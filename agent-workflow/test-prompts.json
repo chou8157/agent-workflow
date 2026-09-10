@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "prompt": "用 $agent-workflow 接手一个全新的 Python 项目，为它创建 AGENTS.md 和 .agent-workflow/ 初版。",
+    "expected": "能识别 init 模式，说明初始化顺序、最低扫描协议、AGENTS.md 处理和 .agent-workflow/ 骨架生成。"
+  },
+  {
+    "id": 2,
+    "prompt": "用 $agent-workflow 把一个已有 agent_docs/ 的项目迁移到新的 .agent-workflow/ 结构，先给映射方案，不要直接迁移。",
+    "expected": "能识别 migrate 模式，先扫描旧目录、给映射方案、强调不自动迁移和需用户确认。"
+  },
+  {
+    "id": 3,
+    "prompt": "我刚完成一次模块开发和验证，用 $agent-workflow 帮我把这次工作记录到项目工作流里。",
+    "expected": "能识别 record 模式，先确定目标工作项，更新该工作项的 current-status 和阶段进展，并按事实决定是否更新局部验证、风险、决策或模块索引。"
+  },
+  {
+    "id": 4,
+    "prompt": "项目里有两个进行中的需求，帮我切换需求。",
+    "expected": "能识别多个进行中工作项，要求用户指定工作项 ID，不能猜测或读取任一任务的详细上下文。"
+  },
+  {
+    "id": 5,
+    "prompt": "用 $agent-workflow 创建一个支付需求任务，以后我需要能恢复它。",
+    "expected": "能创建工作项目录，记录需求定义和当前状态，并说明项目公共工作流不会复制到任务目录。"
+  },
+  {
+    "id": 6,
+    "prompt": "把已经生成的 .agent-workflow 更新到最新版，但不要覆盖我改过的 AGENTS.md。",
+    "expected": "能识别 upgrade 模式，先生成版本升级计划；安全补齐缺失结构，对已有入口文档生成建议文件并等待确认，不直接覆盖。"
+  }
+]
