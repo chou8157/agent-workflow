@@ -2,25 +2,28 @@
 
 ## 基本信息
 
-- 最近更新：2026-07-15
+- 最近更新：2026-09-10
 - 当前目标：开发并稳定 `agent-workflow` Codex skill，用于生成、使用、记录、改进、自检、迁移和恢复多工作项上下文。
-- 当前阶段：多工作项能力与版本化升级能力已同步安装版，等待重启 Codex 后真实项目试跑。
+- 当前阶段：项目已完成 Git/GitHub 基线建设并由新会话接手，进入真实项目试跑和工程化加固阶段。
 
 ## 已完成
 
 - 完成需求澄清和领域建模，记录在 `CONTEXT.md`。
-- 形成 35 条设计决策，记录在 `docs/adr/0001...0035`。
+- 已形成 36 条设计决策，记录在 `docs/adr/0001...0036`。
 - 创建 `agent-workflow/` skill 初版，包含 `SKILL.md`、`references/`、`assets/templates/`、`scripts/` 和 `agents/openai.yaml`。
 - 使用 TDD 完成 `check_workflow.py` 和 `scaffold_workflow.py` 的核心行为测试。
 - 完成达尔文式干跑评估、小优化和本地前向测试，记录在 `agent-workflow/evaluation-notes.md`。
 - 已安装到 `/Users/yizhoucp/.codex/skills/agent-workflow`。
 - 已修复英文内容过多的问题，当前面向阅读的文档和脚本输出已中文为主。
 - 已为当前项目创建 `AGENTS.md` 和 `.agent-workflow/`，用于新 session 接手。
+- 已将源码目录统一为 `/Users/yizhoucp/Documents/agent-workflow`，初始化 Git，并将 `main` 推送到公开仓库 `chou8157/agent-workflow`。
+- 已补充仓库 `README.md` 和 `.gitignore`，缓存文件不纳入版本控制。
 
 ## 下一步
 
-1. 重启 Codex 后，在低风险真实项目中试跑任务创建、切换、恢复和升级。
-2. 根据真实项目反馈决定第二期 Git 代码状态记录能力。
+1. 在低风险真实项目中完整试跑初始化、工作项创建/切换、记录、自检和升级。
+2. 为脚手架、自检、升级和异常输入补充独立回归测试。
+3. 根据真实反馈决定第二期 Git/worktree 状态记录能力，以及 CI、版本和发布策略。
 
 ## 当前阻塞
 
@@ -30,7 +33,8 @@
 
 - 尚未在真实业务项目中完整试跑多工作项创建、切换和恢复。
 - Git/worktree 代码状态适配尚未实现，当前第一期只覆盖任务文档上下文。
-- 当前目录不是 git 仓库，无法使用 git 状态追踪变更。
+- 本地源码与 Codex 安装版依赖人工同步，后续迭代可能发生版本漂移。
+- 尚未建立 CI、版本发布和开源许可证策略。
 
 ## 工作项摘要
 

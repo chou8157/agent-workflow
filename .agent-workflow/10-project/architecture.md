@@ -30,4 +30,11 @@
 
 - `record` 没有专用脚本，当前依赖文档流程和人工判断。（状态：已确认；来源：evaluation-notes）
 - Git/worktree 代码状态适配尚未实现；当前工作项能力只隔离文档上下文。（状态：已确认；来源：当前开发范围）
-- 当前项目不是 git 仓库，缺少版本追踪能力。（状态：已确认；来源：`git status` 失败）
+- 本地源码与 Codex 安装版之间尚无自动同步或版本匹配机制。（状态：已确认；来源：当前安装流程）
+- 当前测试集中在工作项和升级主路径，脚手架、自检及异常路径仍需补充独立回归测试。（状态：已确认；来源：测试文件审阅）
+
+## 版本控制与发布边界
+
+- 源码根目录为 `/Users/yizhoucp/Documents/agent-workflow`，使用 Git `main` 分支管理。（状态：已确认；来源：Git 状态）
+- 公开远端为 `git@github.com:chou8157/agent-workflow.git`。（状态：已确认；来源：Git remote）
+- `/Users/yizhoucp/.codex/skills/agent-workflow` 是运行安装版，不是开发源目录；修改源码后必须经确认再同步安装版。（状态：已确认；来源：项目规范）

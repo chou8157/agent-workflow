@@ -64,3 +64,16 @@
 - 验证方式：安装版 `quick_validate.py` 与排除 `__pycache__/` 的本地/安装版目录对比。
 - 结果：安装版格式校验通过，目录内容无差异。
 - 未覆盖风险：重启 Codex 后的真实项目试跑尚未执行。
+
+### 2026-09-10 - GitHub 基线与接手验证
+
+- 验证对象：Git 仓库状态、项目测试、工作流结构、工作流版本和 skill 格式。
+- 验证方式：
+  - `git status --short --branch`、`git remote -v`、`git log -1`
+  - `python3 -m pytest tests -q`
+  - `python3 agent-workflow/scripts/check_workflow.py . --require-work-items --json`
+  - `python3 agent-workflow/scripts/upgrade_workflow.py . status --json`
+  - `python3.10 /Users/yizhoucp/.codex/skills/.system/skill-creator/scripts/quick_validate.py agent-workflow`
+  - 排除缓存目录后对比本地 `agent-workflow/` 与 Codex 安装版
+- 结果：`main` 跟踪 `origin/main`；测试 `7 passed`；严格结构自检通过；工作流版本为 2 且已是最新；skill 格式有效；接手更新前源码与安装版无差异。
+- 未覆盖风险：尚未执行真实业务项目的完整闭环试跑。

@@ -83,3 +83,10 @@
 - 变更：将本地 `agent-workflow/` 保留式同步到 Codex skills 安装目录。
 - 结果：安装版 skill 格式校验通过，排除缓存目录后与本地版无差异。
 - 后续：重启 Codex 后选低风险真实项目试跑。
+
+### 2026-09-10 - 建立 GitHub 基线并接手迭代
+
+- 目标：明确唯一开发源目录，为后续迭代建立可追踪的 Git 基线，并恢复项目工作流上下文。
+- 变更：将源码目录统一为 `/Users/yizhoucp/Documents/agent-workflow`；初始化 Git `main` 分支；补充仓库 README 和缓存忽略规则；推送到公开仓库 `chou8157/agent-workflow`；同步更新项目概览、规范、状态和风险记录。
+- 结果：首个基线提交 `bc0ff05` 已推送；当前 `main` 跟踪 `origin/main`；项目结构、版本、测试和 skill 格式校验通过。
+- 后续：先完成真实项目闭环试跑，再根据反馈补测试、Git/worktree 状态能力和发布流程。

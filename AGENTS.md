@@ -42,8 +42,8 @@
 
 - 已完成 `agent-workflow` 初版、安装和中文化修复。
 - 多工作项能力和工作流版本化升级能力已同步安装版，详见 `W-20260715-workflow-upgrade`。
-- 下一步是重启 Codex 后，在低风险真实项目中试跑 `$agent-workflow`。
-- 当前项目尚未在 git 仓库中，不能依赖 git 状态追踪。
+- 当前源码由 Git 管理，`main` 跟踪公开仓库 `chou8157/agent-workflow`。
+- 下一阶段优先在低风险真实项目中试跑 `$agent-workflow`，再根据反馈加固测试和发布流程。
 
 ## 禁止事项
 
