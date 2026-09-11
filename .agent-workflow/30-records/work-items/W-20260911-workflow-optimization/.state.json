@@ -1,0 +1,12 @@
+{
+  "id": "W-20260911-workflow-optimization",
+  "title": "工作流状态与文档治理优化",
+  "type": "工作流改进",
+  "status": "in_progress",
+  "parent": null,
+  "created_at": "2026-09-11T17:24:18+08:00",
+  "updated_at": "2026-09-11T17:24:18+08:00",
+  "completed_at": null,
+  "blocked_reason": null,
+  "migrated_from": "work-item.md"
+}

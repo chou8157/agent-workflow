@@ -11,6 +11,8 @@
 3. `.agent-workflow/30-records/current-status.md`（项目公共状态）
 4. 选择目标工作项后，读取 `30-records/work-items/<ID>/README.md`、`current-status.md` 和 `work-item.md`。
 
+工作项生命周期状态以同目录 `.state.json` 为准；`current-status.md` 只解释当前阶段、进展、阻塞和下一步。
+
 ## 工作项选择
 
 - 用户明确指定工作项 ID：直接恢复该工作项。

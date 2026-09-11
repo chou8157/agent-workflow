@@ -43,7 +43,7 @@ def read_structure_version(project: Path) -> int:
 
 
 def suggestion_path(target: Path) -> Path:
-    return target.with_name(f"{target.name}.agent-workflow-v2-suggestion")
+    return target.with_name(f"{target.name}.agent-workflow-v3-suggestion")
 
 
 def review_targets(project: Path) -> list[dict[str, str]]:
@@ -110,6 +110,15 @@ def build_upgrade_plan(project: Path) -> dict[str, object]:
         )
 
     reviews = review_targets(project)
+    work_items = workflow / "30-records" / "work-items"
+    if current_version < LATEST_VERSION and work_items.is_dir():
+        reviews.append(
+            {
+                "target": str(work_items),
+                "suggestion": "请先运行 task_context.py migration-check，再对无冲突工作项运行 migration-apply。",
+                "content": "工作项生命周期状态已迁移为各工作项目录的 .state.json；迁移前必须检查旧状态，冲突不得自动覆盖。",
+            }
+        )
     return {
         "project": str(project),
         "current_version": current_version,

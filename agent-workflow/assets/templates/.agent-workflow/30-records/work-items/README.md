@@ -2,6 +2,8 @@
 
 本目录承载项目内需求、任务和缺陷的独立恢复上下文。每个工作项只记录自身的状态、变更、进展、验证、风险和待修复项；项目公共事实仍保留在上级 `30-records/`。
 
+每个工作项目录的 `.state.json` 是生命周期状态的唯一机器事实源；`work-item.md` 不再重复维护状态字段。
+
 ## 选择与恢复
 
 1. 用户明确指定工作项 ID 时，读取该目录的 `README.md`、`current-status.md` 和 `work-item.md`。
@@ -16,6 +18,8 @@
 - `blocked`：被外部条件阻塞。
 - `completed`：已完成，保留以便追溯。
 - `archived`：已归档，不再作为默认恢复目标。
+
+状态转换由 `task_context.py set-status` 执行；`blocked` 必须提供阻塞原因，`archived` 不允许重新打开。
 
 ## 创建方式
 

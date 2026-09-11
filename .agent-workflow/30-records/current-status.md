@@ -1,5 +1,16 @@
 # 当前状态
 
+## 项目状态（结构化）
+
+```yaml
+project_status: active
+current_phase: engineering_hardening
+primary_work_item: W-20260911-workflow-optimization
+updated_at: 2026-09-11
+```
+
+以上字段用于机器读取；项目目标、阶段判断、风险和下一步仍记录在下文。
+
 ## 基本信息
 
 - 最近更新：2026-09-10
@@ -38,7 +49,7 @@
 
 ## 工作项摘要
 
-- 进行中的工作项：无。
+- 进行中的工作项：W-20260911-workflow-optimization（状态见对应 `.state.json`）。
 - 最近完成：`W-20260715-multi-work-items`。
 - 最近完成：`W-20260715-workflow-upgrade`。
 - 跨任务阻塞：无。

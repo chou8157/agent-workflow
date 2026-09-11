@@ -5,8 +5,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -14,12 +16,79 @@ WORKFLOW_DIR = ".agent-workflow"
 WORK_ITEMS_REL = Path("30-records") / "work-items"
 TEMPLATE_ROOT = Path(__file__).resolve().parents[1] / "assets" / "templates" / "work-item"
 VALID_STATUSES = ("planned", "in_progress", "blocked", "completed", "archived")
+ALLOWED_TRANSITIONS = {
+    "planned": {"in_progress", "blocked", "archived"},
+    "in_progress": {"blocked", "completed", "archived"},
+    "blocked": {"in_progress", "completed", "archived"},
+    "completed": {"in_progress", "archived"},
+    "archived": set(),
+}
+STATE_FILENAME = ".state.json"
 WORK_ITEM_ID_RE = re.compile(r"^W-[A-Za-z0-9][A-Za-z0-9-]*$")
 FIELD_RE = re.compile(r"^- (ID|标题|类型|状态|父工作项)：\s*(.*)$", re.MULTILINE)
 
 
 def work_items_dir(project: Path) -> Path:
     return project / WORKFLOW_DIR / WORK_ITEMS_REL
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+
+
+def state_path(item_path: Path) -> Path:
+    return item_path / STATE_FILENAME
+
+
+def write_json_atomic(path: Path, payload: dict[str, object]) -> None:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    os.replace(temporary, path)
+
+
+def validate_state(state: dict[str, object], expected_id: str | None = None) -> None:
+    required = {"id", "title", "type", "status", "parent", "created_at", "updated_at"}
+    missing = sorted(required - state.keys())
+    if missing:
+        raise ValueError(f"状态文件缺少字段：{'、'.join(missing)}")
+    if expected_id and state["id"] != expected_id:
+        raise ValueError(f"状态文件 ID 与目录不一致：{expected_id}")
+    if state["status"] not in VALID_STATUSES:
+        raise ValueError(f"状态文件包含不支持的状态：{state['status']}")
+    for field in ("id", "title", "type", "updated_at"):
+        if not isinstance(state[field], str) or not state[field].strip():
+            raise ValueError(f"状态文件字段无效：{field}")
+    for field in ("created_at", "updated_at", "completed_at"):
+        value = state.get(field)
+        if value is not None:
+            if not isinstance(value, str):
+                raise ValueError(f"状态文件时间字段无效：{field}")
+            try:
+                datetime.fromisoformat(value)
+            except ValueError as error:
+                raise ValueError(f"状态文件时间格式无效：{field}") from error
+    if state["parent"] is not None and not isinstance(state["parent"], str):
+        raise ValueError("状态文件父工作项必须是字符串或 null")
+    if state["status"] == "blocked" and not state.get("blocked_reason"):
+        raise ValueError("blocked 状态必须填写 blocked_reason")
+    if state["status"] == "completed" and state.get("completed_at") is None and not state.get("completed_at_unknown"):
+        raise ValueError("completed 状态必须填写 completed_at；历史未知时请人工裁决")
+    if state["status"] != "completed" and state.get("completed_at") is not None:
+        raise ValueError("非 completed 状态不应填写 completed_at")
+
+
+def read_state(item_path: Path) -> dict[str, object] | None:
+    path = state_path(item_path)
+    if not path.is_file():
+        return None
+    try:
+        state = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        raise ValueError(f"状态文件不是有效 JSON：{path}：{error}") from error
+    if not isinstance(state, dict):
+        raise ValueError(f"状态文件必须是 JSON 对象：{path}")
+    validate_state(state, item_path.name)
+    return state
 
 
 def copy_template_tree(source: Path, destination: Path, replacements: dict[str, str]) -> None:
@@ -76,6 +145,21 @@ def create_work_item(project: Path, item_id: str, title: str, item_type: str, pa
             "{{WORK_ITEM_PARENT}}": parent or "无",
         },
     )
+    timestamp = now_iso()
+    write_json_atomic(
+        destination / STATE_FILENAME,
+        {
+            "id": item_id,
+            "title": title.strip(),
+            "type": item_type,
+            "status": "planned",
+            "parent": parent or None,
+            "created_at": timestamp,
+            "updated_at": timestamp,
+            "completed_at": None,
+            "blocked_reason": None,
+        },
+    )
     return destination
 
 
@@ -88,6 +172,17 @@ def read_work_item(path: Path) -> dict[str, str]:
         "parent": "",
         "path": str(path),
     }
+    state = read_state(path)
+    if state:
+        return {
+            "id": str(state["id"]),
+            "title": str(state["title"]),
+            "type": str(state["type"]),
+            "status": str(state["status"]),
+            "parent": str(state["parent"] or "无"),
+            "path": str(path),
+        }
+
     item_file = path / "work-item.md"
     if not item_file.is_file():
         metadata["status"] = "invalid"
@@ -120,19 +215,102 @@ def get_work_item(project: Path, item_id: str) -> dict[str, str]:
     return read_work_item(path)
 
 
-def set_status(project: Path, item_id: str, status: str) -> Path:
+def set_status(project: Path, item_id: str, status: str, reason: str | None = None) -> Path:
     if status not in VALID_STATUSES:
         allowed = "、".join(VALID_STATUSES)
         raise ValueError(f"不支持的状态：{status}。可选值：{allowed}")
 
     metadata = get_work_item(project, item_id)
-    item_file = Path(metadata["path"]) / "work-item.md"
-    content = item_file.read_text(encoding="utf-8")
-    updated, count = re.subn(r"^- 状态：.*$", f"- 状态：{status}", content, count=1, flags=re.MULTILINE)
-    if count != 1:
-        raise ValueError(f"工作项状态字段异常：{item_id}")
-    item_file.write_text(updated, encoding="utf-8")
-    return item_file
+    item_path = Path(metadata["path"])
+    state = read_state(item_path)
+    if state is None:
+        raise ValueError(f"工作项缺少 {STATE_FILENAME}，请先执行只读迁移检查：{item_id}")
+    previous = state["status"]
+    if status != previous and status not in ALLOWED_TRANSITIONS[previous]:
+        raise ValueError(f"不允许的状态转换：{previous} -> {status}")
+    state["status"] = status
+    state["updated_at"] = now_iso()
+    if status == "completed" and previous != "completed":
+        state["completed_at"] = state["updated_at"]
+    if status == "blocked":
+        if not reason or not reason.strip():
+            raise ValueError("设置 blocked 状态时必须提供 --reason")
+        state["blocked_reason"] = reason.strip()
+    else:
+        state["blocked_reason"] = None
+    write_json_atomic(state_path(item_path), state)
+    return state_path(item_path)
+
+
+def read_work_item_legacy(path: Path) -> dict[str, str]:
+    item_file = path / "work-item.md"
+    metadata = {"status": "", "title": "", "type": "", "parent": ""}
+    if not item_file.is_file():
+        return metadata
+    field_names = {"标题": "title", "类型": "type", "状态": "status", "父工作项": "parent"}
+    for name, value in FIELD_RE.findall(item_file.read_text(encoding="utf-8", errors="replace")):
+        key = field_names.get(name)
+        if key and not metadata[key]:
+            metadata[key] = value.strip().strip("`")
+    return metadata
+
+
+def migration_report(project: Path) -> list[dict[str, str]]:
+    findings: list[dict[str, str]] = []
+    for item_path in sorted(work_items_dir(project).glob("W-*")):
+        if not item_path.is_dir():
+            continue
+        item = read_work_item_legacy(item_path)
+        if state_path(item_path).exists():
+            try:
+                state = read_state(item_path)
+            except ValueError as error:
+                findings.append({"id": item_path.name, "status": "未知", "finding": f"状态文件无效：{error}"})
+                continue
+            conflicts = [field for field in ("title", "type", "status") if item.get(field) and str(state[field]) != item[field]]
+            if conflicts:
+                findings.append({"id": item_path.name, "status": str(state["status"]), "finding": f"状态文件与旧正文冲突：{'、'.join(conflicts)}"})
+            continue
+        findings.append(
+            {
+                "id": item_path.name,
+                "status": item["status"] or "未知",
+                "finding": "缺少状态文件" if item["status"] in VALID_STATUSES else "缺少状态文件且旧状态无效",
+            }
+        )
+    return findings
+
+
+def migrate_legacy_items(project: Path) -> list[Path]:
+    migrated: list[Path] = []
+    for item_path in sorted(work_items_dir(project).glob("W-*")):
+        if not item_path.is_dir() or state_path(item_path).exists():
+            continue
+        legacy = read_work_item_legacy(item_path)
+        if legacy["status"] not in VALID_STATUSES or not legacy["title"] or not legacy["type"]:
+            continue
+        if legacy["status"] == "blocked":
+            continue
+        timestamp = now_iso()
+        write_json_atomic(
+            state_path(item_path),
+            {
+                "id": item_path.name,
+                "title": legacy["title"],
+                "type": legacy["type"],
+                "status": legacy["status"],
+                "parent": None if legacy["parent"] in ("", "无") else legacy["parent"],
+                "created_at": None,
+                "updated_at": timestamp,
+                "completed_at": None,
+                "completed_at_unknown": legacy["status"] == "completed",
+                "blocked_reason": None,
+                "migrated_from": "work-item.md",
+                "migrated_at": timestamp,
+            },
+        )
+        migrated.append(state_path(item_path))
+    return migrated
 
 
 def format_item(item: dict[str, str]) -> str:
@@ -169,6 +347,13 @@ def main(argv: list[str] | None = None) -> int:
     status_parser = subparsers.add_parser("set-status", help="更新工作项生命周期状态。")
     status_parser.add_argument("item_id", help="工作项 ID。")
     status_parser.add_argument("status", choices=VALID_STATUSES, help="目标状态。")
+    status_parser.add_argument("--reason", help="阻塞原因；设置 blocked 状态时必填。")
+
+    migrate_parser = subparsers.add_parser("migration-check", help="检查旧工作项是否缺少状态文件。")
+    migrate_parser.add_argument("--json", action="store_true", help="输出机器可读 JSON。")
+
+    apply_migrate_parser = subparsers.add_parser("migration-apply", help="为无冲突旧工作项生成状态文件。")
+    apply_migrate_parser.add_argument("--json", action="store_true", help="输出机器可读 JSON。")
 
     args = parser.parse_args(argv)
     project = Path(args.project).resolve()
@@ -195,8 +380,23 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 print(format_item(item))
         elif args.command == "set-status":
-            path = set_status(project, args.item_id, args.status)
+            path = set_status(project, args.item_id, args.status, args.reason)
             print(f"已更新工作项状态：{path}")
+        elif args.command == "migration-check":
+            findings = migration_report(project)
+            if args.json:
+                print(json.dumps(findings, ensure_ascii=False, indent=2))
+            elif not findings:
+                print("未发现缺少状态文件的工作项。")
+            else:
+                for finding in findings:
+                    print(f"{finding['id']}：{finding['finding']}，旧状态={finding['status']}")
+        elif args.command == "migration-apply":
+            migrated = [str(path) for path in migrate_legacy_items(project)]
+            if args.json:
+                print(json.dumps(migrated, ensure_ascii=False, indent=2))
+            else:
+                print(f"已迁移 {len(migrated)} 个无冲突工作项。")
     except ValueError as error:
         print(f"错误：{error}", file=sys.stderr)
         return 2

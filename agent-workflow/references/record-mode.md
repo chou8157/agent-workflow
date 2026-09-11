@@ -40,3 +40,5 @@
 5. **风险和问题**：风险进 `risk-log.md`，已确认问题进 `pending-fixes.md`。
 6. **决策**：轻量决策进 `decision-log.md`；重大决策才建 ADR。
 7. **当前状态**：更新目标工作项的 `current-status.md`；只有项目整体状态变化时才更新根 `current-status.md`。
+
+工作项完成、阻塞或归档时，必须先通过 `task_context.py set-status` 更新 `.state.json`，再补充当前摘要；不得把生命周期状态只写进 Markdown。

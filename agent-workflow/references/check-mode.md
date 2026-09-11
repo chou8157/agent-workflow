@@ -40,3 +40,5 @@ python3 path/to/agent-workflow/scripts/check_workflow.py /path/to/project --requ
 5. 补齐后再次运行自检，确认 `ok: true` 或列出剩余需确认项。
 
 `--require-work-items` 用于已启用多工作项能力的项目。旧工作流默认不因缺少该目录而失败。
+
+启用多工作项检查时，还会检查每个工作项目录是否存在 `.state.json`。缺少状态文件时先执行 `task_context.py migration-check`，不要手工批量改写工作项正文。

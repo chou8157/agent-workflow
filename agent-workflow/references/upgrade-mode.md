@@ -12,6 +12,8 @@
 4. 用户审阅并确认建议文件后，才手工合并到已有 `AGENTS.md`、工作流入口或渐进读取规则。
 5. 运行 `upgrade_workflow.py <项目> status` 和 `check_workflow.py`，记录真实升级结果。
 
+工作流版本 3 引入工作项 `.state.json`。升级旧项目时，先用 `task_context.py migration-check` 生成只读清单，再只对无冲突项目执行 `migration-apply`；升级脚本不会自动覆盖旧工作项状态。
+
 ## 安全边界
 
 - 结构版本与文档审阅状态分开：即使目录已升级，仍可能存在待审阅建议。

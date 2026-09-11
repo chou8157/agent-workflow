@@ -1,5 +1,16 @@
 # 当前状态
 
+## 项目状态（结构化）
+
+```yaml
+project_status: active
+current_phase: discovery
+primary_work_item: null
+updated_at: 待补充
+```
+
+以上字段用于机器读取；项目目标、阶段判断、风险和下一步仍记录在下文。
+
 ## 基本信息
 
 - 最近更新：待补充

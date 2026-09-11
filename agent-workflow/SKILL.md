@@ -62,7 +62,7 @@ python3 path/to/agent-workflow/scripts/upgrade_workflow.py /path/to/project appl
 
 `check_workflow.py` 会检查必需结构。`--fix-low-risk` 可以补齐缺失的工作流目录和占位核心文件，但不会修改 `AGENTS.md`。
 
-`task_context.py` 用于创建、列出、查看和更新工作项生命周期状态；它不执行 Git 操作，也不替代记录模式中的真实事实判断。
+`task_context.py` 用于创建、列出、查看和更新工作项生命周期状态。生命周期状态唯一保存在工作项目录的 `.state.json`；旧工作项先用 `migration-check` 做只读检查。它不执行 Git 操作，也不替代记录模式中的真实事实判断。
 
 `upgrade_workflow.py` 根据结构版本生成升级计划。`apply-safe` 只补齐缺失结构和版本标记；已有入口文档只生成建议文件，必须由用户确认后人工合并。
 

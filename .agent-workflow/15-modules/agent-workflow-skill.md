@@ -18,6 +18,7 @@
 - 自检脚本：`agent-workflow/scripts/check_workflow.py`
 - 脚手架脚本：`agent-workflow/scripts/scaffold_workflow.py`
 - 工作项脚本：`agent-workflow/scripts/task_context.py`
+- 工作项状态：每个工作项目录的 `.state.json`
 - 升级脚本：`agent-workflow/scripts/upgrade_workflow.py`
 - 评估记录：`agent-workflow/evaluation-notes.md`
 

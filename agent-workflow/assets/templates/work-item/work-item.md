@@ -5,8 +5,9 @@
 - ID：`{{WORK_ITEM_ID}}`
 - 标题：{{WORK_ITEM_TITLE}}
 - 类型：{{WORK_ITEM_TYPE}}
-- 状态：planned
 - 父工作项：{{WORK_ITEM_PARENT}}
+
+生命周期状态见同目录 `.state.json`，本文件不重复维护状态字段。
 
 ## 当前需求
 
