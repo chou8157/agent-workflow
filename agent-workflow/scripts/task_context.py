@@ -232,6 +232,10 @@ def set_status(project: Path, item_id: str, status: str, reason: str | None = No
     state["updated_at"] = now_iso()
     if status == "completed" and previous != "completed":
         state["completed_at"] = state["updated_at"]
+        state["completed_at_unknown"] = False
+    elif status != "completed":
+        state["completed_at"] = None
+        state["completed_at_unknown"] = False
     if status == "blocked":
         if not reason or not reason.strip():
             raise ValueError("设置 blocked 状态时必须提供 --reason")

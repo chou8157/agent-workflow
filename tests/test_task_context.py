@@ -102,6 +102,21 @@ def test_blocked_status_requires_and_persists_reason(tmp_path: Path) -> None:
     assert task_context.read_state(tmp_path / ".agent-workflow/30-records/work-items/W-blocked")["blocked_reason"] == "等待外部接口"
 
 
+def test_reopening_completed_item_clears_completion_timestamp(tmp_path: Path) -> None:
+    scaffold_workflow.scaffold_project(tmp_path)
+    created = task_context.create_work_item(tmp_path, "W-reopen", "重新打开任务", "任务", "")
+    task_context.set_status(tmp_path, "W-reopen", "in_progress")
+    task_context.set_status(tmp_path, "W-reopen", "completed")
+    completed = task_context.read_state(created)
+    assert completed["completed_at"] is not None
+
+    task_context.set_status(tmp_path, "W-reopen", "in_progress")
+    reopened = task_context.read_state(created)
+    assert reopened["status"] == "in_progress"
+    assert reopened["completed_at"] is None
+    assert reopened["completed_at_unknown"] is False
+
+
 def test_migration_skips_blocked_legacy_item_without_reason(tmp_path: Path) -> None:
     scaffold_workflow.scaffold_project(tmp_path)
     created = task_context.create_work_item(tmp_path, "W-blocked-legacy", "旧阻塞任务", "任务", "")
