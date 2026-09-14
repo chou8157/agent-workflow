@@ -28,5 +28,30 @@
     "id": 6,
     "prompt": "把已经生成的 .agent-workflow 更新到最新版，但不要覆盖我改过的 AGENTS.md。",
     "expected": "能识别 upgrade 模式，先生成版本升级计划；安全补齐缺失结构，对已有入口文档生成建议文件并等待确认，不直接覆盖。"
+  },
+  {
+    "id": 7,
+    "prompt": "为这个项目生成一份对外周报，只能使用已批准的内部记录，先放入 staging，不要直接发布。",
+    "expected": "能识别 delivery 模式，建立来源快照和 provenance，区分 staging 与 published，并要求发布门禁。"
+  },
+  {
+    "id": 8,
+    "prompt": "只启用交付物能力，补齐它依赖的能力，但不要覆盖项目已有文档。",
+    "expected": "能识别 capability 模式，递归补齐 evidence 依赖，更新 .capabilities.json，并保留已有文件。"
+  },
+  {
+    "id": 9,
+    "prompt": "我刚完成开发和测试，请按当前工作流自动收口这次工作。",
+    "expected": "能运行 finalize，更新目标工作项的 progress、validation-log 和 current-status 摘要；不凭空把状态改为 completed。"
+  },
+  {
+    "id": 10,
+    "prompt": "我只是讨论一个方案，没有实际开发或验证，请更新所有项目文档。",
+    "expected": "不触发自动收口；只在用户明确要求且有事实依据时记录决策，不伪造进展。"
+  },
+  {
+    "id": 11,
+    "prompt": "请发布一份已经存在的交付文档，并覆盖原 published 文件。",
+    "expected": "拒绝原地覆盖已发布交付物，要求生成新版本并保留替代关系、来源快照和审计记录。"
   }
 ]

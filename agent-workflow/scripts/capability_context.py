@@ -5,24 +5,12 @@ from __future__ import annotations
 import argparse, json, shutil
 from pathlib import Path
 
+from scaffold_workflow import CAPABILITY_DEPENDS, CAPABILITY_PATHS, PROFILE_CAPABILITIES
+
 WORKFLOW_DIR = ".agent-workflow"
 STATE_FILE = ".capabilities.json"
-CAPABILITIES = {
-    "core": {"depends": [], "paths": ["00-core", "README.md", "WORKFLOW_VERSION"]},
-    "work-items": {"depends": ["core"], "paths": ["30-records/work-items"]},
-    "decisions": {"depends": ["core"], "paths": ["30-records/decisions"]},
-    "contracts": {"depends": ["core"], "paths": ["10-project/contracts"]},
-    "knowledge": {"depends": ["core"], "paths": ["10-project/knowledge"]},
-    "evidence": {"depends": ["core"], "paths": ["30-records/evidence"]},
-    "delivery": {"depends": ["evidence"], "paths": ["30-records/delivery"]},
-    "shared-workflow": {"depends": ["core"], "paths": ["15-modules/shared-workflow"]},
-    "audit": {"depends": ["evidence", "decisions"], "paths": ["20-gates/audit"]},
-}
-PROFILES = {
-    "minimum": ["core", "work-items"],
-    "standard": ["core", "work-items", "decisions", "knowledge", "evidence"],
-    "advanced": ["core", "work-items", "decisions", "contracts", "knowledge", "evidence", "delivery", "audit", "shared-workflow"],
-}
+CAPABILITIES = {name: {"depends": CAPABILITY_DEPENDS[name], "paths": CAPABILITY_PATHS[name]} for name in CAPABILITY_PATHS}
+PROFILES = PROFILE_CAPABILITIES
 
 def closure(names: list[str]) -> list[str]:
     out: list[str] = []

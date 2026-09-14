@@ -43,3 +43,14 @@ def test_scaffold_capability_includes_dependencies(tmp_path):
     scaffold_workflow.scaffold_project(tmp_path, capabilities=["delivery"])
     state = json.loads((tmp_path / ".agent-workflow" / ".capabilities.json").read_text(encoding="utf-8"))
     assert state["enabled"] == ["core", "evidence", "delivery"]
+
+
+def test_scaffold_and_enable_share_the_same_capability_schema(tmp_path):
+    import scaffold_workflow
+    assert capability_context.CAPABILITIES.keys() == scaffold_workflow.CAPABILITY_PATHS.keys()
+    assert capability_context.CAPABILITIES["evidence"]["paths"] == scaffold_workflow.CAPABILITY_PATHS["evidence"]
+    scaffold_workflow.scaffold_project(tmp_path, capabilities=["evidence"])
+    capability_context.enable(tmp_path, ["delivery"])
+    root = tmp_path / ".agent-workflow"
+    assert (root / "30-records" / "validation-log.md").is_file()
+    assert (root / "30-records" / "delivery").is_dir()
