@@ -43,4 +43,6 @@ python3 path/to/agent-workflow/scripts/check_workflow.py /path/to/project --requ
 
 启用交付能力后，还应检查 `30-records/delivery/` 的草稿和发布物：发布物必须有旁置元数据、报告周期、受众、内容哈希，且正文不得包含内部路径、工作项 ID、未确认判断或敏感字段。
 
+如果项目存在 `.capabilities.json`，只检查清单中已启用的能力；未启用能力缺失不算错误。能力清单无效时停止并报告，不自动修复。
+
 启用多工作项检查时，还会检查每个工作项目录是否存在 `.state.json`。缺少状态文件时先执行 `task_context.py migration-check`，不要手工批量改写工作项正文。
