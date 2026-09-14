@@ -42,6 +42,7 @@ REQUIRED_FILES = [
 ]
 WORK_ITEMS_README = "30-records/work-items/README.md"
 STATE_FILENAME = ".state.json"
+DELIVERY_DIR = "30-records/delivery"
 PROJECT_STATE_FIELDS = ("project_status", "current_phase", "primary_work_item", "updated_at")
 
 
@@ -172,6 +173,29 @@ def check_project(project: Path, require_work_items: bool = False) -> list[Issue
                     raise ValueError("非 completed 不应有 completed_at")
             except (OSError, json.JSONDecodeError, ValueError) as error:
                 issues.append(Issue("invalid_work_item_state", str(state_file.relative_to(project)), "error", f"状态文件无效：{error}"))
+
+    delivery_root = workflow / DELIVERY_DIR
+    published_root = delivery_root / "published"
+    if published_root.is_dir():
+        for artifact in sorted(published_root.glob("*.md")):
+            if artifact.name == "README.md":
+                continue
+            metadata_file = artifact.with_suffix(".json")
+            try:
+                if not metadata_file.is_file():
+                    raise ValueError("缺少旁置元数据")
+                metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
+                required = {"artifact_id", "artifact_type", "audience", "period", "version", "status", "content_sha256"}
+                missing = sorted(required - metadata.keys())
+                if missing:
+                    raise ValueError(f"缺少字段：{'、'.join(missing)}")
+                if metadata["status"] != "published":
+                    raise ValueError("发布物状态必须是 published")
+                content = artifact.read_text(encoding="utf-8", errors="replace")
+                if any(marker in content for marker in (".agent-workflow/", "待确认", "未验证")):
+                    raise ValueError("正文包含内部路径或未确认判断")
+            except (OSError, json.JSONDecodeError, ValueError) as error:
+                issues.append(Issue("invalid_delivery_artifact", str(artifact.relative_to(project)), "error", f"交付物无效：{error}"))
 
     return issues
 

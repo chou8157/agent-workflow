@@ -41,4 +41,6 @@ python3 path/to/agent-workflow/scripts/check_workflow.py /path/to/project --requ
 
 `--require-work-items` 用于已启用多工作项能力的项目。旧工作流默认不因缺少该目录而失败。
 
+启用交付能力后，还应检查 `30-records/delivery/` 的草稿和发布物：发布物必须有旁置元数据、报告周期、受众、内容哈希，且正文不得包含内部路径、工作项 ID、未确认判断或敏感字段。
+
 启用多工作项检查时，还会检查每个工作项目录是否存在 `.state.json`。缺少状态文件时先执行 `task_context.py migration-check`，不要手工批量改写工作项正文。

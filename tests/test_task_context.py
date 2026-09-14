@@ -19,6 +19,7 @@ def test_scaffold_creates_work_items_entry(tmp_path: Path) -> None:
 
     assert (tmp_path / ".agent-workflow" / "30-records" / "work-items" / "README.md").is_file()
     assert (tmp_path / ".agent-workflow" / "WORKFLOW_VERSION").read_text(encoding="utf-8") == f"{upgrade_workflow.LATEST_VERSION}\n"
+    assert (tmp_path / ".agent-workflow" / "30-records" / "delivery" / "staging" / "README.md").is_file()
 
 
 def test_create_list_and_update_work_item(tmp_path: Path) -> None:
@@ -207,7 +208,7 @@ def test_safe_upgrade_preserves_existing_entry_documents(tmp_path: Path) -> None
     result = upgrade_workflow.apply_safe_upgrade(tmp_path)
 
     assert (work_items / "README.md").is_file()
-    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == "3\n"
+    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == "4\n"
     assert agents.read_text(encoding="utf-8") == "# 既有入口\n"
     assert readme.read_text(encoding="utf-8") == "# 既有工作流\n"
     assert disclosure.read_text(encoding="utf-8") == "# 既有渐进规则\n"

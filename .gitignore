@@ -13,3 +13,6 @@ ENV/
 
 # Local Git worktrees
 .worktrees/
+
+# Regenerated external delivery drafts
+.agent-workflow/30-records/delivery/staging/*

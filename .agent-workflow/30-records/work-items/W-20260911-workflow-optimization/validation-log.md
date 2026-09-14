@@ -7,3 +7,11 @@
 - `blocked` 无原因拒绝：由自动化测试覆盖，通过。
 - 重新打开已完成工作项：首次发现 `completed_at` 清理缺陷，修复后回归通过。
 - 三个外部案例：本轮未修改，仅保留此前只读扫描结果。
+
+## 2026-09-14：外部交付第一期试用
+
+- 生成 `phase-report-20260914` staging 草稿：通过。
+- 发布 `phase-report-20260914` published 版本：通过。
+- 发布物元数据、内容哈希和内部泄露检查：通过。
+- `python3 -m pytest tests -q`：`20 passed`。
+- `check_workflow.py . --require-work-items --json`：`ok: true`。
