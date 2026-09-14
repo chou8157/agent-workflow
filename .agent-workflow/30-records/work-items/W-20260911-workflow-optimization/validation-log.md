@@ -15,3 +15,11 @@
 - 发布物元数据、内容哈希和内部泄露检查：通过。
 - `python3 -m pytest tests -q`：`20 passed`。
 - `check_workflow.py . --require-work-items --json`：`ok: true`。
+
+## 2026-09-14：生命周期与五角色接入验证
+
+- 临时项目完成 `draft -> approved -> published -> superseded -> archived`：通过。
+- source snapshot、provenance 和内容哈希：通过。
+- 发布物篡改、内部工作项 ID 和非法替代关系：均被检查工具拒绝。
+- Memory 规则、Skill 路由、交付脚本和模板边界：已接入。
+- 全量测试：`22 passed`。
