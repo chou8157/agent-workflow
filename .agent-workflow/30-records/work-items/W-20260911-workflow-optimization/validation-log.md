@@ -23,3 +23,11 @@
 - 发布物篡改、内部工作项 ID 和非法替代关系：均被检查工具拒绝。
 - Memory 规则、Skill 路由、交付脚本和模板边界：已接入。
 - 全量测试：`22 passed`。
+
+## 2026-09-14：当前项目外部交付自托管试用
+
+- 当前项目完成两个交付物的生成、批准和发布：通过。
+- 已发布版本在来源文件变化后保持内容哈希不变：通过（Python `hashlib.sha256`）。
+- 交付物替代、撤回和归档链路：通过。
+- `check_workflow.py . --require-work-items --json`：`ok: true`。
+- `python3 -m pytest tests -q`：`22 passed`。
