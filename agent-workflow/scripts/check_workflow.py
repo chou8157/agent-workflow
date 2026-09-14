@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import re
@@ -44,6 +45,7 @@ WORK_ITEMS_README = "30-records/work-items/README.md"
 STATE_FILENAME = ".state.json"
 DELIVERY_DIR = "30-records/delivery"
 PROJECT_STATE_FIELDS = ("project_status", "current_phase", "primary_work_item", "updated_at")
+INTERNAL_WORK_ITEM = re.compile(r"\bW-[A-Za-z0-9][A-Za-z0-9_-]*\b")
 
 
 @dataclass
@@ -189,10 +191,20 @@ def check_project(project: Path, require_work_items: bool = False) -> list[Issue
                 missing = sorted(required - metadata.keys())
                 if missing:
                     raise ValueError(f"缺少字段：{'、'.join(missing)}")
-                if metadata["status"] != "published":
-                    raise ValueError("发布物状态必须是 published")
+                if metadata["status"] not in ("published", "superseded", "withdrawn"):
+                    raise ValueError("发布物状态必须是 published、superseded 或 withdrawn")
+                if metadata["status"] == "superseded":
+                    replacement = str(metadata.get("superseded_by", "")).strip()
+                    if not replacement:
+                        raise ValueError("superseded 交付物缺少 superseded_by")
+                    if not (published_root / f"{replacement}.md").is_file():
+                        raise ValueError(f"替代交付物不存在：{replacement}")
                 content = artifact.read_text(encoding="utf-8", errors="replace")
-                if any(marker in content for marker in (".agent-workflow/", "待确认", "未验证")):
+                expected_hash = metadata.get("content_sha256")
+                actual_hash = hashlib.sha256(artifact.read_bytes()).hexdigest()
+                if expected_hash != actual_hash:
+                    raise ValueError("正文内容哈希不匹配")
+                if any(marker in content for marker in (".agent-workflow/", "待确认", "未验证")) or INTERNAL_WORK_ITEM.search(content):
                     raise ValueError("正文包含内部路径或未确认判断")
             except (OSError, json.JSONDecodeError, ValueError) as error:
                 issues.append(Issue("invalid_delivery_artifact", str(artifact.relative_to(project)), "error", f"交付物无效：{error}"))

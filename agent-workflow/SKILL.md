@@ -24,6 +24,7 @@ description: 创建、使用、记录、优化、自检和迁移项目智能体�
 - **migrate**：用户要求迁移旧 `agent_docs/`、`stack-workflow/` 或其他工作流文档。读取 `references/migrate-mode.md` 和 `references/document-structure.md`。
 - **upgrade**：用户要求把已生成工作流更新到最新结构、同步模板更新或查看工作流版本。读取 `references/upgrade-mode.md`。
 - **delivery**：用户要求生成周报、阶段报告、交付、验收或发布说明。读取 `references/delivery-mode.md`。
+- **memory**：用户要求沉淀、索引或恢复项目长期知识。读取 `references/memory-mode.md`，不得把草稿和交付中间物写入 Memory。
 
 如果模式不明确，先问一个简短澄清问题，再写文件。
 
