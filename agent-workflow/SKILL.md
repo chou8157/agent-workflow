@@ -25,6 +25,7 @@ description: 创建、使用、记录、优化、自检和迁移项目智能体�
 - **upgrade**：用户要求把已生成工作流更新到最新结构、同步模板更新或查看工作流版本。读取 `references/upgrade-mode.md`。
 - **delivery**：用户要求生成周报、阶段报告、交付、验收或发布说明。读取 `references/delivery-mode.md`。
 - **capability**：用户要求按项目规模初始化、启用能力、精简目录或渐进升级。读取 `references/capability-mode.md`。
+- **finalize**：本轮实际执行了开发、测试、状态变更或交付操作并准备结束时，默认执行工作流收口。读取 `references/finalize-mode.md`。纯讨论、阅读、规划和未产生项目事实的任务不触发。
 - **memory**：用户要求沉淀、索引或恢复项目长期知识。读取 `references/memory-mode.md`，不得把草稿和交付中间物写入 Memory。
 
 如果模式不明确，先问一个简短澄清问题，再写文件。
@@ -40,7 +41,7 @@ description: 创建、使用、记录、优化、自检和迁移项目智能体�
 - 新初始化项目默认创建 `30-records/work-items/`。每个实际开发需求必须归属到一个工作项；公共规则、架构和跨任务记录不得复制到工作项中。
 - 多个进行中工作项而用户未指定目标时，必须先询问；只有一个进行中工作项时可以默认选择，并说明选择结果。
 - Git 分支和 worktree 是可选的代码状态适配能力，未明确启用时不得创建、切换或删除 Git 工作区。
-- 只有用户明确触发 init、record、improve、check 或 migrate 时才更新工作流文档；普通任务可以建议记录，但不能自动记录。
+- 实际开发、测试、状态变更或交付完成后默认执行 `finalize` 收口；纯讨论、阅读、规划和未产生项目事实的任务不触发。收口只写入可验证事实，不自动改写项目级判断或 Memory。
 
 ## 内置资源
 
@@ -72,6 +73,8 @@ python3 path/to/agent-workflow/scripts/upgrade_workflow.py /path/to/project appl
 `delivery_context.py` 用于生成和发布独立外部交付物。草稿写入 staging，发布前检查内部路径、内部工作项 ID、未确认判断和敏感字段；published 版本不可原地覆盖。
 
 `capability_context.py` 管理能力模块、依赖、profile 和只读升级建议。默认初始化使用 `minimum`，启用能力前由用户确认，检查和升级不会要求未启用模块存在。
+
+收口时按 `references/finalize-mode.md` 执行：更新目标工作项的状态、进展和真实验证记录；项目级状态、长期 Memory 和外部交付物不因普通开发自动改写。
 
 ## 输出要求
 
