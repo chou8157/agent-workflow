@@ -31,3 +31,12 @@
 - 交付物替代、撤回和归档链路：通过。
 - `check_workflow.py . --require-work-items --json`：`ok: true`。
 - `python3 -m pytest tests -q`：`22 passed`。
+
+## 2026-09-14：当前项目能力渐进自托管试用
+
+- `capability_context.py suggest`：识别 `delivery` 能力。
+- 启用 `core + work-items + delivery`：自动补齐 `evidence` 依赖，通过。
+- 既有 `agent-workflow/SKILL.md` 哈希前后相同，未被覆盖。
+- `check_workflow.py . --require-work-items --json`：`ok: true`。
+- `upgrade_workflow.py . status --json`：版本 `5`，无待升级动作。
+- `python3 -m pytest tests -q`：`26 passed`。
