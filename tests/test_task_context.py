@@ -19,7 +19,7 @@ def test_scaffold_creates_work_items_entry(tmp_path: Path) -> None:
 
     assert (tmp_path / ".agent-workflow" / "30-records" / "work-items" / "README.md").is_file()
     assert (tmp_path / ".agent-workflow" / "WORKFLOW_VERSION").read_text(encoding="utf-8") == f"{upgrade_workflow.LATEST_VERSION}\n"
-    assert (tmp_path / ".agent-workflow" / "30-records" / "delivery" / "staging" / "README.md").is_file()
+    assert (tmp_path / ".agent-workflow" / ".capabilities.json").is_file()
 
 
 def test_create_list_and_update_work_item(tmp_path: Path) -> None:
@@ -176,9 +176,9 @@ def test_legacy_workflow_is_valid_without_work_items(tmp_path: Path) -> None:
             path.rmdir()
     work_items.rmdir()
 
-    assert check_workflow.check_project(tmp_path) == []
+    assert [issue.code for issue in check_workflow.check_project(tmp_path)] == ["missing_core_file"]
     strict_issues = check_workflow.check_project(tmp_path, require_work_items=True)
-    assert [issue.code for issue in strict_issues] == ["missing_work_items"]
+    assert [issue.code for issue in strict_issues] == ["missing_core_file", "missing_work_items"]
 
 
 def test_safe_upgrade_preserves_existing_entry_documents(tmp_path: Path) -> None:
@@ -208,7 +208,7 @@ def test_safe_upgrade_preserves_existing_entry_documents(tmp_path: Path) -> None
     result = upgrade_workflow.apply_safe_upgrade(tmp_path)
 
     assert (work_items / "README.md").is_file()
-    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == "4\n"
+    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == "5\n"
     assert agents.read_text(encoding="utf-8") == "# 既有入口\n"
     assert readme.read_text(encoding="utf-8") == "# 既有工作流\n"
     assert disclosure.read_text(encoding="utf-8") == "# 既有渐进规则\n"

@@ -12,7 +12,7 @@
 4. 用户审阅并确认建议文件后，才手工合并到已有 `AGENTS.md`、工作流入口或渐进读取规则。
 5. 运行 `upgrade_workflow.py <项目> status` 和 `check_workflow.py`，记录真实升级结果。
 
-工作流版本 3 引入工作项 `.state.json`，版本 4 引入外部交付 staging/published/archive 结构。升级旧项目时，先用 `task_context.py migration-check` 生成只读清单，再只对无冲突项目执行 `migration-apply`；升级脚本不会自动覆盖旧工作项状态，也不会自动发布或迁移历史交付文档。
+工作流版本 3 引入工作项 `.state.json`，版本 4 引入外部交付 staging/published/archive 结构，版本 5 引入能力清单和按需初始化。升级旧项目时，先用 `task_context.py migration-check` 生成只读清单，再只对无冲突项目执行 `migration-apply`；升级脚本不会自动覆盖旧工作项状态，也不会自动发布或迁移历史交付文档。
 
 ## 安全边界
 

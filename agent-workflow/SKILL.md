@@ -24,6 +24,7 @@ description: 创建、使用、记录、优化、自检和迁移项目智能体�
 - **migrate**：用户要求迁移旧 `agent_docs/`、`stack-workflow/` 或其他工作流文档。读取 `references/migrate-mode.md` 和 `references/document-structure.md`。
 - **upgrade**：用户要求把已生成工作流更新到最新结构、同步模板更新或查看工作流版本。读取 `references/upgrade-mode.md`。
 - **delivery**：用户要求生成周报、阶段报告、交付、验收或发布说明。读取 `references/delivery-mode.md`。
+- **capability**：用户要求按项目规模初始化、启用能力、精简目录或渐进升级。读取 `references/capability-mode.md`。
 - **memory**：用户要求沉淀、索引或恢复项目长期知识。读取 `references/memory-mode.md`，不得把草稿和交付中间物写入 Memory。
 
 如果模式不明确，先问一个简短澄清问题，再写文件。
@@ -69,6 +70,8 @@ python3 path/to/agent-workflow/scripts/upgrade_workflow.py /path/to/project appl
 `upgrade_workflow.py` 根据结构版本生成升级计划。`apply-safe` 只补齐缺失结构和版本标记；已有入口文档只生成建议文件，必须由用户确认后人工合并。
 
 `delivery_context.py` 用于生成和发布独立外部交付物。草稿写入 staging，发布前检查内部路径、内部工作项 ID、未确认判断和敏感字段；published 版本不可原地覆盖。
+
+`capability_context.py` 管理能力模块、依赖、profile 和只读升级建议。默认初始化使用 `minimum`，启用能力前由用户确认，检查和升级不会要求未启用模块存在。
 
 ## 输出要求
 

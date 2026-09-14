@@ -41,6 +41,17 @@ REQUIRED_FILES = [
     "30-records/risk-log.md",
     "30-records/pending-fixes.md",
 ]
+CAPABILITIES_FILE = ".capabilities.json"
+CAPABILITY_REQUIRED = {
+    "core": ["README.md", "WORKFLOW_VERSION", "00-core/workflow.md", "00-core/principles.md", "00-core/disclosure.md", "00-core/preferences.md", "30-records/current-status.md"],
+    "work-items": ["30-records/work-items/README.md"],
+    "decisions": ["30-records/decision-log.md"],
+    "knowledge": ["10-project/overview.md", "10-project/unknowns.md"],
+    "contracts": ["10-project/architecture.md", "10-project/dependencies.md"],
+    "evidence": ["30-records/validation-log.md", "30-records/risk-log.md"],
+    "delivery": ["30-records/delivery"],
+    "audit": ["20-gates"],
+}
 WORK_ITEMS_README = "30-records/work-items/README.md"
 STATE_FILENAME = ".state.json"
 DELIVERY_DIR = "30-records/delivery"
@@ -87,7 +98,24 @@ def check_project(project: Path, require_work_items: bool = False) -> list[Issue
             )
         )
 
-    for rel in REQUIRED_DIRS:
+    enabled = None
+    manifest = workflow / CAPABILITIES_FILE
+    if manifest.is_file():
+        try:
+            data = json.loads(manifest.read_text(encoding="utf-8"))
+            enabled = data.get("enabled")
+            if not isinstance(enabled, list) or any(item not in CAPABILITY_REQUIRED for item in enabled):
+                raise ValueError("enabled 必须是已知能力列表")
+        except (OSError, json.JSONDecodeError, ValueError) as error:
+            issues.append(Issue("invalid_capabilities", str(manifest.relative_to(project)), "error", f"能力清单无效：{error}"))
+            enabled = None
+
+    required_dirs = REQUIRED_DIRS if enabled is None else [rel for cap in enabled for rel in ("00-core", "30-records") if cap == "core"]
+    if enabled is not None:
+        required_dirs = []
+        if "core" in enabled: required_dirs += ["00-core", "30-records"]
+        if "audit" in enabled: required_dirs += ["20-gates"]
+    for rel in dict.fromkeys(required_dirs):
         path = workflow / rel
         if not path.is_dir():
             issues.append(
@@ -100,7 +128,8 @@ def check_project(project: Path, require_work_items: bool = False) -> list[Issue
                 )
             )
 
-    for rel in REQUIRED_FILES:
+    required_files = REQUIRED_FILES if enabled is None else [item for cap in enabled for item in CAPABILITY_REQUIRED[cap] if not (workflow / item).is_dir()]
+    for rel in dict.fromkeys(required_files):
         path = workflow / rel
         if not path.is_file():
             issues.append(
