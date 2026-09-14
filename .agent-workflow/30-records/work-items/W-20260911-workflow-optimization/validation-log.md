@@ -40,3 +40,8 @@
 - `check_workflow.py . --require-work-items --json`：`ok: true`。
 - `upgrade_workflow.py . status --json`：版本 `5`，无待升级动作。
 - `python3 -m pytest tests -q`：`26 passed`。
+
+## 收口 2026-09-14T16:55:11+08:00
+- 摘要：验证自动收口能力已在当前项目启用
+- 测试：python3 -m pytest tests -q; python3 agent-workflow/scripts/check_workflow.py . --require-work-items --json
+- 变更文件：未检测到
