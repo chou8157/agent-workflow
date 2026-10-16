@@ -1,0 +1,40 @@
+{
+  "checked_text_files": 46,
+  "issues": [],
+  "raw_xml_trailing_whitespace_preserved": [
+    "experiments/frontier/evidence/regression-before-fix.xml:4",
+    "experiments/frontier/evidence/regression-before-fix.xml:9",
+    "experiments/frontier/evidence/regression-before-fix.xml:14",
+    "experiments/frontier/evidence/regression-before-fix.xml:19",
+    "experiments/frontier/evidence/regression-before-fix.xml:24",
+    "experiments/frontier/evidence/regression-before-fix.xml:29",
+    "experiments/frontier/evidence/regression-before-fix.xml:34",
+    "experiments/frontier/evidence/regression-before-fix.xml:39",
+    "experiments/frontier/evidence/regression-before-fix.xml:44",
+    "experiments/frontier/evidence/regression-before-fix.xml:49",
+    "experiments/frontier/evidence/regression-before-fix.xml:54",
+    "experiments/frontier/evidence/regression-before-fix.xml:59"
+  ],
+  "runs": [
+    {
+      "evidence": "p1-scale-20261010-v2.json",
+      "samples": 320,
+      "all_passed": true,
+      "code_matches_current": true
+    },
+    {
+      "evidence": "p1-facts10-20261010.json",
+      "samples": 120,
+      "all_passed": true,
+      "code_matches_current": true
+    },
+    {
+      "evidence": "p1-facts100-20261010.json",
+      "samples": 80,
+      "all_passed": true,
+      "code_matches_current": true
+    }
+  ],
+  "archive_sha256_matches": true,
+  "note": "格式检查针对维护的源码和文档；原始失败XML含pytest traceback空白，保留原样。"
+}

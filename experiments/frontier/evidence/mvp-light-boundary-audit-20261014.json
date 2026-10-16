@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "run_type": "mvp_light_semantics_boundary",
+  "fixture_nodes": 3,
+  "activity_record_count": 9,
+  "activity_records": [
+    {
+      "node_id": "leaf",
+      "work_item_id": "W-20260715-multi-work-items",
+      "date": "2026-07-15",
+      "line": 3
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-15",
+      "line": 3
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-15",
+      "line": 10
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-16",
+      "line": 17
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-11",
+      "line": 3
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "line": 11
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "line": 19
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "line": 27
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "line": 35
+    }
+  ],
+  "business_activity_markers": [],
+  "business_week_filter_ready": false,
+  "adversarial_fact": {
+    "node_id": "middle",
+    "work_item_id": "W-20260715-workflow-upgrade",
+    "status": "in_progress"
+  },
+  "adversarial_agent_text": "该工作项已完成并已在本周上线。",
+  "agent_validator_accepted_status_mismatch": true,
+  "validator_error": null,
+  "deterministic_boundary_only": true,
+  "conclusion": "现有日期记录是验证/记录日期，不足以证明业务活动日期；fact_refs 约束来源范围，但不校验自然语言是否忠实表达事实。"
+}

@@ -1,0 +1,1385 @@
+{
+  "schema_version": 1,
+  "scope": "稳定版 31989c7 单节点本地基线；不构成网络自治或真实外部项目验收",
+  "captured_at_utc": "2026-10-10T07:20:19.886803+00:00",
+  "repository": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+  "head": "31989c7b909529f0f36d04558bba657f9b913c2f",
+  "fixture_root": "/private/tmp/frontier-baseline-kgb6ps5w",
+  "environment": {
+    "platform": "macOS-10.16-x86_64-i386-64bit",
+    "machine": "x86_64",
+    "python": "3.8.3 (v3.8.3:6f8c8320e9, May 13 2020, 16:29:34) \n[Clang 6.0 (clang-600.0.57)]",
+    "python_executable": "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+    "overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTEST_ADDOPTS": "-p no:cacheprovider"
+    },
+    "network_used": false,
+    "packages_installed": false
+  },
+  "existing_test_run": {
+    "command": "env PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' python3 -m pytest tests -q",
+    "cwd": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+    "exit_code": 0,
+    "stdout": ".............................                                            [100%]\n29 passed in 0.80s\n",
+    "evidence_origin": "本次审计先执行的 exec_command 实测输出，非本脚本再次执行",
+    "test_functions_by_file": {
+      "test_capability_context.py": 5,
+      "test_delivery_context.py": 5,
+      "test_finalize_context.py": 2,
+      "test_task_context.py": 14
+    },
+    "collected_cases": 29,
+    "case_counts_by_file": {
+      "test_capability_context.py": 5,
+      "test_delivery_context.py": 8,
+      "test_finalize_context.py": 2,
+      "test_task_context.py": 14
+    },
+    "safety_review": "4 个测试文件均为本地 tmp_path fixture；finalize 仅运行只读 git status；无外部网络/真实环境调用"
+  },
+  "commands": [
+    {
+      "label": "git_head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+      "started_at_utc": "2026-10-10T07:20:08.084235+00:00",
+      "elapsed_seconds": 0.093997,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "31989c7b909529f0f36d04558bba657f9b913c2f\n",
+      "stderr": ""
+    },
+    {
+      "label": "git_branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+      "started_at_utc": "2026-10-10T07:20:08.179758+00:00",
+      "elapsed_seconds": 0.070622,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "codex/exp-frontier-workflow-20261009\n",
+      "stderr": ""
+    },
+    {
+      "label": "python_version",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "--version"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:08.250466+00:00",
+      "elapsed_seconds": 0.055348,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "Python 3.8.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "pytest_version",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "--version"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:08.305980+00:00",
+      "elapsed_seconds": 0.427947,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "pytest 8.3.5\n",
+      "stderr": ""
+    },
+    {
+      "label": "pytest_collection",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "tests",
+        "--collect-only",
+        "-q"
+      ],
+      "cwd": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+      "started_at_utc": "2026-10-10T07:20:08.734021+00:00",
+      "elapsed_seconds": 0.488418,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "tests/test_capability_context.py::test_dependency_closure_and_profile\ntests/test_capability_context.py::test_enable_is_non_destructive\ntests/test_capability_context.py::test_unknown_capability_rejected\ntests/test_capability_context.py::test_scaffold_capability_includes_dependencies\ntests/test_capability_context.py::test_scaffold_and_enable_share_the_same_capability_schema\ntests/test_delivery_context.py::test_generate_and_publish_creates_independent_artifact\ntests/test_delivery_context.py::test_delivery_rejects_internal_or_unconfirmed_content[\\u8be6\\u89c1 .agent-workflow/30-records/current-status.md]\ntests/test_delivery_context.py::test_delivery_rejects_internal_or_unconfirmed_content[W-20260911-workflow-optimization \\u5df2\\u5b8c\\u6210]\ntests/test_delivery_context.py::test_delivery_rejects_internal_or_unconfirmed_content[\\u53ef\\u80fd\\u5df2\\u7ecf\\u5b8c\\u6210]\ntests/test_delivery_context.py::test_delivery_rejects_internal_or_unconfirmed_content[token=abc]\ntests/test_delivery_context.py::test_published_artifact_cannot_be_overwritten\ntests/test_delivery_context.py::test_check_rejects_tampered_published_content_and_internal_id\ntests/test_delivery_context.py::test_delivery_lifecycle_and_provenance\ntests/test_finalize_context.py::test_finalize_records_facts_idempotently\ntests/test_finalize_context.py::test_finalize_does_not_infer_completion\ntests/test_task_context.py::test_scaffold_creates_work_items_entry\ntests/test_task_context.py::test_create_list_and_update_work_item\ntests/test_task_context.py::test_migration_check_reports_legacy_work_items_without_writing\ntests/test_task_context.py::test_migration_apply_creates_state_from_valid_legacy_metadata\ntests/test_task_context.py::test_status_transition_rejects_reopening_archived_item\ntests/test_task_context.py::test_blocked_status_requires_and_persists_reason\ntests/test_task_context.py::test_reopening_completed_item_clears_completion_timestamp\ntests/test_task_context.py::test_migration_skips_blocked_legacy_item_without_reason\ntests/test_task_context.py::test_check_workflow_reports_invalid_state_file\ntests/test_task_context.py::test_invalid_work_item_id_is_rejected\ntests/test_task_context.py::test_create_restores_missing_work_items_entry\ntests/test_task_context.py::test_legacy_workflow_is_valid_without_work_items\ntests/test_task_context.py::test_safe_upgrade_preserves_existing_entry_documents\ntests/test_task_context.py::test_upgrade_repairs_missing_structure_at_latest_version\n\n29 tests collected in 0.10s\n",
+      "stderr": ""
+    },
+    {
+      "label": "worktree_check",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+        "--require-work-items",
+        "--json"
+      ],
+      "cwd": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009",
+      "started_at_utc": "2026-10-10T07:20:09.222638+00:00",
+      "elapsed_seconds": 0.139131,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_capability_context",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/capability_context.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:09.362880+00:00",
+      "elapsed_seconds": 0.119665,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: capability_context.py [-h] [project] {list,suggest,enable} ...\n\n按需启用项目工作流能力模块。\n\npositional arguments:\n  project\n  {list,suggest,enable}\n\noptional arguments:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_check_workflow",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:09.482701+00:00",
+      "elapsed_seconds": 0.135666,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: check_workflow.py [-h] [--json] [--fix-low-risk] [--require-work-items]\n                         [project]\n\n检查 智能体工作流目录结构是否完整。\n\npositional arguments:\n  project               要检查的项目目录。\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --json                输出机器可读 JSON。\n  --fix-low-risk        补齐缺失的工作流目录和占位核心文件；不会修改 AGENTS.md。\n  --require-work-items  要求多工作项入口存在，用于启用多需求工作流的项目。\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_delivery_context",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:09.618561+00:00",
+      "elapsed_seconds": 0.133072,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: delivery_context.py [-h]\n                           [project]\n                           {generate,publish,approve,supersede,withdraw,archive}\n                           ...\n\n生成、检查和发布独立的外部交付文档。\n\npositional arguments:\n  project\n  {generate,publish,approve,supersede,withdraw,archive}\n\noptional arguments:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_finalize_context",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/finalize_context.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:09.751837+00:00",
+      "elapsed_seconds": 0.143167,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: finalize_context.py [-h] --summary SUMMARY [--test TEST]\n                           project item_id\n\n收口开发事实\n\npositional arguments:\n  project\n  item_id\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --summary SUMMARY\n  --test TEST\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_scaffold_workflow",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/scaffold_workflow.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:09.895175+00:00",
+      "elapsed_seconds": 0.117287,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: scaffold_workflow.py [-h] [--shared] [--shared-name SHARED_NAME]\n                            [--overwrite]\n                            [--profile {advanced,minimum,standard}]\n                            [--capability CAPABILITIES]\n                            [project]\n\n从内置模板生成 智能体工作流文件。\n\npositional arguments:\n  project               目标项目目录。\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --shared              生成多项目共享工作流目录。\n  --shared-name SHARED_NAME\n                        共享工作流目录名称。\n  --overwrite           覆盖已有模板文件，请谨慎使用。\n  --profile {advanced,minimum,standard}\n                        初始化能力组合，默认 minimum。\n  --capability CAPABILITIES\n                        额外启用能力，可重复指定。\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_task_context",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.012655+00:00",
+      "elapsed_seconds": 0.12892,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: task_context.py [-h]\n                       [project]\n                       {create,list,show,set-status,migration-check,migration-apply}\n                       ...\n\n创建和检查项目工作项上下文。\n\npositional arguments:\n  project               项目控制根目录。\n  {create,list,show,set-status,migration-check,migration-apply}\n    create              创建工作项。\n    list                列出工作项。\n    show                查看工作项元数据。\n    set-status          更新工作项生命周期状态。\n    migration-check     检查旧工作项是否缺少状态文件。\n    migration-apply     为无冲突旧工作项生成状态文件。\n\noptional arguments:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "label": "help_upgrade_workflow",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/upgrade_workflow.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.141770+00:00",
+      "elapsed_seconds": 0.121467,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "usage: upgrade_workflow.py [-h] [project] {status,plan,apply-safe} ...\n\n安全升级既有 智能体工作流 的目录结构。\n\npositional arguments:\n  project               项目控制根目录。\n  {status,plan,apply-safe}\n    status              查看版本和待审阅项。\n    plan                生成升级计划，不修改文件。\n    apply-safe          补齐安全结构并生成待审阅建议，不覆盖已有文档。\n\noptional arguments:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "label": "initialize_minimum",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/scaffold_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.263403+00:00",
+      "elapsed_seconds": 0.115915,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/AGENTS.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/WORKFLOW_VERSION\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/00-core/principles.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/00-core/workflow.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/00-core/preferences.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/00-core/disclosure.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/current-status.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/.capabilities.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "check_initialized",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "--require-work-items",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.380389+00:00",
+      "elapsed_seconds": 0.132845,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "create_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "create",
+        "W-baseline",
+        "--title",
+        "单节点基线验证"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.513389+00:00",
+      "elapsed_seconds": 0.126532,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已创建工作项：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline\n",
+      "stderr": ""
+    },
+    {
+      "label": "list_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "list",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.640151+00:00",
+      "elapsed_seconds": 0.123715,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "[\n  {\n    \"id\": \"W-baseline\",\n    \"title\": \"单节点基线验证\",\n    \"type\": \"任务\",\n    \"status\": \"planned\",\n    \"parent\": \"无\",\n    \"path\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "label": "start_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "in_progress"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.764021+00:00",
+      "elapsed_seconds": 0.130708,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已更新工作项状态：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "reject_blocked_without_reason",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "blocked"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:10.894875+00:00",
+      "elapsed_seconds": 0.214457,
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expectation_met": true,
+      "stdout": "",
+      "stderr": "错误：设置 blocked 状态时必须提供 --reason\n"
+    },
+    {
+      "label": "block_task_with_reason",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "blocked",
+        "--reason",
+        "隔离演练阻塞"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.109499+00:00",
+      "elapsed_seconds": 0.129693,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已更新工作项状态：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "resume_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "in_progress"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.239359+00:00",
+      "elapsed_seconds": 0.126196,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已更新工作项状态：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "check_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "--require-work-items",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.365716+00:00",
+      "elapsed_seconds": 0.134098,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "finalize_first",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/finalize_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "W-baseline",
+        "--summary",
+        "单节点隔离验证完成",
+        "--test",
+        "隔离 fixture 的 check_workflow.py --require-work-items --json: exit=0, ok=true"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.499997+00:00",
+      "elapsed_seconds": 0.21556,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"recorded\": true,\n  \"pending_confirmation\": true,\n  \"path\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/progress/finalize-509b7827c2e15af6.md\",\n  \"fingerprint\": \"509b7827c2e15af6\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "finalize_repeat",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/finalize_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "W-baseline",
+        "--summary",
+        "单节点隔离验证完成",
+        "--test",
+        "隔离 fixture 的 check_workflow.py --require-work-items --json: exit=0, ok=true"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.715792+00:00",
+      "elapsed_seconds": 0.214162,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"recorded\": false,\n  \"pending_confirmation\": false,\n  \"path\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/progress/finalize-509b7827c2e15af6.md\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "complete_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "completed"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:11.931047+00:00",
+      "elapsed_seconds": 0.128875,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已更新工作项状态：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "archive_task",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "archived"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.060079+00:00",
+      "elapsed_seconds": 0.128423,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已更新工作项状态：/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/work-items/W-baseline/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "reject_archived_reopen",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/task_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "set-status",
+        "W-baseline",
+        "in_progress"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.188674+00:00",
+      "elapsed_seconds": 0.145163,
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expectation_met": true,
+      "stdout": "",
+      "stderr": "错误：不允许的状态转换：archived -> in_progress\n"
+    },
+    {
+      "label": "initialize_preserve_existing_agents",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/scaffold_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/existing-entries"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.334693+00:00",
+      "elapsed_seconds": 0.118191,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/WORKFLOW_VERSION\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/00-core/principles.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/00-core/workflow.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/00-core/preferences.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/00-core/disclosure.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/30-records/current-status.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/30-records/work-items/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/existing-entries/.agent-workflow/.capabilities.json\n",
+      "stderr": "警告：已有 AGENTS.md 缺少工作流入口；已生成 AGENTS.md.agent-workflow-suggestion 供确认。\n"
+    },
+    {
+      "label": "prepare_legacy_fixture",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/scaffold_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.453265+00:00",
+      "elapsed_seconds": 0.128261,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/WORKFLOW_VERSION\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/principles.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/workflow.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/preferences.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/30-records/current-status.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/30-records/work-items/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/.capabilities.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "upgrade_status",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/upgrade_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy",
+        "status",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.583450+00:00",
+      "elapsed_seconds": 0.139369,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy\",\n  \"current_version\": 1,\n  \"latest_version\": 5,\n  \"safe_actions\": [\n    {\n      \"action\": \"copy_template\",\n      \"source\": \"/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/assets/templates/.agent-workflow/30-records/work-items/README.md\",\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/30-records/work-items/README.md\",\n      \"message\": \"补齐多工作项入口。\"\n    },\n    {\n      \"action\": \"write_version\",\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/WORKFLOW_VERSION\",\n      \"message\": \"将工作流结构版本标记为 5。\"\n    }\n  ],\n  \"review_actions\": [\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项工作流入口\\n\\n- 项目公共状态：`.agent-workflow/30-records/current-status.md`。\\n- 需求、任务和缺陷的独立上下文：`.agent-workflow/30-records/work-items/`。\\n- 多个进行中工作项而用户未指定目标时，必须先询问。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项恢复入口\\n\\n涉及实际开发需求时，先选择 `30-records/work-items/<ID>/`，再读取该工作项的入口、当前状态和需求定义。项目公共规则和跨任务记录仍只保留一份。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项渐进读取建议\\n\\n在读取项目公共状态后，选择目标工作项，再读取其 `README.md`、`current-status.md` 和 `work-item.md`。详细任务历史只按需读取该工作项的 `progress/`、`changes/` 和局部日志。\\n\"\n    }\n  ],\n  \"up_to_date\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "upgrade_plan",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/upgrade_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy",
+        "plan",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.722988+00:00",
+      "elapsed_seconds": 0.12113,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy\",\n  \"current_version\": 1,\n  \"latest_version\": 5,\n  \"safe_actions\": [\n    {\n      \"action\": \"copy_template\",\n      \"source\": \"/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/assets/templates/.agent-workflow/30-records/work-items/README.md\",\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/30-records/work-items/README.md\",\n      \"message\": \"补齐多工作项入口。\"\n    },\n    {\n      \"action\": \"write_version\",\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/WORKFLOW_VERSION\",\n      \"message\": \"将工作流结构版本标记为 5。\"\n    }\n  ],\n  \"review_actions\": [\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项工作流入口\\n\\n- 项目公共状态：`.agent-workflow/30-records/current-status.md`。\\n- 需求、任务和缺陷的独立上下文：`.agent-workflow/30-records/work-items/`。\\n- 多个进行中工作项而用户未指定目标时，必须先询问。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项恢复入口\\n\\n涉及实际开发需求时，先选择 `30-records/work-items/<ID>/`，再读取该工作项的入口、当前状态和需求定义。项目公共规则和跨任务记录仍只保留一份。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项渐进读取建议\\n\\n在读取项目公共状态后，选择目标工作项，再读取其 `README.md`、`current-status.md` 和 `work-item.md`。详细任务历史只按需读取该工作项的 `progress/`、`changes/` 和局部日志。\\n\"\n    }\n  ],\n  \"up_to_date\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "upgrade_apply_safe",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/upgrade_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy",
+        "apply-safe",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.844267+00:00",
+      "elapsed_seconds": 0.12699,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy\",\n  \"current_version\": 5,\n  \"latest_version\": 5,\n  \"safe_actions\": [],\n  \"review_actions\": [\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项工作流入口\\n\\n- 项目公共状态：`.agent-workflow/30-records/current-status.md`。\\n- 需求、任务和缺陷的独立上下文：`.agent-workflow/30-records/work-items/`。\\n- 多个进行中工作项而用户未指定目标时，必须先询问。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项恢复入口\\n\\n涉及实际开发需求时，先选择 `30-records/work-items/<ID>/`，再读取该工作项的入口、当前状态和需求定义。项目公共规则和跨任务记录仍只保留一份。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项渐进读取建议\\n\\n在读取项目公共状态后，选择目标工作项，再读取其 `README.md`、`current-status.md` 和 `work-item.md`。详细任务历史只按需读取该工作项的 `progress/`、`changes/` 和局部日志。\\n\"\n    }\n  ],\n  \"up_to_date\": false,\n  \"created_suggestions\": [\n    \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md.agent-workflow-v3-suggestion\",\n    \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md.agent-workflow-v3-suggestion\",\n    \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md.agent-workflow-v3-suggestion\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "upgrade_remaining_review",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/upgrade_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy",
+        "status",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:12.971955+00:00",
+      "elapsed_seconds": 0.118605,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy\",\n  \"current_version\": 5,\n  \"latest_version\": 5,\n  \"safe_actions\": [],\n  \"review_actions\": [\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/AGENTS.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项工作流入口\\n\\n- 项目公共状态：`.agent-workflow/30-records/current-status.md`。\\n- 需求、任务和缺陷的独立上下文：`.agent-workflow/30-records/work-items/`。\\n- 多个进行中工作项而用户未指定目标时，必须先询问。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/README.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项恢复入口\\n\\n涉及实际开发需求时，先选择 `30-records/work-items/<ID>/`，再读取该工作项的入口、当前状态和需求定义。项目公共规则和跨任务记录仍只保留一份。\\n\"\n    },\n    {\n      \"target\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md\",\n      \"suggestion\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy/.agent-workflow/00-core/disclosure.md.agent-workflow-v3-suggestion\",\n      \"content\": \"## 多工作项渐进读取建议\\n\\n在读取项目公共状态后，选择目标工作项，再读取其 `README.md`、`current-status.md` 和 `work-item.md`。详细任务历史只按需读取该工作项的 `progress/`、`changes/` 和局部日志。\\n\"\n    }\n  ],\n  \"up_to_date\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "upgrade_check_before_manual_entry_merge",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/legacy",
+        "--require-work-items",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.091245+00:00",
+      "elapsed_seconds": 0.134191,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": false,\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/legacy\",\n  \"issues\": [\n    {\n      \"code\": \"agents_missing_workflow_entry\",\n      \"path\": \"AGENTS.md\",\n      \"severity\": \"warning\",\n      \"message\": \"AGENTS.md 未提到 .agent-workflow/。\",\n      \"auto_fixable\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "capability_enable_delivery",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/capability_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "enable",
+        "delivery"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.225644+00:00",
+      "elapsed_seconds": 0.129457,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已启用：evidence、delivery\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery_generate",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "generate",
+        "baseline-report",
+        "phase_report",
+        "--audience",
+        "维护者",
+        "--period",
+        "2026-10-10",
+        "--content-file",
+        "/private/tmp/frontier-baseline-kgb6ps5w/delivery-content.md"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.355774+00:00",
+      "elapsed_seconds": 0.135378,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/delivery/staging/baseline-report.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery_publish_without_explicit_approve",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "publish",
+        "baseline-report"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.491949+00:00",
+      "elapsed_seconds": 0.137225,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/delivery/published/baseline-report.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery_reject_overwrite",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "publish",
+        "baseline-report"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.629695+00:00",
+      "elapsed_seconds": 0.131382,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "",
+      "stderr": "错误：已发布版本不可原地覆盖\n"
+    },
+    {
+      "label": "check_published_delivery",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "--require-work-items",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.761229+00:00",
+      "elapsed_seconds": 0.138468,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/single-node\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery_withdraw",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "withdraw",
+        "baseline-report"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:13.899863+00:00",
+      "elapsed_seconds": 0.129604,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/delivery/published/baseline-report.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery_archive",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/delivery_context.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/single-node",
+        "archive",
+        "baseline-report"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:14.029619+00:00",
+      "elapsed_seconds": 0.129445,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "/private/tmp/frontier-baseline-kgb6ps5w/single-node/.agent-workflow/30-records/delivery/archive/baseline-report.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "advanced_initialize",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/scaffold_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile",
+        "--profile",
+        "advanced"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:14.159674+00:00",
+      "elapsed_seconds": 0.121877,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/AGENTS.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/WORKFLOW_VERSION\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/00-core/principles.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/00-core/workflow.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/00-core/preferences.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/00-core/disclosure.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/current-status.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/work-items/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/decision-log.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/10-project/architecture.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/10-project/dependencies.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/10-project/overview.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/10-project/unknowns.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/validation-log.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/risk-log.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/delivery/staging/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/delivery/archive/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/30-records/delivery/published/README.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/20-gates/quality-gates.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/20-gates/task-gates.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/20-gates/safety-gates.md\n已创建：/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile/.agent-workflow/.capabilities.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "advanced_checker_schema_mismatch",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/agent-workflow/scripts/check_workflow.py",
+        "/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile",
+        "--json"
+      ],
+      "cwd": "/private/tmp/frontier-baseline-kgb6ps5w",
+      "started_at_utc": "2026-10-10T07:20:14.281706+00:00",
+      "elapsed_seconds": 0.132747,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "{\n  \"ok\": false,\n  \"project\": \"/private/tmp/frontier-baseline-kgb6ps5w/advanced-profile\",\n  \"issues\": [\n    {\n      \"code\": \"invalid_capabilities\",\n      \"path\": \".agent-workflow/.capabilities.json\",\n      \"severity\": \"error\",\n      \"message\": \"能力清单无效：enabled 必须是已知能力列表\",\n      \"auto_fixable\": false\n    },\n    {\n      \"code\": \"missing_required_dir\",\n      \"path\": \".agent-workflow/15-modules\",\n      \"severity\": \"error\",\n      \"message\": \"必需目录 15-modules 缺失。\",\n      \"auto_fixable\": true\n    },\n    {\n      \"code\": \"missing_core_file\",\n      \"path\": \".agent-workflow/10-project/conventions.md\",\n      \"severity\": \"error\",\n      \"message\": \"核心工作流文件 10-project/conventions.md 缺失。\",\n      \"auto_fixable\": true\n    },\n    {\n      \"code\": \"missing_core_file\",\n      \"path\": \".agent-workflow/15-modules/README.md\",\n      \"severity\": \"error\",\n      \"message\": \"核心工作流文件 15-modules/README.md 缺失。\",\n      \"auto_fixable\": true\n    },\n    {\n      \"code\": \"missing_core_file\",\n      \"path\": \".agent-workflow/30-records/progress-log.md\",\n      \"severity\": \"error\",\n      \"message\": \"核心工作流文件 30-records/progress-log.md 缺失。\",\n      \"auto_fixable\": true\n    },\n    {\n      \"code\": \"missing_core_file\",\n      \"path\": \".agent-workflow/30-records/pending-fixes.md\",\n      \"severity\": \"error\",\n      \"message\": \"核心工作流文件 30-records/pending-fixes.md 缺失。\",\n      \"auto_fixable\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "observations": [
+    {
+      "name": "minimum_capabilities",
+      "actual": [
+        "core",
+        "work-items"
+      ],
+      "expected": [
+        "core",
+        "work-items"
+      ],
+      "matched": true
+    },
+    {
+      "name": "structure_version",
+      "actual": "5",
+      "expected": "5",
+      "matched": true
+    },
+    {
+      "name": "finalize_first_recorded",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "name": "finalize_repeat_recorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "name": "finalize_does_not_complete",
+      "actual": "in_progress",
+      "expected": "in_progress",
+      "matched": true
+    },
+    {
+      "name": "existing_agents_preserved",
+      "actual": "# 用户入口\n",
+      "expected": "# 用户入口\n",
+      "matched": true
+    },
+    {
+      "name": "existing_agents_suggestion_created",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "name": "upgrade_safe_actions",
+      "actual": 2,
+      "expected": 2,
+      "matched": true
+    },
+    {
+      "name": "upgrade_created_suggestions",
+      "actual": 3,
+      "expected": 3,
+      "matched": true
+    },
+    {
+      "name": "upgrade_preserves_entry_texts",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "name": "upgrade_version_5",
+      "actual": "5",
+      "expected": "5",
+      "matched": true
+    },
+    {
+      "name": "delivery_initial_status",
+      "actual": "draft",
+      "expected": "draft",
+      "matched": true
+    },
+    {
+      "name": "delivery_draft_can_publish",
+      "actual": "published",
+      "expected": "published",
+      "matched": true
+    },
+    {
+      "name": "delivery_publish_generates_approved_at",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "name": "delivery_archived_status",
+      "actual": "archived",
+      "expected": "archived",
+      "matched": true
+    },
+    {
+      "name": "advanced_checker_rejects_shared_workflow_capability",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "name": "source_hashes_unchanged_during_audit",
+      "actual": "identical",
+      "expected": "identical",
+      "matched": true
+    }
+  ],
+  "summary": {
+    "commands_executed": 43,
+    "command_expectations_met": 43,
+    "observations_recorded": 17,
+    "observation_expectations_met": 17
+  },
+  "source_sha256": {
+    "AGENTS.md": "fde272ada921d7501bd33341b5d22883d1de998dda587d097ca08ad0adc679c5",
+    "CHANGELOG.md": "9d8b7bc734e9fce63c7e9d8d874ebab74995db9c62b075d937f1c116e1faf9ec",
+    "README.md": "af05591a2cd0d50828e423bee1625d90704d67bc288f5cd7702d6ccea70e2dc7",
+    "agent-workflow/SKILL.md": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+    "agent-workflow/agents/openai.yaml": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+    "agent-workflow/assets/templates/.agent-workflow/00-core/disclosure.md": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+    "agent-workflow/assets/templates/.agent-workflow/00-core/preferences.md": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+    "agent-workflow/assets/templates/.agent-workflow/00-core/principles.md": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+    "agent-workflow/assets/templates/.agent-workflow/00-core/workflow.md": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+    "agent-workflow/assets/templates/.agent-workflow/10-project/architecture.md": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+    "agent-workflow/assets/templates/.agent-workflow/10-project/conventions.md": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+    "agent-workflow/assets/templates/.agent-workflow/10-project/dependencies.md": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+    "agent-workflow/assets/templates/.agent-workflow/10-project/overview.md": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+    "agent-workflow/assets/templates/.agent-workflow/10-project/unknowns.md": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+    "agent-workflow/assets/templates/.agent-workflow/15-modules/README.md": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+    "agent-workflow/assets/templates/.agent-workflow/15-modules/module-template.md": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+    "agent-workflow/assets/templates/.agent-workflow/20-gates/quality-gates.md": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+    "agent-workflow/assets/templates/.agent-workflow/20-gates/safety-gates.md": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+    "agent-workflow/assets/templates/.agent-workflow/20-gates/task-gates.md": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/adr/0000-template.md": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/current-status.md": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/decision-log.md": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/archive/README.md": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/published/README.md": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/staging/README.md": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/pending-fixes.md": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/progress-log.md": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/risk-log.md": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/validation-log.md": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+    "agent-workflow/assets/templates/.agent-workflow/30-records/work-items/README.md": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+    "agent-workflow/assets/templates/.agent-workflow/README.md": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+    "agent-workflow/assets/templates/.agent-workflow/WORKFLOW_VERSION": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+    "agent-workflow/assets/templates/.agent-workflow-shared/README.md": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+    "agent-workflow/assets/templates/.agent-workflow-shared/change-manifests/README.md": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+    "agent-workflow/assets/templates/.agent-workflow-shared/contracts/README.md": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+    "agent-workflow/assets/templates/.agent-workflow-shared/handoffs/current-feature.md": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+    "agent-workflow/assets/templates/.agent-workflow-shared/impact-tracking/README.md": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+    "agent-workflow/assets/templates/.agent-workflow-shared/interaction-map.md": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+    "agent-workflow/assets/templates/.agent-workflow-shared/projects.md": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+    "agent-workflow/assets/templates/.agent-workflow-shared/records/progress-log.md": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+    "agent-workflow/assets/templates/AGENTS.md": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+    "agent-workflow/assets/templates/work-item/README.md": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+    "agent-workflow/assets/templates/work-item/changes/README.md": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+    "agent-workflow/assets/templates/work-item/current-status.md": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+    "agent-workflow/assets/templates/work-item/progress/README.md": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+    "agent-workflow/assets/templates/work-item/work-item.md": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+    "agent-workflow/evaluation-notes.md": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+    "agent-workflow/references/capability-mode.md": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+    "agent-workflow/references/check-mode.md": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+    "agent-workflow/references/delivery-mode.md": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+    "agent-workflow/references/document-structure.md": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+    "agent-workflow/references/finalize-mode.md": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+    "agent-workflow/references/improve-mode.md": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+    "agent-workflow/references/init-mode.md": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+    "agent-workflow/references/memory-mode.md": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+    "agent-workflow/references/migrate-mode.md": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+    "agent-workflow/references/operating-model.md": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+    "agent-workflow/references/record-mode.md": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+    "agent-workflow/references/shared-workflow.md": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+    "agent-workflow/references/upgrade-mode.md": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+    "agent-workflow/references/use-mode.md": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+    "agent-workflow/scripts/capability_context.py": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+    "agent-workflow/scripts/check_workflow.py": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+    "agent-workflow/scripts/delivery_context.py": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+    "agent-workflow/scripts/finalize_context.py": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+    "agent-workflow/scripts/scaffold_workflow.py": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+    "agent-workflow/scripts/task_context.py": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+    "agent-workflow/scripts/upgrade_workflow.py": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+    "agent-workflow/test-prompts.json": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+    "tests/test_capability_context.py": "62759d261357b7fe154042820f67269eb144782c68d43beee6ef172907034865",
+    "tests/test_delivery_context.py": "50fd3f473786787161f9b43b96af9322ece31e48f0a474c320c71a4c5ca831dd",
+    "tests/test_finalize_context.py": "704c4c13e2d3df793be4e1bc4ce3b405fcf6b33c8c4438c8e5ea30f04e8866ee",
+    "tests/test_task_context.py": "85818a80332184653ec619e7f27ef110c7149339bdc9f9bc3c6e622fb58059f0"
+  },
+  "source_hash_file_count": 73,
+  "all_source_files_match_head": true,
+  "source_head_comparison": [
+    {
+      "path": "AGENTS.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "CHANGELOG.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/SKILL.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/agents/openai.yaml",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/disclosure.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/preferences.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/principles.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/workflow.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/architecture.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/conventions.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/dependencies.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/overview.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/unknowns.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/15-modules/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/15-modules/module-template.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/quality-gates.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/safety-gates.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/task-gates.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/adr/0000-template.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/current-status.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/decision-log.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/archive/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/published/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/staging/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/pending-fixes.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/progress-log.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/risk-log.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/validation-log.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/work-items/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/WORKFLOW_VERSION",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/change-manifests/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/contracts/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/handoffs/current-feature.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/impact-tracking/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/interaction-map.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/projects.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/records/progress-log.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/AGENTS.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/changes/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/current-status.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/progress/README.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/work-item.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/evaluation-notes.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/capability-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/check-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/delivery-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/document-structure.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/finalize-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/improve-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/init-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/memory-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/migrate-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/operating-model.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/record-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/shared-workflow.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/upgrade-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/references/use-mode.md",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/capability_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/check_workflow.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/delivery_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/finalize_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/scaffold_workflow.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/task_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/scripts/upgrade_workflow.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "agent-workflow/test-prompts.json",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "tests/test_capability_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "tests/test_delivery_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "tests/test_finalize_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    },
+    {
+      "path": "tests/test_task_context.py",
+      "head_blob_present": true,
+      "matches_head": true
+    }
+  ],
+  "not_validated": [
+    "跨节点因果一致性",
+    "并发写入和冲突仲裁",
+    "崩溃恢复",
+    "离线队列与网络重试",
+    "身份和权限认证",
+    "批准事件不可伪造",
+    "跨项目副作用幂等",
+    "分布式知识传播",
+    "真实外部项目",
+    "安装版同步或发布"
+  ]
+}

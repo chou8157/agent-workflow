@@ -1,0 +1,1881 @@
+{
+  "captured_at": "2026-10-10T10:37:53.607070+00:00",
+  "purpose": "只读隔离与文件指纹复核；不是测试通过证明",
+  "baseline": "31989c7b909529f0f36d04558bba657f9b913c2f",
+  "branch": "codex/exp-frontier-workflow-20261009",
+  "main_clean": true,
+  "changes_in_scope": true,
+  "stable_files": [
+    {
+      "path": "AGENTS.md",
+      "baseline_sha256": "fde272ada921d7501bd33341b5d22883d1de998dda587d097ca08ad0adc679c5",
+      "experiment_sha256": "fde272ada921d7501bd33341b5d22883d1de998dda587d097ca08ad0adc679c5",
+      "main_sha256": "fde272ada921d7501bd33341b5d22883d1de998dda587d097ca08ad0adc679c5",
+      "passed": true
+    },
+    {
+      "path": "CHANGELOG.md",
+      "baseline_sha256": "9d8b7bc734e9fce63c7e9d8d874ebab74995db9c62b075d937f1c116e1faf9ec",
+      "experiment_sha256": "9d8b7bc734e9fce63c7e9d8d874ebab74995db9c62b075d937f1c116e1faf9ec",
+      "main_sha256": "9d8b7bc734e9fce63c7e9d8d874ebab74995db9c62b075d937f1c116e1faf9ec",
+      "passed": true
+    },
+    {
+      "path": "README.md",
+      "baseline_sha256": "af05591a2cd0d50828e423bee1625d90704d67bc288f5cd7702d6ccea70e2dc7",
+      "experiment_sha256": "af05591a2cd0d50828e423bee1625d90704d67bc288f5cd7702d6ccea70e2dc7",
+      "main_sha256": "af05591a2cd0d50828e423bee1625d90704d67bc288f5cd7702d6ccea70e2dc7",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/SKILL.md",
+      "baseline_sha256": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+      "experiment_sha256": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+      "main_sha256": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/agents/openai.yaml",
+      "baseline_sha256": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+      "experiment_sha256": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+      "main_sha256": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/README.md",
+      "baseline_sha256": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+      "experiment_sha256": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+      "main_sha256": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/change-manifests/README.md",
+      "baseline_sha256": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+      "experiment_sha256": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+      "main_sha256": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/contracts/README.md",
+      "baseline_sha256": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+      "experiment_sha256": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+      "main_sha256": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/handoffs/current-feature.md",
+      "baseline_sha256": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+      "experiment_sha256": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+      "main_sha256": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/impact-tracking/README.md",
+      "baseline_sha256": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+      "experiment_sha256": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+      "main_sha256": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/interaction-map.md",
+      "baseline_sha256": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+      "experiment_sha256": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+      "main_sha256": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/projects.md",
+      "baseline_sha256": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+      "experiment_sha256": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+      "main_sha256": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow-shared/records/progress-log.md",
+      "baseline_sha256": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+      "experiment_sha256": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+      "main_sha256": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/disclosure.md",
+      "baseline_sha256": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+      "experiment_sha256": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+      "main_sha256": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/preferences.md",
+      "baseline_sha256": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+      "experiment_sha256": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+      "main_sha256": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/principles.md",
+      "baseline_sha256": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+      "experiment_sha256": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+      "main_sha256": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/00-core/workflow.md",
+      "baseline_sha256": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+      "experiment_sha256": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+      "main_sha256": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/architecture.md",
+      "baseline_sha256": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+      "experiment_sha256": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+      "main_sha256": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/conventions.md",
+      "baseline_sha256": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+      "experiment_sha256": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+      "main_sha256": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/dependencies.md",
+      "baseline_sha256": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+      "experiment_sha256": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+      "main_sha256": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/overview.md",
+      "baseline_sha256": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+      "experiment_sha256": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+      "main_sha256": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/10-project/unknowns.md",
+      "baseline_sha256": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+      "experiment_sha256": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+      "main_sha256": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/15-modules/README.md",
+      "baseline_sha256": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+      "experiment_sha256": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+      "main_sha256": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/15-modules/module-template.md",
+      "baseline_sha256": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+      "experiment_sha256": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+      "main_sha256": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/quality-gates.md",
+      "baseline_sha256": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+      "experiment_sha256": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+      "main_sha256": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/safety-gates.md",
+      "baseline_sha256": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+      "experiment_sha256": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+      "main_sha256": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/20-gates/task-gates.md",
+      "baseline_sha256": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+      "experiment_sha256": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+      "main_sha256": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/adr/0000-template.md",
+      "baseline_sha256": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+      "experiment_sha256": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+      "main_sha256": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/current-status.md",
+      "baseline_sha256": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+      "experiment_sha256": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+      "main_sha256": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/decision-log.md",
+      "baseline_sha256": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+      "experiment_sha256": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+      "main_sha256": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/archive/README.md",
+      "baseline_sha256": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+      "experiment_sha256": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+      "main_sha256": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/published/README.md",
+      "baseline_sha256": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+      "experiment_sha256": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+      "main_sha256": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/delivery/staging/README.md",
+      "baseline_sha256": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+      "experiment_sha256": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+      "main_sha256": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/pending-fixes.md",
+      "baseline_sha256": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+      "experiment_sha256": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+      "main_sha256": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/progress-log.md",
+      "baseline_sha256": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+      "experiment_sha256": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+      "main_sha256": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/risk-log.md",
+      "baseline_sha256": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+      "experiment_sha256": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+      "main_sha256": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/validation-log.md",
+      "baseline_sha256": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+      "experiment_sha256": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+      "main_sha256": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/30-records/work-items/README.md",
+      "baseline_sha256": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+      "experiment_sha256": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+      "main_sha256": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/README.md",
+      "baseline_sha256": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+      "experiment_sha256": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+      "main_sha256": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/.agent-workflow/WORKFLOW_VERSION",
+      "baseline_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "experiment_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "main_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/AGENTS.md",
+      "baseline_sha256": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+      "experiment_sha256": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+      "main_sha256": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/README.md",
+      "baseline_sha256": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+      "experiment_sha256": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+      "main_sha256": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/changes/README.md",
+      "baseline_sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+      "experiment_sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+      "main_sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/current-status.md",
+      "baseline_sha256": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+      "experiment_sha256": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+      "main_sha256": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/progress/README.md",
+      "baseline_sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+      "experiment_sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+      "main_sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/assets/templates/work-item/work-item.md",
+      "baseline_sha256": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+      "experiment_sha256": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+      "main_sha256": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/evaluation-notes.md",
+      "baseline_sha256": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+      "experiment_sha256": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+      "main_sha256": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/capability-mode.md",
+      "baseline_sha256": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+      "experiment_sha256": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+      "main_sha256": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/check-mode.md",
+      "baseline_sha256": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+      "experiment_sha256": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+      "main_sha256": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/delivery-mode.md",
+      "baseline_sha256": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+      "experiment_sha256": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+      "main_sha256": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/document-structure.md",
+      "baseline_sha256": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+      "experiment_sha256": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+      "main_sha256": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/finalize-mode.md",
+      "baseline_sha256": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+      "experiment_sha256": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+      "main_sha256": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/improve-mode.md",
+      "baseline_sha256": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+      "experiment_sha256": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+      "main_sha256": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/init-mode.md",
+      "baseline_sha256": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+      "experiment_sha256": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+      "main_sha256": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/memory-mode.md",
+      "baseline_sha256": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+      "experiment_sha256": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+      "main_sha256": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/migrate-mode.md",
+      "baseline_sha256": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+      "experiment_sha256": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+      "main_sha256": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/operating-model.md",
+      "baseline_sha256": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+      "experiment_sha256": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+      "main_sha256": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/record-mode.md",
+      "baseline_sha256": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+      "experiment_sha256": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+      "main_sha256": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/shared-workflow.md",
+      "baseline_sha256": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+      "experiment_sha256": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+      "main_sha256": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/upgrade-mode.md",
+      "baseline_sha256": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+      "experiment_sha256": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+      "main_sha256": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/references/use-mode.md",
+      "baseline_sha256": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+      "experiment_sha256": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+      "main_sha256": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/capability_context.py",
+      "baseline_sha256": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+      "experiment_sha256": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+      "main_sha256": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/check_workflow.py",
+      "baseline_sha256": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+      "experiment_sha256": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+      "main_sha256": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/delivery_context.py",
+      "baseline_sha256": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+      "experiment_sha256": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+      "main_sha256": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/finalize_context.py",
+      "baseline_sha256": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+      "experiment_sha256": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+      "main_sha256": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/scaffold_workflow.py",
+      "baseline_sha256": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+      "experiment_sha256": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+      "main_sha256": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/task_context.py",
+      "baseline_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+      "experiment_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+      "main_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/scripts/upgrade_workflow.py",
+      "baseline_sha256": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+      "experiment_sha256": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+      "main_sha256": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+      "passed": true
+    },
+    {
+      "path": "agent-workflow/test-prompts.json",
+      "baseline_sha256": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+      "experiment_sha256": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+      "main_sha256": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+      "passed": true
+    },
+    {
+      "path": "tests/test_capability_context.py",
+      "baseline_sha256": "62759d261357b7fe154042820f67269eb144782c68d43beee6ef172907034865",
+      "experiment_sha256": "62759d261357b7fe154042820f67269eb144782c68d43beee6ef172907034865",
+      "main_sha256": "62759d261357b7fe154042820f67269eb144782c68d43beee6ef172907034865",
+      "passed": true
+    },
+    {
+      "path": "tests/test_delivery_context.py",
+      "baseline_sha256": "50fd3f473786787161f9b43b96af9322ece31e48f0a474c320c71a4c5ca831dd",
+      "experiment_sha256": "50fd3f473786787161f9b43b96af9322ece31e48f0a474c320c71a4c5ca831dd",
+      "main_sha256": "50fd3f473786787161f9b43b96af9322ece31e48f0a474c320c71a4c5ca831dd",
+      "passed": true
+    },
+    {
+      "path": "tests/test_finalize_context.py",
+      "baseline_sha256": "704c4c13e2d3df793be4e1bc4ce3b405fcf6b33c8c4438c8e5ea30f04e8866ee",
+      "experiment_sha256": "704c4c13e2d3df793be4e1bc4ce3b405fcf6b33c8c4438c8e5ea30f04e8866ee",
+      "main_sha256": "704c4c13e2d3df793be4e1bc4ce3b405fcf6b33c8c4438c8e5ea30f04e8866ee",
+      "passed": true
+    },
+    {
+      "path": "tests/test_task_context.py",
+      "baseline_sha256": "85818a80332184653ec619e7f27ef110c7149339bdc9f9bc3c6e622fb58059f0",
+      "experiment_sha256": "85818a80332184653ec619e7f27ef110c7149339bdc9f9bc3c6e622fb58059f0",
+      "main_sha256": "85818a80332184653ec619e7f27ef110c7149339bdc9f9bc3c6e622fb58059f0",
+      "passed": true
+    }
+  ],
+  "installed_files": [
+    {
+      "path": "SKILL.md",
+      "source_sha256": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+      "installed_sha256": "3ea4631fa6257b73be45b52ca3d7b3a1ec256b5113b51d070059eaa78e0e4349",
+      "passed": true
+    },
+    {
+      "path": "agents/openai.yaml",
+      "source_sha256": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+      "installed_sha256": "5de13e67d86104aea1694867fb3ba9fbbdfddb988f7895c71c9a66cd5e88ff61",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/00-core/disclosure.md",
+      "source_sha256": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+      "installed_sha256": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/00-core/preferences.md",
+      "source_sha256": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+      "installed_sha256": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/00-core/principles.md",
+      "source_sha256": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+      "installed_sha256": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/00-core/workflow.md",
+      "source_sha256": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+      "installed_sha256": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/10-project/architecture.md",
+      "source_sha256": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+      "installed_sha256": "fbbc100e3b67fe47974774906c2557729ccf3e63f825fdadf03a201e9f03ac28",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/10-project/conventions.md",
+      "source_sha256": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+      "installed_sha256": "21325496ee83f1697ebe928baa9d440274b1899a599290a186c3e7c4cc63218d",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/10-project/dependencies.md",
+      "source_sha256": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+      "installed_sha256": "0642224c3c28decf13facf2fa9b9525a970770bec20b5f225e9a790c99fb911a",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/10-project/overview.md",
+      "source_sha256": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+      "installed_sha256": "f0204becf646146b00d13f5cfbe7267beb5fd8b9ea245fac4fda7570e1153968",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/10-project/unknowns.md",
+      "source_sha256": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+      "installed_sha256": "315fd8af2a34225831d64c1e7f54167d4ded497e000cd21a89499e6d9136f17e",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/15-modules/README.md",
+      "source_sha256": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+      "installed_sha256": "b4f1562ad529b9785c89384db34e7cf2409f9e583cd75646d093a77e0940a174",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/15-modules/module-template.md",
+      "source_sha256": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+      "installed_sha256": "aa017cb4c5376342a3a8b852d1958fea7bbd7a0c109f22885ce2c26ecde54a58",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/20-gates/quality-gates.md",
+      "source_sha256": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+      "installed_sha256": "0b9f2e23ad1992692667629166e3eb3add851d968ca7f93f8aa2269d9e73ac18",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/20-gates/safety-gates.md",
+      "source_sha256": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+      "installed_sha256": "e6c51cf9d71b5f0e156e69dee1c3b77a9d33f960298d7d3dc2a11642269289f0",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/20-gates/task-gates.md",
+      "source_sha256": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+      "installed_sha256": "d61d80b72b96847d6a52bdd966f18183db0efe1ff438700ebc507bb5661337f2",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/adr/0000-template.md",
+      "source_sha256": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+      "installed_sha256": "362d38a48c4b23b265edef3de33f9114e0c6f1c1365d1bccf097565a26111663",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/current-status.md",
+      "source_sha256": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+      "installed_sha256": "b94d4419ffc84c3796a3590bd94896b5d579a0df5458833d2ffba76da4d40275",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/decision-log.md",
+      "source_sha256": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+      "installed_sha256": "1b0b14cc6826f8fdef56ff776847b75a33f5ebe0bf468719b6bf771ed3905cb9",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/delivery/archive/README.md",
+      "source_sha256": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+      "installed_sha256": "b5ae0d021815ec6694236c21993e291b83ebb72d317f6ada7dd5fa96556b5671",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/delivery/published/README.md",
+      "source_sha256": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+      "installed_sha256": "d24364c25d9204a2b670649d82e9c112225b200d1fee12183afb7e0a4fccf43f",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/delivery/staging/README.md",
+      "source_sha256": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+      "installed_sha256": "4074121c20e48a0a00c6ed3d15908a64fb595dde727a7afe54a7ec0e015398e7",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/pending-fixes.md",
+      "source_sha256": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+      "installed_sha256": "db8a44c66a4405e0aa7d698bb38eae3fecd77c2ae86939f2ef16c4e0526abbc8",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/progress-log.md",
+      "source_sha256": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+      "installed_sha256": "3ca6358e6de6d75fa1a72f2119fcb9805c7b6a288ab671bf90b2974c5d3d79c7",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/risk-log.md",
+      "source_sha256": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+      "installed_sha256": "3357930f11ac4d50c073e7f97047268145624e1784222a581c6b842ca3972fd4",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/validation-log.md",
+      "source_sha256": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+      "installed_sha256": "0985d0a8a248b66091415590f7e08a492fe5c9730af9e9d5bc9feb9480af273b",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/30-records/work-items/README.md",
+      "source_sha256": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+      "installed_sha256": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/README.md",
+      "source_sha256": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+      "installed_sha256": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow/WORKFLOW_VERSION",
+      "source_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "installed_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/README.md",
+      "source_sha256": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+      "installed_sha256": "f5ae4da55ac31ba64d5099f45e8d021164364b1b2694bbf708abd4b438d52406",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/change-manifests/README.md",
+      "source_sha256": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+      "installed_sha256": "312751ceb33619335673c67baf9cb291d877b23aac42c3461a668bb282620b5b",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/contracts/README.md",
+      "source_sha256": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+      "installed_sha256": "3aeea05177117d0d733c4b67902dafb0659052903d0b5985b1673f80e7c8d6a7",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/handoffs/current-feature.md",
+      "source_sha256": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+      "installed_sha256": "7df9056fa5f58f9dcc6afcf394f8dff1830cc1dbbe90ff4c269fc6a102736d55",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/impact-tracking/README.md",
+      "source_sha256": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+      "installed_sha256": "c1796ed356d8262643fb3b53f28fc8935865a1401513ea2bce290f3a9f402cdb",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/interaction-map.md",
+      "source_sha256": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+      "installed_sha256": "8d2351d06666c7b7b0793dbac35afc3f82cf56bf9ee255591fa136ce2d9e318e",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/projects.md",
+      "source_sha256": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+      "installed_sha256": "d967316f8997596756e6f8d2db9fde1c746cd7befd2367f3af90749bff3fe57c",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/.agent-workflow-shared/records/progress-log.md",
+      "source_sha256": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+      "installed_sha256": "0ea0ae3b342a22c37c1d8b1ce425a6e580193ee0422d5ce07484903bf30f1bed",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/AGENTS.md",
+      "source_sha256": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+      "installed_sha256": "c917049931689b1938a81fcb2a83c3ec80c62896f0180b2593afe9f63c2a8afe",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/work-item/README.md",
+      "source_sha256": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+      "installed_sha256": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/work-item/changes/README.md",
+      "source_sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+      "installed_sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/work-item/current-status.md",
+      "source_sha256": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+      "installed_sha256": "32edccd479e9a8260e03cdd30c7d7b414b105c0484a9dbc6e2f47ae96fcb1ddc",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/work-item/progress/README.md",
+      "source_sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+      "installed_sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+      "passed": true
+    },
+    {
+      "path": "assets/templates/work-item/work-item.md",
+      "source_sha256": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+      "installed_sha256": "29d1dcea58b97a34016cee64b3492a8ab3ea7e74c9ee0da1e1aaa67c030eb93c",
+      "passed": true
+    },
+    {
+      "path": "evaluation-notes.md",
+      "source_sha256": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+      "installed_sha256": "828512f5d44eedb68a9f149ef7ea129e6ded302d795f3899871b4307e53bf9ae",
+      "passed": true
+    },
+    {
+      "path": "references/capability-mode.md",
+      "source_sha256": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+      "installed_sha256": "7081321e840fe365ab488973ce5de3a0dfc4414b157da388fa8c03905b1db4d5",
+      "passed": true
+    },
+    {
+      "path": "references/check-mode.md",
+      "source_sha256": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+      "installed_sha256": "02b5c9e33f8d5b76606cb41afc9df532905d78d7c4ac9c5a0f965fe2c99cdc99",
+      "passed": true
+    },
+    {
+      "path": "references/delivery-mode.md",
+      "source_sha256": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+      "installed_sha256": "961bbdd12cb425c8c4337c221cf4692afd47444f27daf3e37689bf3c904b9799",
+      "passed": true
+    },
+    {
+      "path": "references/document-structure.md",
+      "source_sha256": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+      "installed_sha256": "8c05ef2a1934ab2888d3021e452710d338c4272f3c918527d2f25bc7168cc495",
+      "passed": true
+    },
+    {
+      "path": "references/finalize-mode.md",
+      "source_sha256": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+      "installed_sha256": "abe99df20c73aa492345ef8ff55900acc1eb072816327ba9fd43545d8620db64",
+      "passed": true
+    },
+    {
+      "path": "references/improve-mode.md",
+      "source_sha256": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+      "installed_sha256": "35f5b13d18ca5f8a4554e8c7c2faaad9037fa92174e214a0e7b7fa2bf792592a",
+      "passed": true
+    },
+    {
+      "path": "references/init-mode.md",
+      "source_sha256": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+      "installed_sha256": "4778a1e403c3000d438da8f73a16f1bd15a47a6bcc7f33a4caa9a2b80c2d8595",
+      "passed": true
+    },
+    {
+      "path": "references/memory-mode.md",
+      "source_sha256": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+      "installed_sha256": "49ff97e9a6944800737b06ba7669b70a281ce431e6625958123ab6bb53a488d0",
+      "passed": true
+    },
+    {
+      "path": "references/migrate-mode.md",
+      "source_sha256": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+      "installed_sha256": "882951062a13b330e1a5678df70b9707708e39ff5d75880f585ca14297f5999c",
+      "passed": true
+    },
+    {
+      "path": "references/operating-model.md",
+      "source_sha256": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+      "installed_sha256": "de184c1de5dc88e4ba18bb56015f70536aa3a15797e5cf59458d893a079385ef",
+      "passed": true
+    },
+    {
+      "path": "references/record-mode.md",
+      "source_sha256": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+      "installed_sha256": "b75bbf00a1c93e98e1670b15cf297495f2d810ca929218c932eca1e72fefcaae",
+      "passed": true
+    },
+    {
+      "path": "references/shared-workflow.md",
+      "source_sha256": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+      "installed_sha256": "1e30e98cd1966bb6a6f9975d01d10aed73bc90318a1ad106a7a7cddbe7fd5889",
+      "passed": true
+    },
+    {
+      "path": "references/upgrade-mode.md",
+      "source_sha256": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+      "installed_sha256": "f328f8ee7ddde7e5f5cffdd12751bf6d261e0c679a290166f5f028d2baa18ef1",
+      "passed": true
+    },
+    {
+      "path": "references/use-mode.md",
+      "source_sha256": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+      "installed_sha256": "ec66ef13bfb584ab0e515260d9775eb33bbe794c451083d37126e50d37809333",
+      "passed": true
+    },
+    {
+      "path": "scripts/capability_context.py",
+      "source_sha256": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+      "installed_sha256": "667054c5e171e05fe79ea77bdce81cf487016c963a99846bd9202824d8065954",
+      "passed": true
+    },
+    {
+      "path": "scripts/check_workflow.py",
+      "source_sha256": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+      "installed_sha256": "1832980f1b89c048a9f2bc99eec5c0cc7573d2273e5d49eb83e1521afa57a6ed",
+      "passed": true
+    },
+    {
+      "path": "scripts/delivery_context.py",
+      "source_sha256": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+      "installed_sha256": "8ce3cfb042a1da47069015e712a85fb655d00fb98a956d25b33d88971466f987",
+      "passed": true
+    },
+    {
+      "path": "scripts/finalize_context.py",
+      "source_sha256": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+      "installed_sha256": "df3c8a443b074c5a7eb96a5dcc28bacc76c17efab9a3f7ba833fad70597fc3b4",
+      "passed": true
+    },
+    {
+      "path": "scripts/scaffold_workflow.py",
+      "source_sha256": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+      "installed_sha256": "f17942f48c9d143a42637d63b482246dccaa15e9baf95d494141491b0fc2a7a4",
+      "passed": true
+    },
+    {
+      "path": "scripts/task_context.py",
+      "source_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+      "installed_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+      "passed": true
+    },
+    {
+      "path": "scripts/upgrade_workflow.py",
+      "source_sha256": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+      "installed_sha256": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+      "passed": true
+    },
+    {
+      "path": "test-prompts.json",
+      "source_sha256": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+      "installed_sha256": "1a7e8a76b21129c83cc3ad2d2ceb53099535974c0ae28fc9ddc3c7dee96c199a",
+      "passed": true
+    }
+  ],
+  "maintenance_files_checked": [
+    "experiments/frontier/CONTRACT.md",
+    "experiments/frontier/IMPLEMENTATION.md",
+    "experiments/frontier/PLAN.md",
+    "experiments/frontier/README.md",
+    "experiments/frontier/RESULTS.md",
+    "experiments/frontier/baseline.md",
+    "experiments/frontier/benchmark.py",
+    "experiments/frontier/coordinator.py",
+    "experiments/frontier/evaluation-review.md",
+    "experiments/frontier/file_store.py",
+    "experiments/frontier/file_variant_benchmark.py",
+    "experiments/frontier/implementation-review.md",
+    "experiments/frontier/independent_probe.py",
+    "experiments/frontier/log_store.py",
+    "experiments/frontier/node_workflow.py",
+    "experiments/frontier/orchestration-research.md",
+    "experiments/frontier/p2-file-variant.md",
+    "experiments/frontier/p2-local-results.md",
+    "experiments/frontier/p2-services.md",
+    "experiments/frontier/p2_local.py",
+    "experiments/frontier/p3-protocol.md",
+    "experiments/frontier/p3_cases.py",
+    "experiments/frontier/p3_native_harness.py",
+    "experiments/frontier/p4-acceptance.md",
+    "experiments/frontier/research.md",
+    "experiments/frontier/service_benchmark.py",
+    "experiments/frontier/service_stores.py",
+    "experiments/frontier/sqlite_store.py",
+    "experiments/frontier/storage_common.py",
+    "experiments/frontier/test_autonomy.py",
+    "experiments/frontier/test_benchmark.py",
+    "experiments/frontier/test_coordinator.py",
+    "experiments/frontier/test_file_store.py",
+    "experiments/frontier/test_log_store.py",
+    "experiments/frontier/test_node_workflow.py",
+    "experiments/frontier/test_p2_local.py",
+    "experiments/frontier/test_p3_cases.py",
+    "experiments/frontier/test_p3_native_harness.py",
+    "experiments/frontier/test_service_stores.py",
+    "experiments/frontier/test_sqlite_store.py",
+    "experiments/frontier/test_storage_common.py",
+    "experiments/frontier/verify_delivery.py"
+  ],
+  "artifacts": [
+    {
+      "path": "experiments/frontier/CONTRACT.md",
+      "bytes": 5000,
+      "sha256": "bba4c17ed591429271be051f8557a3ac6cffbc1d6c45899298c6e78c0a0f9b91"
+    },
+    {
+      "path": "experiments/frontier/IMPLEMENTATION.md",
+      "bytes": 9030,
+      "sha256": "ed97dd93f0e28965916567a801a5a8f96339db9acad3d8bf716fc5f5ffa16cae"
+    },
+    {
+      "path": "experiments/frontier/PLAN.md",
+      "bytes": 9605,
+      "sha256": "115fa9a76fe81bb9a46032e658eb833386f3e943e7561504efe295775894a740"
+    },
+    {
+      "path": "experiments/frontier/README.md",
+      "bytes": 1736,
+      "sha256": "5112c1d56045e7b72fe7d584793025bb1c289ec2f1f5a726775e0f76e1b063ab"
+    },
+    {
+      "path": "experiments/frontier/RESULTS.md",
+      "bytes": 9696,
+      "sha256": "7a5c755a339de5ea1e5e037c7cbd25f1a5cff89c092bbaebbf4533bdcaa39d20"
+    },
+    {
+      "path": "experiments/frontier/baseline.md",
+      "bytes": 8325,
+      "sha256": "34d70379509144250ca26ebfe0f0ed3f387c006eab633e0b29a3b911b5c11712"
+    },
+    {
+      "path": "experiments/frontier/benchmark.py",
+      "bytes": 12198,
+      "sha256": "34a7f776484924aadbddd9a4ccd1456cc71e8baf30b0e421b4ea9d55e3ef2202"
+    },
+    {
+      "path": "experiments/frontier/coordinator.py",
+      "bytes": 12559,
+      "sha256": "71ca8d70b6fdcdaae2453d5d175e30365f71e61c4fde869d9dfc05ec189971d0"
+    },
+    {
+      "path": "experiments/frontier/evaluation-review.md",
+      "bytes": 20457,
+      "sha256": "0adeb51b88694af61c021ec74987357515a7a1a33a6850e15333282bc6a50074"
+    },
+    {
+      "path": "experiments/frontier/evidence/artifact-index.json",
+      "bytes": 2022,
+      "sha256": "c17ffea736ca6bea4decd0bc4c34df2a7f86fe0e6f357f44f2e7ab1354d2079d"
+    },
+    {
+      "path": "experiments/frontier/evidence/baseline.json",
+      "bytes": 78007,
+      "sha256": "f2a3e121e56f9f4a33b83405ccda865814b04bb466731456f96396270f005f45"
+    },
+    {
+      "path": "experiments/frontier/evidence/environment.json",
+      "bytes": 600,
+      "sha256": "98b36407e824e951a5c9d8f48a15fdf7108ec47a7ca9a5f41326eb051de1dc3a"
+    },
+    {
+      "path": "experiments/frontier/evidence/independent-probe-v2.json",
+      "bytes": 192708,
+      "sha256": "06f98b6c0113299d210c7c3513a44c2137a8b8be6330afecc22e73eb54ba32ba"
+    },
+    {
+      "path": "experiments/frontier/evidence/independent-probe.json",
+      "bytes": 192708,
+      "sha256": "fe1db69bb902ba241d0fbde6b817de9fdb44a19e68e8437f7cb71884169674d0"
+    },
+    {
+      "path": "experiments/frontier/evidence/integrity-final.json",
+      "bytes": 1480,
+      "sha256": "9a0b3d4d71e652621d2870fa39ced0656b197c1ce86ef78abb28dbae60095827"
+    },
+    {
+      "path": "experiments/frontier/evidence/isolation-final.json",
+      "bytes": 68730,
+      "sha256": "bd3b25b0307f013e8d5de43d09ab3196e1e14b862dbffbafaee5e1779e7a6688"
+    },
+    {
+      "path": "experiments/frontier/evidence/p1-artifacts-20261010.tar.gz",
+      "bytes": 12682959,
+      "sha256": "0c3c678ae6a9e5945e5c59ba16270b31f736e32f2d66081ee3a9451a32d2f799"
+    },
+    {
+      "path": "experiments/frontier/evidence/p1-facts10-20261010.json",
+      "bytes": 180291,
+      "sha256": "3f900fcb9932feaa720df5a647e590fae24712958eb9cb770df5844d991e5f14"
+    },
+    {
+      "path": "experiments/frontier/evidence/p1-facts100-20261010.json",
+      "bytes": 121338,
+      "sha256": "1741b00468fac72405a88f1e200dc9685c0ac1f32188bbed885ed460dbc6d416"
+    },
+    {
+      "path": "experiments/frontier/evidence/p1-scale-20261010-v2.json",
+      "bytes": 475394,
+      "sha256": "cda55ca71f475a4cae4645655349d932d80858a0040c207e6776fd009de59fc8"
+    },
+    {
+      "path": "experiments/frontier/evidence/p1-scale-20261010.json",
+      "bytes": 438056,
+      "sha256": "5b8687045cea0eac24de15193c64dad3e941990a1121d2a4c115b5da08b65edb"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-file-variant-20261010-v2.json",
+      "bytes": 1276752,
+      "sha256": "16a26ff7144fdfef1d0a152976627517a73081d9d719dea92275eae50616d552"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-file-variant-20261010.json",
+      "bytes": 1067869,
+      "sha256": "41f9db7b54233eacbe0600a733bc84155329334eeb37246ede86ab491f469402"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-file-variant-validation.json",
+      "bytes": 1301,
+      "sha256": "09bbd5d8eff0846810e2f22d7d4b948d9e90506364d9ecaf442b65b446b40fa8"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-local-20261010-v2.json",
+      "bytes": 89768,
+      "sha256": "1c4599e7cbe3106bcf17c34609422093f1582ecc18809576b0e444b29bd82c92"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-local-20261010.json",
+      "bytes": 89252,
+      "sha256": "e8b6cb6894739bb7cad4dc1a4815d01f7ca454fbc8a2dbaac8c49dad9227cbc3"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-local-test-before-fix.json",
+      "bytes": 1025,
+      "sha256": "a6bf9b6bfdad48e27d9d11d5d832b0130c7f2957adfb91b1f7e604d751aa2d74"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-local-validation.json",
+      "bytes": 1016,
+      "sha256": "8e458c759b979e4dc7f8712354ca0b85fe96c3653646627586a6101055404b2b"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-container-crash.json",
+      "bytes": 1353,
+      "sha256": "6d9a62fb235b8db129625cd3028c5a2307646e3a2191738c51c6f314e378f3a7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-matrix-v2.json",
+      "bytes": 455708,
+      "sha256": "6f41b94829c2423c7850f2ae10a15ced901e16887c8a673518a413b0591b67c6"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-matrix.json",
+      "bytes": 455539,
+      "sha256": "3789d060362e835f2088b6dea2a7e22ead50e6412c83d07930efae971d6157cd"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-preflight.json",
+      "bytes": 5602,
+      "sha256": "68af7a5f4346cc9f0dca14cfdfe45d2b3cb5255e627800c2321b2dea0ed97129"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-recovery-after.json",
+      "bytes": 4621,
+      "sha256": "981868d2ba28e9474d872e4e26578bbb5783e7eae2758313f5413b2f1250521d"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-recovery-before.json",
+      "bytes": 6999,
+      "sha256": "f973f3797c97b2a5c57e459bb5e58c07c11a27641ad2e40ebb3a955327940c42"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-resources.json",
+      "bytes": 4228,
+      "sha256": "ffc80a324ca8d08cd017285e9ae2a1082767fd510296b4bb82b882b291f52576"
+    },
+    {
+      "path": "experiments/frontier/evidence/p2-service-sandbox-attempt.json",
+      "bytes": 998,
+      "sha256": "acaa028ba817822aced4c59efcbbbd81829eb59ec90abb66ba06f27e9b17edb2"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-20261010/plan.json",
+      "bytes": 117025,
+      "sha256": "dca656519fae6e709bb88c2459e858073a7d26abece474830ea6d334530380e8"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-20261010/superseded.json",
+      "bytes": 242,
+      "sha256": "017feb94b58438f3b1e5ae26b4b0ac009cc91b54d867271581ebc454dbd7c08f"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r1_final/evidence.json",
+      "bytes": 9932,
+      "sha256": "da67b915ee1e71f36a35375583b8db892c31415c7dff4f1836b39124f9c9dce1"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r1_final/input-manifest.json",
+      "bytes": 129,
+      "sha256": "e7fdb755ba5ac08a13185df13e75190f316bf0cac33ad2a60473f71350242cfd"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r1_final/input.json",
+      "bytes": 4663,
+      "sha256": "8dbacd9bd5fbf8656ea914dbb2581137e8e7102e7257db0521d023f4d4c24559"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r1_final/output.txt",
+      "bytes": 578,
+      "sha256": "1485135c5752970c8908b51f572fdaaea5cf15f099ad132e59c6f67a2bb7cff7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r1_final/spawn-request.json",
+      "bytes": 786,
+      "sha256": "10cc1006750a5eb68c116a33ef390fa46ae91e5cbd6e9e9c6983d3a88a8487bb"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r2_final/evidence.json",
+      "bytes": 9939,
+      "sha256": "503d5e3ef2544d1e5783d9685a5680b6ada696020143d0b18f0fd49aad8dc0d9"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r2_final/input-manifest.json",
+      "bytes": 129,
+      "sha256": "b5ea88336659524e5b0123876103f4ca55d8c8588f7d3dd413650dabc195ecc4"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r2_final/input.json",
+      "bytes": 4663,
+      "sha256": "8dbacd9bd5fbf8656ea914dbb2581137e8e7102e7257db0521d023f4d4c24559"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r2_final/output.txt",
+      "bytes": 578,
+      "sha256": "1485135c5752970c8908b51f572fdaaea5cf15f099ad132e59c6f67a2bb7cff7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r2_final/spawn-request.json",
+      "bytes": 786,
+      "sha256": "412d933ea3ed809dd0bd56ddfe502ebc2f54f02a34bf71ee9b783e393bc050d1"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r3_final/evidence.json",
+      "bytes": 9920,
+      "sha256": "1693aee3ee1efcb9ea592b8f08825fa8ad0856d80cacf19f8eb2dc67d8d55ab1"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r3_final/input-manifest.json",
+      "bytes": 129,
+      "sha256": "9089fd2b02ab85d1818eb3222c33b85d1bc1c3d4b82ac0b2bb8e4b16132bd00c"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r3_final/input.json",
+      "bytes": 4663,
+      "sha256": "8dbacd9bd5fbf8656ea914dbb2581137e8e7102e7257db0521d023f4d4c24559"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r3_final/output.txt",
+      "bytes": 578,
+      "sha256": "1485135c5752970c8908b51f572fdaaea5cf15f099ad132e59c6f67a2bb7cff7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_c_01_r3_final/spawn-request.json",
+      "bytes": 786,
+      "sha256": "aba0e466aa892e4d89890832536c07cde82a0b75f163dc0af586625b67ec73d9"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r1_final/evidence.json",
+      "bytes": 9915,
+      "sha256": "155d6c4f27e176ea1435f30e2c6230344057123affbb1a8e2847760861c6b77c"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r1_final/input-manifest.json",
+      "bytes": 129,
+      "sha256": "76e43d9fe752cbd0f7fa45513970549ac2215a80e8875cc6e870ecb85b620fb3"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r1_final/input.json",
+      "bytes": 4663,
+      "sha256": "9fd79b7921a609f34ee8419bb42bac2df411f3f836ef72ba30088e71b54a5365"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r1_final/output.txt",
+      "bytes": 578,
+      "sha256": "1485135c5752970c8908b51f572fdaaea5cf15f099ad132e59c6f67a2bb7cff7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r1_final/spawn-request.json",
+      "bytes": 786,
+      "sha256": "e84718df18260c33e15438f5b1de36f775c4be7d1c73da69f3bf478f454eb5dd"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r2_final/input-manifest.json",
+      "bytes": 129,
+      "sha256": "09d0c2ebe4428079b8c931be7e72588b1a59c62486221382eb1219542604ab66"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r2_final/input.json",
+      "bytes": 4663,
+      "sha256": "9fd79b7921a609f34ee8419bb42bac2df411f3f836ef72ba30088e71b54a5365"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/p3b20261010_h_01_r2_final/spawn-request.json",
+      "bytes": 786,
+      "sha256": "331d5d39575d88ba6ce37b740ed4e450bc22bdfef2356052c46d4c5b9da23f32"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/plan.json",
+      "bytes": 122829,
+      "sha256": "9dc2e1ade1602a51c27defc9650ab783db4c3ac2cc101595426da6540652145c"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-native-formal-20261010b/source-freeze.json",
+      "bytes": 862,
+      "sha256": "2d48a6038fb9c1e4ac9d75fbb85ae68cf8f22c70930a57aac76a96d806a10394"
+    },
+    {
+      "path": "experiments/frontier/evidence/p3-preflight.json",
+      "bytes": 1532,
+      "sha256": "0736b73ce91b67dbdb60deb1147fa1786a9cf562655b99d2a775065ba7c049c7"
+    },
+    {
+      "path": "experiments/frontier/evidence/p4-acceptance.json",
+      "bytes": 25796,
+      "sha256": "a9b683d461e5bb9ae367706f68d038975cdf949cb77217a2b48608ed16b90eb4"
+    },
+    {
+      "path": "experiments/frontier/evidence/p4-final-cli-local-initial.json",
+      "bytes": 297961,
+      "sha256": "5171ce38de2e4fba4fb8df64eeee459fcefad1865771ce1febbbc33c74f9aeea"
+    },
+    {
+      "path": "experiments/frontier/evidence/p4-fixture-read.json",
+      "bytes": 30405,
+      "sha256": "b5af3b0bb3263f73f3168305b8eb95e0515f493f5b24ff9a18a48adf4e942360"
+    },
+    {
+      "path": "experiments/frontier/evidence/postread-metric-before-fix.xml",
+      "bytes": 1039,
+      "sha256": "32f3bbcd0fb364d95c3475018142b3c3eafe592dc52d87d50a289651eadc5dcb"
+    },
+    {
+      "path": "experiments/frontier/evidence/regression-before-fix.xml",
+      "bytes": 6511,
+      "sha256": "2b602459b51820d639ba206149f2a74709ffcb7ca5043e549455310b2ceb08ce"
+    },
+    {
+      "path": "experiments/frontier/evidence/tests-after-fix.xml",
+      "bytes": 22679,
+      "sha256": "851599abba4278f5a9ceae2a1c0320a2259c230dacf50f6ec988d75acffc6023"
+    },
+    {
+      "path": "experiments/frontier/evidence/tests-final-v2.xml",
+      "bytes": 26145,
+      "sha256": "0d27dee22e4454dd0d9feeb0ac83416b355d00cc8539cff26be9233ce20a14b3"
+    },
+    {
+      "path": "experiments/frontier/evidence/tests-final-v3.xml",
+      "bytes": 26416,
+      "sha256": "9077b680b91d4246765ebd460f8b7a05a774a45677d6d56e9b12ef018ab09441"
+    },
+    {
+      "path": "experiments/frontier/evidence/tests-final.xml",
+      "bytes": 25842,
+      "sha256": "75fed89c575d678443a382ea9a05d71f2d04afc2f888b18e1e8e2bc41580dc0e"
+    },
+    {
+      "path": "experiments/frontier/file_store.py",
+      "bytes": 5006,
+      "sha256": "9c48bf6759e98eece83edc8b8e7edc377a5863a533796465c099eae9548b24ac"
+    },
+    {
+      "path": "experiments/frontier/file_variant_benchmark.py",
+      "bytes": 17330,
+      "sha256": "3d25a6bdd2e3b372b56b66802f205541a775b3c9d8f11518471c87fe0e92857e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/01-self/input.json",
+      "bytes": 4597,
+      "sha256": "1c868be56f9b53e141fa2244b670420bdcd76d9567e7fd36d71b6cc358a62a4b"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/01-self/oracle.json",
+      "bytes": 579,
+      "sha256": "6976d22cb33b118a2f94654a2ab8d5f17687b1362bfd0c30c705a71d4f4612ca"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/01-self/relations.json",
+      "bytes": 111,
+      "sha256": "716c51388fccb3673df0d9aea4cc5e18da92415df83d59d2bd8e316849914f48"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/02-multilevel/input.json",
+      "bytes": 6387,
+      "sha256": "61863c952b3f070d11e5b8f601580025dac3a43102a55c8117a28e6aec24f005"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/02-multilevel/oracle.json",
+      "bytes": 1161,
+      "sha256": "d50bc8ac4236553b2ea6b457dcfee02136a43b46425446f42469478ac652788e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/02-multilevel/relations.json",
+      "bytes": 357,
+      "sha256": "5fe8a03776abb4661897686d8764a7c8b6e23a6bc4970e1f127b3b3f83f5b1af"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/03-diamond/input.json",
+      "bytes": 7258,
+      "sha256": "bc67046f7c9ba1e2bc75b98641c9e8b542241d3fb5e8fa81dda89ea2b5909c56"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/03-diamond/oracle.json",
+      "bytes": 1440,
+      "sha256": "9e360d7591f01b33f8bb0ace109c487bb10eef2f90b1b1da1a70eae7e07f16db"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/03-diamond/relations.json",
+      "bytes": 579,
+      "sha256": "8ea1768c2148897b587ee924dabefaba11dece9789a0a83056dd0b5f12332d63"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/04-scope/input.json",
+      "bytes": 6020,
+      "sha256": "79e46cafae508cc6b684289f4c1795b91716d837a9117cf3007e8c4aa1f5421f"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/04-scope/oracle.json",
+      "bytes": 836,
+      "sha256": "107da9bddf55b9af7696c2adeee9275c786cfa23996db629146d31dbfd5ae919"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/04-scope/relations.json",
+      "bytes": 581,
+      "sha256": "42295cafdea8a165300ada0b08323b78895aa6368013dbae3e1d0b0486f0f3c2"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/05-unavailable/input.json",
+      "bytes": 4970,
+      "sha256": "ebd12f1995b89c49c81c9d57ff451a4256e1731a60f0ef13cd5f9096ff626fe3"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/05-unavailable/oracle.json",
+      "bytes": 723,
+      "sha256": "ad6297afbe94147db4482de0f94841d0e1710ae8b82a5731bf901c93ecb602d3"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/05-unavailable/relations.json",
+      "bytes": 357,
+      "sha256": "5fe8a03776abb4661897686d8764a7c8b6e23a6bc4970e1f127b3b3f83f5b1af"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/06-conflict/input.json",
+      "bytes": 7228,
+      "sha256": "ad1774f04084d2495c3e4862847bc873f76a0557bea036b92171709ccb2df0a2"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/06-conflict/oracle.json",
+      "bytes": 950,
+      "sha256": "ecac596d5481e77d92f6495c8b90cb87133b64ba0cc85a3f9de814860670716e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/06-conflict/relations.json",
+      "bytes": 357,
+      "sha256": "5fe8a03776abb4661897686d8764a7c8b6e23a6bc4970e1f127b3b3f83f5b1af"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/07-revision/input.json",
+      "bytes": 5521,
+      "sha256": "b6b8ec79428885d19c330d521ac8f21b8042f6d310277bb32e3888fc93775cda"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/07-revision/oracle.json",
+      "bytes": 970,
+      "sha256": "9ad6c1c987c61cb96499a45f1eebca1362bf384b14aab40b92ef989c855919cb"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/07-revision/relations.json",
+      "bytes": 296,
+      "sha256": "f2065ebac5afc0ae629a2bc1f9b38515907f83362f33d6387cd961d39e282f2a"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/08-budget/input.json",
+      "bytes": 4972,
+      "sha256": "9ff4f622fe7cf0a0be4b77c5778a9c2faebd8642c20b9e1545a9e57bce076de1"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/08-budget/oracle.json",
+      "bytes": 732,
+      "sha256": "647779f9d279073d162c269c85ba1f851f6296fce03583ce3651ffaa3f28688f"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/08-budget/relations.json",
+      "bytes": 357,
+      "sha256": "5fe8a03776abb4661897686d8764a7c8b6e23a6bc4970e1f127b3b3f83f5b1af"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/freeze.json",
+      "bytes": 2885,
+      "sha256": "eb759d44c859c03161809bc5c7c0bdfcefd91be3de0c35023616fdfb8d8a0537"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/manifest.json",
+      "bytes": 1939,
+      "sha256": "b3f297af61842cca5950c8bc1b81fc6f632e473e691df48261b8165adad6560e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/output-schema.json",
+      "bytes": 1601,
+      "sha256": "654e3b65e04271186b6ade451d6d71b3e747c9314d8d0d213d1e76ef603d88f2"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/sources/leaf/injection-excerpt.json",
+      "bytes": 440,
+      "sha256": "0450dd5c97c78a37e858f19816c135b05842f5fc706f6bc52fb3d2d359e12ca0"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/sources/leaf/state.json",
+      "bytes": 386,
+      "sha256": "7e9bf89b97d48ed7fdb8c64c922278c5fe9127d17696d7de64f6511c0d9323b0"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/sources/middle/state.json",
+      "bytes": 380,
+      "sha256": "719be8dd219112023edc40032ac66374757b692e5b6cc245a2737f4d88fe23f1"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/sources/root/state.json",
+      "bytes": 401,
+      "sha256": "43d42b58d1e357272271f5adef5bb0c78024c8941582453c911842742340aa8e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p3/sources/side/state.json",
+      "bytes": 380,
+      "sha256": "719be8dd219112023edc40032ac66374757b692e5b6cc245a2737f4d88fe23f1"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/control/registry.json",
+      "bytes": 845,
+      "sha256": "485844bf37b1e6c6be5aeced90f1cdee02eaa55b05d126e8f16471a8901577ef"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/control/registry.json.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/fixture-manifest.json",
+      "bytes": 21530,
+      "sha256": "fab6f7f4ea88efe9f4a7bfe049ec62e0530fab704c8d0b8e2e9ca08c56cc5fc9"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/.state.json",
+      "bytes": 386,
+      "sha256": "7e9bf89b97d48ed7fdb8c64c922278c5fe9127d17696d7de64f6511c0d9323b0"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/README.md",
+      "bytes": 417,
+      "sha256": "c89e7fbab000bfeb5527ecf4e50a114777fcde79052de12f0caaeab2d910f5ba"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/changes/README.md",
+      "bytes": 59,
+      "sha256": "9d11dd06120290975b8fec34d32a9f99c3cebbd3918ab50bf6d58807554848ea"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/current-status.md",
+      "bytes": 862,
+      "sha256": "55df9bc2bbed790c436532d4dce8a6e01de406acc87240130a65e1191462663b"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/001-实现与验证.md",
+      "bytes": 1306,
+      "sha256": "662bf848af3d968a2084d19dc37ecc6acd8ff55ccc7f096740928462f68638a5"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/README.md",
+      "bytes": 97,
+      "sha256": "8e5e7fc326443273d80c6420384f516b7bdb40e98e5168f192804f50297f771c"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+      "bytes": 767,
+      "sha256": "901e92924a1dc91c534bfe8e019bac0dcee57b1227d1539595dc743df196ae1b"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/work-item.md",
+      "bytes": 832,
+      "sha256": "cbe99854855e916c303193abaab6b8e0604407ee79b3e213f6dd06b459d740a6"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/leaf/.frontier-node.json",
+      "bytes": 225,
+      "sha256": "b169e063b1e128f43604b35dfbf20c50869a03ca50b7de3c5b1a141d5026ef8c"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/.state.json",
+      "bytes": 380,
+      "sha256": "719be8dd219112023edc40032ac66374757b692e5b6cc245a2737f4d88fe23f1"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/README.md",
+      "bytes": 173,
+      "sha256": "349cee4b8f942c97218fda1cf8557c35701ec13e4d476ec87d5573caab7bfcce"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/changes/README.md",
+      "bytes": 59,
+      "sha256": "9d11dd06120290975b8fec34d32a9f99c3cebbd3918ab50bf6d58807554848ea"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/current-status.md",
+      "bytes": 537,
+      "sha256": "ef9d4c40cb2d96302f03f610fb00e76cb00fe1b65504d5280e5dc4e1f3a29f15"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/001-实现与验证.md",
+      "bytes": 1354,
+      "sha256": "645e8ca0ca47c70c188893d7dac21cba7627c6ba883cc140c78b5a3a2775bcad"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/002-审查修复.md",
+      "bytes": 655,
+      "sha256": "beb3dad53e32a36f0b4b879d3e3f72ee631c58caacb7a7e360d4b3d42e9464b1"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/003-安装版同步.md",
+      "bytes": 548,
+      "sha256": "4050ef2c61a84c19c8f3b84abeb6f54ea7146631247bbdc63dbda030b4396a26"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/README.md",
+      "bytes": 47,
+      "sha256": "1dfdfa87672ff2ad19f0c2bdb0eff6104aae5f22e742a5f15a567a637014ebf9"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "bytes": 1298,
+      "sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/work-item.md",
+      "bytes": 778,
+      "sha256": "7cf2ca352c2adce124a195619539176f6260214649cadaeead5d23de4bd0c380"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/middle/.frontier-node.json",
+      "bytes": 227,
+      "sha256": "2a6449d12b20f2c578d71e037fb87f2d6176226cc4ce1a252cdc0a1b970c196e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/.state.json",
+      "bytes": 401,
+      "sha256": "43d42b58d1e357272271f5adef5bb0c78024c8941582453c911842742340aa8e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/README.md",
+      "bytes": 448,
+      "sha256": "7cb6363f9177a2dfcc676f81bf3cbfdda54a44f8c8f8fe4787a2ff74dcc504f9"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/changes/README.md",
+      "bytes": 405,
+      "sha256": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/current-status.md",
+      "bytes": 1139,
+      "sha256": "d08c3b87a91b35d7394f354d37a19bce66ea0e9ba3bf39524bb84fa895ffbf65"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/001-status-sync-analysis.md",
+      "bytes": 3072,
+      "sha256": "77395b6ffb83b52866edcc1c90a83b38c86792fa512b1024ca436367efbdd8c7"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/002-self-hosted-status-trial.md",
+      "bytes": 967,
+      "sha256": "d9ecaaf55e5a84f776b63a7f6ca0de24d0ec7966c911e2fb5bcb64fad579ab72"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/003-document-governance-synthesis.md",
+      "bytes": 3761,
+      "sha256": "42fe8b47a7418584524e25a4faedf0e8face7dc577eb0360240bf7e4f86a7061"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/004-document-delivery-governance-spec.md",
+      "bytes": 8100,
+      "sha256": "a5794f139b24aabf1d81e5286d167f3a0bc6c9f654eb31be68c14d0fb795e002"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/005-delivery-prototype-implementation.md",
+      "bytes": 862,
+      "sha256": "8898f532006663bd36e7e5f401217e48b5f1fd81f1fcb6ef7198466d45763b2b"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/006-governance-completion.md",
+      "bytes": 1056,
+      "sha256": "349bf3b62901c3e79b4ae79e45edbde908444151f96c7a2a80c8fa0a94ef9a5e"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/007-self-hosted-delivery-trial.md",
+      "bytes": 797,
+      "sha256": "9f2a50d72dc2591a5563bd0c495a545a699321f82ffad142fc7b7b997b53d407"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/008-capability-growth-completion.md",
+      "bytes": 950,
+      "sha256": "07a12e82747bfc890d057c7019dc58ea9aa361c4efdc3dd823ea76dc439bcbab"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/009-capability-self-hosted-trial.md",
+      "bytes": 793,
+      "sha256": "5fda48e6c695ad4d8bfb6a56efac0b09b13cf667d17e0e80c76b91dcab778e42"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/010-auto-finalize-fix.md",
+      "bytes": 861,
+      "sha256": "9753b13475a4ff4e6048ad458ae0cf029f617409dfb053a4f8467df8d4fe7aa3"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/011-release-surface-consistency.md",
+      "bytes": 886,
+      "sha256": "ad34b0b82b794d2544d2c44775e4e000d5f09692beb7529d5362bd3d9faee7a9"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/README.md",
+      "bytes": 309,
+      "sha256": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/finalize-c13c702f8bb40806.md",
+      "bytes": 204,
+      "sha256": "384c2be8fda6ee50aaf05cabc07395bb7af635a1a21995378923df44a41a270d"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "bytes": 2354,
+      "sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/work-item.md",
+      "bytes": 1184,
+      "sha256": "d74091517dae1813c0426ee565e42159cf4457830854a01a893911f8a50be45b"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/nodes/root/.frontier-node.json",
+      "bytes": 225,
+      "sha256": "b92432c3ec54e96586851cb8f132bf257f3780d94d4b50dfea679f1f6169c107"
+    },
+    {
+      "path": "experiments/frontier/fixtures/p4/outside/private.txt",
+      "bytes": 38,
+      "sha256": "0daa183dc7fe0fb5c3ba1d5f4838c3cbd45afbdf8a7851a71d48e8105a461f65"
+    },
+    {
+      "path": "experiments/frontier/implementation-review.md",
+      "bytes": 6753,
+      "sha256": "5bbdc1ae4c65e6516deb9e0e7d5c590f0130a2c579d98acb14a445d142399349"
+    },
+    {
+      "path": "experiments/frontier/independent_probe.py",
+      "bytes": 11193,
+      "sha256": "5b998d00b4de1c526552cc67fb14dd8794fbe06d388ceff60f03f4cc41586db4"
+    },
+    {
+      "path": "experiments/frontier/log_store.py",
+      "bytes": 11521,
+      "sha256": "d1847cd7e14aef8ef64941ab28ccdeeaa4f71324d55cbbd0c7718d718545932c"
+    },
+    {
+      "path": "experiments/frontier/node_workflow.py",
+      "bytes": 38073,
+      "sha256": "ec8063db0357a415b655ae5dda740d2985e3b85b8eef35063de856358453b65a"
+    },
+    {
+      "path": "experiments/frontier/orchestration-research.md",
+      "bytes": 8984,
+      "sha256": "ab507752853a19b6698a1243469a25eb381e6edc702f21a4782b150d72f599d4"
+    },
+    {
+      "path": "experiments/frontier/p2-file-variant.md",
+      "bytes": 8070,
+      "sha256": "0ddc97948620f52668b0b231928c24263044e73c54f7cdce1dbbf44909454488"
+    },
+    {
+      "path": "experiments/frontier/p2-local-results.md",
+      "bytes": 7422,
+      "sha256": "7b02fb3363be7e0a23a56bc98ca135a9c247e4e6d5c3b51cd1fe1e1acb66546b"
+    },
+    {
+      "path": "experiments/frontier/p2-services.md",
+      "bytes": 11128,
+      "sha256": "e42af98701f15a710dcc13e5db9260a5f37dbf1c95d839516033e90b28cfd6a6"
+    },
+    {
+      "path": "experiments/frontier/p2_local.py",
+      "bytes": 28103,
+      "sha256": "ca0f69f82822ec7d1becd70535e7977cd73b1e7c0e064c0efc718d0a3517e365"
+    },
+    {
+      "path": "experiments/frontier/p3-protocol.md",
+      "bytes": 8674,
+      "sha256": "2ce60fb88465f76c9557824169fda34484e152a9ad74bf9b459b8a16b5f97486"
+    },
+    {
+      "path": "experiments/frontier/p3_cases.py",
+      "bytes": 19964,
+      "sha256": "e6757ed209ef7c12182c7b1c139a24314946243585730157fd43554c08f21134"
+    },
+    {
+      "path": "experiments/frontier/p3_native_harness.py",
+      "bytes": 26950,
+      "sha256": "cb7ca0d4edda798bc829df2ab199d0d37247fac80b933a5f566bcaf17ceb250f"
+    },
+    {
+      "path": "experiments/frontier/p4-acceptance.md",
+      "bytes": 6766,
+      "sha256": "557e70ea8dea4a11f5f8c3aff86644e5c8cfc7cbfb00079f33813c26114af61e"
+    },
+    {
+      "path": "experiments/frontier/research.md",
+      "bytes": 12420,
+      "sha256": "0a7d3010f8694913a199fd5074376878e90caed7e34e79012c702099ffed3543"
+    },
+    {
+      "path": "experiments/frontier/service_benchmark.py",
+      "bytes": 16660,
+      "sha256": "740e5afd162249b94ab3cf47093e1e6c13cfce288c9335a01635353a399823bc"
+    },
+    {
+      "path": "experiments/frontier/service_stores.py",
+      "bytes": 21773,
+      "sha256": "707b481547bd32f1e83aff75cf2ee8169c170847f1bde5863b9bd585bac0e7bb"
+    },
+    {
+      "path": "experiments/frontier/sqlite_store.py",
+      "bytes": 8533,
+      "sha256": "8678cddac854642679f76f8fa40cba364b09caed46da7fd83ebc0e834f536607"
+    },
+    {
+      "path": "experiments/frontier/storage_common.py",
+      "bytes": 3416,
+      "sha256": "aa9afee75aff31cd327abd6d6494b7f51b75d3d784dd1abb42be9dbf6ca1a92a"
+    },
+    {
+      "path": "experiments/frontier/test_autonomy.py",
+      "bytes": 4555,
+      "sha256": "b9c28f2798112af82a6c596ac0824f3a51b2ac8bde79cb2bf38af0444c46fbcc"
+    },
+    {
+      "path": "experiments/frontier/test_benchmark.py",
+      "bytes": 1038,
+      "sha256": "310734c157bae1501ad36ccceb714cbfb06e2a9359909c68bb5c498d10126e0e"
+    },
+    {
+      "path": "experiments/frontier/test_coordinator.py",
+      "bytes": 26296,
+      "sha256": "1e8c4a8b9f91bbf9984c055ea42404bbdb8b1da949fe808876310697059aeeb6"
+    },
+    {
+      "path": "experiments/frontier/test_file_store.py",
+      "bytes": 9931,
+      "sha256": "48a19f4c2fa2aacf8209287667f5f73877d866bea472ec0713b65d02514ee703"
+    },
+    {
+      "path": "experiments/frontier/test_log_store.py",
+      "bytes": 6303,
+      "sha256": "b1d48ef0eb24b8da384a17f1d24297a39406eaebd4a46304c4f50a9189b4b6ef"
+    },
+    {
+      "path": "experiments/frontier/test_node_workflow.py",
+      "bytes": 29977,
+      "sha256": "c738aa896606e8cebd3b95218f210e4d78b3d0472abe8ed02b5450094161a9ee"
+    },
+    {
+      "path": "experiments/frontier/test_p2_local.py",
+      "bytes": 3725,
+      "sha256": "4a29a56f018883803d93b2821e3ea12d34abd0abff08febddc995da872adfaca"
+    },
+    {
+      "path": "experiments/frontier/test_p3_cases.py",
+      "bytes": 5682,
+      "sha256": "a5640e59a30f81777f218013b1613a037504df7be0a9b49f3ca1931d2802e99c"
+    },
+    {
+      "path": "experiments/frontier/test_p3_native_harness.py",
+      "bytes": 13039,
+      "sha256": "5a25fbebcd0dee4db3940aafa52388d2629963a83a3f94aa73b1a4c11ce53fc1"
+    },
+    {
+      "path": "experiments/frontier/test_service_stores.py",
+      "bytes": 13400,
+      "sha256": "99bf538e764ebcc69fc1d48d1d166cf991b44a679e596fff00447c96e1d28e8b"
+    },
+    {
+      "path": "experiments/frontier/test_sqlite_store.py",
+      "bytes": 7741,
+      "sha256": "cf7aaaed0fcc03864e9444ea261f4788b0ab7192263fdf1dcb4665a47b56c512"
+    },
+    {
+      "path": "experiments/frontier/test_storage_common.py",
+      "bytes": 534,
+      "sha256": "0fea279774e18ad66f164533edaae65262598132a3094df84ae9034a50329f91"
+    },
+    {
+      "path": "experiments/frontier/verify_delivery.py",
+      "bytes": 5206,
+      "sha256": "c21f779bc6886faa923df0a425505c1e9641479394a985a83d76ac85167bf05a"
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "notes": [
+    "原始输出、历史失败 XML、输入与模型输出不做空白格式重写",
+    "输出自身在写入前尚不存在，不包含自身哈希"
+  ]
+}

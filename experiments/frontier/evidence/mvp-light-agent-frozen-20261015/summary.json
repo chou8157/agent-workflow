@@ -1,0 +1,46 @@
+{
+  "facts": [
+    {
+      "node_id": "alpha",
+      "work_item_id": "W-alpha",
+      "completed_at": "2026-10-15T09:00:00+08:00",
+      "completed_at_status": "known",
+      "status": "completed",
+      "title": "完成节点自治验证"
+    },
+    {
+      "node_id": "beta",
+      "work_item_id": "W-beta",
+      "completed_at": null,
+      "completed_at_status": "unknown",
+      "status": "in_progress",
+      "title": "子节点聚合验证"
+    },
+    {
+      "node_id": "gamma",
+      "work_item_id": "W-gamma",
+      "completed_at": null,
+      "completed_at_status": "unknown",
+      "status": "completed",
+      "title": "历史资料待整理"
+    }
+  ],
+  "status": "partial",
+  "coverage": {
+    "expected": [
+      "alpha",
+      "beta",
+      "gamma",
+      "denied"
+    ],
+    "succeeded": [
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "failed": {
+      "denied": "本次请求明确拒绝读取"
+    },
+    "skipped": {}
+  }
+}

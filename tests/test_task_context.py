@@ -3,6 +3,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = PROJECT_ROOT / "agent-workflow" / "scripts"
@@ -118,14 +119,15 @@ def test_reopening_completed_item_clears_completion_timestamp(tmp_path: Path) ->
     assert reopened["completed_at_unknown"] is False
 
 
-def test_migration_skips_blocked_legacy_item_without_reason(tmp_path: Path) -> None:
+def test_migration_rejects_blocked_legacy_item_without_reason(tmp_path: Path) -> None:
     scaffold_workflow.scaffold_project(tmp_path)
     created = task_context.create_work_item(tmp_path, "W-blocked-legacy", "旧阻塞任务", "任务", "")
     (created / ".state.json").unlink()
     item_file = created / "work-item.md"
     item_file.write_text(item_file.read_text(encoding="utf-8").replace("- 父工作项：无", "- 状态：blocked\n- 父工作项：无"), encoding="utf-8")
 
-    assert task_context.migrate_legacy_items(tmp_path) == []
+    with pytest.raises(ValueError, match="blocked.*阻塞原因"):
+        task_context.migrate_legacy_items(tmp_path)
     assert not (created / ".state.json").exists()
 
 
@@ -208,7 +210,7 @@ def test_safe_upgrade_preserves_existing_entry_documents(tmp_path: Path) -> None
     result = upgrade_workflow.apply_safe_upgrade(tmp_path)
 
     assert (work_items / "README.md").is_file()
-    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == "5\n"
+    assert (workflow / "WORKFLOW_VERSION").read_text(encoding="utf-8") == f"{upgrade_workflow.LATEST_VERSION}\n"
     assert agents.read_text(encoding="utf-8") == "# 既有入口\n"
     assert readme.read_text(encoding="utf-8") == "# 既有工作流\n"
     assert disclosure.read_text(encoding="utf-8") == "# 既有渐进规则\n"

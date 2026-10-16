@@ -22,7 +22,7 @@ description: 创建、使用、记录、优化、自检和迁移项目智能体�
 - **improve**：用户说“以后都这样”“优化规则”“改工作流”“更新习惯”。读取 `references/improve-mode.md`。
 - **check**：用户要求“自检”“检查工作流”“看结构是否完整”。读取 `references/check-mode.md`。
 - **migrate**：用户要求迁移旧 `agent_docs/`、`stack-workflow/` 或其他工作流文档。读取 `references/migrate-mode.md` 和 `references/document-structure.md`。
-- **upgrade**：用户要求把已生成工作流更新到最新结构、同步模板更新或查看工作流版本。读取 `references/upgrade-mode.md`。
+- **upgrade**：用户要求更新 skill、把已生成工作流按版本升级、查看兼容性或恢复更新。读取 `references/upgrade-mode.md`，区分技能程序更新与项目增量升级，不重新初始化已有项目。
 - **delivery**：用户要求生成周报、阶段报告、交付、验收或发布说明。读取 `references/delivery-mode.md`。
 - **capability**：用户要求按项目规模初始化、启用能力、精简目录或渐进升级。读取 `references/capability-mode.md`。
 - **finalize**：本轮实际执行了开发、测试、状态变更或交付操作并准备结束时，默认执行工作流收口。读取 `references/finalize-mode.md`。纯讨论、阅读、规划和未产生项目事实的任务不触发。
@@ -68,7 +68,7 @@ python3 path/to/agent-workflow/scripts/upgrade_workflow.py /path/to/project appl
 
 `task_context.py` 用于创建、列出、查看和更新工作项生命周期状态。生命周期状态唯一保存在工作项目录的 `.state.json`；旧工作项先用 `migration-check` 做只读检查。它不执行 Git 操作，也不替代记录模式中的真实事实判断。
 
-`upgrade_workflow.py` 根据结构版本生成升级计划。`apply-safe` 只补齐缺失结构和版本标记；已有入口文档只生成建议文件，必须由用户确认后人工合并。
+`upgrade_workflow.py` 根据结构版本和实际文件生成升级计划，区分结构、工作项迁移、冲突与待审文档。`apply-safe` 只补缺并迁移合法旧状态，保留未知日期；已有入口文档生成建议供审阅。完整发行包的 `release_package.py` 另提供技能程序更新、备份、恢复和回滚，详见升级模式。
 
 `delivery_context.py` 用于生成和发布独立外部交付物。草稿写入 staging，发布前检查内部路径、内部工作项 ID、未确认判断和敏感字段；published 版本不可原地覆盖。
 

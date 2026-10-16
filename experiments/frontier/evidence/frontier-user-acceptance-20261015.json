@@ -1,0 +1,170 @@
+{
+  "checked_at": "2026-10-15T18:40:20.135515+08:00",
+  "scope": "独立 Agent 使用及中断后恢复验收，主 Agent 读回与重复运行核验",
+  "independent_agent": "/root/frontier_user_acceptance",
+  "interruption": "一次文档补充调用停滞并受控中断；恢复后先读回，补齐活动与报告，不计为无中断连续通过或模型可靠率。",
+  "verifier_correction": "首次核对脚本将清单文件名误写为 MANIFEST.json；实际为 release-manifest.json。更正后重跑核对；产品记录与汇总均正常。",
+  "state": {
+    "id": "W-sample-check",
+    "title": "示例检查及后续工作",
+    "type": "任务",
+    "status": "in_progress",
+    "parent": null,
+    "created_at": "2026-10-15T18:27:14+08:00",
+    "updated_at": "2026-10-15T18:36:18+08:00",
+    "completed_at": null,
+    "blocked_reason": null,
+    "completed_at_unknown": false,
+    "activity_records": [
+      {
+        "id": "activity-c278ce6ef3138e4d4a9f4eb9",
+        "date": "2026-10-15",
+        "summary": "执行 check_example.py，2 项本地检查通过，保留后续任务",
+        "status": "completed",
+        "evidence_refs": [
+          {
+            "path": ".agent-workflow/30-records/work-items/W-sample-check/progress/001-local-check.md",
+            "sha256": "32a5bb6881778d9b18036dfc093b98f8b53a85ac7cfa8fc397e108360f191724",
+            "line_start": 3,
+            "line_end": 12,
+            "hash_scope": "lines"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence_text": "# 2026-10-15 本地示例检查\n\n- 业务日期：2026-10-15（本机 Asia/Shanghai 日期）。\n- 事实状态：已确认，来自本次真实命令执行。\n- 执行目录：`sample-project` 项目根目录。\n- 执行命令：`python3 -B check_example.py`。\n- 退出码：0。\n- 标准输出：`校验通过：2 项本地检查`。\n- 检查内容：`sum([2, 3, 5]) == 10`、`len(\"workflow\") == 8` 两项断言。\n- 实际变更：创建工作项并记录检查结果；检查脚本未修改。\n- 验证边界：只验证该脚本中的两项本地断言；未执行其他业务或生产验收。\n- 任务边界：用户明确检查只是任务的一部分，通过 task_context.py 保持工作项进行中。\n\n## 后续\n\n- 检查以外的后续业务范围待用户补充；不据本次检查推断整个任务完成。\n",
+  "report_text": "# 记录活动摘要\n\n- 查询范围：2026-10-12 至 2026-10-18（包含起止日）\n- 节点读取状态：full；关系版本：3\n- 计划覆盖：2 个节点；成功读取：2 个；失败：0 个；跳过：0 个\n- 事实来源：工作项 .state.json 中的结构化 activity_records\n\n## 窗口内记录\n- [sample-project] 2026-10-15：执行 check_example.py，2 项本地检查通过，保留后续任务（completed，来源：/private/tmp/frontier-acceptance-20261015/use-case/projects/sample-project/.agent-workflow/30-records/work-items/W-sample-check/.state.json:1-29）\n  - 工作项：W-sample-check；活动：activity-c278ce6ef3138e4d4a9f4eb9；来源 SHA-256：8163ae9913cb6bdc33c7050b0062994ee9d09684b9fdf3c309f3db3e6be84f47\n  - 证据：.agent-workflow/30-records/work-items/W-sample-check/progress/001-local-check.md:3-12；SHA-256：32a5bb6881778d9b18036dfc093b98f8b53a85ac7cfa8fc397e108360f191724；哈希范围：lines\n\n## 未覆盖或失败\n- 无节点读取缺口\n\n## 日期记录缺口（unknown_date）\n- [portfolio] 没有可识别的日期记录，不能判断该范围内是否有工作\n\n## 事实口径\n- 节点读取完整不代表活动历史完整；只汇总已显式记录的活动，不从日志日期或文件时间推断工作。\n",
+  "checks": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/private/tmp/frontier-acceptance-20261015/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "record",
+        "--project",
+        "/private/tmp/frontier-acceptance-20261015/use-case/projects/sample-project",
+        "--item",
+        "W-sample-check",
+        "--date",
+        "2026-10-15",
+        "--summary",
+        "执行 check_example.py，2 项本地检查通过，保留后续任务",
+        "--status",
+        "completed",
+        "--evidence",
+        ".agent-workflow/30-records/work-items/W-sample-check/progress/001-local-check.md",
+        "--line-start",
+        "3",
+        "--line-end",
+        "12"
+      ],
+      "returncode": 0,
+      "stdout": "本地活动已记录：activity-c278ce6ef3138e4d4a9f4eb9（unchanged）\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/private/tmp/frontier-acceptance-20261015/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "report",
+        "--project",
+        "/private/tmp/frontier-acceptance-20261015/use-case/projects/portfolio",
+        "--source-root",
+        "/private/tmp/frontier-acceptance-20261015/use-case/projects",
+        "--week",
+        "this",
+        "--scope",
+        "subtree",
+        "--output",
+        "/private/tmp/frontier-acceptance-20261015/verification-report-final.md"
+      ],
+      "returncode": 0,
+      "stdout": "报告已写入：/private/tmp/frontier-acceptance-20261015/verification-report-final.md\n范围：2026-10-12 至 2026-10-18；节点读取：full；成功 2，失败 0，跳过 0。日期缺口请查看报告。\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/private/tmp/frontier-acceptance-20261015/agent-workflow-frontier/scripts/release_package.py",
+        "verify",
+        "/private/tmp/frontier-acceptance-20261015/agent-workflow-frontier"
+      ],
+      "returncode": 0,
+      "stdout": "交付包操作完成：{\"files\": 79, \"name\": \"agent-workflow-frontier\", \"status\": \"verified\", \"version\": \"0.1.0\"}\n",
+      "stderr": ""
+    }
+  ],
+  "source_hashes_before": {
+    "portfolio/.agent-workflow/.capabilities.json": "0e2666d3af47c99cffcd1b8499b3006e43f566125942f21a998664730968ce16",
+    "portfolio/.agent-workflow/00-core/disclosure.md": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+    "portfolio/.agent-workflow/00-core/preferences.md": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+    "portfolio/.agent-workflow/00-core/principles.md": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+    "portfolio/.agent-workflow/00-core/workflow.md": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+    "portfolio/.agent-workflow/30-records/current-status.md": "47ee73bff42d7f77c1ad91d266c3bfd2c1727863238c75b6740a73d71483299f",
+    "portfolio/.agent-workflow/30-records/validation-log.md": "68f475e88cf4bb0af282be7faf1a5a0fd31ffb0d51e0b0b35a4fdf6f1ed76673",
+    "portfolio/.agent-workflow/30-records/work-items/README.md": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+    "portfolio/.agent-workflow/README.md": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+    "portfolio/.frontier-node.json": "a554ac1ea9aefefea15c04b6673618c392d68b6ce5ce584eed30048ae055fc38",
+    "portfolio/AGENTS.md": "9a3bd129c02aa5ac1ca43199dad033a031a9e7a1e5495c0708837a6a65ce2519",
+    "sample-project/.agent-workflow/.capabilities.json": "0e2666d3af47c99cffcd1b8499b3006e43f566125942f21a998664730968ce16",
+    "sample-project/.agent-workflow/00-core/disclosure.md": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+    "sample-project/.agent-workflow/00-core/preferences.md": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+    "sample-project/.agent-workflow/00-core/principles.md": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+    "sample-project/.agent-workflow/00-core/workflow.md": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+    "sample-project/.agent-workflow/30-records/current-status.md": "f48650f8d75660849d5ed22d036f8abab7b8e9be98783810baf3b8fe9067009f",
+    "sample-project/.agent-workflow/30-records/work-items/README.md": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/.state.json": "8163ae9913cb6bdc33c7050b0062994ee9d09684b9fdf3c309f3db3e6be84f47",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/README.md": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/changes/README.md": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/current-status.md": "710ca4431749a85b6d737e4dd94ca01cc14f31d057f5082006a685817fef32c2",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/progress/001-local-check.md": "f2892c44b4a865b8b8a14e0c9c65af49abf3b99246d7b3237402db44e96134ba",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/progress/README.md": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/validation-log.md": "e486cfbf9159e33bdca7a3b795f7dc72b8c555f81719ae759a16bc7a6e7d10f9",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/work-item.md": "97228587d16325c239c8414166f3f3dafd03b8134678004a4541e307fabe62e2",
+    "sample-project/.agent-workflow/README.md": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+    "sample-project/.frontier-node.json": "420aca3b68719d5dfdd7ff2635dbc643d4d6ac66eb754ae025edbe0937cc172c",
+    "sample-project/AGENTS.md": "aa34fe725ff3cab69874284edc46a346213108ae8418e0387dbeb6f02a6580a1"
+  },
+  "source_hashes_after": {
+    "portfolio/.agent-workflow/.capabilities.json": "0e2666d3af47c99cffcd1b8499b3006e43f566125942f21a998664730968ce16",
+    "portfolio/.agent-workflow/00-core/disclosure.md": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+    "portfolio/.agent-workflow/00-core/preferences.md": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+    "portfolio/.agent-workflow/00-core/principles.md": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+    "portfolio/.agent-workflow/00-core/workflow.md": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+    "portfolio/.agent-workflow/30-records/current-status.md": "47ee73bff42d7f77c1ad91d266c3bfd2c1727863238c75b6740a73d71483299f",
+    "portfolio/.agent-workflow/30-records/validation-log.md": "68f475e88cf4bb0af282be7faf1a5a0fd31ffb0d51e0b0b35a4fdf6f1ed76673",
+    "portfolio/.agent-workflow/30-records/work-items/README.md": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+    "portfolio/.agent-workflow/README.md": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+    "portfolio/.frontier-node.json": "a554ac1ea9aefefea15c04b6673618c392d68b6ce5ce584eed30048ae055fc38",
+    "portfolio/AGENTS.md": "9a3bd129c02aa5ac1ca43199dad033a031a9e7a1e5495c0708837a6a65ce2519",
+    "sample-project/.agent-workflow/.capabilities.json": "0e2666d3af47c99cffcd1b8499b3006e43f566125942f21a998664730968ce16",
+    "sample-project/.agent-workflow/00-core/disclosure.md": "2a647fdf6444285767f88f515c4b0672516d2dae96d728950d5783cc34526100",
+    "sample-project/.agent-workflow/00-core/preferences.md": "4acbd09d0655f687a3f8fa9a99f4b7ade6c569b80e15b75bb6909d936e08a6d0",
+    "sample-project/.agent-workflow/00-core/principles.md": "aeb1530bc83bbe5af18e18747f8bb1526ddddc3e913c4bf62be071e240086df5",
+    "sample-project/.agent-workflow/00-core/workflow.md": "8b08cc6eba03e94d02e4797bbc8d348fb51627b77e140dfe23b7c90cbea915c5",
+    "sample-project/.agent-workflow/30-records/current-status.md": "f48650f8d75660849d5ed22d036f8abab7b8e9be98783810baf3b8fe9067009f",
+    "sample-project/.agent-workflow/30-records/work-items/README.md": "4986e1630fb6001045d82401b63c218cf8ad9fd24b6b37b9bcb30eb95ee97390",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/.state.json": "8163ae9913cb6bdc33c7050b0062994ee9d09684b9fdf3c309f3db3e6be84f47",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/README.md": "3c953ab56c23973370ab193e60fa008bff966214a91d36930397bf919ce87dfe",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/changes/README.md": "83258f9548186955a9f5672806cf4b772d1a536f114b6eb1a04b0f2edddcdb1a",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/current-status.md": "710ca4431749a85b6d737e4dd94ca01cc14f31d057f5082006a685817fef32c2",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/progress/001-local-check.md": "f2892c44b4a865b8b8a14e0c9c65af49abf3b99246d7b3237402db44e96134ba",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/progress/README.md": "056d95656236b7d3e5d5552251437f5983858402183b4785ba90760c6ab6a91f",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/validation-log.md": "e486cfbf9159e33bdca7a3b795f7dc72b8c555f81719ae759a16bc7a6e7d10f9",
+    "sample-project/.agent-workflow/30-records/work-items/W-sample-check/work-item.md": "97228587d16325c239c8414166f3f3dafd03b8134678004a4541e307fabe62e2",
+    "sample-project/.agent-workflow/README.md": "cd94a393de963e4cbc2919f5ba81959eea791fedac389e0c285195671c2c8f89",
+    "sample-project/.frontier-node.json": "420aca3b68719d5dfdd7ff2635dbc643d4d6ac66eb754ae025edbe0937cc172c",
+    "sample-project/AGENTS.md": "aa34fe725ff3cab69874284edc46a346213108ae8418e0387dbeb6f02a6580a1"
+  },
+  "source_unchanged": true,
+  "runtime_code_same_as_final_package": true,
+  "package_differences": [
+    "references/network-mode.md",
+    "release-manifest.json"
+  ],
+  "acceptance_manifest_sha256": "dd8b4f7575dff0a16bcf494767e089403f18b0d01f9aa1a58b8a16f004180d7a",
+  "final_manifest_sha256": "4440dc1951300aff42e8a31eec618e2c5a14fce65de07cd47168b64d6cac5e5b"
+}

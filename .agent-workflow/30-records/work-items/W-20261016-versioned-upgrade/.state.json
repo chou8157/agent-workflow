@@ -1,0 +1,29 @@
+{
+  "id": "W-20261016-versioned-upgrade",
+  "title": "连续版本升级与原项目兼容",
+  "type": "需求",
+  "status": "completed",
+  "parent": null,
+  "created_at": "2026-10-16T15:35:13+08:00",
+  "updated_at": "2026-10-16T16:27:34+08:00",
+  "completed_at": "2026-10-16T16:27:34+08:00",
+  "blocked_reason": null,
+  "completed_at_unknown": false,
+  "activity_records": [
+    {
+      "id": "release-continuous-upgrade-20261016",
+      "date": "2026-10-16",
+      "summary": "完成连续版本升级与回滚能力并更新本机同名技能",
+      "status": "completed",
+      "evidence_refs": [
+        {
+          "path": ".agent-workflow/30-records/work-items/W-20261016-versioned-upgrade/progress/001-连续升级交付.md",
+          "sha256": "dc88b24ca78af2a6a911f896edb68893d80d5fec45e545a606155b74f8ed8d68",
+          "line_start": 7,
+          "line_end": 11,
+          "hash_scope": "lines"
+        }
+      ]
+    }
+  ]
+}

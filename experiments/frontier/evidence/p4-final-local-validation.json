@@ -1,0 +1,30 @@
+{
+  "python": "3.8.3",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+    "-m",
+    "pytest",
+    "experiments/frontier/test_node_workflow.py",
+    "-q",
+    "-k",
+    "not same_lifecycle"
+  ],
+  "duration_seconds": 54.942,
+  "returncode": 0,
+  "stdout": "........................................................................ [ 53%]\n...............................................................          [100%]\n135 passed, 5 deselected in 53.45s\n",
+  "stderr": "",
+  "source_hashes": {
+    "node_workflow.py": "484f96dbd900b69ba6fbaafdb64a08b8f1e64bdae18bb11f1165d2431c966688",
+    "test_node_workflow.py": "8ae366737cef31d447090e9dc7db9f835cb33a04e7ae212d71699ae2da8ab492",
+    "file_store.py": "9c48bf6759e98eece83edc8b8e7edc377a5863a533796465c099eae9548b24ac",
+    "sqlite_store.py": "8678cddac854642679f76f8fa40cba364b09caed46da7fd83ebc0e834f536607",
+    "log_store.py": "d1847cd7e14aef8ef64941ab28ccdeeaa4f71324d55cbbd0c7718d718545932c",
+    "service_stores.py": "707b481547bd32f1e83aff75cf2ee8169c170847f1bde5863b9bd585bac0e7bb",
+    "coordinator.py": "71ca8d70b6fdcdaae2453d5d175e30365f71e61c4fde869d9dfc05ec189971d0"
+  },
+  "source_unchanged_during_test": true,
+  "cli_calls": 121,
+  "bounded_cli_calls": 117,
+  "max_stdout_bytes": 3733,
+  "service_validation": "root owns separate five-backend lifecycle validation"
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "arguments": [
+      "local",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/nodes/root",
+      "--",
+      "create",
+      "W-p4-all",
+      "--title",
+      "五候选同口径自治"
+    ],
+    "stdout_bytes": 413,
+    "stdout_sha256": "12120cb4016886d4b5e04a098a27c90599c411e6411cec8724f53a90a5daa10e",
+    "returncode": 0,
+    "stdout": {
+      "execution": "original_local_cli",
+      "project": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/nodes/root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "已创建工作项：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/nodes/root/.agent-workflow/30-records/work-items/W-p4-all\n"
+    }
+  },
+  {
+    "arguments": [
+      "aggregate",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/nodes/root",
+      "--source-root",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/nodes"
+    ],
+    "stdout_bytes": 194,
+    "stdout_sha256": "8b1479d438702e4493ca6099f1e336313ab02089c358515d6a9cac04bfdb3560",
+    "returncode": 2,
+    "stdout": {
+      "error": "[Errno 2] No such file or directory: '/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai0/absent'",
+      "status": "failed"
+    }
+  },
+  {
+    "arguments": [
+      "local",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/nodes/root",
+      "--",
+      "create",
+      "W-p4-all",
+      "--title",
+      "五候选同口径自治"
+    ],
+    "stdout_bytes": 413,
+    "stdout_sha256": "3736fdd1196618f8eae4e37d9f840433dd920e4b681d9b2ff9fc762ff70c5979",
+    "returncode": 0,
+    "stdout": {
+      "execution": "original_local_cli",
+      "project": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/nodes/root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "已创建工作项：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/nodes/root/.agent-workflow/30-records/work-items/W-p4-all\n"
+    }
+  },
+  {
+    "arguments": [
+      "aggregate",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/nodes/root",
+      "--source-root",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/nodes"
+    ],
+    "stdout_bytes": 179,
+    "stdout_sha256": "3dcb4d567cc7ac0c228a1b98beba7e07f08551f4d54a0c9c1096c17f66c47bba",
+    "returncode": 2,
+    "stdout": {
+      "error": "关系权威不存在：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai1/absent",
+      "status": "failed"
+    }
+  },
+  {
+    "arguments": [
+      "local",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai2/nodes/root",
+      "--",
+      "create",
+      "W-p4-all",
+      "--title",
+      "五候选同口径自治"
+    ],
+    "stdout_bytes": 413,
+    "stdout_sha256": "25920c2093e4d39c75fae559b8239acbdaa5c4c5407e0d85c6dbf3a7902a8147",
+    "returncode": 0,
+    "stdout": {
+      "execution": "original_local_cli",
+      "project": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai2/nodes/root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "已创建工作项：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai2/nodes/root/.agent-workflow/30-records/work-items/W-p4-all\n"
+    }
+  },
+  {
+    "arguments": [
+      "aggregate",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai2/nodes/root",
+      "--source-root",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai2/nodes"
+    ],
+    "stdout_bytes": 76,
+    "stdout_sha256": "9485c06055acf61e18903a9097c17ed9fbb59d0d9121be8835a09656c6d4e842",
+    "returncode": 2,
+    "stdout": {
+      "error": "F-log 权威目录缺失或不是独立目录",
+      "status": "failed"
+    }
+  },
+  {
+    "arguments": [
+      "local",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai3/nodes/root",
+      "--",
+      "create",
+      "W-p4-all",
+      "--title",
+      "五候选同口径自治"
+    ],
+    "stdout_bytes": 413,
+    "stdout_sha256": "73515fce7a90f622daa0d053c5394425d048a4187a3174a30ad0a1f79ca41e99",
+    "returncode": 0,
+    "stdout": {
+      "execution": "original_local_cli",
+      "project": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai3/nodes/root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "已创建工作项：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai3/nodes/root/.agent-workflow/30-records/work-items/W-p4-all\n"
+    }
+  },
+  {
+    "arguments": [
+      "aggregate",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai3/nodes/root",
+      "--source-root",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai3/nodes"
+    ],
+    "stdout_bytes": 69,
+    "stdout_sha256": "b6b48c0a276154ae1541fa3d9bee3d51f979ea0eebda30f3f6f260f482f261f2",
+    "returncode": 2,
+    "stdout": {
+      "error": "PostgreSQL 实验关系权威不存在",
+      "status": "failed"
+    }
+  },
+  {
+    "arguments": [
+      "local",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai4/nodes/root",
+      "--",
+      "create",
+      "W-p4-all",
+      "--title",
+      "五候选同口径自治"
+    ],
+    "stdout_bytes": 413,
+    "stdout_sha256": "b53c1b2d829f55a225bf52d28571492dfbe9c8827bb8abf89fabd4cb24b084f4",
+    "returncode": 0,
+    "stdout": {
+      "execution": "original_local_cli",
+      "project": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai4/nodes/root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "已创建工作项：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai4/nodes/root/.agent-workflow/30-records/work-items/W-p4-all\n"
+    }
+  },
+  {
+    "arguments": [
+      "aggregate",
+      "--project",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai4/nodes/root",
+      "--source-root",
+      "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-42/test_same_lifecycle_and_unavai4/nodes"
+    ],
+    "stdout_bytes": 64,
+    "stdout_sha256": "885988858cc5c7291ccba7d84856845a104193f664968d3007a830b0ede840b7",
+    "returncode": 2,
+    "stdout": {
+      "error": "Neo4j 实验关系权威不存在",
+      "status": "failed"
+    }
+  }
+]

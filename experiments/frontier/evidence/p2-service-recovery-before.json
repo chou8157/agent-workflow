@@ -1,0 +1,251 @@
+{
+  "stage": "P2",
+  "created_at": "2026-10-10T10:14:37.847809+00:00",
+  "environment": {
+    "python": "3.10.10",
+    "platform": "macOS-15.0-arm64-arm-64bit"
+  },
+  "parameters": {
+    "backends": [
+      "postgresql",
+      "neo4j"
+    ],
+    "sizes": [
+      10,
+      100
+    ],
+    "shapes": [
+      "flat",
+      "balanced",
+      "chain",
+      "diamond"
+    ],
+    "repeats": 5
+  },
+  "code_sha256": {
+    "service_stores.py": "707b481547bd32f1e83aff75cf2ee8169c170847f1bde5863b9bd585bac0e7bb",
+    "service_benchmark.py": "21fb685012271f37263347ebf7bce4758f708784a2e4cb8d33668fab47e73841",
+    "test_service_stores.py": "99bf538e764ebcc69fc1d48d1d166cf991b44a679e596fff00447c96e1d28e8b",
+    "storage_common.py": "aa9afee75aff31cd327abd6d6494b7f51b75d3d784dd1abb42be9dbf6ca1a92a",
+    "file_store.py": "9c48bf6759e98eece83edc8b8e7edc377a5863a533796465c099eae9548b24ac",
+    "sqlite_store.py": "8678cddac854642679f76f8fa40cba364b09caed46da7fd83ebc0e834f536607"
+  },
+  "limitations": [
+    "只连接显式启用的本机专用实例，不代表跨主机/生产性能",
+    "本矩阵只比关系存储与后代集合，不调用模型、不统计 token",
+    "Neo4j 一致快照通过元节点锁实现，需要写事务权限并会串行化同一 registry 读取",
+    "原生查询只返回节点ID，独立报告与全快照载荷差异；未宣称两者传输内容相同",
+    "逻辑备份不代替服务原生物理备份或节点事实备份；提交确认丢失未做网络故障实测",
+    "保留所有样本；5次探索不估可靠P95，不决定赢家"
+  ],
+  "kind": "p2_service_restart_seed",
+  "registries": [
+    {
+      "backend": "postgresql",
+      "namespace": "p2_recovery_b21d92100bdd47cfaf50d1491fb910b9",
+      "snapshot": {
+        "revision": 2,
+        "nodes": [
+          {
+            "id": "n00000",
+            "locator": "committed-before-restart.json"
+          },
+          {
+            "id": "n00001",
+            "locator": "source-1.json"
+          },
+          {
+            "id": "n00002",
+            "locator": "source-2.json"
+          },
+          {
+            "id": "n00003",
+            "locator": "source-3.json"
+          }
+        ],
+        "edges": [
+          {
+            "source": "n00000",
+            "target": "n00001",
+            "kind": "contains"
+          },
+          {
+            "source": "n00000",
+            "target": "n00002",
+            "kind": "contains"
+          },
+          {
+            "source": "n00000",
+            "target": "n00003",
+            "kind": "contains"
+          },
+          {
+            "source": "n00002",
+            "target": "n00003",
+            "kind": "contains"
+          }
+        ]
+      },
+      "backup": {
+        "format": "frontier-registry-v1",
+        "snapshot": {
+          "revision": 2,
+          "nodes": [
+            {
+              "id": "n00000",
+              "locator": "committed-before-restart.json"
+            },
+            {
+              "id": "n00001",
+              "locator": "source-1.json"
+            },
+            {
+              "id": "n00002",
+              "locator": "source-2.json"
+            },
+            {
+              "id": "n00003",
+              "locator": "source-3.json"
+            }
+          ],
+          "edges": [
+            {
+              "source": "n00000",
+              "target": "n00001",
+              "kind": "contains"
+            },
+            {
+              "source": "n00000",
+              "target": "n00002",
+              "kind": "contains"
+            },
+            {
+              "source": "n00000",
+              "target": "n00003",
+              "kind": "contains"
+            },
+            {
+              "source": "n00002",
+              "target": "n00003",
+              "kind": "contains"
+            }
+          ]
+        },
+        "sha256": "09c16f7d4e51fa4e676faa0717d8eda6664025e32118659f78deff23d99a2d85"
+      },
+      "server_info": {
+        "backend": "postgresql",
+        "version": "PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+        "synchronous_commit": "on",
+        "snapshot_strategy": "repeatable_read",
+        "driver": "3.3.6"
+      }
+    },
+    {
+      "backend": "neo4j",
+      "namespace": "p2_recovery_435dbfe1fa6d4b598c1e9a6f0a85b802",
+      "snapshot": {
+        "revision": 2,
+        "nodes": [
+          {
+            "id": "n00000",
+            "locator": "committed-before-restart.json"
+          },
+          {
+            "id": "n00001",
+            "locator": "source-1.json"
+          },
+          {
+            "id": "n00002",
+            "locator": "source-2.json"
+          },
+          {
+            "id": "n00003",
+            "locator": "source-3.json"
+          }
+        ],
+        "edges": [
+          {
+            "source": "n00000",
+            "target": "n00001",
+            "kind": "contains"
+          },
+          {
+            "source": "n00000",
+            "target": "n00002",
+            "kind": "contains"
+          },
+          {
+            "source": "n00000",
+            "target": "n00003",
+            "kind": "contains"
+          },
+          {
+            "source": "n00002",
+            "target": "n00003",
+            "kind": "contains"
+          }
+        ]
+      },
+      "backup": {
+        "format": "frontier-registry-v1",
+        "snapshot": {
+          "revision": 2,
+          "nodes": [
+            {
+              "id": "n00000",
+              "locator": "committed-before-restart.json"
+            },
+            {
+              "id": "n00001",
+              "locator": "source-1.json"
+            },
+            {
+              "id": "n00002",
+              "locator": "source-2.json"
+            },
+            {
+              "id": "n00003",
+              "locator": "source-3.json"
+            }
+          ],
+          "edges": [
+            {
+              "source": "n00000",
+              "target": "n00001",
+              "kind": "contains"
+            },
+            {
+              "source": "n00000",
+              "target": "n00002",
+              "kind": "contains"
+            },
+            {
+              "source": "n00000",
+              "target": "n00003",
+              "kind": "contains"
+            },
+            {
+              "source": "n00002",
+              "target": "n00003",
+              "kind": "contains"
+            }
+          ]
+        },
+        "sha256": "09c16f7d4e51fa4e676faa0717d8eda6664025e32118659f78deff23d99a2d85"
+      },
+      "server_info": {
+        "backend": "neo4j",
+        "name": "Neo4j Kernel",
+        "version": [
+          "5.26.31"
+        ],
+        "edition": "community",
+        "driver": "5.28.6",
+        "snapshot_strategy": "registry_node_lock_requires_write_transaction"
+      }
+    }
+  ],
+  "note": "仅播种已提交数据；需要外部实际重启专用服务后再执行 verify，播种本身不证明重启恢复",
+  "code_unchanged_during_run": true
+}

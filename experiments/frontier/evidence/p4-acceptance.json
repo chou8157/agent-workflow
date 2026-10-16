@@ -1,0 +1,602 @@
+{
+  "stage": "P4",
+  "scope": "真实文档副本上的可选节点包装层；不是真实 Agent",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "experiments/frontier/test_node_workflow.py",
+        "-q",
+        "--tb=short",
+        "--junitxml=/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/p4-final-oj0h9tsj/tests.xml"
+      ],
+      "returncode": 0,
+      "stdout": "................................                                         [100%]\n- generated xml file: /var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/p4-final-oj0h9tsj/tests.xml -\n32 passed in 8.41s\n",
+      "stderr": "",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "32",
+        "time": "8.417",
+        "timestamp": "2026-10-10T18:05:39.095684+08:00",
+        "hostname": "ChiXin-MacBook-Pro.local"
+      },
+      "cases": [
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-root]",
+          "time": "0.716",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-middle]",
+          "time": "0.591",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-leaf]",
+          "time": "0.594",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-root]",
+          "time": "0.571",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-middle]",
+          "time": "0.638",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-leaf]",
+          "time": "0.576",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-root]",
+          "time": "0.593",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-middle]",
+          "time": "0.603",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-leaf]",
+          "time": "0.584",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-root]",
+          "time": "0.548",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-middle]",
+          "time": "0.574",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-leaf]",
+          "time": "0.578",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_fresh_unenabled_identity_needs_no_relationship_authority",
+          "time": "0.137",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_three_real_work_items_have_fixed_identities_and_completion_semantics",
+          "time": "0.043",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_evidence_links_hashes_lines_and_observation_time_match_original_documents",
+          "time": "0.034",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_adversarial_markdown_is_data_and_does_not_add_completion_or_read_scope",
+          "time": "0.027",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_missing_state_is_unknown_partial_not_inferred_from_markdown",
+          "time": "0.033",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_denied_leaf_is_gap_and_not_successful_empty",
+          "time": "0.030",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_exiting_middle_and_restoring_membership_is_reversible",
+          "time": "0.041",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_exit_from_corrupted_network_is_explicitly_partial_and_local_remains_usable",
+          "time": "0.158",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_keeps_identity_and_fact_bytes_and_can_move_back",
+          "time": "0.044",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_before_commit_failure_restores_original_location",
+          "time": "0.037",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_rechecks_commit_instead_of_rolling_back_success",
+          "time": "0.038",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_uncertain_relocation_reports_location_and_supports_explicit_reconciliation",
+          "time": "0.170",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_reconciliation_rejects_competing_existing_identity_copy",
+          "time": "0.039",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_is_not_an_active_authority_and_restore_verifies_every_file",
+          "time": "0.051",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[extra]",
+          "time": "0.037",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[content]",
+          "time": "0.038",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[symlink]",
+          "time": "0.036",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_document_symlink_escape_is_a_coverage_gap",
+          "time": "0.034",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_write_rejects_workflow_symlink_before_invoking_stable_cli",
+          "time": "0.027",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_public_cli_reports_read_partial_and_unavailable_network",
+          "time": "0.044",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "command": [
+        "python3.10",
+        "-m",
+        "pytest",
+        "experiments/frontier/test_node_workflow.py",
+        "-q",
+        "--tb=short",
+        "--junitxml=/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/p4-final-zbh5r3w7/tests.xml"
+      ],
+      "returncode": 0,
+      "stdout": "................................                                         [100%]\n- generated xml file: /var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/p4-final-zbh5r3w7/tests.xml -\n32 passed in 7.57s\n",
+      "stderr": "",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "32",
+        "time": "7.579",
+        "timestamp": "2026-10-10T18:05:48.202212+08:00",
+        "hostname": "ChiXin-MacBook-Pro.local"
+      },
+      "cases": [
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-root]",
+          "time": "0.599",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-middle]",
+          "time": "0.530",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disabled-leaf]",
+          "time": "0.549",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-root]",
+          "time": "0.526",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-middle]",
+          "time": "0.502",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[corrupted-leaf]",
+          "time": "0.495",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-root]",
+          "time": "0.503",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-middle]",
+          "time": "0.501",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[disconnected-leaf]",
+          "time": "0.515",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-root]",
+          "time": "0.527",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-middle]",
+          "time": "0.511",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_cli_reads_and_writes_each_role_without_network_dependency[exited-leaf]",
+          "time": "0.515",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_fresh_unenabled_identity_needs_no_relationship_authority",
+          "time": "0.128",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_three_real_work_items_have_fixed_identities_and_completion_semantics",
+          "time": "0.048",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_evidence_links_hashes_lines_and_observation_time_match_original_documents",
+          "time": "0.039",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_adversarial_markdown_is_data_and_does_not_add_completion_or_read_scope",
+          "time": "0.030",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_missing_state_is_unknown_partial_not_inferred_from_markdown",
+          "time": "0.041",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_denied_leaf_is_gap_and_not_successful_empty",
+          "time": "0.035",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_exiting_middle_and_restoring_membership_is_reversible",
+          "time": "0.054",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_exit_from_corrupted_network_is_explicitly_partial_and_local_remains_usable",
+          "time": "0.141",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_keeps_identity_and_fact_bytes_and_can_move_back",
+          "time": "0.053",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_before_commit_failure_restores_original_location",
+          "time": "0.044",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_relocation_rechecks_commit_instead_of_rolling_back_success",
+          "time": "0.046",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_uncertain_relocation_reports_location_and_supports_explicit_reconciliation",
+          "time": "0.164",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_reconciliation_rejects_competing_existing_identity_copy",
+          "time": "0.046",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_is_not_an_active_authority_and_restore_verifies_every_file",
+          "time": "0.061",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[extra]",
+          "time": "0.036",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[content]",
+          "time": "0.039",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_backup_tampering_is_rejected[symlink]",
+          "time": "0.037",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_document_symlink_escape_is_a_coverage_gap",
+          "time": "0.041",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_local_write_rejects_workflow_symlink_before_invoking_stable_cli",
+          "time": "0.029",
+          "failure": null
+        },
+        {
+          "classname": "experiments.frontier.test_node_workflow",
+          "name": "test_public_cli_reports_read_partial_and_unavailable_network",
+          "time": "0.051",
+          "failure": null
+        }
+      ]
+    }
+  ],
+  "original_source_checks": [
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/.state.json",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/changes/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/current-status.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/001-status-sync-analysis.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/002-self-hosted-status-trial.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/003-document-governance-synthesis.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/004-document-delivery-governance-spec.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/005-delivery-prototype-implementation.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/006-governance-completion.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/007-self-hosted-delivery-trial.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/008-capability-growth-completion.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/009-capability-self-hosted-trial.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/010-auto-finalize-fix.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/011-release-surface-consistency.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/finalize-c13c702f8bb40806.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/work-item.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/.state.json",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/changes/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/current-status.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/001-实现与验证.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/002-审查修复.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/003-安装版同步.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/work-item.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/.state.json",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/changes/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/current-status.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/001-实现与验证.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/work-item.md",
+      "unchanged": true
+    }
+  ],
+  "original_sources_unchanged": true,
+  "source_sha256": {
+    "node_workflow.py": "c3d8dade0763b60dd72471d87f9f1528b7a971a503e342693d5c61688a1d07e0",
+    "test_node_workflow.py": "2b1e59f63dce5499a90c39b8416a0bf4e093c820ff61a79ff9190196085d7c63",
+    "coordinator.py": "71ca8d70b6fdcdaae2453d5d175e30365f71e61c4fde869d9dfc05ec189971d0",
+    "file_store.py": "9c48bf6759e98eece83edc8b8e7edc377a5863a533796465c099eae9548b24ac",
+    "storage_common.py": "aa9afee75aff31cd327abd6d6494b7f51b75d3d784dd1abb42be9dbf6ca1a92a"
+  },
+  "stable_task_cli_sha256": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+  "created_at": "2026-10-10T10:05:56.082641+00:00"
+}

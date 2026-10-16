@@ -1,0 +1,111 @@
+{
+  "started_at": "2026-10-15T18:31:19.452375+08:00",
+  "scope": "frontier_0.1.0_release_candidate",
+  "source_sha256": {
+    "agent-workflow/scripts/task_context.py": "612344bf99dad7c395401ebf9f77f16c5778633a21aece11c8c25a2c6276ab76",
+    "experiments/frontier/activity_closeout.py": "8e71157c82e4bbfac3a17c433b6db1f5c4745f74361b6028ef7eba129375c170",
+    "experiments/frontier/node_workflow.py": "a892ae29ed7e27ff21d650f781908c4a78396059e5818f620067e8225c44bcf2",
+    "experiments/frontier/light_cli.py": "34f2863ea35a5845c7c2cdf65a4a67ab137f6961effeeb14b86384ac05b941e4",
+    "experiments/frontier/light_report.py": "5d642b7ace006980ff1bb626f0061204281db222c412a690d670c555860b7832",
+    "experiments/frontier/mvp_light.py": "f04c6bdbf8462e54136df93b4504c90c4567a2b73acb2df6b076cc1d652646c3",
+    "experiments/frontier/build_release.py": "f2678bf7861ff153823222ef62c8d64882ae1421bc9be445b3bb5fea0a902a2c",
+    "experiments/frontier/real_project_trial.py": "5a4eeb759624ad88f24e4b0610efafb6262f03187f0f1b488c40fd25585b6426",
+    "experiments/frontier/skill/SKILL.md": "7444e17fdd001a04084b4753c6daaa895d3e62f04e0460ee7aa287da9b68142e",
+    "experiments/frontier/skill/references/network-mode.md": "dff2edfb9f4c7952af06828af56165a0b4b8a116f7422151f17b22986897e281",
+    "experiments/frontier/skill/agents/openai.yaml": "1862f63760ec3db71a970f7e0087cf447d7722498bf653aea7f3f572f911ae04",
+    "experiments/frontier/test_node_workflow.py": "0c82eaf57526fc17c0ab60c6b33d087c6c1329280ca6d3d54438ebe62c85aeb8"
+  },
+  "previous_attempts": [
+    {
+      "started_at": "2026-10-15T18:28:30.769744+08:00",
+      "scope": "frontier_0.1.0_release_candidate",
+      "source_sha256": {
+        "agent-workflow/scripts/task_context.py": "612344bf99dad7c395401ebf9f77f16c5778633a21aece11c8c25a2c6276ab76",
+        "experiments/frontier/activity_closeout.py": "8e71157c82e4bbfac3a17c433b6db1f5c4745f74361b6028ef7eba129375c170",
+        "experiments/frontier/node_workflow.py": "a892ae29ed7e27ff21d650f781908c4a78396059e5818f620067e8225c44bcf2",
+        "experiments/frontier/light_cli.py": "34f2863ea35a5845c7c2cdf65a4a67ab137f6961effeeb14b86384ac05b941e4",
+        "experiments/frontier/light_report.py": "5d642b7ace006980ff1bb626f0061204281db222c412a690d670c555860b7832",
+        "experiments/frontier/mvp_light.py": "f04c6bdbf8462e54136df93b4504c90c4567a2b73acb2df6b076cc1d652646c3",
+        "experiments/frontier/build_release.py": "f2678bf7861ff153823222ef62c8d64882ae1421bc9be445b3bb5fea0a902a2c",
+        "experiments/frontier/real_project_trial.py": "5a4eeb759624ad88f24e4b0610efafb6262f03187f0f1b488c40fd25585b6426",
+        "experiments/frontier/skill/SKILL.md": "7444e17fdd001a04084b4753c6daaa895d3e62f04e0460ee7aa287da9b68142e",
+        "experiments/frontier/skill/references/network-mode.md": "dff2edfb9f4c7952af06828af56165a0b4b8a116f7422151f17b22986897e281",
+        "experiments/frontier/skill/agents/openai.yaml": "1862f63760ec3db71a970f7e0087cf447d7722498bf653aea7f3f572f911ae04"
+      },
+      "checks": [
+        {
+          "command": [
+            "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+            "-m",
+            "pytest",
+            "experiments/frontier",
+            "-q"
+          ],
+          "returncode": 1,
+          "stdout": "........................................................................ [ 12%]\n........................................................................ [ 25%]\n........................................................................ [ 38%]\n........................................................................ [ 51%]\n........................................................................ [ 63%]\n....................FFF...ss............................................ [ 76%]\n.............................................................sssssssssss [ 89%]\nsssssssssssssssssssssssss..................................              [100%]\n=================================== FAILURES ===================================\n_______ test_mutation_during_read_is_explicit_and_never_published[file] ________\n\nnetwork = (PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_durin...3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e0/control/registry.file'))\ntmp_path = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7faf503eb6a0>\n\n    def test_mutation_during_read_is_explicit_and_never_published(network, tmp_path, monkeypatch):\n        nodes, _ = network\n        project = nodes / \"leaf\"\n        document = project / workflow.ITEMS / WORK_ITEMS[\"leaf\"] / \"current-status.md\"\n        original = workflow.inventory\n        calls = []\n    \n        def change_before_final_check(path):\n            calls.append(True)\n            if len(calls) == 2:\n                document.write_text(\"并发变化\", encoding=\"utf-8\")\n            return original(path)\n    \n        monkeypatch.setattr(workflow, \"inventory\", change_before_final_check)\n        with pytest.raises(workflow.StaleRun):\n>           workflow.read_node(project)\n\nexperiments/frontier/test_node_workflow.py:608: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproject = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e0/nodes/leaf')\nexpected_node_id = None, standalone = False\n\n    def read_node(project, expected_node_id=None, standalone=False):\n        project = Path(project).resolve()\n        if (project / NODE_BACKUP).exists():\n            raise NodeError(\"备份不可作为活动事实节点，请先显式恢复\")\n>       guard, all_sources, inventory_gaps = inventory(project, include_identity=not standalone)\nE       TypeError: change_before_final_check() got an unexpected keyword argument 'include_identity'\n\nexperiments/frontier/node_workflow.py:305: TypeError\n______ test_mutation_during_read_is_explicit_and_never_published[sqlite] _______\n\nnetwork = (PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_durin...kj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e1/control/registry.sqlite'))\ntmp_path = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7faf3063c6d0>\n\n    def test_mutation_during_read_is_explicit_and_never_published(network, tmp_path, monkeypatch):\n        nodes, _ = network\n        project = nodes / \"leaf\"\n        document = project / workflow.ITEMS / WORK_ITEMS[\"leaf\"] / \"current-status.md\"\n        original = workflow.inventory\n        calls = []\n    \n        def change_before_final_check(path):\n            calls.append(True)\n            if len(calls) == 2:\n                document.write_text(\"并发变化\", encoding=\"utf-8\")\n            return original(path)\n    \n        monkeypatch.setattr(workflow, \"inventory\", change_before_final_check)\n        with pytest.raises(workflow.StaleRun):\n>           workflow.read_node(project)\n\nexperiments/frontier/test_node_workflow.py:608: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproject = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e1/nodes/leaf')\nexpected_node_id = None, standalone = False\n\n    def read_node(project, expected_node_id=None, standalone=False):\n        project = Path(project).resolve()\n        if (project / NODE_BACKUP).exists():\n            raise NodeError(\"备份不可作为活动事实节点，请先显式恢复\")\n>       guard, all_sources, inventory_gaps = inventory(project, include_identity=not standalone)\nE       TypeError: change_before_final_check() got an unexpected keyword argument 'include_identity'\n\nexperiments/frontier/node_workflow.py:305: TypeError\n________ test_mutation_during_read_is_explicit_and_never_published[log] ________\n\nnetwork = (PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_durin.../3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e2/control/registry.log'))\ntmp_path = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e2')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7faf503dd460>\n\n    def test_mutation_during_read_is_explicit_and_never_published(network, tmp_path, monkeypatch):\n        nodes, _ = network\n        project = nodes / \"leaf\"\n        document = project / workflow.ITEMS / WORK_ITEMS[\"leaf\"] / \"current-status.md\"\n        original = workflow.inventory\n        calls = []\n    \n        def change_before_final_check(path):\n            calls.append(True)\n            if len(calls) == 2:\n                document.write_text(\"并发变化\", encoding=\"utf-8\")\n            return original(path)\n    \n        monkeypatch.setattr(workflow, \"inventory\", change_before_final_check)\n        with pytest.raises(workflow.StaleRun):\n>           workflow.read_node(project)\n\nexperiments/frontier/test_node_workflow.py:608: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproject = PosixPath('/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/pytest-of-yizhoucp/pytest-135/test_mutation_during_read_is_e2/nodes/leaf')\nexpected_node_id = None, standalone = False\n\n    def read_node(project, expected_node_id=None, standalone=False):\n        project = Path(project).resolve()\n        if (project / NODE_BACKUP).exists():\n            raise NodeError(\"备份不可作为活动事实节点，请先显式恢复\")\n>       guard, all_sources, inventory_gaps = inventory(project, include_identity=not standalone)\nE       TypeError: change_before_final_check() got an unexpected keyword argument 'include_identity'\n\nexperiments/frontier/node_workflow.py:305: TypeError\n=========================== short test summary info ============================\nFAILED experiments/frontier/test_node_workflow.py::test_mutation_during_read_is_explicit_and_never_published[file]\nFAILED experiments/frontier/test_node_workflow.py::test_mutation_during_read_is_explicit_and_never_published[sqlite]\nFAILED experiments/frontier/test_node_workflow.py::test_mutation_during_read_is_explicit_and_never_published[log]\n3 failed, 522 passed, 38 skipped in 107.19s (0:01:47)\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "experiments/frontier",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "........................................................................ [ 12%]\n........................................................................ [ 25%]\n........................................................................ [ 38%]\n........................................................................ [ 50%]\n........................................................................ [ 63%]\n.............................ss......................................... [ 76%]\n................................................................ssssssss [ 89%]\nssssssssssssssssssssssssssss..................................           [100%]\n528 passed, 38 skipped in 106.05s (0:01:46)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": ".............................                                            [100%]\n29 passed in 0.54s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "py_compile",
+        "agent-workflow/scripts/check_workflow.py",
+        "agent-workflow/scripts/scaffold_workflow.py",
+        "agent-workflow/scripts/task_context.py",
+        "experiments/frontier/activity_closeout.py",
+        "experiments/frontier/node_workflow.py",
+        "experiments/frontier/light_cli.py",
+        "experiments/frontier/light_report.py",
+        "experiments/frontier/mvp_light.py",
+        "experiments/frontier/build_release.py",
+        "experiments/frontier/real_project_trial.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "agent-workflow/scripts/check_workflow.py",
+        ".",
+        "--require-work-items",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "finished_at": "2026-10-15T18:33:09.365336+08:00",
+  "source_unchanged_during_checks": true
+}

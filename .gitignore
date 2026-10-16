@@ -16,3 +16,7 @@ ENV/
 
 # Regenerated external delivery drafts
 .agent-workflow/30-records/delivery/staging/*
+
+# Runtime lock files
+*.state.json.lock
+experiments/frontier/fixtures/**/*.lock

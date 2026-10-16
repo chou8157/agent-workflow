@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.242" timestamp="2026-10-10T15:50:29.465651+08:00" hostname="ChiXin-MacBook-Pro.local"><testcase classname="experiments.frontier.test_coordinator" name="test_darwin_post_read_path_change_keeps_actual_byte_count[central]" time="0.008"><failure message="assert 0 == 177">experiments/frontier/test_coordinator.py:360: in test_darwin_post_read_path_change_keeps_actual_byte_count
+    assert result["metrics"]["source_bytes_read"] == expected_bytes
+E   assert 0 == 177</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_darwin_post_read_path_change_keeps_actual_byte_count[hierarchical]" time="0.003"><failure message="assert 0 == 177">experiments/frontier/test_coordinator.py:360: in test_darwin_post_read_path_change_keeps_actual_byte_count
+    assert result["metrics"]["source_bytes_read"] == expected_bytes
+E   assert 0 == 177</failure></testcase></testsuite></testsuites>

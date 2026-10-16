@@ -1,0 +1,7 @@
+interface:
+  display_name: "智能体工作流"
+  short_description: "持续升级已有项目工作流，保留本地事实并按需汇总多项目活动"
+  default_prompt: "使用 $agent-workflow 管理当前项目；已有工作流按需增量升级，保留原记录。"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "test_command": "env PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' python3 -m pytest experiments/frontier/test_p2_local.py -q",
+  "test_exit_code": 0,
+  "test_actual_output": "..............                                                           [100%]\n14 passed in 2.53s\n",
+  "experiment_command": "env PYTHONDONTWRITEBYTECODE=1 python3 experiments/frontier/p2_local.py --output experiments/frontier/evidence/p2-local-20261010-v2.json",
+  "experiment_exit_code": 0,
+  "active_result": "p2-local-20261010-v2.json",
+  "active_fixture_root": "/private/tmp/frontier-p2-local-n8teurc_",
+  "previous_evidence": [
+    "p2-local-test-before-fix.json",
+    "p2-local-20261010.json"
+  ],
+  "previous_result_status": "首轮性能数据保留供追溯。v2 去除 F 查询包装层不必要的深拷贝后重跑完整矩阵；选型使用 v2。",
+  "scope": "本地 P2 原型；测试未修改既有 F/S 源码，不代表产品集成、系统断电或跨机器事务验收"
+}

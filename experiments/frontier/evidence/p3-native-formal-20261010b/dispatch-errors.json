@@ -1,0 +1,18 @@
+[
+  {
+    "observed_at": "2026-10-10T11:19:09.585184+00:00",
+    "call_id": "p3b20261010_h_04_r2_side",
+    "error": "agent thread limit reached",
+    "model_started": false,
+    "action": "keep_same_prepared_input_and_wait_for_actual_slot",
+    "other_agent_status": "/root/baseline_audit pending_init"
+  },
+  {
+    "observed_at": "2026-10-10T11:21:49.506717+00:00",
+    "call_id": "p3b20261010_h_04_r3_side",
+    "error": "agent thread limit reached",
+    "model_started": false,
+    "action": "continue_single_worker_after_second_slot_rejected_again",
+    "other_agent_status": "/root/baseline_audit pending_init after root interrupt"
+  }
+]

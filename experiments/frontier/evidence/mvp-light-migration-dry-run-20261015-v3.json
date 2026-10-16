@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-10-15T06:50:53.096419+00:00",
+  "scope": "三个原项目的工作项目录只读盘点；没有复制后迁移，也没有向原项目写入",
+  "source_unchanged": true,
+  "automatic_migration_performed": false,
+  "candidate_semantics": "日期位置，不是已确认业务活动；不同文档同日位置未合并成事件",
+  "business_week_ready": false,
+  "scan_limits": {
+    "file_bytes": 1048576,
+    "total_bytes": 16777216,
+    "files": 1000,
+    "directory_entries": 2000,
+    "date_locations": 2000,
+    "issues": 200
+  },
+  "summary": [
+    {
+      "project": "agent-workflow",
+      "scan_status": "full",
+      "work_item_count": 3,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "candidate_date_locations": 10,
+      "ignored_status_date_locations": 0,
+      "legacy_unmigrated_work_items": [],
+      "source_manifest_before": {
+        "file_count": 38,
+        "sha256": "2d0b7b2466efab89a671412da279affbe1174d4c06a12a0fc80f4e07af3b8bc1"
+      },
+      "source_manifest_after": {
+        "file_count": 38,
+        "sha256": "2d0b7b2466efab89a671412da279affbe1174d4c06a12a0fc80f4e07af3b8bc1"
+      },
+      "read_metrics": {
+        "files_attempted": 31,
+        "bytes_read": 37351
+      }
+    },
+    {
+      "project": "support-service",
+      "scan_status": "full",
+      "work_item_count": 20,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "candidate_date_locations": 270,
+      "ignored_status_date_locations": 0,
+      "legacy_unmigrated_work_items": [],
+      "source_manifest_before": {
+        "file_count": 615,
+        "sha256": "1af32e62ea070c6b30a86a3f229632de07be0916373bbf39f6cc317e6f9e19b1"
+      },
+      "source_manifest_after": {
+        "file_count": 615,
+        "sha256": "1af32e62ea070c6b30a86a3f229632de07be0916373bbf39f6cc317e6f9e19b1"
+      },
+      "read_metrics": {
+        "files_attempted": 355,
+        "bytes_read": 1266616
+      }
+    },
+    {
+      "project": "feedbackserver",
+      "scan_status": "partial",
+      "work_item_count": 2,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "candidate_date_locations": 20,
+      "ignored_status_date_locations": 12,
+      "legacy_unmigrated_work_items": [
+        "W-20260723-sync-feedback-observability",
+        "W-20260910-customer-ai-dify"
+      ],
+      "source_manifest_before": {
+        "file_count": 33,
+        "sha256": "e546cc87e55f8f4b9bd9edb74e7449275b591f9a8e6c54698aaef4a2d67f5c69"
+      },
+      "source_manifest_after": {
+        "file_count": 33,
+        "sha256": "e546cc87e55f8f4b9bd9edb74e7449275b591f9a8e6c54698aaef4a2d67f5c69"
+      },
+      "read_metrics": {
+        "files_attempted": 21,
+        "bytes_read": 116431
+      }
+    }
+  ]
+}

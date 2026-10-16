@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "test_command": "env PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' python3 -m pytest experiments/frontier/test_log_store.py -q",
+  "test_exit_code": 0,
+  "test_actual_output": "..................                                                       [100%]\n18 passed in 1.51s\n",
+  "benchmark_command": "env PYTHONDONTWRITEBYTECODE=1 python3 experiments/frontier/file_variant_benchmark.py --repetitions 6 --output experiments/frontier/evidence/p2-file-variant-20261010-v2.json",
+  "benchmark_exit_code": 0,
+  "active_evidence": "p2-file-variant-20261010-v2.json",
+  "active_fixture_root": "/private/tmp/frontier-flog-0p_gqd6k",
+  "previous_evidence": "p2-file-variant-20261010.json",
+  "previous_evidence_status": "5 轮初测保留。v2 使用 6 轮以完整平衡三候选顺序；1000 节点样本仍有明显波动，两轮数据均不得包装为稳定 SLO。",
+  "confirmed_counts": {
+    "candidate_size_profile_cells": 18,
+    "independent_rounds": 108,
+    "writes": 1134,
+    "native_reads": 1080,
+    "reopens": 108,
+    "cas_processes": 16,
+    "actual_sigkills": 3,
+    "committed_corruption_cases": 4
+  },
+  "scope": "独立 F-log 原型与本地比较；没有修改 F/S 或稳定产品，未执行系统断电测试，不提前选赢家"
+}

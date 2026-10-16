@@ -1,0 +1,229 @@
+{
+  "p3_files_checked": 31,
+  "p3_mismatches": [],
+  "p4_checks": [
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/.state.json",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/.state.json",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/changes/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/changes/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/current-status.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/current-status.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/001-status-sync-analysis.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/001-status-sync-analysis.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/002-self-hosted-status-trial.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/002-self-hosted-status-trial.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/003-document-governance-synthesis.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/003-document-governance-synthesis.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/004-document-delivery-governance-spec.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/004-document-delivery-governance-spec.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/005-delivery-prototype-implementation.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/005-delivery-prototype-implementation.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/006-governance-completion.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/006-governance-completion.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/007-self-hosted-delivery-trial.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/007-self-hosted-delivery-trial.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/008-capability-growth-completion.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/008-capability-growth-completion.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/009-capability-self-hosted-trial.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/009-capability-self-hosted-trial.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/010-auto-finalize-fix.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/010-auto-finalize-fix.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/011-release-surface-consistency.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/011-release-surface-consistency.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/finalize-c13c702f8bb40806.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/progress/finalize-c13c702f8bb40806.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/work-item.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/work-item.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/.state.json",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/.state.json",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/changes/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/changes/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/current-status.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/current-status.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/001-实现与验证.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/001-实现与验证.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/002-审查修复.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/002-审查修复.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/003-安装版同步.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/003-安装版同步.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/progress/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/work-item.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/work-item.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/.state.json",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/.state.json",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/changes/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/changes/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/current-status.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/current-status.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/001-实现与验证.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/001-实现与验证.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/README.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/progress/README.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+      "copy_matches": true
+    },
+    {
+      "original": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/work-item.md",
+      "original_matches": true,
+      "copy": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/work-item.md",
+      "copy_matches": true
+    }
+  ],
+  "passed": true
+}

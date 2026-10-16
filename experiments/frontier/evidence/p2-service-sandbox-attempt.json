@@ -1,0 +1,19 @@
+{
+  "stage": "P2",
+  "kind": "tool_result_summary",
+  "date": "2026-10-10",
+  "classification": "environment_permission_failure",
+  "operation": "test_service_stores.py with both dedicated services configured",
+  "sandbox_attempt": {
+    "exit_code": 1,
+    "pytest_summary": "36 failed, 8 passed, 36 errors in 7.59s",
+    "postgresql_error_excerpt": "connection to server at 127.0.0.1, port 15432 failed: Operation not permitted",
+    "neo4j_error_excerpt": "Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 17687)) (reason [Errno 1] Operation not permitted)",
+    "note": "错误发生在沙箱禁止 TCP 连接；失败与 teardown errors 不代表数据库契约失败。此文件记录工具输出摘要，未声称完整原始 stdout。"
+  },
+  "unsandboxed_retry": {
+    "exit_code": 0,
+    "pytest_summary": "44 passed in 20.42s",
+    "note": "同一实现连接实际专用服务通过；正式矩阵另存带代码指纹和完整脱敏 pytest 输出的证据。"
+  }
+}

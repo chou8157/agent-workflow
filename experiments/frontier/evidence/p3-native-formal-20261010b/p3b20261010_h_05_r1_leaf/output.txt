@@ -1,0 +1,1 @@
+{"schema_version":1,"case_id":"05-unavailable","status":"partial","registry":{"requested":5,"observed":5,"source_sha256":"5fe8a03776abb4661897686d8764a7c8b6e23a6bc4970e1f127b3b3f83f5b1af"},"coverage":{"expected":["leaf"],"succeeded":[],"failed":{"leaf":"unreachable"},"skipped":{}},"facts":[],"gaps":[{"node_id":"leaf","reason":"unreachable"}]}

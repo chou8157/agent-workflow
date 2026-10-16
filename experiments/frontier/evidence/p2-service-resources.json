@@ -1,0 +1,130 @@
+{
+  "stage": "P2",
+  "kind": "post_benchmark_resource_snapshot",
+  "created_at": "2026-10-10T10:33:24.182879+00:00",
+  "containers": [
+    {
+      "backend": "postgresql",
+      "container_id": "127b1982476167fe31a3b9d63327faae23e1b9a7e171d6328cf8e38264de1d15",
+      "image_id": "sha256:ca0bd484cb98bf4b24eb1010e73fb3fcbd6714d240fbc1a10eea5b7dbecb641d",
+      "image_size_bytes": 158931123,
+      "architecture": "arm64",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "cpu_shares": 0,
+      "shm_size_bytes": 67108864,
+      "restart_policy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "15432"
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "b34fb2244a856b4ca887b148ef6b911221ddd66922507fd0a346c0e8e2867f8c",
+          "Source": "/var/lib/docker/volumes/b34fb2244a856b4ca887b148ef6b911221ddd66922507fd0a346c0e8e2867f8c/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "neo4j_memory_environment": {}
+    },
+    {
+      "backend": "neo4j",
+      "container_id": "bc89127f094d8cb16a7350b3a8d9f7cad4850fa93baa71f2a1f660eea7745c35",
+      "image_id": "sha256:c7d25c0eeebfe125718d58b72ed5d663c85d0479047733845eb2237c67ce8069",
+      "image_size_bytes": 361998364,
+      "architecture": "arm64",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "cpu_shares": 0,
+      "shm_size_bytes": 67108864,
+      "restart_policy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "ports": {
+        "7474/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "17474"
+          }
+        ],
+        "7687/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "17687"
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "c75cdde04d2b140df98b4dde997e5f7cb632b2bd5407e0653a66cda0f2d8305d",
+          "Source": "/var/lib/docker/volumes/c75cdde04d2b140df98b4dde997e5f7cb632b2bd5407e0653a66cda0f2d8305d/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "5092a283a5d3e155e1201c8eab50c69d593f28ca3fa9bdaa8736e769f4876f47",
+          "Source": "/var/lib/docker/volumes/5092a283a5d3e155e1201c8eab50c69d593f28ca3fa9bdaa8736e769f4876f47/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "neo4j_memory_environment": {
+        "NEO4J_server_memory_heap_initial__size": "256m",
+        "NEO4J_server_memory_heap_max__size": "512m",
+        "NEO4J_server_memory_pagecache_size": "256m"
+      }
+    }
+  ],
+  "docker_stats": [
+    {
+      "BlockIO": "0B / 249MB",
+      "CPUPerc": "0.16%",
+      "Container": "127b1982476167fe31a3b9d63327faae23e1b9a7e171d6328cf8e38264de1d15",
+      "ID": "127b19824761",
+      "MemPerc": "0.69%",
+      "MemUsage": "55.06MiB / 7.75GiB",
+      "Name": "frontier-pg-20261010",
+      "NetIO": "35.2MB / 36.7MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "766kB / 181MB",
+      "CPUPerc": "1.39%",
+      "Container": "bc89127f094d8cb16a7350b3a8d9f7cad4850fa93baa71f2a1f660eea7745c35",
+      "ID": "bc89127f094d",
+      "MemPerc": "12.11%",
+      "MemUsage": "961.1MiB / 7.75GiB",
+      "Name": "frontier-neo4j-20261010",
+      "NetIO": "12.3MB / 26.5MB",
+      "PIDs": "88"
+    }
+  ],
+  "limitations": [
+    "此处是正式矩阵结束后的单次资源快照，不是峰值、空载基线或随负载变化曲线。",
+    "Memory/NanoCpus=0 表示无单容器显式限制，不表示无限主机资源。",
+    "镜像大小为 Docker image inspect 的逻辑镜像大小，不等同新增独占磁盘用量或实际内存。",
+    "Docker Desktop VM 自身 CPU/内存限制未在此采集。",
+    "只采集 Neo4j 内存相关环境配置，不导出认证配置。"
+  ]
+}

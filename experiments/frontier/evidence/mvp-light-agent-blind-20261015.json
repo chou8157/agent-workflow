@@ -1,0 +1,222 @@
+{
+  "correction": "原始 final 及当前评分以 audited 文件为准。旧 fact_package 是事后构造，不是已核实输入字节；v3 重建修改了 e/f 文本及 f 的字段，1/2 结论作废。保留旧内容用于追溯。",
+  "evidence_status": "superseded_by_raw_audit",
+  "experiment": "mvp-light-agent-blind",
+  "fact_package": {
+    "facts": [
+      {
+        "completed_at": "2026-10-15T09:00:00+08:00",
+        "completed_at_status": "known",
+        "fact_ref": "alpha/W-alpha",
+        "status": "completed",
+        "title": "完成节点自治验证"
+      },
+      {
+        "completed_at": null,
+        "completed_at_status": "unknown",
+        "fact_ref": "beta/W-beta",
+        "status": "in_progress",
+        "title": "子节点聚合验证"
+      },
+      {
+        "completed_at": null,
+        "completed_at_status": "unknown",
+        "fact_ref": "gamma/W-gamma",
+        "status": "completed",
+        "title": "历史资料待整理"
+      }
+    ],
+    "rules": [
+      "只能使用 facts 中的字段，不得补充日期或完成结论",
+      "每个 sections.fact_refs 必须在 claims 中逐项以 fact_ref 声明",
+      "无法覆盖的事实必须进入 omitted"
+    ],
+    "schema_version": 1
+  },
+  "fact_package_sha256": "609b35f8654890f50688f2239ebf59f26e54606179e1a06f179b4922eae8a8ac",
+  "observed_at": "2026-10-15",
+  "runs": [
+    {
+      "agent_id": "blind_agent_a",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 事实声明引用未知事实：None",
+        "text_semantics_verified": false
+      },
+      "raw_response": {
+        "omitted": [],
+        "sections": [
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "完成节点自治验证"
+              },
+              {
+                "field": "status",
+                "value": "completed"
+              },
+              {
+                "field": "completed_at",
+                "value": "2026-10-15T09:00:00+08:00"
+              },
+              {
+                "field": "completed_at_status",
+                "value": "known"
+              }
+            ],
+            "fact_refs": [
+              "alpha/W-alpha"
+            ],
+            "text": "完成节点自治验证。"
+          },
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "子节点聚合验证"
+              },
+              {
+                "field": "status",
+                "value": "in_progress"
+              },
+              {
+                "field": "completed_at",
+                "value": null
+              },
+              {
+                "field": "completed_at_status",
+                "value": "unknown"
+              }
+            ],
+            "fact_refs": [
+              "beta/W-beta"
+            ],
+            "text": "子节点聚合验证进行中。"
+          },
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "历史资料待整理"
+              },
+              {
+                "field": "status",
+                "value": "completed"
+              },
+              {
+                "field": "completed_at",
+                "value": null
+              },
+              {
+                "field": "completed_at_status",
+                "value": "unknown"
+              }
+            ],
+            "fact_refs": [
+              "gamma/W-gamma"
+            ],
+            "text": "历史资料待整理。"
+          }
+        ]
+      },
+      "session_type": "independent_fresh"
+    },
+    {
+      "agent_id": "blind_agent_b",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 事实声明引用未知事实：None",
+        "text_semantics_verified": false
+      },
+      "raw_response": {
+        "omitted": [],
+        "sections": [
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "完成节点自治验证"
+              },
+              {
+                "field": "status",
+                "value": "completed"
+              },
+              {
+                "field": "completed_at",
+                "value": "2026-10-15T09:00:00+08:00"
+              },
+              {
+                "field": "completed_at_status",
+                "value": "known"
+              }
+            ],
+            "fact_refs": [
+              "alpha/W-alpha"
+            ],
+            "text": "记录：完成节点自治验证；状态字段为 completed。"
+          },
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "子节点聚合验证"
+              },
+              {
+                "field": "status",
+                "value": "in_progress"
+              },
+              {
+                "field": "completed_at",
+                "value": null
+              },
+              {
+                "field": "completed_at_status",
+                "value": "unknown"
+              }
+            ],
+            "fact_refs": [
+              "beta/W-beta"
+            ],
+            "text": "记录：子节点聚合验证；状态字段为 in_progress，完成时间状态为 unknown。"
+          },
+          {
+            "claims": [
+              {
+                "field": "title",
+                "value": "历史资料待整理"
+              },
+              {
+                "field": "status",
+                "value": "completed"
+              },
+              {
+                "field": "completed_at",
+                "value": null
+              },
+              {
+                "field": "completed_at_status",
+                "value": "unknown"
+              }
+            ],
+            "fact_refs": [
+              "gamma/W-gamma"
+            ],
+            "text": "记录：历史资料待整理；状态字段为 completed，完成时间状态为 unknown。"
+          }
+        ]
+      },
+      "session_type": "independent_fresh"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "固定事实包表达层盲测；不代表稳定版接入或生产验收",
+  "summary": {
+    "accepted": 0,
+    "conclusion": "两次独立 Agent 均未在 claims 中提供 fact_ref，按契约拒绝；不能自动补齐引用。",
+    "rejected": 2,
+    "runs": 2,
+    "text_semantics_verified": false
+  },
+  "superseded_by": "mvp-light-agent-blind-20261015-audited.json"
+}

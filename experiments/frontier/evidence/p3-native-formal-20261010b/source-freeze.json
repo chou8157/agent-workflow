@@ -1,0 +1,20 @@
+{
+  "status": "ready",
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "verified_from": "own turn_context at 2026-10-10T10:30:05.672Z",
+  "parent_agent": "/root/evaluation_review",
+  "planned_calls": 138,
+  "tests": {
+    "python3.8.3": 73,
+    "python3.10.10": 73
+  },
+  "source_sha256": {
+    "p3_cases.py": "e6757ed209ef7c12182c7b1c139a24314946243585730157fd43554c08f21134",
+    "p3_native_harness.py": "cb7ca0d4edda798bc829df2ab199d0d37247fac80b933a5f566bcaf17ceb250f",
+    "test_p3_cases.py": "a5640e59a30f81777f218013b1613a037504df7be0a9b49f3ca1931d2802e99c",
+    "test_p3_native_harness.py": "5a25fbebcd0dee4db3940aafa52388d2629963a83a3f94aa73b1a4c11ce53fc1",
+    "p3-protocol.md": "2ce60fb88465f76c9557824169fda34484e152a9ad74bf9b459b8a16b5f97486",
+    "fixtures/p3/freeze.json": "eb759d44c859c03161809bc5c7c0bdfcefd91be3de0c35023616fdfb8d8a0537"
+  }
+}

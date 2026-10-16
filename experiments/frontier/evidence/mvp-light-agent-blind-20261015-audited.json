@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "experiment": "mvp-light-agent-blind-raw-audit",
+  "observed_at": "2026-10-15",
+  "source": "只提取原生 final_answer 的 output_text，逐字与 task_complete 核对，不补字段、不修改文本",
+  "summary_input_for_replay": {
+    "facts": [
+      {
+        "node_id": "alpha",
+        "work_item_id": "W-alpha",
+        "completed_at": "2026-10-15T09:00:00+08:00",
+        "completed_at_status": "known",
+        "status": "completed",
+        "title": "完成节点自治验证"
+      },
+      {
+        "node_id": "beta",
+        "work_item_id": "W-beta",
+        "completed_at": null,
+        "completed_at_status": "unknown",
+        "status": "in_progress",
+        "title": "子节点聚合验证"
+      },
+      {
+        "node_id": "gamma",
+        "work_item_id": "W-gamma",
+        "completed_at": null,
+        "completed_at_status": "unknown",
+        "status": "completed",
+        "title": "历史资料待整理"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "agent_id": "blind_agent_a",
+      "session_id": "01a13e92-0eae-79a1-a56f-5d3c69797836",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T15-58-41-01a13e92-0eae-79a1-a56f-5d3c69797836.jsonl",
+      "session_sha256": "1cd2e7c4789e7afa4eb6606d70647f6af2d8bee3940b62428bb98a305434aa7b",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"fact_refs\":[\"alpha/W-alpha\"],\"text\":\"完成节点自治验证。\",\"claims\":[{\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"field\":\"status\",\"value\":\"completed\"},{\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"field\":\"completed_at_status\",\"value\":\"known\"}]},{\"fact_refs\":[\"beta/W-beta\"],\"text\":\"子节点聚合验证进行中。\",\"claims\":[{\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"field\":\"status\",\"value\":\"in_progress\"},{\"field\":\"completed_at\",\"value\":null},{\"field\":\"completed_at_status\",\"value\":\"unknown\"}]},{\"fact_refs\":[\"gamma/W-gamma\"],\"text\":\"历史资料待整理。\",\"claims\":[{\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"field\":\"status\",\"value\":\"completed\"},{\"field\":\"completed_at\",\"value\":null},{\"field\":\"completed_at_status\",\"value\":\"unknown\"}]}],\"omitted\":[]}",
+      "raw_final_sha256": "ffb5e70793c237d426add98f56d51c3814d0532550e7958740ece76db1d854dd",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 事实声明缺少必需字段或包含未定义字段",
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": true,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28557,
+        "cached_input_tokens": 1792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 637,
+        "reasoning_output_tokens": 425,
+        "total_tokens": 29194
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    },
+    {
+      "agent_id": "blind_agent_b",
+      "session_id": "01a13e92-74bf-7332-bb29-ba4cc8ff3956",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T15-59-08-01a13e92-74bf-7332-bb29-ba4cc8ff3956.jsonl",
+      "session_sha256": "e568cb26fa9e17b3be0c64ddddfd25ef292318b6aee819e07b0333cc7fb13b69",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"text\":\"记录：完成节点自治验证；状态字段为 completed。\",\"fact_refs\":[\"alpha/W-alpha\"],\"claims\":[{\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"field\":\"status\",\"value\":\"completed\"},{\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"field\":\"completed_at_status\",\"value\":\"known\"}]},{\"text\":\"记录：子节点聚合验证；状态字段为 in_progress，完成时间状态为 unknown。\",\"fact_refs\":[\"beta/W-beta\"],\"claims\":[{\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"field\":\"status\",\"value\":\"in_progress\"},{\"field\":\"completed_at\",\"value\":null},{\"field\":\"completed_at_status\",\"value\":\"unknown\"}]},{\"text\":\"记录：历史资料待整理；状态字段为 completed，完成时间状态为 unknown。\",\"fact_refs\":[\"gamma/W-gamma\"],\"claims\":[{\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"field\":\"status\",\"value\":\"completed\"},{\"field\":\"completed_at\",\"value\":null},{\"field\":\"completed_at_status\",\"value\":\"unknown\"}]}],\"omitted\":[]}",
+      "raw_final_sha256": "3125e6fe8922f87f5cfa5061b0e1c438b7c3ebf63c3c9bf7b24a12f63564ebf1",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 事实声明缺少必需字段或包含未定义字段",
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": true,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28557,
+        "cached_input_tokens": 27392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 996,
+        "reasoning_output_tokens": 752,
+        "total_tokens": 29553
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    },
+    {
+      "agent_id": "blind_agent_c",
+      "session_id": "01a13eaf-aa2a-7d40-850f-04e62268d831",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T16-31-02-01a13eaf-aa2a-7d40-850f-04e62268d831.jsonl",
+      "session_sha256": "9c381c99d851bee83921042ba3f61079048e9524f69647a5667ea934ad055154",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"fact_refs\":[\"alpha/W-alpha\"],\"claims\":[{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at_status\",\"value\":\"known\"}],\"text\":\"事实引用 alpha/W-alpha：标题为完成节点自治验证，状态为 completed，完成时间为 2026-10-15T09:00:00+08:00，完成时间状态为 known。\"},{\"fact_refs\":[\"beta/W-beta\"],\"claims\":[{\"fact_ref\":\"beta/W-beta\",\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"status\",\"value\":\"in_progress\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"text\":\"事实引用 beta/W-beta：标题为子节点聚合验证，状态为 in_progress，完成时间为 null，完成时间状态为 unknown。\"},{\"fact_refs\":[\"gamma/W-gamma\"],\"claims\":[{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"text\":\"事实引用 gamma/W-gamma：标题为历史资料待整理，状态为 completed，完成时间为 null，完成时间状态为 unknown。\"}],\"omitted\":[]}",
+      "raw_final_sha256": "cd9d063a3666d52cd417447ddb5c5f7818abb90700661d8361057697512823d1",
+      "evaluation": {
+        "accepted": true,
+        "covered": [
+          "alpha/W-alpha",
+          "beta/W-beta",
+          "gamma/W-gamma"
+        ],
+        "omitted": [],
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": true,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28558,
+        "cached_input_tokens": 1792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 453,
+        "reasoning_output_tokens": 70,
+        "total_tokens": 29011
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    },
+    {
+      "agent_id": "blind_agent_d",
+      "session_id": "01a13eb0-5f46-71b0-b1b4-501a99ca8929",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T16-31-48-01a13eb0-5f46-71b0-b1b4-501a99ca8929.jsonl",
+      "session_sha256": "66a24b7026745b950c81053a052105204413d62d4f4cd00e6dae866cc206acf6",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"fact_refs\":[\"alpha/W-alpha\"],\"claims\":[{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at_status\",\"value\":\"known\"}],\"text\":\"完成节点自治验证，状态为 completed，完成时间为 2026-10-15T09:00:00+08:00，完成时间状态为 known。\"},{\"fact_refs\":[\"beta/W-beta\"],\"claims\":[{\"fact_ref\":\"beta/W-beta\",\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"status\",\"value\":\"in_progress\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"text\":\"子节点聚合验证，状态为 in_progress，完成时间为 null，完成时间状态为 unknown。\"},{\"fact_refs\":[\"gamma/W-gamma\"],\"claims\":[{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"text\":\"历史资料待整理，状态为 completed，完成时间为 null，完成时间状态为 unknown。\"}],\"omitted\":[]}",
+      "raw_final_sha256": "eb146e7516544f9b5f5c42c3777cb39cfd99e332238e875963ddb0b749dafcc2",
+      "evaluation": {
+        "accepted": true,
+        "covered": [
+          "alpha/W-alpha",
+          "beta/W-beta",
+          "gamma/W-gamma"
+        ],
+        "omitted": [],
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": true,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28558,
+        "cached_input_tokens": 28416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 464,
+        "reasoning_output_tokens": 106,
+        "total_tokens": 29022
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    },
+    {
+      "agent_id": "blind_agent_e",
+      "session_id": "01a13eb8-1ba6-7462-b58f-c9d1363d3b2a",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T16-40-15-01a13eb8-1ba6-7462-b58f-c9d1363d3b2a.jsonl",
+      "session_sha256": "39bd547a53f2379d23a511e56ed57e8fb82ddfa852e90ec26ee853d35114629b",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"fact_refs\":[\"alpha/W-alpha\"],\"claims\":[{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at_status\",\"value\":\"known\"}],\"omitted\":[],\"text\":\"title=完成节点自治验证; status=completed; completed_at=2026-10-15T09:00:00+08:00; completed_at_status=known\"},{\"fact_refs\":[\"beta/W-beta\"],\"claims\":[{\"fact_ref\":\"beta/W-beta\",\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"status\",\"value\":\"in_progress\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"omitted\":[],\"text\":\"title=子节点聚合验证; status=in_progress; completed_at=null; completed_at_status=unknown\"},{\"fact_refs\":[\"gamma/W-gamma\"],\"claims\":[{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"omitted\":[],\"text\":\"title=历史资料待整理; status=completed; completed_at=null; completed_at_status=unknown\"}],\"omitted\":[]}",
+      "raw_final_sha256": "b03aa608d41249891526dc15f540957d33ea1dcc7e9d855fb9fb2585b24c07a1",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 草稿段落缺少必需字段或包含未定义字段",
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": false,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28493,
+        "cached_input_tokens": 27392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 807,
+        "reasoning_output_tokens": 438,
+        "total_tokens": 29300
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    },
+    {
+      "agent_id": "blind_agent_f",
+      "session_id": "01a13eb8-829e-74c0-b020-e363a5fd5852",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T16-40-41-01a13eb8-829e-74c0-b020-e363a5fd5852.jsonl",
+      "session_sha256": "a5b129978cb797e28de5b71e85ed42e8547445713ef9d05332e24be085e51f62",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "raw_final": "{\"sections\":[{\"fact_refs\":[\"alpha/W-alpha\"],\"claims\":[{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"title\",\"value\":\"完成节点自治验证\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at\",\"value\":\"2026-10-15T09:00:00+08:00\"},{\"fact_ref\":\"alpha/W-alpha\",\"field\":\"completed_at_status\",\"value\":\"known\"}],\"omitted\":[],\"text\":\"title=完成节点自治验证; status=completed; completed_at=2026-10-15T09:00:00+08:00; completed_at_status=known\"},{\"fact_refs\":[\"beta/W-beta\"],\"claims\":[{\"fact_ref\":\"beta/W-beta\",\"field\":\"title\",\"value\":\"子节点聚合验证\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"status\",\"value\":\"in_progress\"},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"beta/W-beta\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"omitted\":[],\"text\":\"title=子节点聚合验证; status=in_progress; completed_at=null; completed_at_status=unknown\"},{\"fact_refs\":[\"gamma/W-gamma\"],\"claims\":[{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"title\",\"value\":\"历史资料待整理\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"status\",\"value\":\"completed\"},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at\",\"value\":null},{\"fact_ref\":\"gamma/W-gamma\",\"field\":\"completed_at_status\",\"value\":\"unknown\"}],\"omitted\":[],\"text\":\"title=历史资料待整理; status=completed; completed_at=null; completed_at_status=unknown\"}]}",
+      "raw_final_sha256": "7a1e14d7e1e950ab5ff5c2c6869bb2fe053da6e73b7cdc458ade4881258e05df",
+      "evaluation": {
+        "accepted": false,
+        "error": "Agent 草稿缺少必需字段或包含未定义字段",
+        "text_semantics_verified": false
+      },
+      "old_evidence_matches_raw_final": false,
+      "native_tool_calls": [],
+      "usage": {
+        "input_tokens": 28493,
+        "cached_input_tokens": 27392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 855,
+        "reasoning_output_tokens": 490,
+        "total_tokens": 29348
+      },
+      "prompt_audit": "原生日志内任务提示加密，不能从该日志验证当时输入字节；旧事实包哈希仅属于事后构造，不是已证实模型输入哈希"
+    }
+  ],
+  "groups": [
+    {
+      "agents": [
+        "blind_agent_a",
+        "blind_agent_b"
+      ],
+      "accepted": 0,
+      "runs": 2,
+      "note": "旧提示原文无法从日志恢复，不能单独归因为模型能力"
+    },
+    {
+      "agents": [
+        "blind_agent_c",
+        "blind_agent_d"
+      ],
+      "accepted": 2,
+      "runs": 2,
+      "note": "本会话完整 JSON 模板提示；与下一组提示不同，不合并统计"
+    },
+    {
+      "agents": [
+        "blind_agent_e",
+        "blind_agent_f"
+      ],
+      "accepted": 0,
+      "runs": 2,
+      "note": "简化自然语言提示；e 多段落 omitted，f 多段落 omitted 且缺根 omitted；旧 1/2 结论作废"
+    }
+  ],
+  "invalidated_evidence": [
+    {
+      "path": "mvp-light-agent-blind-20261015.json",
+      "sha256_before_correction": "7c9ad2874a9f5d8c9cebe6895d8a9fa78f8a73f7209e6d10358169fb663cb351"
+    },
+    {
+      "path": "mvp-light-agent-blind-20261015-v2.json",
+      "sha256_before_correction": "388e054f4f0f5ca46f06d0ceabb50d8c5483460e64a2afd3c51ea61ad3b080e1"
+    },
+    {
+      "path": "mvp-light-agent-blind-20261015-v3.json",
+      "sha256_before_correction": "df6209256c284474c4b3eeeb5bfc1ecef77c0bae329c3175e9c7dd650fba6de8"
+    }
+  ],
+  "code_sha256": {
+    "experiments/frontier/agent_blind_eval.py": "68f802d902cb27e3f8609bb09d8b746e20c4bad4586a1e4e82b15643980b2cff",
+    "experiments/frontier/mvp_light.py": "1cbbdf000ec12d0e80bf8eb907bba0c11d38586600d3210473af38b32c0d3612"
+  },
+  "limits": [
+    "这是 3 组不同提示的小样本调试，不能证明稳定通过率",
+    "只核验结构化声明；不声称 text 语义已通过",
+    "最新原始回放证据替代旧手工重建结果"
+  ]
+}

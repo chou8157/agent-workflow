@@ -1,0 +1,398 @@
+{
+  "checked_at": "2026-10-16T15:26:17.767513+08:00",
+  "scope": "仅使用当前已安装的两个版本，在临时生成项目验证；未写真实项目或安装目录",
+  "root": "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4",
+  "results": {
+    "v5_read_only_compatible": true,
+    "v5_upgrade_plan": {
+      "project": "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+      "current_version": 5,
+      "latest_version": 5,
+      "safe_actions": [],
+      "review_actions": [],
+      "up_to_date": true
+    },
+    "v5_old_state_fields_preserved": true,
+    "v5_local_record_without_identity": true,
+    "record_retry_unchanged": true,
+    "stable_sequential_state_update_preserves_activity": true,
+    "stable_ignores_new_writer_lock": true,
+    "existing_project_report_contains_activity": true,
+    "custom_entry_documents_preserved": true,
+    "legacy_plan_read_only": true,
+    "legacy_apply_result": {
+      "project": "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+      "current_version": 5,
+      "latest_version": 5,
+      "safe_actions": [],
+      "review_actions": [],
+      "up_to_date": true,
+      "created_suggestions": [
+        "请先运行 task_context.py migration-check，再对无冲突工作项运行 migration-apply。"
+      ]
+    },
+    "legacy_apply_unexpected_cwd_files": [
+      "请先运行 task_context.py migration-check，再对无冲突工作项运行 migration-apply。"
+    ],
+    "legacy_apply_preserves_originals": true,
+    "legacy_apply_does_not_migrate_state": true,
+    "legacy_record_refuses_missing_state": true,
+    "legacy_migration_preserves_unknown_dates": true,
+    "legacy_original_text_unchanged": true,
+    "mixed_version_interleaving_loses_new_activity": true
+  },
+  "commands": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/scaffold_workflow.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5"
+      ],
+      "returncode": 0,
+      "stdout": "已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/AGENTS.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/README.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/WORKFLOW_VERSION\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/00-core/principles.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/00-core/workflow.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/00-core/preferences.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/00-core/disclosure.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/current-status.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/README.md\n已创建：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/.capabilities.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "create",
+        "W-existing",
+        "--title",
+        "既有项目兼容性验证"
+      ],
+      "returncode": 0,
+      "stdout": "已创建工作项：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "set-status",
+        "W-existing",
+        "in_progress"
+      ],
+      "returncode": 0,
+      "stdout": "已更新工作项状态：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/upgrade_workflow.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "plan",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"project\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5\",\n  \"current_version\": 5,\n  \"latest_version\": 5,\n  \"safe_actions\": [],\n  \"review_actions\": [],\n  \"up_to_date\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "show",
+        "W-existing"
+      ],
+      "returncode": 0,
+      "stdout": "工作项：W-existing\n标题：既有项目兼容性验证\n类型：任务\n状态：in_progress\n路径：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/check_workflow.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "--require-work-items",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "record",
+        "--project",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "--item",
+        "W-existing",
+        "--date",
+        "2026-10-16",
+        "--summary",
+        "新版本检查既有项目结构通过",
+        "--status",
+        "completed",
+        "--evidence",
+        ".agent-workflow/30-records/work-items/W-existing/progress/compatibility.md",
+        "--line-start",
+        "2",
+        "--line-end",
+        "2"
+      ],
+      "returncode": 0,
+      "stdout": "本地活动已记录：activity-7ca9cd09725ff5dd4af09bc1（created）\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "record",
+        "--project",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "--item",
+        "W-existing",
+        "--date",
+        "2026-10-16",
+        "--summary",
+        "新版本检查既有项目结构通过",
+        "--status",
+        "completed",
+        "--evidence",
+        ".agent-workflow/30-records/work-items/W-existing/progress/compatibility.md",
+        "--line-start",
+        "2",
+        "--line-end",
+        "2"
+      ],
+      "returncode": 0,
+      "stdout": "本地活动已记录：activity-7ca9cd09725ff5dd4af09bc1（unchanged）\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "set-status",
+        "W-existing",
+        "completed"
+      ],
+      "returncode": 0,
+      "stdout": "已更新工作项状态：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "show",
+        "W-existing"
+      ],
+      "returncode": 0,
+      "stdout": "工作项：W-existing\n标题：既有项目兼容性验证\n类型：任务\n状态：completed\n路径：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "set-status",
+        "W-existing",
+        "in_progress"
+      ],
+      "returncode": 0,
+      "stdout": "已更新工作项状态：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "set-status",
+        "W-existing",
+        "completed"
+      ],
+      "returncode": 0,
+      "stdout": "已更新工作项状态：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5/.agent-workflow/30-records/work-items/W-existing/.state.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "report",
+        "--project",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "--source-root",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5",
+        "--scope",
+        "self",
+        "--week",
+        "this",
+        "--output",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5-report.md"
+      ],
+      "returncode": 0,
+      "stdout": "报告已写入：/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/existing-v5-report.md\n范围：2026-10-12 至 2026-10-18；节点读取：full；成功 1，失败 0，跳过 0。日期缺口请查看报告。\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/upgrade_workflow.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+        "plan",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"project\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2\",\n  \"current_version\": 2,\n  \"latest_version\": 5,\n  \"safe_actions\": [\n    {\n      \"action\": \"copy_template\",\n      \"source\": \"/Users/yizhoucp/.codex/skills/agent-workflow-frontier/assets/templates/.agent-workflow/30-records/work-items/README.md\",\n      \"target\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2/.agent-workflow/30-records/work-items/README.md\",\n      \"message\": \"补齐多工作项入口。\"\n    },\n    {\n      \"action\": \"write_version\",\n      \"target\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2/.agent-workflow/WORKFLOW_VERSION\",\n      \"message\": \"将工作流结构版本标记为 5。\"\n    }\n  ],\n  \"review_actions\": [\n    {\n      \"target\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2/.agent-workflow/30-records/work-items\",\n      \"suggestion\": \"请先运行 task_context.py migration-check，再对无冲突工作项运行 migration-apply。\",\n      \"content\": \"工作项生命周期状态已迁移为各工作项目录的 .state.json；迁移前必须检查旧状态，冲突不得自动覆盖。\"\n    }\n  ],\n  \"up_to_date\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/upgrade_workflow.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+        "apply-safe",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"project\": \"/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2\",\n  \"current_version\": 5,\n  \"latest_version\": 5,\n  \"safe_actions\": [],\n  \"review_actions\": [],\n  \"up_to_date\": true,\n  \"created_suggestions\": [\n    \"请先运行 task_context.py migration-check，再对无冲突工作项运行 migration-apply。\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/frontier/light_cli.py",
+        "record",
+        "--project",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+        "--item",
+        "W-legacy",
+        "--date",
+        "2026-10-16",
+        "--summary",
+        "测试缺状态拒绝",
+        "--status",
+        "completed",
+        "--evidence",
+        ".agent-workflow/30-records/work-items/W-legacy/progress/check.md",
+        "--line-start",
+        "1",
+        "--line-end",
+        "1"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "操作失败：工作项缺少可写的 .state.json\n"
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+        "migration-check",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"id\": \"W-legacy\",\n    \"status\": \"completed\",\n    \"finding\": \"缺少状态文件\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/task_context.py",
+        "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/legacy-v2",
+        "migration-apply"
+      ],
+      "returncode": 0,
+      "stdout": "已迁移 1 个无冲突工作项。\n",
+      "stderr": ""
+    }
+  ],
+  "mixed_writer_reproduction": {
+    "method": "在临时副本导入实际旧安装版 task_context；第二次 read_state 已读取后暂停旧写入，执行新安装版 record，再让旧 set_status 写回。仅注入交错时机，未修改两版安装文件。",
+    "before_count": 1,
+    "after_new_count": 2,
+    "after_old_count": 1,
+    "injected_commands": [
+      {
+        "command": [
+          "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+          "-B",
+          "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/frontier/light_cli.py",
+          "record",
+          "--project",
+          "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/mixed-version-race",
+          "--item",
+          "W-existing",
+          "--id",
+          "activity-concurrent-new",
+          "--date",
+          "2026-10-16",
+          "--summary",
+          "在受控交错下验证旧版写入能否保留新活动",
+          "--status",
+          "in_progress",
+          "--evidence",
+          ".agent-workflow/30-records/work-items/W-existing/progress/compatibility.md",
+          "--line-start",
+          "2",
+          "--line-end",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "本地活动已记录：activity-concurrent-new（created）\n",
+        "stderr": "",
+        "count_after_new_write": 2
+      }
+    ]
+  },
+  "installer_independent_review": {
+    "sandbox": "/private/tmp/frontier-installer-audit-20261016-ys2wt1fp",
+    "first": {
+      "status": "created",
+      "path": "/private/tmp/frontier-installer-audit-20261016-ys2wt1fp/skills/agent-workflow-frontier"
+    },
+    "changed_package_error": "目标目录已有不同交付包，拒绝覆盖：/private/tmp/frontier-installer-audit-20261016-ys2wt1fp/skills/agent-workflow-frontier",
+    "installed_unchanged": true,
+    "next_version_verify_error": "manifest 的包名、版本或结构不受支持"
+  },
+  "installed_source_hashes": {
+    "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/task_context.py": "0459878304d1b2946aba0fd378c8bc5b6f5f6577371b209588f0a20a15854ebd",
+    "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/upgrade_workflow.py": "6159302fd6815e4b8952c64e1686194a41b4f3c2498814942c4762ee5015cca9",
+    "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/task_context.py": "a251e49c503ad19b8c58cfb479fd15fe8a76aa2065eb380336097f11383fd394",
+    "/Users/yizhoucp/.codex/skills/agent-workflow-frontier/scripts/upgrade_workflow.py": "e2ab274f809c54b4a8bafb7c560969c98a959b1cddb8fd3a494beb3c3add512b"
+  },
+  "stable_installed_files_unchanged": true,
+  "frontier_install_verify": {
+    "returncode": 0,
+    "stdout": "交付包操作完成：{\"files\": 79, \"name\": \"agent-workflow-frontier\", \"status\": \"verified\", \"version\": \"0.1.0\"}\n",
+    "stderr": ""
+  },
+  "evidence_inputs": {
+    "/private/tmp/agent-workflow-upgrade-audit-20261016-vd2a9jj4/results.json": "7ddd5495f98151a4ac2c57ef4ed19932ccfadb70866feebde9f6f26ca434f45a",
+    "/private/tmp/frontier-installer-audit-20261016-ys2wt1fp/audit.json": "ec2dbbc1439220c5fe7feca3bc834908f4f941b8b055b3759ee9af4433f531cd"
+  },
+  "finished_at": "2026-10-16T15:28:40.007617+08:00"
+}

@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-10-15T18:09:38.576336+08:00",
+  "scope": "isolated_worktree_and_temporary_fixtures",
+  "source_sha256": {
+    "agent-workflow/scripts/task_context.py": "612344bf99dad7c395401ebf9f77f16c5778633a21aece11c8c25a2c6276ab76",
+    "experiments/frontier/activity_closeout.py": "8e71157c82e4bbfac3a17c433b6db1f5c4745f74361b6028ef7eba129375c170",
+    "experiments/frontier/node_workflow.py": "1c1f19ab0ee0e84f6fd8fb95e689a3a09b0b5d281c914f97940e8b54799b9e09",
+    "experiments/frontier/light_cli.py": "235a6aa2a35d72e0fb149dc03fe32efa7408fe64776df3bd31f7f93df53dbb1f",
+    "experiments/frontier/light_report.py": "3bf2f0d2524fefa007a76bc85071a2d1b63e9c5b22f6659ab6300f508dc68032",
+    "experiments/frontier/mvp_light.py": "f04c6bdbf8462e54136df93b4504c90c4567a2b73acb2df6b076cc1d652646c3",
+    "experiments/frontier/test_activity_closeout.py": "4a1d51fe1af20a570d2c1489c4db4b228d070089ab2f49620ea54a5c6a6b9d22",
+    "experiments/frontier/test_write_reliability.py": "fc4224503cd37c0b97b3585e4910b3b39047ae4fb74d760b9144201de6db27aa",
+    "experiments/frontier/test_light_cli.py": "e78848c8336c679addf4c8a2c97c6b7f2a075f5db72ee769c99bfaeb0acf3c8c",
+    "experiments/frontier/test_light_report.py": "be4de77c10dc17cb89dee414ded4c4820480309d71dc22c1506893da9060936b"
+  },
+  "checks": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "experiments/frontier",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "........................................................................ [ 13%]\n........................................................................ [ 26%]\n........................................................................ [ 40%]\n........................................................................ [ 53%]\n........................................................................ [ 67%]\n..................ss.................................................... [ 80%]\n...................................ssssssssssssssssssssssssssssssssssss. [ 93%]\n.................................                                        [100%]\n499 passed, 38 skipped in 97.82s (0:01:37)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": ".............................                                            [100%]\n29 passed in 0.56s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "py_compile",
+        "agent-workflow/scripts/check_workflow.py",
+        "agent-workflow/scripts/scaffold_workflow.py",
+        "agent-workflow/scripts/task_context.py",
+        "experiments/frontier/activity_closeout.py",
+        "experiments/frontier/node_workflow.py",
+        "experiments/frontier/light_cli.py",
+        "experiments/frontier/light_report.py",
+        "experiments/frontier/mvp_light.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "agent-workflow/scripts/check_workflow.py",
+        ".",
+        "--require-work-items",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"project\": \"/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009\",\n  \"issues\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "finished_at": "2026-10-15T18:11:18.423669+08:00",
+  "source_unchanged_during_checks": true
+}

@@ -1,0 +1,12 @@
+{
+  "recorded_date": "2026-10-10",
+  "docker_context": "desktop-linux",
+  "docker_probe": "docker info --format '{{.ServerVersion}}'",
+  "sandbox_attempt": "permission denied on local Docker socket",
+  "escalated_attempt_exit": 1,
+  "escalated_attempt_result": "Cannot connect to the Docker daemon; service is not running",
+  "postgresql": "not_run/environment",
+  "neo4j": "not_run/environment",
+  "interpretation": "服务候选暂未具备隔离实例；不是功能失败，不参与本轮胜负排名",
+  "side_effects": "没有启动或停止现有容器，没有连接真实业务数据库"
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "scope": "现有工作流日期记录提取与时间窗口边界",
+  "july_window": {
+    "start_date": "2026-07-15",
+    "end_date": "2026-07-21",
+    "records": [
+      {
+        "node_id": "leaf",
+        "work_item_id": "W-20260715-multi-work-items",
+        "date": "2026-07-15",
+        "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+        "source_sha256": "901e92924a1dc91c534bfe8e019bac0dcee57b1227d1539595dc743df196ae1b",
+        "line": 3
+      },
+      {
+        "node_id": "middle",
+        "work_item_id": "W-20260715-workflow-upgrade",
+        "date": "2026-07-15",
+        "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+        "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+        "line": 3
+      },
+      {
+        "node_id": "middle",
+        "work_item_id": "W-20260715-workflow-upgrade",
+        "date": "2026-07-15",
+        "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+        "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+        "line": 10
+      },
+      {
+        "node_id": "middle",
+        "work_item_id": "W-20260715-workflow-upgrade",
+        "date": "2026-07-16",
+        "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+        "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+        "line": 17
+      }
+    ],
+    "unknown_date_nodes": [],
+    "recorded_outside_window_nodes": [
+      "root"
+    ]
+  },
+  "current_window": {
+    "start_date": "2026-10-13",
+    "end_date": "2026-10-19",
+    "records": [],
+    "unknown_date_nodes": [],
+    "recorded_outside_window_nodes": [
+      "leaf",
+      "middle",
+      "root"
+    ]
+  },
+  "extracted_records": [
+    {
+      "node_id": "leaf",
+      "work_item_id": "W-20260715-multi-work-items",
+      "date": "2026-07-15",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md",
+      "source_sha256": "901e92924a1dc91c534bfe8e019bac0dcee57b1227d1539595dc743df196ae1b",
+      "line": 3
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-15",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+      "line": 3
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-15",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+      "line": 10
+    },
+    {
+      "node_id": "middle",
+      "work_item_id": "W-20260715-workflow-upgrade",
+      "date": "2026-07-16",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md",
+      "source_sha256": "e8d82156d595d6001d095eb4e9ecc09cb4b094598a63a7f3111bc96269833de4",
+      "line": 17
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-11",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "source_sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef",
+      "line": 3
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "source_sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef",
+      "line": 11
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "source_sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef",
+      "line": 19
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "source_sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef",
+      "line": 27
+    },
+    {
+      "node_id": "root",
+      "work_item_id": "W-20260911-workflow-optimization",
+      "date": "2026-09-14",
+      "source_path": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/root/.agent-workflow/30-records/work-items/W-20260911-workflow-optimization/validation-log.md",
+      "source_sha256": "56899fa9611ebe5b432904b225199884a0583d70b703c2e2cb5be8acdc3587ef",
+      "line": 35
+    }
+  ],
+  "reports": {
+    "july": "# 记录活动摘要\n\n- 查询范围：2026-07-15 至 2026-07-21\n- 事实来源：节点 progress/validation-log 中的显式日期记录\n\n## 窗口内记录\n- [leaf] 2026-07-15（来源：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/leaf/.agent-workflow/30-records/work-items/W-20260715-multi-work-items/validation-log.md:3）\n- [middle] 2026-07-15（来源：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md:3）\n- [middle] 2026-07-15（来源：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md:10）\n- [middle] 2026-07-16（来源：/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-mvp-date-9aomvgvf/nodes/middle/.agent-workflow/30-records/work-items/W-20260715-workflow-upgrade/validation-log.md:17）\n\n## 需要注意\n- [root] 有日期记录，但不在本次范围内；不能据此断言没有其他未记录工作\n",
+    "current": "# 记录活动摘要\n\n- 查询范围：2026-10-13 至 2026-10-19\n- 事实来源：节点 progress/validation-log 中的显式日期记录\n\n## 窗口内记录\n- 未发现窗口内的显式日期记录\n\n## 需要注意\n- [leaf] 有日期记录，但不在本次范围内；不能据此断言没有其他未记录工作\n- [middle] 有日期记录，但不在本次范围内；不能据此断言没有其他未记录工作\n- [root] 有日期记录，但不在本次范围内；不能据此断言没有其他未记录工作\n"
+  },
+  "conclusion": {
+    "explicit_record_date_extraction": true,
+    "business_week_filter_ready": false,
+    "reason": "现有日期主要来自 validation-log 的验证记录，缺少统一的业务活动日期语义；不能把记录日期直接当作本周工作日期。"
+  }
+}

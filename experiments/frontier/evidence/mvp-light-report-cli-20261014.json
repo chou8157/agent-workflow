@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "run_type": "mvp_light_report_cli",
+  "full": {
+    "returncode": 0,
+    "output_exists": true,
+    "report_sha256": "221e99856e8a9692b68d509b2014500aa9f65eae1d74fd8adac2f635f0c51d39",
+    "contains_nodes": true
+  },
+  "partial": {
+    "returncode": 2,
+    "output_exists": true,
+    "report_sha256": "376b24823b8086bad05d18349281fa48a0cdbf374d996f1344f767ced18cd06f",
+    "contains_gap": true
+  },
+  "source_files_unchanged": true,
+  "source_file_count": 40,
+  "conclusion": "第一阶段只读报告入口可运行；完整聚合成功，拒绝节点显式降级，派生报告不修改来源。"
+}

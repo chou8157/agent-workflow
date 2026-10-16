@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "scope": "固定输入两次 fresh 调用；小样本输出契约与降级验证，不证明生产稳定率",
+  "cases": [
+    "已完成且日期已知",
+    "进行中且日期未知",
+    "已完成但日期未知",
+    "未发送给模型的拒绝节点由程序展示"
+  ],
+  "planned_agents": [
+    "blind_frozen_r1",
+    "blind_frozen_r2"
+  ],
+  "input_sha256": "982d0a0a59a1a4ffb99530b779c911af37ac034260f96ed74df0839f26889579",
+  "summary_sha256": "f205320b89c2cfeb6386dfb69d8f3ca673b1df0a42fc6980a93a1277d822e52d",
+  "input_bytes": 2445,
+  "code_sha256": {
+    "experiments/frontier/agent_blind_eval.py": "68f802d902cb27e3f8609bb09d8b746e20c4bad4586a1e4e82b15643980b2cff",
+    "experiments/frontier/mvp_light.py": "1cbbdf000ec12d0e80bf8eb907bba0c11d38586600d3210473af38b32c0d3612"
+  },
+  "acceptance": "必须原始 JSON 逐字解析通过；模型失败不补字段，固定格式报告须保留全部事实和 denied 缺口；两个样本不外推长期成功率"
+}

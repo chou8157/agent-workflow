@@ -1,0 +1,7 @@
+{
+  "command": "env PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' P4_CLI_EVIDENCE=experiments/frontier/evidence/p4-final-cli-local.json python3 -m pytest experiments/frontier/test_node_workflow.py -q -k 'not same_lifecycle'",
+  "result": "3 failed, 129 passed, 5 deselected in 56.29s",
+  "failure": "three backend instances of test_run_scope_and_tamper_rejections_never_read_external_sources expected the older source-root mismatch error; new check rejected sooner because the widened source root contained the run directory",
+  "fix": "use nodes as the mismatched source root, so source root mismatch and source-as-run are tested independently",
+  "category": "test assertion changed after earlier rejection guard was added"
+}

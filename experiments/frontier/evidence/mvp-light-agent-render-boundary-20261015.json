@@ -1,0 +1,62 @@
+{
+  "assertions": {
+    "contradictory_text_excluded": true,
+    "verified_status_preserved": true
+  },
+  "draft": {
+    "omitted": [],
+    "sections": [
+      {
+        "claims": [
+          {
+            "fact_ref": "alpha/W-alpha",
+            "field": "title",
+            "value": "完成自治验证"
+          },
+          {
+            "fact_ref": "alpha/W-alpha",
+            "field": "status",
+            "value": "completed"
+          }
+        ],
+        "fact_refs": [
+          "alpha/W-alpha"
+        ],
+        "text": "完成自治验证。"
+      },
+      {
+        "claims": [
+          {
+            "fact_ref": "beta/W-beta",
+            "field": "title",
+            "value": "聚合验证进行中"
+          },
+          {
+            "fact_ref": "beta/W-beta",
+            "field": "status",
+            "value": "in_progress"
+          }
+        ],
+        "fact_refs": [
+          "beta/W-beta"
+        ],
+        "text": "beta 已完成并上线。"
+      }
+    ]
+  },
+  "evaluation": {
+    "accepted": true,
+    "covered": [
+      "alpha/W-alpha",
+      "beta/W-beta"
+    ],
+    "omitted": [],
+    "text_semantics_verified": false
+  },
+  "experiment": "mvp-light-agent-render-boundary",
+  "observed_at": "2026-10-15",
+  "rendered": "- 完成自治验证：状态=completed；完成时间=2026-10-15T09:00:00+08:00（事实引用：alpha/W-alpha）\n- 聚合验证进行中：状态=in_progress；完成时间=未记录（事实引用：beta/W-beta）\n",
+  "rendered_sha256": "382401431ca35259f90840479e160d95fdf5cc9eab2b720651823813560155cd",
+  "schema_version": 1,
+  "scope": "验证自由文本与已核验字段冲突时，最终展示是否只来自程序重渲染"
+}

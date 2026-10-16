@@ -1,0 +1,89 @@
+{
+  "omitted": [],
+  "sections": [
+    {
+      "claims": [
+        {
+          "fact_ref": "alpha/W-alpha",
+          "field": "completed_at",
+          "value": "2026-10-15T09:00:00+08:00"
+        },
+        {
+          "fact_ref": "alpha/W-alpha",
+          "field": "completed_at_status",
+          "value": "known"
+        },
+        {
+          "fact_ref": "alpha/W-alpha",
+          "field": "status",
+          "value": "completed"
+        },
+        {
+          "fact_ref": "alpha/W-alpha",
+          "field": "title",
+          "value": "完成节点自治验证"
+        }
+      ],
+      "fact_refs": [
+        "alpha/W-alpha"
+      ],
+      "text": "根据声明组织表达"
+    },
+    {
+      "claims": [
+        {
+          "fact_ref": "beta/W-beta",
+          "field": "completed_at",
+          "value": null
+        },
+        {
+          "fact_ref": "beta/W-beta",
+          "field": "completed_at_status",
+          "value": "unknown"
+        },
+        {
+          "fact_ref": "beta/W-beta",
+          "field": "status",
+          "value": "in_progress"
+        },
+        {
+          "fact_ref": "beta/W-beta",
+          "field": "title",
+          "value": "子节点聚合验证"
+        }
+      ],
+      "fact_refs": [
+        "beta/W-beta"
+      ],
+      "text": "根据声明组织表达"
+    },
+    {
+      "claims": [
+        {
+          "fact_ref": "gamma/W-gamma",
+          "field": "completed_at",
+          "value": null
+        },
+        {
+          "fact_ref": "gamma/W-gamma",
+          "field": "completed_at_status",
+          "value": "unknown"
+        },
+        {
+          "fact_ref": "gamma/W-gamma",
+          "field": "status",
+          "value": "completed"
+        },
+        {
+          "fact_ref": "gamma/W-gamma",
+          "field": "title",
+          "value": "历史资料待整理"
+        }
+      ],
+      "fact_refs": [
+        "gamma/W-gamma"
+      ],
+      "text": "根据声明组织表达"
+    }
+  ]
+}

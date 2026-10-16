@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "manifest": "manifest.json",
+  "runs": [
+    {
+      "agent_id": "blind_frozen_r1",
+      "session_id": "01a13edf-70c8-76e1-80b1-008b5b8aefff",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T17-23-13-01a13edf-70c8-76e1-80b1-008b5b8aefff.jsonl",
+      "session_sha256": "d3fa22982b3d2d78fa6e86d1ae231ad77084f46328c2c24ec52bf74b32c94b45",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "input_read_verified": true,
+      "input_sha256": "982d0a0a59a1a4ffb99530b779c911af37ac034260f96ed74df0839f26889579",
+      "tool_expression": "const result = await tools.exec_command({cmd:\"cat /Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/evidence/mvp-light-agent-frozen-20261015/input.txt\"}); text(result.output);\n",
+      "raw_final": "{\n  \"omitted\": [],\n  \"sections\": [\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"completed_at\",\n          \"value\": \"2026-10-15T09:00:00+08:00\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"known\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"status\",\n          \"value\": \"completed\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"title\",\n          \"value\": \"完成节点自治验证\"\n        }\n      ],\n      \"fact_refs\": [\n        \"alpha/W-alpha\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    },\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"completed_at\",\n          \"value\": null\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"unknown\"\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"status\",\n          \"value\": \"in_progress\"\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"title\",\n          \"value\": \"子节点聚合验证\"\n        }\n      ],\n      \"fact_refs\": [\n        \"beta/W-beta\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    },\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"completed_at\",\n          \"value\": null\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"unknown\"\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"status\",\n          \"value\": \"completed\"\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"title\",\n          \"value\": \"历史资料待整理\"\n        }\n      ],\n      \"fact_refs\": [\n        \"gamma/W-gamma\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    }\n  ]\n}",
+      "raw_final_sha256": "8308f4f89284b564763f97e1eceb353f5f22e98a09e5977ab81c2027c7b1239b",
+      "evaluation": {
+        "accepted": true,
+        "covered": [
+          "alpha/W-alpha",
+          "beta/W-beta",
+          "gamma/W-gamma"
+        ],
+        "omitted": [],
+        "text_semantics_verified": false
+      },
+      "render_mode": "agent_ordered",
+      "rendered": "# 已核验工作项摘要\n\n- 来源聚合状态：partial\n- 计划节点：4；成功读取：3\n- 事实展示：3；明确省略：0\n\n## 已读取事实\n- 完成节点自治验证：状态=completed；完成时间=2026\\-10\\-15T09:00:00\\+08:00（事实引用：alpha/W\\-alpha）\n- 子节点聚合验证：状态=in\\_progress；完成时间=未记录（事实引用：beta/W\\-beta）\n- 历史资料待整理：状态=completed；完成时间=未记录（事实引用：gamma/W\\-gamma）\n\n## 未覆盖或失败\n- 读取失败 denied：本次请求明确拒绝读取\n",
+      "all_four_fields_declared": true,
+      "usage": {
+        "input_tokens": 57555,
+        "cached_input_tokens": 56448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 604,
+        "reasoning_output_tokens": 36,
+        "total_tokens": 58159
+      },
+      "assertions": {
+        "denied_gap_preserved": true,
+        "unknown_date_preserved": true,
+        "in_progress_preserved": true
+      }
+    },
+    {
+      "agent_id": "blind_frozen_r2",
+      "session_id": "01a13edf-a25c-7c70-9f6d-192f77911190",
+      "session_path": "/Users/yizhoucp/.codex/sessions/2026/10/15/rollout-2026-10-15T17-23-25-01a13edf-a25c-7c70-9f6d-192f77911190.jsonl",
+      "session_sha256": "43bcc730c21bd142ccdf2d937552833e4ae648b69d0129efa5a2e68c78a6e5b9",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "input_read_verified": true,
+      "input_sha256": "982d0a0a59a1a4ffb99530b779c911af37ac034260f96ed74df0839f26889579",
+      "tool_expression": "const r = await tools.exec_command({cmd:\"cat /Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/evidence/mvp-light-agent-frozen-20261015/input.txt\"}); text(r.output);\n",
+      "raw_final": "{\n  \"omitted\": [],\n  \"sections\": [\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"completed_at\",\n          \"value\": \"2026-10-15T09:00:00+08:00\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"known\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"status\",\n          \"value\": \"completed\"\n        },\n        {\n          \"fact_ref\": \"alpha/W-alpha\",\n          \"field\": \"title\",\n          \"value\": \"完成节点自治验证\"\n        }\n      ],\n      \"fact_refs\": [\n        \"alpha/W-alpha\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    },\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"completed_at\",\n          \"value\": null\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"unknown\"\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"status\",\n          \"value\": \"in_progress\"\n        },\n        {\n          \"fact_ref\": \"beta/W-beta\",\n          \"field\": \"title\",\n          \"value\": \"子节点聚合验证\"\n        }\n      ],\n      \"fact_refs\": [\n        \"beta/W-beta\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    },\n    {\n      \"claims\": [\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"completed_at\",\n          \"value\": null\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"completed_at_status\",\n          \"value\": \"unknown\"\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"status\",\n          \"value\": \"completed\"\n        },\n        {\n          \"fact_ref\": \"gamma/W-gamma\",\n          \"field\": \"title\",\n          \"value\": \"历史资料待整理\"\n        }\n      ],\n      \"fact_refs\": [\n        \"gamma/W-gamma\"\n      ],\n      \"text\": \"根据声明组织表达\"\n    }\n  ]\n}",
+      "raw_final_sha256": "8308f4f89284b564763f97e1eceb353f5f22e98a09e5977ab81c2027c7b1239b",
+      "evaluation": {
+        "accepted": true,
+        "covered": [
+          "alpha/W-alpha",
+          "beta/W-beta",
+          "gamma/W-gamma"
+        ],
+        "omitted": [],
+        "text_semantics_verified": false
+      },
+      "render_mode": "agent_ordered",
+      "rendered": "# 已核验工作项摘要\n\n- 来源聚合状态：partial\n- 计划节点：4；成功读取：3\n- 事实展示：3；明确省略：0\n\n## 已读取事实\n- 完成节点自治验证：状态=completed；完成时间=2026\\-10\\-15T09:00:00\\+08:00（事实引用：alpha/W\\-alpha）\n- 子节点聚合验证：状态=in\\_progress；完成时间=未记录（事实引用：beta/W\\-beta）\n- 历史资料待整理：状态=completed；完成时间=未记录（事实引用：gamma/W\\-gamma）\n\n## 未覆盖或失败\n- 读取失败 denied：本次请求明确拒绝读取\n",
+      "all_four_fields_declared": true,
+      "usage": {
+        "input_tokens": 57555,
+        "cached_input_tokens": 56448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 594,
+        "reasoning_output_tokens": 26,
+        "total_tokens": 58149
+      },
+      "assertions": {
+        "denied_gap_preserved": true,
+        "unknown_date_preserved": true,
+        "in_progress_preserved": true
+      }
+    }
+  ],
+  "summary": {
+    "accepted": 2,
+    "runs": 2,
+    "render_assertions_passed": true,
+    "text_semantics_verified": false
+  },
+  "limits": [
+    "仅 2 次相同固定输入的调用；不外推一般模型稳定性",
+    "模型只做顺序与引用；用户可见事实由原始 summary 重渲染",
+    "coverage 未发给模型，由程序保留，不能让模型决定完整性",
+    "此阶段是工作项状态摘要，尚未接入活动周报、稳定版 CLI 或真实项目迁移"
+  ]
+}

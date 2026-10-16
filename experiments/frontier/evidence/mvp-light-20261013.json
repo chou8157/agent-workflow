@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "scope": "SQLite关系登记 + 确定性三节点聚合 + 简单报告渲染",
+  "backend": "sqlite",
+  "full_run": {
+    "status": "full",
+    "coverage": {
+      "expected": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "visited": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "succeeded": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "failed": {},
+      "skipped": {}
+    },
+    "fact_count": 3,
+    "status_counts": {
+      "completed": 3
+    },
+    "date_fields": [
+      {
+        "node_id": "leaf",
+        "completed_at": null,
+        "completed_at_status": "unknown"
+      },
+      {
+        "node_id": "middle",
+        "completed_at": null,
+        "completed_at_status": "unknown"
+      },
+      {
+        "node_id": "root",
+        "completed_at": "2026-09-14T12:28:21+08:00",
+        "completed_at_status": "known"
+      }
+    ]
+  },
+  "denied_run": {
+    "status": "partial",
+    "coverage": {
+      "expected": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "visited": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "succeeded": [
+        "middle",
+        "root"
+      ],
+      "failed": {
+        "leaf": "本次请求明确拒绝读取"
+      },
+      "skipped": {}
+    },
+    "report_contains_explicit_gap": true
+  },
+  "repeated_fact_output_equal": true,
+  "source_files_unchanged": true,
+  "report": "# 多项目工作摘要\n\n- 聚合状态：full\n- 关系版本：4\n- 计划覆盖：3 个节点；成功读取：3 个；缺口：0 个\n\n## 已读取事实\n- [leaf] 多工作项上下文能力第一期：completed（完成日期：未记录日期）\n- [middle] 工作流版本化升级能力：completed（完成日期：未记录日期）\n- [root] 工作流状态与文档治理优化：completed（完成日期：2026-09-14T12:28:21+08:00）\n\n## 未覆盖或失败\n- 无\n\n## 事实口径\n- 以上内容只来自节点工作流文件；未记录日期的事实不参与时间范围推断。\n",
+  "conclusion": {
+    "deterministic_core_passed": true,
+    "weekly_time_filter_ready": false,
+    "weekly_time_filter_reason": "middle/leaf 的 completed_at 为 unknown；当前资料没有可靠的业务活动日期，不能据文件更新时间推断本周。",
+    "agent_expression_layer_tested": false
+  }
+}

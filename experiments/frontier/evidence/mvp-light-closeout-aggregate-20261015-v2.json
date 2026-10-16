@@ -1,0 +1,78 @@
+{
+  "observed_at": "2026-10-15T07:43:17.980133+00:00",
+  "scope": "实验 fixture 的单节点收口和三节点按需聚合；没有读取真实项目",
+  "stable_or_real_project_written": false,
+  "local_closeout_without_node_identity": true,
+  "single_source": {
+    "middle": true,
+    "leaf": true,
+    "repeat_leaf": "unchanged",
+    "repeat_leaf_source_unchanged": true
+  },
+  "full_aggregate": {
+    "status": "full",
+    "coverage": {
+      "expected": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "visited": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "succeeded": [
+        "leaf",
+        "middle",
+        "root"
+      ],
+      "failed": {},
+      "skipped": {}
+    },
+    "window_records": [
+      [
+        "leaf",
+        "a-leaf"
+      ],
+      [
+        "middle",
+        "a-middle"
+      ]
+    ],
+    "unknown_date_nodes": [
+      "root"
+    ],
+    "evidence_refs_preserved": true
+  },
+  "denied_child": {
+    "status": "partial",
+    "failed": {
+      "leaf": "本次请求明确拒绝读取"
+    },
+    "window_records": [
+      [
+        "middle",
+        "a-middle"
+      ]
+    ],
+    "unknown_date_nodes": [
+      "root"
+    ]
+  },
+  "node_budget": {
+    "status": "partial",
+    "visited": [
+      "middle",
+      "root"
+    ],
+    "skipped": {
+      "leaf": "node_budget"
+    }
+  },
+  "evidence_change": {
+    "tested": true,
+    "result": "partial_and_leaf_activity_excluded"
+  },
+  "root_source_unchanged": true
+}

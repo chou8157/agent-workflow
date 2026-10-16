@@ -51,6 +51,7 @@ CAPABILITY_REQUIRED = {
     "evidence": ["30-records/validation-log.md", "30-records/risk-log.md"],
     "delivery": ["30-records/delivery"],
     "audit": ["20-gates"],
+    "shared-workflow": [],
 }
 WORK_ITEMS_README = "30-records/work-items/README.md"
 STATE_FILENAME = ".state.json"

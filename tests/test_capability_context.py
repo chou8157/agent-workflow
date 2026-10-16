@@ -54,3 +54,17 @@ def test_scaffold_and_enable_share_the_same_capability_schema(tmp_path):
     root = tmp_path / ".agent-workflow"
     assert (root / "30-records" / "validation-log.md").is_file()
     assert (root / "30-records" / "delivery").is_dir()
+
+
+def test_advanced_project_remains_recognized_by_upgrade_and_check(tmp_path):
+    import check_workflow
+    import scaffold_workflow
+    import upgrade_workflow
+    scaffold_workflow.scaffold_project(tmp_path, profile="advanced")
+    manifest = tmp_path / ".agent-workflow" / ".capabilities.json"
+    original = manifest.read_bytes()
+    (tmp_path / ".agent-workflow" / "WORKFLOW_VERSION").write_text("5\n", encoding="utf-8")
+    upgraded = upgrade_workflow.apply_safe_upgrade(tmp_path)
+    assert upgraded["runtime_ready"] is True
+    assert manifest.read_bytes() == original
+    assert not check_workflow.check_project(tmp_path, require_work_items=True)

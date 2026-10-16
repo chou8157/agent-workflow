@@ -1,0 +1,6 @@
+{
+  "status": "superseded",
+  "executed_calls": 0,
+  "reason": "调用负责人改为 /root/evaluation_review，增加真实耗时与完成标记审计",
+  "replacement": "experiments/frontier/evidence/p3-native-formal-20261010b/plan.json"
+}

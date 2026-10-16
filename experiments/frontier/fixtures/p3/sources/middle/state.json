@@ -1,0 +1,14 @@
+{
+  "id": "W-20260715-workflow-upgrade",
+  "title": "工作流版本化升级能力",
+  "type": "需求",
+  "status": "completed",
+  "parent": null,
+  "created_at": null,
+  "updated_at": "2026-09-11T17:24:18+08:00",
+  "completed_at": null,
+  "completed_at_unknown": true,
+  "blocked_reason": null,
+  "migrated_from": "work-item.md",
+  "migrated_at": "2026-09-11T17:24:18+08:00"
+}

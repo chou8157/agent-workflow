@@ -1,0 +1,63 @@
+{
+  "completed_count": 107,
+  "passed_count": 71,
+  "collected": [
+    {
+      "call_id": "p3b20261010_h_07_r1_middle",
+      "passed": false,
+      "protocol_errors": [
+        "unauthorized_tool_or_read"
+      ],
+      "quality": {
+        "passed": false,
+        "errors": [
+          {
+            "code": "missing_field",
+            "path": "$.schema_version"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.case_id"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.status"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.registry"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.coverage"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.facts"
+          },
+          {
+            "code": "missing_field",
+            "path": "$.gaps"
+          },
+          {
+            "code": "extra_field",
+            "path": "$.error"
+          }
+        ]
+      },
+      "total_tokens": 57710,
+      "elapsed_seconds": 30.865
+    }
+  ],
+  "active": [],
+  "ready": [
+    {
+      "call_id": "p3b20261010_h_07_r1_final",
+      "index": 108
+    },
+    {
+      "call_id": "p3b20261010_h_07_r2_leaf",
+      "index": 109
+    }
+  ]
+}

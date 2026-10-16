@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "node_id": "middle",
+  "network_enabled": true,
+  "registry": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/control/registry.json"
+}

@@ -1,0 +1,36 @@
+{
+  "stage": "data_protocol_and_harness_only",
+  "real_model_calls": 0,
+  "formal_plan": "evidence/p3-native-20261010/plan.json",
+  "planned_final_calls": 72,
+  "planned_worker_calls": 66,
+  "validation": [
+    {
+      "python": "3.8.3",
+      "command": "python3 -m pytest experiments/frontier/test_p3_cases.py experiments/frontier/test_p3_native_harness.py -q",
+      "passed": 69
+    },
+    {
+      "python": "Python 3.10.10",
+      "command": "python3.10 -m pytest experiments/frontier/test_p3_cases.py experiments/frontier/test_p3_native_harness.py -q",
+      "passed": 69
+    },
+    {
+      "command": "python3 experiments/frontier/p3_cases.py check",
+      "changed_files": []
+    },
+    {
+      "command": "python3 -m py_compile experiments/frontier/p3_cases.py experiments/frontier/p3_native_harness.py",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "p3_cases.py": "e6757ed209ef7c12182c7b1c139a24314946243585730157fd43554c08f21134",
+    "p3_native_harness.py": "81c8d66510e310449ff59c42c77676740bbfe3790455ff56ada807f6509032cb",
+    "test_p3_cases.py": "a5640e59a30f81777f218013b1613a037504df7be0a9b49f3ca1931d2802e99c",
+    "test_p3_native_harness.py": "a0e844790120329e4a8f59ae4cf1f49d4e059d8b9056c3c813071694caa261ef",
+    "p3-protocol.md": "060b4944564a1c0e4980fa40bfd698c9d234944053410d640a03d2bf3ebefc89",
+    "fixtures/p3/freeze.json": "eb759d44c859c03161809bc5c7c0bdfcefd91be3de0c35023616fdfb8d8a0537"
+  },
+  "note": "以上为已执行程序验证；合成日志测试不代表真实模型成功。"
+}

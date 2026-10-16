@@ -1,0 +1,180 @@
+{
+  "stage": "P2",
+  "created_at": "2026-10-10T09:59:03.387018+00:00",
+  "environment": {
+    "python": "3.8.3",
+    "platform": "macOS-10.16-x86_64-i386-64bit"
+  },
+  "parameters": {
+    "backends": [
+      "file",
+      "sqlite",
+      "postgresql",
+      "neo4j"
+    ],
+    "sizes": [
+      3
+    ],
+    "shapes": [
+      "diamond"
+    ],
+    "repeats": 1
+  },
+  "code_sha256": {
+    "service_stores.py": "43dd654899ae4564d19f9fb626bba9f6be2a6fb1385ef60ec9b9f3883ff9a70b",
+    "service_benchmark.py": "e745ad5639e674f039b5e291ec8cd0fb8bbfba91e5bf1ae43ba4310b3297a964",
+    "test_service_stores.py": "970e83df019ac17d6ab2638a4aa2eaa26bd48fcfad0da0224bf8b5336a494e9f",
+    "storage_common.py": "aa9afee75aff31cd327abd6d6494b7f51b75d3d784dd1abb42be9dbf6ca1a92a",
+    "file_store.py": "9c48bf6759e98eece83edc8b8e7edc377a5863a533796465c099eae9548b24ac",
+    "sqlite_store.py": "8678cddac854642679f76f8fa40cba364b09caed46da7fd83ebc0e834f536607"
+  },
+  "limitations": [
+    "只连接显式启用的本机专用实例，不代表跨主机/生产性能",
+    "本矩阵只比关系存储与后代集合，不调用模型、不统计 token",
+    "Neo4j 一致快照通过元节点锁实现，需要写事务权限并会串行化同一 registry 读取",
+    "原生查询只返回节点ID，独立报告与全快照载荷差异；未宣称两者传输内容相同",
+    "逻辑备份不代替服务原生物理备份或节点事实备份；提交确认丢失未做网络故障实测",
+    "保留所有样本；5次探索不估可靠P95，不决定赢家"
+  ],
+  "contract_tests": {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+      "-m",
+      "pytest",
+      "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/test_service_stores.py",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "exit_code": 0,
+    "output": "ssssssssssssssssssssssssssssss......                                     [100%]\n6 passed, 30 skipped in 0.11s\n"
+  },
+  "kind": "p2_service_matrix",
+  "candidates": {
+    "file": "measured",
+    "sqlite": "measured",
+    "postgresql": "not_run/environment",
+    "neo4j": "not_run/environment"
+  },
+  "server_info": {},
+  "workspace": "/private/tmp/frontier-p2-services-fo5zj14l",
+  "samples": [
+    {
+      "backend": "file",
+      "nodes": 3,
+      "shape": "diamond",
+      "repetition": 0,
+      "position": 0,
+      "dataset_sha256": "cff444d4312c403f861d829108647fc500d82ea277ae620bda6a928ae5bd8cad",
+      "status": "pass",
+      "native_queries": [],
+      "initialize_ms": 1.032083000000017,
+      "snapshot_ms": 0.341542000000028,
+      "snapshot_payload_bytes": 272,
+      "snapshot_queries": [
+        {
+          "root": "n00000",
+          "node_count": 3,
+          "python_closure_ms": 0.004500000000073889,
+          "snapshot_plus_closure_ms": 0.3460420000001019
+        },
+        {
+          "root": "n00001",
+          "node_count": 1,
+          "python_closure_ms": 0.0017500000000225668,
+          "snapshot_plus_closure_ms": 0.34329200000005056
+        }
+      ],
+      "update_ms": 0.834208000000003,
+      "reopen_snapshot_ms": 0.1758749999999365
+    },
+    {
+      "backend": "sqlite",
+      "nodes": 3,
+      "shape": "diamond",
+      "repetition": 0,
+      "position": 1,
+      "dataset_sha256": "cff444d4312c403f861d829108647fc500d82ea277ae620bda6a928ae5bd8cad",
+      "status": "pass",
+      "native_queries": [],
+      "initialize_ms": 15.432875000000124,
+      "snapshot_ms": 0.7757910000001367,
+      "snapshot_payload_bytes": 272,
+      "snapshot_queries": [
+        {
+          "root": "n00000",
+          "node_count": 3,
+          "python_closure_ms": 0.0036660000000132698,
+          "snapshot_plus_closure_ms": 0.77945700000015
+        },
+        {
+          "root": "n00001",
+          "node_count": 1,
+          "python_closure_ms": 0.0015839999998323862,
+          "snapshot_plus_closure_ms": 0.7773749999999691
+        }
+      ],
+      "update_ms": 1.9614999999999494,
+      "reopen_snapshot_ms": 0.5392499999998801
+    }
+  ],
+  "summary": [
+    {
+      "backend": "file",
+      "nodes": 3,
+      "shape": "diamond",
+      "samples": 1,
+      "passed": 1,
+      "timing_population": "passed_samples_only",
+      "initialize_ms": {
+        "median": 1.032083000000017,
+        "min": 1.032083000000017,
+        "max": 1.032083000000017
+      },
+      "snapshot_ms": {
+        "median": 0.341542000000028,
+        "min": 0.341542000000028,
+        "max": 0.341542000000028
+      },
+      "update_ms": {
+        "median": 0.834208000000003,
+        "min": 0.834208000000003,
+        "max": 0.834208000000003
+      },
+      "reopen_snapshot_ms": {
+        "median": 0.1758749999999365,
+        "min": 0.1758749999999365,
+        "max": 0.1758749999999365
+      }
+    },
+    {
+      "backend": "sqlite",
+      "nodes": 3,
+      "shape": "diamond",
+      "samples": 1,
+      "passed": 1,
+      "timing_population": "passed_samples_only",
+      "initialize_ms": {
+        "median": 15.432875000000124,
+        "min": 15.432875000000124,
+        "max": 15.432875000000124
+      },
+      "snapshot_ms": {
+        "median": 0.7757910000001367,
+        "min": 0.7757910000001367,
+        "max": 0.7757910000001367
+      },
+      "update_ms": {
+        "median": 1.9614999999999494,
+        "min": 1.9614999999999494,
+        "max": 1.9614999999999494
+      },
+      "reopen_snapshot_ms": {
+        "median": 0.5392499999998801,
+        "min": 0.5392499999998801,
+        "max": 0.5392499999998801
+      }
+    }
+  ],
+  "code_unchanged_during_run": true
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="12" skipped="0" tests="14" time="0.266" timestamp="2026-10-10T15:34:36.912592+08:00" hostname="ChiXin-MacBook-Pro.local"><testcase classname="experiments.frontier.test_coordinator" name="test_version_conflict_crossing_time_window_cannot_expose_old_fact[central]" time="0.007"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:277: in test_version_conflict_crossing_time_window_cannot_expose_old_fact
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_version_conflict_crossing_time_window_cannot_expose_old_fact[hierarchical]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:277: in test_version_conflict_crossing_time_window_cannot_expose_old_fact
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[central-True-1]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[central-left1-right1]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[central-left2-right2]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[hierarchical-True-1]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[hierarchical-left1-right1]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_json_boolean_and_number_are_different_fact_values[hierarchical-left2-right2]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:286: in test_json_boolean_and_number_are_different_fact_values
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_record_cannot_claim_a_different_authority_node[central]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:296: in test_record_cannot_claim_a_different_authority_node
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_record_cannot_claim_a_different_authority_node[hierarchical]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:296: in test_record_cannot_claim_a_different_authority_node
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_nonstandard_json_nan_rejects_the_source[central]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:305: in test_nonstandard_json_nan_rejects_the_source
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_nonstandard_json_nan_rejects_the_source[hierarchical]" time="0.002"><failure message="AssertionError: assert 'full' == 'partial'&#10;  &#10;  - partial&#10;  + full">experiments/frontier/test_coordinator.py:305: in test_nonstandard_json_nan_rejects_the_source
+    assert result["status"] == "partial"
+E   AssertionError: assert 'full' == 'partial'
+E     
+E     - partial
+E     + full</failure></testcase><testcase classname="experiments.frontier.test_coordinator" name="test_source_bytes_changing_within_one_query_are_rejected[central]" time="0.002" /><testcase classname="experiments.frontier.test_coordinator" name="test_source_bytes_changing_within_one_query_are_rejected[hierarchical]" time="0.002" /></testsuite></testsuites>

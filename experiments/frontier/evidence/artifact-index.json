@@ -1,0 +1,45 @@
+{
+  "archive": "p1-artifacts-20261010.tar.gz",
+  "sha256": "0c3c678ae6a9e5945e5c59ba16270b31f736e32f2d66081ee3a9451a32d2f799",
+  "bytes": 12682959,
+  "verified_result_files": 840,
+  "runs": [
+    {
+      "evidence": "p1-scale-20261010.json",
+      "evidence_sha256": "5b8687045cea0eac24de15193c64dad3e941990a1121d2a4c115b5da08b65edb",
+      "archive_prefix": "p1-scale-20261010",
+      "original_workspace": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-p1-5lolrguu",
+      "samples": 320,
+      "passed": 0,
+      "interpretation": "基准路径别名误判，保留但不参与比较"
+    },
+    {
+      "evidence": "p1-scale-20261010-v2.json",
+      "evidence_sha256": "cda55ca71f475a4cae4645655349d932d80858a0040c207e6776fd009de59fc8",
+      "archive_prefix": "p1-scale-20261010-v2",
+      "original_workspace": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-p1-824spz84",
+      "samples": 320,
+      "passed": 320,
+      "interpretation": "P1 正式探索样本"
+    },
+    {
+      "evidence": "p1-facts10-20261010.json",
+      "evidence_sha256": "3f900fcb9932feaa720df5a647e590fae24712958eb9cb770df5844d991e5f14",
+      "archive_prefix": "p1-facts10-20261010",
+      "original_workspace": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-p1-_vgk2688",
+      "samples": 120,
+      "passed": 120,
+      "interpretation": "P1 正式探索样本"
+    },
+    {
+      "evidence": "p1-facts100-20261010.json",
+      "evidence_sha256": "1741b00468fac72405a88f1e200dc9685c0ac1f32188bbed885ed460dbc6d416",
+      "archive_prefix": "p1-facts100-20261010",
+      "original_workspace": "/private/var/folders/s2/3nkj65b96gbg9jqlhm9db2k00000gp/T/frontier-p1-5up0ll9v",
+      "samples": 80,
+      "passed": 80,
+      "interpretation": "P1 正式探索样本"
+    }
+  ],
+  "scope": "保存合成来源、完整查询结果和每轮证据；关系初始化由固定版本 benchmark.py 重建。解压后原绝对路径仅作采样时证据定位，不直接用于查询。"
+}

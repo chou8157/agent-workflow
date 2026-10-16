@@ -1,0 +1,34 @@
+{
+  "edges": [
+    {
+      "kind": "contains",
+      "source": "middle",
+      "target": "leaf"
+    },
+    {
+      "kind": "contains",
+      "source": "root",
+      "target": "leaf"
+    },
+    {
+      "kind": "contains",
+      "source": "root",
+      "target": "middle"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "leaf",
+      "locator": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/leaf"
+    },
+    {
+      "id": "middle",
+      "locator": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/middle"
+    },
+    {
+      "id": "root",
+      "locator": "/Users/yizhoucp/Documents/agent-workflow/.worktrees/frontier-workflow-20261009/experiments/frontier/fixtures/p4/nodes/root"
+    }
+  ],
+  "revision": 5
+}

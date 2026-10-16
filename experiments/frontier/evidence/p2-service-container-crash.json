@@ -1,0 +1,34 @@
+{
+  "stage": "P2",
+  "kind": "external_operation_report",
+  "date": "2026-10-10",
+  "source": "根 Agent 负责容器生命周期；以下为其实际工具执行结果的协作回传，不是本文件作者独立运行 Docker 的记录。",
+  "docker_version": "29.7.2",
+  "operation": "专用容器 docker kill KILL，然后 docker start",
+  "kill_exit_code": 0,
+  "start_exit_code": 0,
+  "containers": [
+    {
+      "backend": "postgresql",
+      "container_id": "127b1982476167fe31a3b9d63327faae23e1b9a7e171d6328cf8e38264de1d15",
+      "image_id": "sha256:ca0bd484cb98bf4b24eb1010e73fb3fcbd6714d240fbc1a10eea5b7dbecb641d"
+    },
+    {
+      "backend": "neo4j",
+      "container_id": "bc89127f094d8cb16a7350b3a8d9f7cad4850fa93baa71f2a1f660eea7745c35",
+      "image_id": "sha256:c7d25c0eeebfe125718d58b72ed5d663c85d0479047733845eb2237c67ce8069"
+    }
+  ],
+  "isolation": {
+    "label": "agent-workflow.experiment=frontier-20261010",
+    "restart_policy": "no",
+    "published_interfaces": "loopback only"
+  },
+  "before_evidence": "p2-service-recovery-before.json",
+  "after_evidence": "p2-service-recovery-after.json",
+  "limitations": [
+    "仅验证容器进程崩溃后的已提交状态恢复。",
+    "未重启主机、未模拟断电、磁盘损坏或数据卷丢失。",
+    "没有在数据库提交确认窗口注入网络故障。"
+  ]
+}

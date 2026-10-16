@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "command": "env PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' python3 -m pytest experiments/frontier/test_p2_local.py -q",
+  "exit_code": 1,
+  "actual_summary": "2 failed, 12 passed in 2.96s",
+  "failed_cases": [
+    "test_backup_during_writes_is_consistent_and_restorable[F]",
+    "test_backup_during_writes_is_consistent_and_restorable[S]"
+  ],
+  "diagnosis": "备份内容与恢复快照均一致，但实验错误地跨进程比较 time.monotonic。本机 macOS Python 3.8 的起点不同，导致并发区间被误判。",
+  "observed_debug_example": {
+    "writer_monotonic_start": 0.099459,
+    "writer_monotonic_end": 0.211972167,
+    "parent_first_backup_monotonic_start": 0.323066042,
+    "first_backup_revision": 7,
+    "final_revision": 11,
+    "all_three_backups_consistent_and_restored": true
+  },
+  "fix": "用子进程完成 Event 确认并发窗口；跨进程时间只记录 wall_time_ns，不再比较不同起点的 monotonic。候选 F/S 源码未修改。"
+}

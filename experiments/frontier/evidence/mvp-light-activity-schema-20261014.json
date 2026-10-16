@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_type": "mvp_light_activity_schema",
+  "legacy_log_date_records_accepted": 0,
+  "structured_records": [
+    [
+      "middle",
+      "2026-10-13",
+      "完成升级验证",
+      "completed"
+    ],
+    [
+      "leaf",
+      "2026-10-14",
+      "完成任务拆分",
+      "in_progress"
+    ]
+  ],
+  "unknown_date_nodes": [
+    "root"
+  ],
+  "invalid_date_status": "partial",
+  "invalid_date_gap": [
+    {
+      "work_item_id": "W-20260715-multi-work-items",
+      "document": ".state.json",
+      "reason": "activity_records 第 1 项 date 无效"
+    }
+  ],
+  "schema_supported_with_structured_input": true,
+  "current_fixture_business_week_ready": false,
+  "source_of_truth": "work item .state.json activity_records",
+  "conclusion": "只有结构化 activity_records 进入业务日期窗口；普通 validation-log 日期被忽略；非法记录显式降级为节点缺口。"
+}

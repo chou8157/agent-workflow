@@ -4,10 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import re
 import sys
+import tempfile
+import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -40,10 +44,57 @@ def state_path(item_path: Path) -> Path:
     return item_path / STATE_FILENAME
 
 
+@contextmanager
+def state_lock(path: Path, timeout: float = 5.0):
+    """串行化同一工作项的读取、修改和写入；锁文件保留以避免 inode 竞争。"""
+    path = Path(path)
+    if path.is_symlink():
+        raise ValueError("状态文件不能是符号链接")
+    lock_path = path.with_name(path.name + ".lock")
+    descriptor = None
+    try:
+        descriptor = os.open(lock_path, os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
+        deadline = time.monotonic() + max(0, timeout)
+        while True:
+            try:
+                fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() >= deadline:
+                    raise ValueError("工作项写入锁超时，请稍后重试")
+                time.sleep(min(0.05, max(0, deadline - time.monotonic())))
+        yield
+    except OSError as error:
+        raise ValueError(f"工作项写入失败：{error}") from error
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+
+
 def write_json_atomic(path: Path, payload: dict[str, object]) -> None:
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(temporary, path)
+    """原子替换并刷盘；修改已有状态的调用方必须持有 state_lock。"""
+    temporary = None
+    replaced = False
+    try:
+        descriptor, temporary = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
+        with os.fdopen(descriptor, "w", encoding="utf-8") as stream:
+            json.dump(payload, stream, ensure_ascii=False, indent=2, allow_nan=False)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+        replaced = True
+        directory = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    except OSError as error:
+        message = "状态已替换但持久化结果待确认，请重读状态或使用相同活动 ID 重试" if replaced else "状态写入失败，原状态未替换"
+        raise ValueError(f"{message}：{error}") from error
+    finally:
+        if temporary is not None and os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def validate_state(state: dict[str, object], expected_id: str | None = None) -> None:
@@ -132,34 +183,37 @@ def create_work_item(project: Path, item_id: str, title: str, item_type: str, pa
 
     root = ensure_work_items_root(project)
     destination = root / item_id
-    if destination.exists():
+    try:
+        destination.mkdir()
+    except FileExistsError:
         raise ValueError(f"工作项已存在：{item_id}")
 
-    copy_template_tree(
-        TEMPLATE_ROOT,
-        destination,
-        {
-            "{{WORK_ITEM_ID}}": item_id,
-            "{{WORK_ITEM_TITLE}}": title.strip(),
-            "{{WORK_ITEM_TYPE}}": item_type,
-            "{{WORK_ITEM_PARENT}}": parent or "无",
-        },
-    )
-    timestamp = now_iso()
-    write_json_atomic(
-        destination / STATE_FILENAME,
-        {
-            "id": item_id,
-            "title": title.strip(),
-            "type": item_type,
-            "status": "planned",
-            "parent": parent or None,
-            "created_at": timestamp,
-            "updated_at": timestamp,
-            "completed_at": None,
-            "blocked_reason": None,
-        },
-    )
+    with state_lock(state_path(destination)):
+        copy_template_tree(
+            TEMPLATE_ROOT,
+            destination,
+            {
+                "{{WORK_ITEM_ID}}": item_id,
+                "{{WORK_ITEM_TITLE}}": title.strip(),
+                "{{WORK_ITEM_TYPE}}": item_type,
+                "{{WORK_ITEM_PARENT}}": parent or "无",
+            },
+        )
+        timestamp = now_iso()
+        write_json_atomic(
+            destination / STATE_FILENAME,
+            {
+                "id": item_id,
+                "title": title.strip(),
+                "type": item_type,
+                "status": "planned",
+                "parent": parent or None,
+                "created_at": timestamp,
+                "updated_at": timestamp,
+                "completed_at": None,
+                "blocked_reason": None,
+            },
+        )
     return destination
 
 
@@ -222,98 +276,126 @@ def set_status(project: Path, item_id: str, status: str, reason: str | None = No
 
     metadata = get_work_item(project, item_id)
     item_path = Path(metadata["path"])
-    state = read_state(item_path)
-    if state is None:
-        raise ValueError(f"工作项缺少 {STATE_FILENAME}，请先执行只读迁移检查：{item_id}")
-    previous = state["status"]
-    if status != previous and status not in ALLOWED_TRANSITIONS[previous]:
-        raise ValueError(f"不允许的状态转换：{previous} -> {status}")
-    state["status"] = status
-    state["updated_at"] = now_iso()
-    if status == "completed" and previous != "completed":
-        state["completed_at"] = state["updated_at"]
-        state["completed_at_unknown"] = False
-    elif status != "completed":
-        state["completed_at"] = None
-        state["completed_at_unknown"] = False
-    if status == "blocked":
-        if not reason or not reason.strip():
-            raise ValueError("设置 blocked 状态时必须提供 --reason")
-        state["blocked_reason"] = reason.strip()
-    else:
-        state["blocked_reason"] = None
-    write_json_atomic(state_path(item_path), state)
+    with state_lock(state_path(item_path)):
+        state = read_state(item_path)
+        if state is None:
+            raise ValueError(f"工作项缺少 {STATE_FILENAME}，请先执行只读迁移检查：{item_id}")
+        previous = state["status"]
+        if status != previous and status not in ALLOWED_TRANSITIONS[previous]:
+            raise ValueError(f"不允许的状态转换：{previous} -> {status}")
+        state["status"] = status
+        state["updated_at"] = now_iso()
+        if status == "completed" and previous != "completed":
+            state["completed_at"] = state["updated_at"]
+            state["completed_at_unknown"] = False
+        elif status != "completed":
+            state["completed_at"] = None
+            state["completed_at_unknown"] = False
+        if status == "blocked":
+            if not reason or not reason.strip():
+                raise ValueError("设置 blocked 状态时必须提供 --reason")
+            state["blocked_reason"] = reason.strip()
+        else:
+            state["blocked_reason"] = None
+        write_json_atomic(state_path(item_path), state)
     return state_path(item_path)
 
 
 def read_work_item_legacy(path: Path) -> dict[str, str]:
     item_file = path / "work-item.md"
-    metadata = {"status": "", "title": "", "type": "", "parent": ""}
+    metadata = {"id": "", "status": "", "title": "", "type": "", "parent": "", "blocked_reason": ""}
     if not item_file.is_file():
         return metadata
-    field_names = {"标题": "title", "类型": "type", "状态": "status", "父工作项": "parent"}
-    for name, value in FIELD_RE.findall(item_file.read_text(encoding="utf-8", errors="replace")):
-        key = field_names.get(name)
-        if key and not metadata[key]:
-            metadata[key] = value.strip().strip("`")
+    field_names = {"ID": "id", "标题": "title", "类型": "type", "状态": "status", "父工作项": "parent", "阻塞原因": "blocked_reason"}
+    fields = re.findall(r"^- (ID|标题|类型|状态|父工作项|阻塞原因)：\s*(.*)$", item_file.read_text(encoding="utf-8"), re.MULTILINE)
+    for name, value in fields:
+        key, value = field_names[name], value.strip().strip("`")
+        if metadata[key] and metadata[key] != value:
+            raise ValueError(f"旧正文存在重复且冲突的字段：{name}")
+        metadata[key] = value
+    if metadata["id"] and metadata["id"] != path.name:
+        raise ValueError("旧正文 ID 与工作项目录不一致")
     return metadata
+
+
+def validate_migration_paths(project: Path) -> list[Path]:
+    """迁移只访问项目内普通目录和文件，拒绝符号链接及类型冲突。"""
+    root = work_items_dir(project)
+    for path in (project / WORKFLOW_DIR, root.parent, root):
+        if path.is_symlink() or (path.exists() and not path.is_dir()):
+            raise ValueError(f"迁移路径必须是普通目录：{path}")
+    if not root.is_dir():
+        return []
+    items = []
+    for item_path in sorted(root.glob("W-*")):
+        if item_path.is_symlink() or not item_path.is_dir():
+            raise ValueError(f"工作项路径必须是普通目录：{item_path}")
+        validate_work_item_id(item_path.name)
+        for name in ("work-item.md", STATE_FILENAME, STATE_FILENAME + ".lock"):
+            path = item_path / name
+            if path.is_symlink() or (path.exists() and not path.is_file()):
+                raise ValueError(f"迁移路径必须是普通文件：{path}")
+        items.append(item_path)
+    return items
+
+
+def legacy_state_payload(item_path: Path) -> dict[str, object]:
+    legacy = read_work_item_legacy(item_path)
+    if legacy["status"] not in VALID_STATUSES:
+        raise ValueError("缺少状态文件且旧状态无效")
+    if not legacy["title"] or not legacy["type"]:
+        raise ValueError("旧正文缺少标题或类型")
+    if legacy["status"] == "blocked" and not legacy["blocked_reason"]:
+        raise ValueError("旧 blocked 状态缺少明确阻塞原因")
+    timestamp = now_iso()
+    return {
+        "id": item_path.name, "title": legacy["title"], "type": legacy["type"],
+        "status": legacy["status"], "parent": None if legacy["parent"] in ("", "无") else legacy["parent"],
+        "created_at": None, "updated_at": timestamp, "completed_at": None,
+        "completed_at_unknown": legacy["status"] == "completed",
+        "blocked_reason": legacy["blocked_reason"] or None,
+        "migrated_from": "work-item.md", "migrated_at": timestamp,
+        "legacy_metadata": legacy,
+    }
 
 
 def migration_report(project: Path) -> list[dict[str, str]]:
     findings: list[dict[str, str]] = []
-    for item_path in sorted(work_items_dir(project).glob("W-*")):
-        if not item_path.is_dir():
-            continue
-        item = read_work_item_legacy(item_path)
-        if state_path(item_path).exists():
-            try:
+    for item_path in validate_migration_paths(project):
+        try:
+            item = read_work_item_legacy(item_path)
+            if state_path(item_path).exists():
                 state = read_state(item_path)
-            except ValueError as error:
-                findings.append({"id": item_path.name, "status": "未知", "finding": f"状态文件无效：{error}"})
+                # 未改动的旧元数据是迁移快照；后续生命周期以 .state.json 为准。
+                if state.get("legacy_metadata") == item:
+                    continue
+                conflicts = [field for field in ("title", "type", "status") if item.get(field) and str(state[field]) != item[field]]
+                if item["parent"] and (state["parent"] or "无") != item["parent"]:
+                    conflicts.append("parent")
+                if conflicts:
+                    findings.append({"id": item_path.name, "status": str(state["status"]), "finding": f"状态文件与旧正文冲突：{'、'.join(conflicts)}"})
                 continue
-            conflicts = [field for field in ("title", "type", "status") if item.get(field) and str(state[field]) != item[field]]
-            if conflicts:
-                findings.append({"id": item_path.name, "status": str(state["status"]), "finding": f"状态文件与旧正文冲突：{'、'.join(conflicts)}"})
-            continue
-        findings.append(
-            {
-                "id": item_path.name,
-                "status": item["status"] or "未知",
-                "finding": "缺少状态文件" if item["status"] in VALID_STATUSES else "缺少状态文件且旧状态无效",
-            }
-        )
+            legacy = legacy_state_payload(item_path)
+            findings.append({"id": item_path.name, "status": str(legacy["status"]), "finding": "缺少状态文件"})
+        except (ValueError, OSError, UnicodeError) as error:
+            findings.append({"id": item_path.name, "status": "未知", "finding": f"迁移阻断：{error}"})
     return findings
 
 
 def migrate_legacy_items(project: Path) -> list[Path]:
     migrated: list[Path] = []
-    for item_path in sorted(work_items_dir(project).glob("W-*")):
-        if not item_path.is_dir() or state_path(item_path).exists():
+    findings = migration_report(project)
+    blockers = [item for item in findings if item["finding"] != "缺少状态文件"]
+    if blockers:
+        raise ValueError("迁移预检未通过，未写入工作项：" + "；".join(f"{item['id']}：{item['finding']}" for item in blockers))
+    for item_path in validate_migration_paths(project):
+        if state_path(item_path).exists():
             continue
-        legacy = read_work_item_legacy(item_path)
-        if legacy["status"] not in VALID_STATUSES or not legacy["title"] or not legacy["type"]:
-            continue
-        if legacy["status"] == "blocked":
-            continue
-        timestamp = now_iso()
-        write_json_atomic(
-            state_path(item_path),
-            {
-                "id": item_path.name,
-                "title": legacy["title"],
-                "type": legacy["type"],
-                "status": legacy["status"],
-                "parent": None if legacy["parent"] in ("", "无") else legacy["parent"],
-                "created_at": None,
-                "updated_at": timestamp,
-                "completed_at": None,
-                "completed_at_unknown": legacy["status"] == "completed",
-                "blocked_reason": None,
-                "migrated_from": "work-item.md",
-                "migrated_at": timestamp,
-            },
-        )
-        migrated.append(state_path(item_path))
+        with state_lock(state_path(item_path)):
+            if state_path(item_path).exists():
+                continue
+            write_json_atomic(state_path(item_path), legacy_state_payload(item_path))
+            migrated.append(state_path(item_path))
     return migrated
 
 

@@ -1,0 +1,1 @@
+{"error":"input.json 不存在，无法读取评测规则和 output_schema"}

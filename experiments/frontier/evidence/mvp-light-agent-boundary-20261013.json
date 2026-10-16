@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "scope": "Agent 草稿引用边界的确定性契约，不是真实模型评测",
+  "good_draft": {
+    "sections": [
+      {
+        "fact_refs": [
+          "root/W-root"
+        ],
+        "text": "根节点记录已核验。"
+      }
+    ],
+    "covered": [
+      "root/W-root"
+    ],
+    "omitted": [
+      "middle/W-middle"
+    ]
+  },
+  "bad_draft_rejected": true,
+  "bad_draft_error": "Agent 草稿引用未知事实：unknown/W-missing"
+}

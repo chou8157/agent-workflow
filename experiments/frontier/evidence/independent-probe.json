@@ -1,0 +1,7425 @@
+{
+  "created_at": "2026-10-10T07:46:50.294520+00:00",
+  "python": "3.8.3",
+  "parameters": {
+    "seed": 20261010,
+    "cases": 400,
+    "nodes": 12,
+    "deep_nodes": 1200
+  },
+  "source_sha256": {
+    "coordinator.py": "b6bd0cbb785f230aac694723ec587dfedf9bb54b6ac86d6b03b2afb3cb6846e1",
+    "storage_common.py": "aa9afee75aff31cd327abd6d6494b7f51b75d3d784dd1abb42be9dbf6ca1a92a",
+    "independent_probe.py": "5b998d00b4de1c526552cc67fb14dd8794fbe06d388ceff60f03f4cc41586db4"
+  },
+  "code_unchanged_during_run": true,
+  "topology": {
+    "random_dag_cases": [
+      {
+        "case": 0,
+        "input_sha256": "17a9cb3f6a3c0a23e7c414e8359c94cf0514223277f68646bbbb7c72b64297bc",
+        "edges": 19,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 1,
+        "input_sha256": "423b1fe7e8057060e3737e239554f0cd263e4c563c8fad31a17769290f1cf934",
+        "edges": 15,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 2,
+        "input_sha256": "e689ab6615a4ed3a6063a68b5fead7ebb32fbde8f937f5c44cae4ab4c37c4a87",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 3,
+        "input_sha256": "4a182089698e40824b6cc2317e3c7fa952c304bfa862bee0a249d97246e72de6",
+        "edges": 14,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 4,
+        "input_sha256": "8aa30dc7ea9d61b2e833cea2f46407d9ea8d53334dea30568a4e083f72d02318",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 5,
+        "input_sha256": "3c27755fcd51358ce85c52465121c1e2bbd9aaefc1fd10043e90291cd5c99728",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 6,
+        "input_sha256": "ad5ed90f6bb4e1a7ba60b8143def642bb7c6a1f1224851070e07d94f08790a38",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 7,
+        "input_sha256": "616c5ec35e90cb72bc61be1b06eac32a8f4154a350d50981db710bb524adbead",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 8,
+        "input_sha256": "b468916c3dffad55a39764dea24ef11fbc210d5af78798882e81097d7f8c4e6a",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 9,
+        "input_sha256": "12cd602fd1bffb6acd20c6c04e28777d3ebcda594435b0673c4d59153f9d032e",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 10,
+        "input_sha256": "3bd0359b1f472b179dbe639e8a154c25484e5d31638caf78381fc944a96afd94",
+        "edges": 9,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 11,
+        "input_sha256": "afd32ab9fdbc5428986e821c54a658883a2154ef2c6562cf0322efc1d46a9e6a",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 12,
+        "input_sha256": "a3ae38db15a8ce350f59d54239e53e22bff8d47cf3193c07ae4414b3b7a9739c",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 13,
+        "input_sha256": "91e15a3fec491d71706ac400f05697079b02bf23517d5ec123157a198a97bac2",
+        "edges": 17,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 14,
+        "input_sha256": "4381323dfe86f18bfb798dc5c4bc0224f4ec2d96fa39f08bbcacce8da03ac7ba",
+        "edges": 18,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 15,
+        "input_sha256": "b5c668525059592c5dd482c1137d089a62ffbfd0214495e3610ef9e764561a00",
+        "edges": 22,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 16,
+        "input_sha256": "ba6411a56f20a3ae87cf728677432e3e2f27345e2475ee620375ee69b96be2d8",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 17,
+        "input_sha256": "2b58467f93235c59a087238cb3ac79586c1635f6d7af512cf86518ab4f6623aa",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 18,
+        "input_sha256": "26c8f1258d3bc6636756c601c569486b775c7c8e529381adb5e8d13b3a810361",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 19,
+        "input_sha256": "831c66c959260708fb52a71b7fc2b0fa42562157212e5eafaf61007b3ce516ef",
+        "edges": 10,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 20,
+        "input_sha256": "be096003fc84e14154b25fe159ac7d03cb5fe793b106a645ada9c46055944aeb",
+        "edges": 18,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 21,
+        "input_sha256": "d8bbcac864f4139ea10530147a6aa9d27b8844aaee26c3350f3db276653b14b7",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 22,
+        "input_sha256": "6ad0982b404d369c45808c80f2de17e9261e1fc507ce336d0defa373ba7ba047",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 23,
+        "input_sha256": "87c897e35fcc208d102c241b1ae35b93c6c72e46f46e44730262e9158f82cc3d",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 24,
+        "input_sha256": "a334a2545a10d3fba263393039bcf59996d80369264a795ad8c47d76c4f00141",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 25,
+        "input_sha256": "6c6cc19f1bbd891bfb8b02c6985588d867a768b79245998580b506dbb6bf00ac",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 26,
+        "input_sha256": "c0084ca816b9655aed19dea0d5a146d8caf9f3e2cf6e2fb54edaf1f71d2d8ce8",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 27,
+        "input_sha256": "c2e557207724aff60f4fea02d5ee1b66e3401faa5a56e617c4b02a1c0d2c630c",
+        "edges": 16,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 28,
+        "input_sha256": "d498239ecc5183dd3ec96728aa43aaf7b4fb731e44332669a55308bc1605ae80",
+        "edges": 19,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 29,
+        "input_sha256": "fb69e747c13082e9f2b711d54b23b3b133a36eb34c68676a92578691b595b6bc",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 30,
+        "input_sha256": "0c500aac1828ff3579d4f274918ef176d5f050c143bbf6104577215a36e68fa4",
+        "edges": 22,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 31,
+        "input_sha256": "3a3a4da6457e24a8d5586d4246e5c839d436fe4b62201ade56a3cc96f63b79a0",
+        "edges": 10,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 32,
+        "input_sha256": "ee2ddc6053ea01c941ab42aeadd9f85deaefac22423f5b703beeaf355a8dfab8",
+        "edges": 22,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 33,
+        "input_sha256": "44e649dde980ec00d8c111c6e226758642b18eafc07bee687f8b8e89a345afa5",
+        "edges": 16,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 34,
+        "input_sha256": "c188a1cec33d1f027efa292943d1614a69a3e8d353c3be5ee96c68f42cd80f7d",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 35,
+        "input_sha256": "b11f374325889e7b910cc24462d13997866f454c83d735105225a044e808d8e8",
+        "edges": 15,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 36,
+        "input_sha256": "fc7b9937eecdfc73f82f7ac640d2f9622c28833377d89edfa60e9e493b3061e1",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 37,
+        "input_sha256": "3fbdeadcaf1e5bd52dd093f7100dca324ed6cac1c99abbd7c588d27f574f2a33",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 38,
+        "input_sha256": "4c4acf68b8af6975a1a536ace825bf888243186b44d41544115a402b10f68705",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 39,
+        "input_sha256": "594d05dafd06e10574f493c6775da561e4a75eeccc0957c77c30fa34cb34c169",
+        "edges": 20,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 40,
+        "input_sha256": "2b2e63a149f3d43c3f7439892f2152a61f18a51e43c9e8d0f6211247b4613f3d",
+        "edges": 20,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 41,
+        "input_sha256": "a52e0650a6ffb9d4910433b6f07d70b630c0621f6e297a0655efd5a9fc370da8",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 42,
+        "input_sha256": "f773f76417a7e671b5928ee6ccce2177ca3e8c2ff0ec518a1bdd81322f3cc00e",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 43,
+        "input_sha256": "2c0f5b19b3965ee0f06e3d45da707c1af0e26134a128c55192ea461ad0fe64e5",
+        "edges": 19,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 44,
+        "input_sha256": "577660646021d3b2424f217dbe216a85cacdfe3c7b95cacfe1c1955d87c3815f",
+        "edges": 17,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 45,
+        "input_sha256": "599f59960ac37d7fb1f13ce52136b25c6b37d6c6098a0fede5966276378f3471",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 46,
+        "input_sha256": "f5dad6b53c7cf9f9d5a92cee632e9457d5f3ba3b1860d6671bc6d006634200c3",
+        "edges": 15,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 47,
+        "input_sha256": "4db94f2fb6bad4424f67496ad1d5cc14bef95594931d6b07cd15ce8b7ad87087",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 48,
+        "input_sha256": "8ff4d8de5be73a665cee31c43d3432c238b168aa4ba64f819e1db43a57e10fb7",
+        "edges": 15,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 49,
+        "input_sha256": "98ab2f89dde0d8dbacb61402d72b1fb2e68470ceef94f85c9a193d2e3ee09fbe",
+        "edges": 13,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 50,
+        "input_sha256": "14dffb6fb0aee755cce74b0cf7144630efd1ce7c4891a46b9f40353c1d1d9de5",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 51,
+        "input_sha256": "a57266faaac79f4a16a4544dfd5cdcab8497d5e8674e471862defe06e53c8a1b",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 52,
+        "input_sha256": "9f2a2586834383f1a0fd91f052bd25571b95e8a9f56deae1264ef00fd8e540ec",
+        "edges": 23,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 53,
+        "input_sha256": "6f8b5619c7b14c40494c49f20ffec7bcb0c787e7009a61ea828fadbe0d648a4c",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 54,
+        "input_sha256": "79a9639874145ddff728b0651ea4977b19967d427c290cb1e650a4e1660a603c",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 55,
+        "input_sha256": "383ec6d2fdba4ab47d4ad3ae8f6a85e31bb8ba278f0ae4f1a5917ae5194a95f5",
+        "edges": 16,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 56,
+        "input_sha256": "0d3dceb3e900d1306c43ffdd03291e7d1c878bb8adfe1faa4a9e9650ecb23ead",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 57,
+        "input_sha256": "1ad812415499cb34e990592c5713d80e9c5522dd0b41986ca30426fe228f7c8a",
+        "edges": 21,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 58,
+        "input_sha256": "041733bdaed1f861845637c17a80896a94db3cab21045ae6dffa089ed7d958e4",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 59,
+        "input_sha256": "21edec38be6085cc438b4b398e3ab9d4a8b642a9ebac9fc15adca476b6d82efa",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 60,
+        "input_sha256": "d8eb2725db0e266c9d95feb6881507b53826c3518f824ffbf57f1884ac5b7036",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 61,
+        "input_sha256": "c3ccaa35e3928eb5af12fe15078976112930886548817b6b939e6731103a3f96",
+        "edges": 21,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 62,
+        "input_sha256": "c62446a274ab1805f1169e15c3a09bd95ccd97e2d2aa157c56e09e0f0f1a4217",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 63,
+        "input_sha256": "9f973e4bbcaa0ee650820e79ee8ace68424f919121c7893d977c6e3341aea6f3",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 64,
+        "input_sha256": "b28c5d591ce9d36a0e9c72f11855ff85440fa3e65f1be86ac83aaf12de46d92d",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 65,
+        "input_sha256": "a45c6771c2787cd8ca060c7180744fb35c15f799430543ce6636e62dfec5bf78",
+        "edges": 20,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 66,
+        "input_sha256": "55fbcc75db1dd5142e151f86c99f02190c1c89cc917671ca7f0915ff8c3124cd",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 67,
+        "input_sha256": "d589bfc2e553add6aefac2329cd2f7fc5be393672a231aea7f941ea55f3097cd",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 68,
+        "input_sha256": "021e2adcd7993e78ac664a6359d9ef4e2237eccb7961be34564f63f3e67538a5",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 69,
+        "input_sha256": "129b15644926cf6782e4e08fc06fa7b76152bd2c0eb599eca55d09c0b8a9a981",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 70,
+        "input_sha256": "7b838530d6590552915b260b38c28a94b52d2ad485c39a29787ea211a450ed52",
+        "edges": 15,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 71,
+        "input_sha256": "29bf7253ef33df75050a00280d5aad527f24dbf62d01631a8b18ea0a6c2a8e44",
+        "edges": 11,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 72,
+        "input_sha256": "082eb2138d9cd5b041ca4626c4b77ab58fb1714ad2cc61c2da68c78d9fdedc52",
+        "edges": 12,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 73,
+        "input_sha256": "a70ef25770feabe002f30bf060668b1dd31245009975aaeb546bbebbf7fa1473",
+        "edges": 21,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 74,
+        "input_sha256": "142dbd54851e7ed58b4fc2978ff59b128c00de8d6d255aacd98403a7fd733a69",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 75,
+        "input_sha256": "a4428f8cb53a791ac9dbd90be2fdb14adac14c39e17c3a8c4da6e93e436e92c4",
+        "edges": 20,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 76,
+        "input_sha256": "e32871bcec038fe44462e9a4953ba4d4626783c55bcec914a10254810c21eda4",
+        "edges": 13,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 77,
+        "input_sha256": "d59f1de17cd6b4f07fb8abc9a4c22b3d0ad62bf796798eeb663580b0f204401f",
+        "edges": 7,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 78,
+        "input_sha256": "fc52c12338adcd6ac222a7896776f296ebadc461054b4cb3ec54b96106e98d74",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 79,
+        "input_sha256": "11555de4ab6209ff8f12cdbacf287eca4a50cae9f7306593e71067c4e9ee6f55",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 80,
+        "input_sha256": "08100d6e1728c40caad6ce240f8fa9bac3b7f7a4ff08407b69f8d9d5026d4754",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 81,
+        "input_sha256": "c182037ab6a2a37a7e0141e9bb89563b1c8e67a777598d143398beb3f9baba62",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 82,
+        "input_sha256": "4947893a6b59215755dc0d5c240a530c91bdd0365f3caf6e4d25fc023d331e5c",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 83,
+        "input_sha256": "ce02e3ef07e305ff932e9c99f8ffec7ea27b38d98065393eca811fe611a991b1",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 84,
+        "input_sha256": "f09bc231859e9c27aa819c4eff73008a91e916574674454c51f26af49943d853",
+        "edges": 22,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 85,
+        "input_sha256": "90b5d853ec83d6e588d237f359849a0df531c0d9eaf306c3bd7241ed99d0144a",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 86,
+        "input_sha256": "7bb22ed9b8c8d1a0d686c58976f12262704250c408924c53585bfcfc6e77d148",
+        "edges": 21,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 87,
+        "input_sha256": "7b6d02da1d8806000a5a01af1293590197df1592c2b89a8dcfe5323a264a479a",
+        "edges": 18,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 88,
+        "input_sha256": "a823abe72f2bb3b25b53be7ec709a80dc908e592d1fcd469d330497540650252",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 89,
+        "input_sha256": "f13bcece72147df01c5b19552e669302c618271d0f0a9e39bf47458c87f292d5",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 90,
+        "input_sha256": "0904a5b05592ab50d93eedd5e5b8bc4c76c9212a666aac36787d1034a46bb4a3",
+        "edges": 7,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 91,
+        "input_sha256": "52c9e244bdc016e8fa7cd2e68dffd83c83f99c8dbb229336c5ab47308128ec0f",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 92,
+        "input_sha256": "d24c83979bff76603b96fa843ccde0de8fdb036bc977e671f9def60e672fa168",
+        "edges": 19,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 93,
+        "input_sha256": "0546d9b9cd2b156e77593b77fe5300369322378d1c492ab5a5a712bfe55347b4",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 94,
+        "input_sha256": "1655475d581ca993262df325735ceb4ebb33c4cac1c6e022b01ecfe01b53ec5f",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 95,
+        "input_sha256": "3caad73f2c9fe17e28b1bf30c45a7b133042a13eaadb96507f9aeede138d839e",
+        "edges": 15,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 96,
+        "input_sha256": "4261df1b86ce0fdfc95306dd0f91005baf851703e01270b3a8e1cef9c6317963",
+        "edges": 20,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 97,
+        "input_sha256": "feb1c086717e060fbafb58160f5a792f355ea6eeeed263bf14917ac2d2aafbbd",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 98,
+        "input_sha256": "d7c9f2e033ff7eef1f9ebec6c3577508798a23fef5d5ef3e720bac1e2256c6fe",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 99,
+        "input_sha256": "0bda14eff1ed5ec774f621c49deb99f8d8cfdc2b27a4850388036413ca922fa3",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 100,
+        "input_sha256": "23cf3989485289c3d3ce047b17910fd886c816785a7849cabd2bb472409ffc23",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 101,
+        "input_sha256": "dc57876abd9f52f72e83a5d236f4886168eecf5e5212204bf3213a473392a4d6",
+        "edges": 22,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 102,
+        "input_sha256": "d6214123329e262a4bdfe691af7e6e2eda460e32bd9107376e16646598973653",
+        "edges": 16,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 103,
+        "input_sha256": "aece654398806d2248fe0da113f830cf1cc54659d7d23a52835eeebb0b58b376",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 104,
+        "input_sha256": "3dfbaa627e61aaf49737da4af38999ed62439c3d4bb9fa5dd917c867e1bc18c1",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 105,
+        "input_sha256": "eb92a3b08d9a5a70c46f2c2c5ff92ab1c2d954a27abb514b8c2479cfa54fb32b",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 106,
+        "input_sha256": "9017cd78c611b0d0a7d4564b9ff4273e711e90679afe3761db9a111e1cc6e5ab",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 107,
+        "input_sha256": "998210d5890d30a930c5e6bc28d544f3dd546e225be0e998cc0880942603ef1b",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 108,
+        "input_sha256": "3b06405f593579e7c12372c4549d67485bb2a3b1d555dcc0f9b2af759f1d07b7",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 109,
+        "input_sha256": "b18189a11aa1ffe7907b9108cbb9c8604fd660ff959a9c8147c8cfc7d1f875ef",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 110,
+        "input_sha256": "cfbca13379fe653b8ff69d2e3f711555d91a502d7725f0e57ff51467ba6af113",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 111,
+        "input_sha256": "aced13120259f22b00528eb0a39db65ddbc1b0903726180a3263734ba90b586e",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 112,
+        "input_sha256": "58ad54e24af15c6cb55a1a6d0d8a1da65366009b3c2a6d9b4793fe10f51d619a",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 113,
+        "input_sha256": "f22a41bfdc60d77f93f94731d0784772a304583e5ec35acc48555e993b439057",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 114,
+        "input_sha256": "18d2c55245327f8e272afb3b886807a269001f2e095d4e74d7f3d51120a60c21",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 115,
+        "input_sha256": "7d603c90cc888662d493dee294f2e6015ac132f1d36ecc1e01178eb3025eb561",
+        "edges": 19,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 116,
+        "input_sha256": "b25e4dff03d401d871546caae1c7c413ad08b36aa1cb8f76c783217c57f71c84",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 117,
+        "input_sha256": "cd9f7f83e3a4df4aa6d8d0177894488e0a3eac47ecffc47cc610b7a4558b4812",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 118,
+        "input_sha256": "aec04486cef2a5629957ac886eca7a4612f626fa839385ae9a82d8651f7baa27",
+        "edges": 21,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 119,
+        "input_sha256": "9518e04011a3a2342116bd2851335cfeea2dba54bc6799a812694132fa545efc",
+        "edges": 9,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 120,
+        "input_sha256": "276df7649592579c498c06e5b7f5b72b7c2f7f3908fc94d4eb83ef132bebdd00",
+        "edges": 20,
+        "expected_facts": 9,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          }
+        }
+      },
+      {
+        "case": 121,
+        "input_sha256": "e42f5e6d7da3f999e7057e58777f30b21b2cd676f0f415831d977d1fc5db0b91",
+        "edges": 16,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 122,
+        "input_sha256": "2ce5387e8b99331510b8f17160763530dff1c6a8d4a56fb432df0f70166da68e",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 123,
+        "input_sha256": "2468337907092f9d7354303a6f79213684774518c02c0a8f6f5d597ae379b994",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 124,
+        "input_sha256": "40d2dde38873f5ba49b3e5370f342c5432f78706c45b74ce35912fb97a003a17",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 125,
+        "input_sha256": "42c10cf0149a2a5355dc7dd5fc87be40fe9c9f7a19d1bfbcc157bf8b11b357dd",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 126,
+        "input_sha256": "bd3709e8a0c1109533d7f82457246cb7d47f861c0a7bedc71ca60f8342ea47ac",
+        "edges": 14,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 127,
+        "input_sha256": "496ac1c8610c0a22baa4d65bf9a99f18eb8580760b2d3c72653b634063effb64",
+        "edges": 11,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 128,
+        "input_sha256": "23b59d54cce69e6de48f4eb41fe5b772f90a7b00b3b79bfdfee0627b8ec31f7a",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 129,
+        "input_sha256": "5c91d1be86664f3f71ae7a4f28fe57d58cdd150bd350d10ace79f719285e1e31",
+        "edges": 19,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 130,
+        "input_sha256": "9b8461782b04138aea23b03b915621cbbb7fa16d97b0b1a19d3fe11078ca26b5",
+        "edges": 16,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 131,
+        "input_sha256": "7bf8573b60b35b21f3ba9ab5688a5ea128162ce1b9b8162e0b2b741f5b4c6e15",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 132,
+        "input_sha256": "c968693551e2509a4298b4bccd583245ae307de80939d5ce0a6923d634162352",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 133,
+        "input_sha256": "2fe8641300a84cee770923bf3c991b3198f360db4bc94eb85d7835986287f057",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 134,
+        "input_sha256": "4fe00488eef10cb3b5a9870d82bd98d41ed2cf71381cd44572ac487770920e0d",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 135,
+        "input_sha256": "111fd1c559616a75b9e4f4a671c471994a76aeedc9a59e8d68615f71d7c553e0",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 136,
+        "input_sha256": "efd0a80bef19a1efe9dfb6f2031c32808ce8fe8d709146b77dffd3e69964082f",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 137,
+        "input_sha256": "a0f7f7784e1ad1c8b993c39a80b937fae297b953fecb95ad185dc355eef368ad",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 138,
+        "input_sha256": "b0f8ec1d40e64f31c3a01967d8e4c8ce4e88a102a7c7cdfb6f5fdd04c086419e",
+        "edges": 21,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 139,
+        "input_sha256": "dadb791a0666366f6af3652f2a246c19e8f51c0b8f122e20d0bcf0d6d3741acd",
+        "edges": 19,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 140,
+        "input_sha256": "b83912878359a63e8bbb28a2fdef373a0bf6fa9de2a0f8017707621674a37a9c",
+        "edges": 18,
+        "expected_facts": 9,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          }
+        }
+      },
+      {
+        "case": 141,
+        "input_sha256": "d40f5b6e22aeb97a066af129c41506044949802405623de33873d02c5860e759",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 142,
+        "input_sha256": "2b156af4a45156f4e7da7c5170a4f800a8decf55d06e7e1c6552bad1c6176541",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 143,
+        "input_sha256": "5cac19119cbde873381a35c14b6d007cbcef2bb474f0045408c1abb0594b1946",
+        "edges": 23,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 144,
+        "input_sha256": "9f83beda31ba6da12a7148daeb0db0fa03472431cfecd6bcfd594d15bce2e1e5",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 145,
+        "input_sha256": "947408472d8911033e7cc17d364d2b34b04dd7ba41dfb6e1ab2a40901770fcc4",
+        "edges": 17,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 146,
+        "input_sha256": "23867f52218443a2835f2853124409509f0dd4d9e83fed827eeab6cc5d698fd6",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 147,
+        "input_sha256": "5c5d03efec073561d5a5fcb84aee400b4763d6fda8c1d797aa83fb03a5203b1e",
+        "edges": 21,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 148,
+        "input_sha256": "45e74f78d7ebc3b463f7369f8254d26c9e63deb2382d69f6e5e784521e5ab3cf",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 149,
+        "input_sha256": "99ba780e36c939b16429079d94c82ae7aa2af31c4d87cc2ddd08e808588bec76",
+        "edges": 20,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 150,
+        "input_sha256": "a228c517eff187d38c9dc363a3297c4bc426c8cc3334f886cb6baf5e5587dbe6",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 151,
+        "input_sha256": "55f5379d7c2fcb117091bff55aa633c6c5141f50e9943806f49be288d25acdf1",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 152,
+        "input_sha256": "65d39f9de323631e4bd7c28db8c7f3f942b201d771a9e061725eaa4a3c6b22e4",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 153,
+        "input_sha256": "c19cb443e3d83ac61257b023481fced1c59440706786d8ae0d0206e42997efe0",
+        "edges": 25,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 154,
+        "input_sha256": "3cde924f2a2bf2b8adcdbbf2b685aaf732a95ceee8b59da778bfe3d284a38040",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 155,
+        "input_sha256": "da1ee22b0e8e7ec3494f9459cba79455ae44de1efc55d75038cff2914955b4d9",
+        "edges": 19,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 156,
+        "input_sha256": "212a1aee4b78ec405c03f92606ef8c6cc5b0e5a080269e4841b883829e34a2a6",
+        "edges": 15,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 157,
+        "input_sha256": "852dca9592be99552b11b02d79d56cba6ae312313472e7a725813e92cdafcaaf",
+        "edges": 21,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 158,
+        "input_sha256": "d6d14757a315fe6c59343980ce30bad9d29181a74018da32f76058b50994f759",
+        "edges": 8,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 159,
+        "input_sha256": "b2f08a937f8c5dde439085e35a10293ac068a6cc0e3fec4c8341de98a12ab03a",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 160,
+        "input_sha256": "9fb6b062e42628142ec2cd14d199110d9bf97957d01964af5faa9aefa9867fc2",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 161,
+        "input_sha256": "c08dec325174af13f369fba1e871a1916a4a9de1a5061ca68662e3d283f88a10",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 162,
+        "input_sha256": "bde62e7da9ed0730b5f13d807e24b5b31e3e79152799b92bb6644d6364325689",
+        "edges": 12,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 163,
+        "input_sha256": "5e004585b91f5a938d45e8f72635590f5789dd206a40e0a900b17ed41d7da7d2",
+        "edges": 16,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 164,
+        "input_sha256": "88aa81a2b1bde1dc98308cf3f6b24d86259806f4d2ab26dc8ee1c7d01ae1ee7d",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 165,
+        "input_sha256": "3793db866a2d0b2cbef8857c0a19dfd353090de31e55ca6b5e5a5ae2c83e3d6c",
+        "edges": 17,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 166,
+        "input_sha256": "6d97e6611a9f9c391158a556fd8da4fa617cfded64f9476b8e3bcf77cfa781df",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 167,
+        "input_sha256": "1f73449af1cc3e411ad156158860cc9f88246dac9153bedd4b0ad069aad10b58",
+        "edges": 21,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 168,
+        "input_sha256": "f57a2b0efa975abe9e394ac43289f2957b112832c8824ead1c8bf911316c10d4",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 169,
+        "input_sha256": "e30b9ff3310fd47a962b3e3306b630ba8039ba18dc77421b6a3abd776dbcd1a4",
+        "edges": 16,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 170,
+        "input_sha256": "2616eebb8ef01082348e0437dfdec6c81741db34a446daff850b893a09166968",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 171,
+        "input_sha256": "331ad15bfc6686cb63105352dd4146e12db1745f6b08ce4344f71eb3e2c6e5d1",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 172,
+        "input_sha256": "54c63e725ca5a663a21839b3062a7c50f6831a73871ddc2b6499af7025c00c58",
+        "edges": 23,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 173,
+        "input_sha256": "03a4a85a1e0a3bce6b3b667b9157567e389edad4c40d48f56f2083f2f3874d61",
+        "edges": 15,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 174,
+        "input_sha256": "4546a8c5b85f50ea7c652686f7b76ae4bdc8471478c8f6e2326154657f87147e",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 175,
+        "input_sha256": "5e825974781cffc4e4f97e3b5b7c958076f9a6734f84d0373cd6e406f8266374",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 176,
+        "input_sha256": "de75a6a93561d38e96984c75718d76fce38d1058fc8e3d5c2aefb58398a8a1cc",
+        "edges": 16,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 177,
+        "input_sha256": "4fab37762b1112afaeecbeac888eb96fd697379ad71e76e564b8ee8d7e7ed316",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 178,
+        "input_sha256": "ed7b932091bca8b50685cb19781a076563b75b3df5cbca3d4e895cf31c1f63fa",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 179,
+        "input_sha256": "f6890bfb60dce7008d892792a43569c55b8ac0afb1df4ff75478c07b181bf4d4",
+        "edges": 19,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 180,
+        "input_sha256": "aabb649ddb59cab96132832f940382fecc9c2bdf6111ee75517a258fbc10422a",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 181,
+        "input_sha256": "331ee430563a3b772e4271b876ba023076dfb01d5cdcbc43bc31335e8efeccbd",
+        "edges": 10,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 182,
+        "input_sha256": "cb76072e259fbf96a6bfa407cd9bbf649c4b486d88087f5405ba7004a48705d8",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 183,
+        "input_sha256": "bfe4f3b1bd900ec0e36ac024c60d3a30bb9dc83a3237474f1d0ef715593815f5",
+        "edges": 24,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 184,
+        "input_sha256": "39a42c42245f836afd5228ffc028cd464aa017bbb62b9ead7b53f28174234476",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 185,
+        "input_sha256": "6c9c69358dcd7a4d80bbc06a6a55e0c283da8477c6fa1a1a7dbe15db833b0506",
+        "edges": 21,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 186,
+        "input_sha256": "5ef8465dfbfc76e55345228b380866a0ed572f61a58a26b4153570bd899dfcc9",
+        "edges": 7,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 187,
+        "input_sha256": "91289055642c1d75c85472b4fbf25605ae939f91f06b01446994dc4b195202c7",
+        "edges": 19,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 188,
+        "input_sha256": "a86c29c89ffe6e5dde6b1e28993dbae8b3c970c8c0505a332de79e02535bf8bf",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 189,
+        "input_sha256": "9f04da2ddd0cb99ba63dfcbba68dfaea96d91017a6b6f71c95c89d11e64e5f0d",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 190,
+        "input_sha256": "e8f035b5414cb7128968081791d44f741d324c0d8d1301425abf7d0ee79eb21d",
+        "edges": 15,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 191,
+        "input_sha256": "81aa20e061d1ecd2e9fe2803ad1eb70a932c7b0dea5ffb73ffd9938f36475fb3",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 192,
+        "input_sha256": "2187b62f0ee357861e864e0d43f75094a84847cb1b4c4aad0afdcdffe2007665",
+        "edges": 18,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 193,
+        "input_sha256": "d571f389b1fe00efb399b27db8be25eccbe2403d438a11982684ad2767a939de",
+        "edges": 11,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 194,
+        "input_sha256": "6256a9530bf586056d9af9e9424bfd8064bd798aa34bd2e1939ee93c1de754e2",
+        "edges": 18,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 195,
+        "input_sha256": "6645e08e7e32ef63b98fbb81912f180b6b0485aa68b13fd8d4f808fd5c235332",
+        "edges": 7,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 196,
+        "input_sha256": "424e9b0e64dfb71ef04aaeeaf42c030da57484f256e2411c5a54bce0edd2827b",
+        "edges": 18,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 197,
+        "input_sha256": "2c6b7e0bc520d9293e9dd460695c33b9198d47b37e1419be1bc02b19e477ce52",
+        "edges": 15,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 198,
+        "input_sha256": "ae5f196590e13aba0176e727946e85b82eb166dc3f52fef075ded2e68e15e571",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 199,
+        "input_sha256": "bc7c29833b6df323892f52e8cb59ac9a5a72896d7c10cdeea5c541def468ff59",
+        "edges": 11,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 200,
+        "input_sha256": "ac3f479f2e881859aaaeddc6fe7808ce73e20f37bde009473d38058d5e45aa96",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 201,
+        "input_sha256": "14f426a22fbc004fe3b48a4a4b1ae47646b70e6f4ce61b9762787af7e2661d61",
+        "edges": 19,
+        "expected_facts": 9,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 9
+          }
+        }
+      },
+      {
+        "case": 202,
+        "input_sha256": "5e726976abf95664d9e129eaf7bdb61444e11ca079f5ce1786a0db5dc849072c",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 203,
+        "input_sha256": "349d507453fc6c1ad4bad2089b113c62394fc44cfad7b7e5568a315bc39d321c",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 204,
+        "input_sha256": "6414b49e19c956210547b4f185b6ec2a588845c7c474fc46e98d52969947f0fd",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 205,
+        "input_sha256": "b1ef5e7aca451c11017bd22734fbdfffaa7e9bf2a5dfc31abaf0516169465905",
+        "edges": 20,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 206,
+        "input_sha256": "1b37362c780faa0a9f2c1a2a78904c3ce21cbd9a04de405de125c1b67dbf06c9",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 207,
+        "input_sha256": "0188f45204553ca426c8251ae57f3545b4e92a10c739ab4375b25d65df3d33ef",
+        "edges": 10,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 208,
+        "input_sha256": "1625a798e6576c5ea79e0dcda3cd9e4885509ce3f4967d877b22fe086ced2929",
+        "edges": 27,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 209,
+        "input_sha256": "f50667ce632166eeb10cc70be0ed3865a95ce1adc1cc99f173a7f989bbbff935",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 210,
+        "input_sha256": "76379457e0c3196f601a48d829b0bb4eb8f43e859c8728b467c1d0f27d27e4ba",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 211,
+        "input_sha256": "0517e077b467e8de22b61057594d88d3d23cbfcdd40a143ec08381e1e1174b39",
+        "edges": 18,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 212,
+        "input_sha256": "c8acdd2288ebcaa33046d80777dd5cf20f6d3fb9483778b9fa63a002675b0fc0",
+        "edges": 7,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 213,
+        "input_sha256": "6c45b6e8dc80ef9561416b8ee47f31730e603778005e3f21986b63a1251d5dc5",
+        "edges": 18,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 214,
+        "input_sha256": "bd5e4dc5040d41ed8994a4df6df57e7d17f292cd8632c4d2074948366b73ad1a",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 215,
+        "input_sha256": "9bc75786e5eacf7030c34673505bba870c1943fb380ea4a27c5eae6739c04598",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 216,
+        "input_sha256": "7c1e0e6dd7bd673dbbcabcff9c845f094d3c6e50e1cb49bbd9bb339bc71baaa1",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 217,
+        "input_sha256": "38c1afa2659d1f7514cb6eecd792380e0bdbf0e445e5ad4f7c4751e219b024d9",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 218,
+        "input_sha256": "8e334af3bc6c9dc2e2041144513e97cd6bb97ebf2698add97c38a6876b387839",
+        "edges": 15,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 219,
+        "input_sha256": "30c9686233fb02d79cb63430b1fe059a8f0bdc7a715d9383ab730820985a0d00",
+        "edges": 15,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 220,
+        "input_sha256": "4adbb25faca13d4ef95edbfd548240c3cd5c01f1e6a4fe04da35497f7d69e69f",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 221,
+        "input_sha256": "71147dce48ba6298d2d33836194ef85a371ba4f492b6d3f329ca26d42ac573bd",
+        "edges": 15,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 222,
+        "input_sha256": "2cd12836c5e4aaef2b641eea28e1f95a36ebf7614c02f53796f248883058ff3c",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 223,
+        "input_sha256": "770b3767540a5a086b603eb2bd099249e74f8493d5818feb3a491f19746b6047",
+        "edges": 21,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 224,
+        "input_sha256": "cabb418df2f25b6259b691d9e9ecf82c09f9160f9ddf2968ce3b7caf3362f574",
+        "edges": 14,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 225,
+        "input_sha256": "3d954be1673924a45eaee9a1930678d71b26dfa642b9c133f3d2371a8b962e3e",
+        "edges": 16,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 226,
+        "input_sha256": "f5be29e5b52b7856bf06f09529c4df5413b1cb1821598e2444039f0d7718184c",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 227,
+        "input_sha256": "4d1fe02bceee54544d8b9375bc99eab260d22cde7957275abfc3dee4fbb9c151",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 228,
+        "input_sha256": "608aadc9fc2cf9e378b3336999003a3768837e767f3426cbdb3e256e6ca5c7b0",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 229,
+        "input_sha256": "6c60a7b83bd47ec0e8e54ebd38714a24b3e1b533b31d83536558de272c8fd54f",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 230,
+        "input_sha256": "6dfc36e66b80556c9fa2a6c409617b259dcd01fe015f1e0e525b915ba770ed2c",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 231,
+        "input_sha256": "7aa43bbff76958729fe5183f7988e85a35dc1268666bbbbf6138d4c2dba50ca4",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 232,
+        "input_sha256": "b3422b783462b49129e2830a9722cd9d4602c591762db6f985b9f533d620e8a1",
+        "edges": 15,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 233,
+        "input_sha256": "84619c174364d0968fee82f06821f95f86c8f67c0c77602689fb6e977828cc05",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 234,
+        "input_sha256": "5ac9a712db4c66f5bea3627ba5e75e8c2c79a39758dcb98ceaddaa22429a5e9c",
+        "edges": 13,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 235,
+        "input_sha256": "ffeda80356efd9460f9c37d2ee201d9f82cce52b22f3399404b13b23c4b48245",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 236,
+        "input_sha256": "8384bbcc7233747b4a2e26425444487760e53b78db71304f742547c166b3f683",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 237,
+        "input_sha256": "05f8417d1dca9877a278b2e9925fbed82778b8c3abf55944d61d46cf2961a286",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 238,
+        "input_sha256": "27bcc678f493e9b3302fbc2d54c2658f86babac795779faaf33e61e764a6231d",
+        "edges": 16,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 239,
+        "input_sha256": "e9b5dcb33ef0d6ba7b5ca6ed764eb7c0b46b28038281031052a9689fd7c96d0c",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 240,
+        "input_sha256": "5d3c485c5a0bc3b5b530855b57f046790a9c47861f7724990af4cff67d37d195",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 241,
+        "input_sha256": "9e0b6549ba00c9d767b7c213fb77814e58a45bcea7a506916a954289632e3527",
+        "edges": 14,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 242,
+        "input_sha256": "42c59ea4687cfc46f7783b95324fbd1607cf17cd6efb9f9d7a2741e89825552a",
+        "edges": 20,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 243,
+        "input_sha256": "cc9ecbe2483916cee7af105769c60fa29cdd942f852d214eb1766cb5fcf7cdfa",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 244,
+        "input_sha256": "e6b856cb441ab95c1aabc659857593e80442602eb240135557f65f7c044939e3",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 245,
+        "input_sha256": "0faf385a74da6876031db9d6386e7fcce6eb687bdd0326669891a4b5f22480ea",
+        "edges": 13,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 246,
+        "input_sha256": "aab9a9329104a2b94a0b15cb258feedaa9f022057bec063310056a43dfea41a7",
+        "edges": 19,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 247,
+        "input_sha256": "92366769c407b37907b717101b365a75c0e5a7fcb29bd304c9d1b40fdd832bdd",
+        "edges": 21,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 248,
+        "input_sha256": "e46e2deb804f0f24efcb9e276c89a86107780c9fc52b6275102d9307d7b4ab06",
+        "edges": 24,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 249,
+        "input_sha256": "adc2ca319d1f6cb9667844f3cf877cb24415cf3c3c60b1eeca9f9c8e711593a4",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 250,
+        "input_sha256": "3249a8cc50142f23b063baf148f96d17a92331902d8bf10954313d896a5167f5",
+        "edges": 20,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 251,
+        "input_sha256": "f24b451e769593c9a3b23c0bcbdde86926e593cbf77ed46c26bca7c58747d7d1",
+        "edges": 10,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 252,
+        "input_sha256": "cb1061bb2d9a9d8446a5b9284fd319e7ec109b19556341a48358977cc7fa318c",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 253,
+        "input_sha256": "65358b7951c0d600bf320caf55a09a6add2c5941311476d39a812a4d02853282",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 254,
+        "input_sha256": "d84f87ebcfd23f4051cc2e05aab2f0d6ec2ee946747a100ae553211c26776c0f",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 255,
+        "input_sha256": "e22bb3ed6f14f5a8f5249458de91cabd59eecd337f5c89c258cfa8ba43cd3f3a",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 256,
+        "input_sha256": "40476ffec6b3502d3dceb96bbc774f5e49c07711d521aeabdb2a0b302749b0cb",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 257,
+        "input_sha256": "d411752763d678a9a8f7606a130e9d6b6ded6af0159b5fee9a6f38f56c99fb91",
+        "edges": 15,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 258,
+        "input_sha256": "7c6506728f87bddf3495eaf4fc8085ca2ed9717d2dc19431b83d62ec2ecae32e",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 259,
+        "input_sha256": "a217df4500e217d1bcff56d2f207f271bff11b14beac07d2b6212eeaa1bf0654",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 260,
+        "input_sha256": "75071f8634d3b65f2ed911b9ae501e41deba73604f5b8fe4255b9d3e8d1108c6",
+        "edges": 12,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 261,
+        "input_sha256": "391357af5c096e38f38027f8b765d0613dee05f4438ce5335da5f7fa32be34ed",
+        "edges": 12,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 262,
+        "input_sha256": "7f5f846d90f9096dacbdf6ab0d5cfb234e2c88812cbd94156c3e86c9b505e0ca",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 263,
+        "input_sha256": "52492596d4a92a5bccc45d66f4eef98e0c2030ef9bafe86855936ce23f02d691",
+        "edges": 22,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 264,
+        "input_sha256": "05b2d9734147df0a49da3efc760682ee5a6fb8d7ae0ccbbd9ca0f48c773f7edc",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 265,
+        "input_sha256": "d4e161ea4ed4bf6d98f50c2e41348f28538c0e0f14c7d59c51767b3062afafba",
+        "edges": 17,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 266,
+        "input_sha256": "1596ef317e197997a5eb2cf43c0afdaab06e0fc5219c6d2bc3b0155ecaebdebc",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 267,
+        "input_sha256": "5b926890c010090b53c3517f08819fafc6ee3e93527a4e5ee4eacd7fd4de46ea",
+        "edges": 13,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 268,
+        "input_sha256": "30bff558a0078ba16d5f21e4a0f18b0269c4fa25b30cad1a579fb6ca1b86d471",
+        "edges": 12,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 269,
+        "input_sha256": "9a53e1ed67b51cbc23f6e468c183ab3481bf42b78e66144af2f4f78110cfe860",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 270,
+        "input_sha256": "3aaf65a2d2f7f04c269b5bc7374561712cee1b750dae6643606046561243e6cb",
+        "edges": 14,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 271,
+        "input_sha256": "2cd24a57fbfb3601f3e58c3f9f238e5f96a12d099521ee41798bd8f4230c6007",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 272,
+        "input_sha256": "c3c2b48c4d7506356c659f389e14dfc374ad32a5c5705dd5aee74046ac2eaa6a",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 273,
+        "input_sha256": "1584cd99735e7c417227313829cd3dfa5fa3033d6603937448f35dc1de74380a",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 274,
+        "input_sha256": "0c2506ef2c2f823dd64a7056d64bb39cb832cf175a95ac061c84a1c4680cd519",
+        "edges": 13,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 275,
+        "input_sha256": "37d27dac4fff223a88a4ad4cd6b4620ce67f12eaa55369939fe04a0ed40276f1",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 276,
+        "input_sha256": "4e44ae85ad66c0997920afcc08dfaf7bd13027792ae9a735157c27e7ebfa5b57",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 277,
+        "input_sha256": "d8c4400f9e4fc57b96936955706d91e304fe250ccdb9d4e4a5a81c33f5da2c3f",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 278,
+        "input_sha256": "572ddd03d2661bc197d13ee5826a7e549b9e27902f67e93538c3d804e2180854",
+        "edges": 17,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 279,
+        "input_sha256": "88ddad8f1577222f1ed9649bf31f938b7d34b6e1d5589eec1943c25e0c5cc047",
+        "edges": 11,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 280,
+        "input_sha256": "99dca7a1014335b564ca87e199121427f1429d99883c78dea7ea98241e25ec3c",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 281,
+        "input_sha256": "7411a2d702476096172b699693d45297fff8a2ccfda231aec7092cd96d0da5f8",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 282,
+        "input_sha256": "769a4c0f328a4ad7ade7d8b24525787e3228cdbe9eb13de63ff309c324c7e9f3",
+        "edges": 10,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 283,
+        "input_sha256": "2deb990067137f109b704e1972c5137f94b23338f666b3814a74514753148ba3",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 284,
+        "input_sha256": "2a073fcee9c67a45f1cf3379bc87c9f60071194a08e04106274b486f9a90035a",
+        "edges": 16,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 285,
+        "input_sha256": "aacd1e24e69ff6812a6b1a1fe76cdeb28f0a254e32da08b07c30a6fc78fae9b3",
+        "edges": 11,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 286,
+        "input_sha256": "4421c35c259e92e5ff3d6329a4fb4259ef7e8c25e1ef6998c4206dda08c3f1a3",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 287,
+        "input_sha256": "abf12fe9662c21e2b8daded3b5f4bb6226d191a1ac26c10ce9c7459b90bd6708",
+        "edges": 20,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 288,
+        "input_sha256": "83aa62789eb9f70f063704dca41b0c7ed2a8528c60a821634bce7c3dfa509c66",
+        "edges": 18,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 289,
+        "input_sha256": "d4bdd9e005b3b67fdd03b5f935fd63383c20e75273430ae9ab291978c9e09792",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 290,
+        "input_sha256": "5dadb8d62c7f31246eda641fda67e08dac313a7aac1d372360d85ba5b39506e1",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 291,
+        "input_sha256": "d856c20283fc3532c1cdcc3b7d10210d54e9c05b05c17e44cb273837a89a5a87",
+        "edges": 16,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 292,
+        "input_sha256": "f02aa95e5377a3bb6f15b39f47fbd23e0abba59887b78e6137491cc888a36418",
+        "edges": 10,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 293,
+        "input_sha256": "97f44f0dd68fc9f4fe50fe1e3493fdec64490decdc1f955f860da798ef4cf856",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 294,
+        "input_sha256": "13fbab384be689d79c35dd38ba7ad9b0c7691a89812910ca2e34a204c6615fbd",
+        "edges": 10,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 295,
+        "input_sha256": "b04053b7cb04730e47b573c18a2d0acfe03172a80546ddb9c78a09526e4a478e",
+        "edges": 21,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 296,
+        "input_sha256": "b0fa456110a5bf229a9501098f67c01581a31f4df4d7eef08864859192b84000",
+        "edges": 20,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 297,
+        "input_sha256": "643892388fc62a311bb0bc1250cba432381a80acebd1118942a72d3076a8b4a4",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 298,
+        "input_sha256": "fa41fad330df8da42ffebfa5ade06d0cac78ff3518a0e5a6527205107b47228a",
+        "edges": 25,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 299,
+        "input_sha256": "64af073c788d252dea998795597b9de7adea2e8b04d9bbdb7f3102dcbb48bbc9",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 300,
+        "input_sha256": "06c593122ac58b22c4ec4c5017b2200c4ba8fed4e9752c1f877167dda4d263f9",
+        "edges": 13,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 301,
+        "input_sha256": "5b29baa761b3dbd06709fbea4dec533fa63990ff5221a30f8b85233b6a5af0fd",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 302,
+        "input_sha256": "47876965330bb71406a21a083ddfbf35686012cd0c7fed6f2a0c4accd316eff3",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 303,
+        "input_sha256": "4c6423fcb51617d8d88a67a11309b0233f7ba2d6ae7d7f8bda991cba48966b27",
+        "edges": 19,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 304,
+        "input_sha256": "c48b64d3e8ecfe8caa8465ed2aa4d666e13ce10d5f6967aacd67660c5a706780",
+        "edges": 25,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 305,
+        "input_sha256": "c40bc40b489105c08ef6894acba0ed9f5f239342fc50f5696c60b7abbbb9aaa2",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 306,
+        "input_sha256": "a92c7f93d9424df147428c67b09e76302fe68203e67f6c0b46924039c530e99b",
+        "edges": 19,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 307,
+        "input_sha256": "3823f54b9989ffb4c8c7b8a6a0a37852bdbfbd1bf57be6a4f69d8b84ac72ec7b",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 308,
+        "input_sha256": "834d72f54a53987eca7068aab3eec9cb96ed374932f3b7d330c43aecb29ac81d",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 309,
+        "input_sha256": "033413bdcf146fa0158f3c6175afa4885a5385f8263bc10dfbcab69b0993b05f",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 310,
+        "input_sha256": "4c5ad9b250237fb45ac960cb5317267b840cc0e43e9297e5c9f9e05191f934b3",
+        "edges": 17,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 311,
+        "input_sha256": "6b22acff49742d249834d746ae33c3bec7bc37c94609641aeb99de63ef1aad83",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 312,
+        "input_sha256": "1bbd4c4ec4dac270fc7b7393fdb10fd0659ea8962ae3e0a4b08947af10ba9add",
+        "edges": 15,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 313,
+        "input_sha256": "9c7543fecd0f71a939ac2a44df0b567a4d44a20dc11c27360780844a3fc0c102",
+        "edges": 11,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 314,
+        "input_sha256": "8fb599bd7412df5a9d47750ed54c45938d1e2bcd1e2ec4118d2183e1b0845efc",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 315,
+        "input_sha256": "fae500e6db6bcfae60d887bcad57bb098400c19b13d5515ffd58a98a57600065",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 316,
+        "input_sha256": "da86b5540dc083d7f40f17076912203502186fadcd3580f261c788806b01f7b8",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 317,
+        "input_sha256": "4b354b57d7f4ee6717f828130a42a2e8e26e135ba7b0e8fb7d681dbfaa930fc6",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 318,
+        "input_sha256": "5ed20c5d5647dcdfc32b40efcc648c7cf1efeec70ba7d0fd1c12886421816543",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 319,
+        "input_sha256": "da2d793c1b5990c0d4a9642680545ecd6e1bc81fea88f5a96c07b9751de144d5",
+        "edges": 20,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 320,
+        "input_sha256": "fb84fb55936998993019e70092328fd158f81db41fe27242ffb4c1e50fd2dc1c",
+        "edges": 24,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 321,
+        "input_sha256": "8e0e4e6b524257c582358f5dd47f222bbc47878b7501a8de02ae5af5a461069e",
+        "edges": 10,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 322,
+        "input_sha256": "af3345d367df509d870143c6fd4cff4dcf115c0ca3b55c6a93e5f50502eb3e08",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 323,
+        "input_sha256": "a007fd7b5ad95c1f920113fb47da11d21b4acf81d16c91b16bac131b2a4866a9",
+        "edges": 19,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 324,
+        "input_sha256": "1657ddc4e79cea56d1d2fe5eb8c0a00cf0058762909fb061aa168604fd072c26",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 325,
+        "input_sha256": "e93fedcbe85c4119144590fc032a1af3e328b05b304babbf5654461026a3424a",
+        "edges": 13,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 326,
+        "input_sha256": "b6168d815ff9a7bc3976d2e6960f0e8073dc5a28966b21413482fd1a222682fd",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 327,
+        "input_sha256": "edc118716c748d299e98501f10a85e408dc6c88271a11ae1ae897a81ef345e1d",
+        "edges": 14,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 328,
+        "input_sha256": "49e4efd95edf2a71d109a60b293a1147cc46ccec027b67960295ec05e3ff3c72",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 329,
+        "input_sha256": "5c4240bccd4dec0f523e2bebe1cc9a01435e15c553f2d1125264e07e6202ff61",
+        "edges": 14,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 330,
+        "input_sha256": "4fdd8ff411931ac251d5f4d21f23167af93da8038c850f4cdcf5f81fdfae9c00",
+        "edges": 18,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 331,
+        "input_sha256": "cbc2ac805ee6db31f16ec9755147ae242a059d061550364b886647b2cae69647",
+        "edges": 17,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 332,
+        "input_sha256": "8160f9e798dfbd869b277662401762408e57c160f12ac340fc0e6e997c65d114",
+        "edges": 17,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 333,
+        "input_sha256": "848ee957971f46e5d24ad4bffb396be8395a19286d565900d6fd3b8a4233798e",
+        "edges": 18,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 334,
+        "input_sha256": "47749f2f0b1b021fc553d6b92164ca637ac33bbb9543cd3f9392c18e75684d75",
+        "edges": 9,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 335,
+        "input_sha256": "5d510c4edc526e632b096aebfb1492d6d38589c8d63150235201182811f8808b",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 336,
+        "input_sha256": "03d7d5cb53b9eb69e93a48e8833d4f6ed4bb7d848321c84ce5e8a43463e14927",
+        "edges": 18,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 337,
+        "input_sha256": "a4bbd9bba1a0af45a85cddbcd0c446aea3b97710baa275f043e9d3af2cc2877d",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 338,
+        "input_sha256": "fa354b93cb2e03e61009c1769eee81aa194e6793853c79366fe97afdcdfca88e",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 339,
+        "input_sha256": "8ab3cc629224fc2a8a6ff8a52593b2ea264a6fe92c471c39f96e473727d93f3a",
+        "edges": 13,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 340,
+        "input_sha256": "0b0ae0da0905bd539a59325a04a6b31830797b5592d8d4b72a175d4c5e366727",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 341,
+        "input_sha256": "2fc9ab84a53c9032adba62796001bd784f55f93bdc59c1055ead309d7a9d7b7c",
+        "edges": 10,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 342,
+        "input_sha256": "173032680dea7d1cbfbf613e06e5d7b5b1745f3c32424d224762980a28d8389e",
+        "edges": 17,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 343,
+        "input_sha256": "065b6f9b94037ea6192c43d644cbceea0eca11559e3c3099ece3d63b6959de38",
+        "edges": 19,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 344,
+        "input_sha256": "f0663ce8244cf4188aaadf25cb7c62edbe3e5d72fc706d2c1636e613fd0699e5",
+        "edges": 15,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 345,
+        "input_sha256": "1b728801845a3ac01413d8c77eb5ebcce27c57d9a396bacf919ec0c03a145714",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 346,
+        "input_sha256": "64ea5dab2f06b0358d01707fdda29d47ed4cefe97139d13b763fa9975290e4d1",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 347,
+        "input_sha256": "9c2d164f6206d833052a77070ba7d686c7b56952b82d70dcbd5852acbe1006d7",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 348,
+        "input_sha256": "847874b34f88bfbed812688682e91f311261c8aed5c13307a4db9a456d81cbe3",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 349,
+        "input_sha256": "be3a681fb86e1b7d9c9406ef10f9e8e8aa4c171f21d6c2731aafb48d91d2eb14",
+        "edges": 15,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 350,
+        "input_sha256": "3a49c83f8f1c0193053493aceb1807911148682c56e1e1019ccb359d108478ca",
+        "edges": 10,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 351,
+        "input_sha256": "b15a240b2177cb0fc8a2816a801ce2fe1cb9621144a621b8d48a21a0c02bc7d8",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 352,
+        "input_sha256": "bf9bf351647f490cfd61feba73f2731e5306af85f1528b4c32795d3d0cf4484f",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 353,
+        "input_sha256": "2a83c73f64dee628f8105ac84023bf72a1c41c9fbf0b1a080aa331e9901b3ed9",
+        "edges": 17,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 354,
+        "input_sha256": "178b8ffe9ac1f5d3be0b4f75358829fc70b6f66a93df482e576a983e1064ba6d",
+        "edges": 12,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 355,
+        "input_sha256": "bab9a572590337f39937a814543681782c779a2abcc83701c6efe25b011910d3",
+        "edges": 15,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 356,
+        "input_sha256": "a4ea92f7c07d2d703c00529ae1772ac5e6ee20d30538fdff1a1f40132fc0b594",
+        "edges": 26,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 357,
+        "input_sha256": "088ff396abe45c9d9625b0363965772724420cf18e2fa55db164af9e3941dcec",
+        "edges": 22,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 358,
+        "input_sha256": "8fb2779bc46f99e29d8dc5b44bfb42f2e62f7d788681f8b92016469ec925cee3",
+        "edges": 18,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 359,
+        "input_sha256": "18728cb4a0998f079ee2cf42bd3f08068bc9af18b3ec2f0cda7c42c2ccca3d5e",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 360,
+        "input_sha256": "94149fa2663312df6fd230125b2ccaca6f64fc18c877fba789642af9b14300d5",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 361,
+        "input_sha256": "eec2908cc82cf4199f57eabf6418944936502cf46095dbd49b42b1539fef558e",
+        "edges": 16,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 362,
+        "input_sha256": "7b59a6b4f608c7f2a92bf76f8c8fd575c3096cd923030d70af376da274a81960",
+        "edges": 12,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 363,
+        "input_sha256": "c75338125f5fe31b2410b2233d3dddb54baaf1c7b0bf97bd85e96966f2096778",
+        "edges": 18,
+        "expected_facts": 8,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 8
+          }
+        }
+      },
+      {
+        "case": 364,
+        "input_sha256": "71ef96effcd4022e0f9d44a9299eb0b930e01dc926b6c8675f6a59e29f6c4be9",
+        "edges": 15,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 365,
+        "input_sha256": "061a487e9643ae19ec1bb8d1bc12c859667d9bb5b7637aeab247266b9291af9a",
+        "edges": 19,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 366,
+        "input_sha256": "a6e6d147fa7d6578880196678aefee025f41e345e2a3c4b77ba1939dd08a41ef",
+        "edges": 14,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 367,
+        "input_sha256": "629f3c6352030db501c718d8728fef80d35f957bab9e119cc4a8227d346f0c9c",
+        "edges": 12,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 368,
+        "input_sha256": "eb278467885659ce7468179dd1a99c2e7b423ee566815d8a8c25df799d5fbe5b",
+        "edges": 12,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 369,
+        "input_sha256": "849e5494f6563f042ea55771fa90351c40a5a4b83909fab856082e55e04d061f",
+        "edges": 13,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 370,
+        "input_sha256": "cf3e6083ca3b580fdcc6d45566116d060f6a7c838fe9ca43f0969f1d82547b7a",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 371,
+        "input_sha256": "18ed1f5f19f172b66ed32bf8bbe94189668e221005391950c61fc728aaac65c9",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 372,
+        "input_sha256": "115d9e36ccba74c6c1f03d7b12c08135e44c4cdb32c5add62d6d19fdb76b7461",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 373,
+        "input_sha256": "dfa36cea131f3303b8d83dab52a12c91aec749ec81924b6951c9b11643bdb8c2",
+        "edges": 12,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 374,
+        "input_sha256": "6a3f358895d7c3c147986250b6430f73b0443b2ab876c7d45765c49c68e3b449",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 375,
+        "input_sha256": "4917bf412d6002e763014b1642a8afbf3ebe7ea3e12ee96d57ad1fad184474a4",
+        "edges": 16,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 376,
+        "input_sha256": "b44eee935b4f9c6c75c19ff2615d932dc88016e756bbb1e938a716de17839af2",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 377,
+        "input_sha256": "06e74946c84ee1f94a0954b4740d74381e3b3db02a79f1829e86852502f51c29",
+        "edges": 19,
+        "expected_facts": 5,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 5
+          }
+        }
+      },
+      {
+        "case": 378,
+        "input_sha256": "589e3cc794b3e42ddf199059cb4715e52b1ff64b431a8e7115c76ae40a66bf14",
+        "edges": 15,
+        "expected_facts": 4,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 4
+          }
+        }
+      },
+      {
+        "case": 379,
+        "input_sha256": "0e9bc1872c33eaeb34de861f3c819575b70cee9a88f3e97ed5af1a4bc182a782",
+        "edges": 19,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 380,
+        "input_sha256": "d50e59150335c82f8012682bd66f8998102d9e7c1e65491a9cac9f87697b566f",
+        "edges": 19,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 381,
+        "input_sha256": "09209ea100472a9eac4ec813cf0164dcc769ee1be451933d8efaeed37f41cbde",
+        "edges": 17,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 382,
+        "input_sha256": "4f938b24e62ae4171b56413cc7972eea47e614f804974a4012281b331199b025",
+        "edges": 17,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 383,
+        "input_sha256": "b8cffecdde5e17648458a4bec620bdea49f233cf5c2452983733e1f8b6c131af",
+        "edges": 20,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 384,
+        "input_sha256": "ec144c6111bd2e3849f869fc5340544aa1289e9246693dca94c4857369612379",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 385,
+        "input_sha256": "1391beadea17d6313bc2328f860e57cc5fb5e1a18e6ca54c86946a26ac11c98a",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 386,
+        "input_sha256": "3786fdbe0ad2fa56d1bb4a8c163b54a16ff3daac9748c3de439d106de78c744a",
+        "edges": 22,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 387,
+        "input_sha256": "7e69df21a969436cac7f1d636759ec92a0c7e29eb48007b4145e68f566f261a4",
+        "edges": 23,
+        "expected_facts": 7,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 7
+          }
+        }
+      },
+      {
+        "case": 388,
+        "input_sha256": "6f7a8615ec18b551c815a8d1e568ccd7f106ee3ea4d88556f688b8ba23bb083d",
+        "edges": 16,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 389,
+        "input_sha256": "06fa57ba3fdbc22df58f57eabc6e908051d55586848a9b1344c10db31f397a7f",
+        "edges": 18,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 390,
+        "input_sha256": "52954d627aa7c4b1a06ed1c56c45905c574eb386ba6fb37a0b27b0b57e6dd9d9",
+        "edges": 19,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "full",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 391,
+        "input_sha256": "e62e1e3a907500ad8ff715d5ad49cde480ac2ffa07faf4f2e12ee6e42f0081b1",
+        "edges": 14,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 392,
+        "input_sha256": "b0a97c9116673046f23636c9a327901da66ac38bd8019081eeeff4dd39944939",
+        "edges": 18,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 393,
+        "input_sha256": "97fb4a2e1dff78c36aeb4436249bfb1a500007a01fb409e620fa39325fcd612e",
+        "edges": 14,
+        "expected_facts": 0,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 0
+          }
+        }
+      },
+      {
+        "case": 394,
+        "input_sha256": "843063b0e10719810f36d5744729f6c78355c648413033bafc129a08ab25fd8c",
+        "edges": 16,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 395,
+        "input_sha256": "90519b4721d244f945e56590411910e2ff45111dfa57aa6f8b2e843156aaa091",
+        "edges": 13,
+        "expected_facts": 1,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 1
+          }
+        }
+      },
+      {
+        "case": 396,
+        "input_sha256": "5b068a4fee96fab76b0c542fba897adc8a627a72c1f441c4c1f31388a02336b1",
+        "edges": 12,
+        "expected_facts": 2,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 2
+          }
+        }
+      },
+      {
+        "case": 397,
+        "input_sha256": "4b46c2b6ce6ffad99619003cde5cb44f310f645b392c5838f886b12420bce445",
+        "edges": 23,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      },
+      {
+        "case": 398,
+        "input_sha256": "52b5f77217a649f784a0a5c9a21c88fd51058da1c7655f5c80348820a5507b99",
+        "edges": 20,
+        "expected_facts": 3,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 3
+          }
+        }
+      },
+      {
+        "case": 399,
+        "input_sha256": "12fa1b4cb3e15c374f43d332593e456ffab13ec9b2eb4121e148339e4f521291",
+        "edges": 20,
+        "expected_facts": 6,
+        "strategies": {
+          "central": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          },
+          "hierarchical": {
+            "passed": true,
+            "status": "partial",
+            "fact_count": 6
+          }
+        }
+      }
+    ],
+    "deep_chain": {
+      "nodes": 1200,
+      "passed": true,
+      "status": "full",
+      "forwarded_fact_references": 719400
+    }
+  },
+  "boundary": [
+    {
+      "case": "cross_window_conflict",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 438,
+      "reported_bytes": 438,
+      "failure_reasons": [],
+      "conflict_reasons": [
+        "unresolved_version"
+      ]
+    },
+    {
+      "case": "json_boolean_number_conflict",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 422,
+      "reported_bytes": 422,
+      "failure_reasons": [],
+      "conflict_reasons": [
+        "conflicting_content"
+      ]
+    },
+    {
+      "case": "foreign_origin",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 153,
+      "reported_bytes": 153,
+      "failure_reasons": [
+        "来源事实声称其他权威节点"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "source_change",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 265,
+      "reported_bytes": 265,
+      "failure_reasons": [
+        "来源在读取期间变化"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "read_bytes",
+      "strategy": "central",
+      "passed": true,
+      "status": "full",
+      "fact_count": 1,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 264,
+      "reported_bytes": 264,
+      "failure_reasons": [],
+      "conflict_reasons": []
+    },
+    {
+      "case": "file_symlink_race",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 0,
+      "reported_bytes": 0,
+      "failure_reasons": [
+        "[Errno 62] Too many levels of symbolic links: '/private/tmp/frontier-independent-probe-82n4pwx1/sources/sub/A.json'"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "directory_symlink_race",
+      "strategy": "central",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 0,
+      "reported_bytes": 0,
+      "failure_reasons": [
+        "来源路径在授权后发生变化"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "cross_window_conflict",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 438,
+      "reported_bytes": 438,
+      "failure_reasons": [],
+      "conflict_reasons": [
+        "unresolved_version"
+      ]
+    },
+    {
+      "case": "json_boolean_number_conflict",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 422,
+      "reported_bytes": 422,
+      "failure_reasons": [],
+      "conflict_reasons": [
+        "conflicting_content"
+      ]
+    },
+    {
+      "case": "foreign_origin",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 153,
+      "reported_bytes": 153,
+      "failure_reasons": [
+        "来源事实声称其他权威节点"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "source_change",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 265,
+      "reported_bytes": 265,
+      "failure_reasons": [
+        "来源在读取期间变化"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "read_bytes",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "full",
+      "fact_count": 1,
+      "actual_read_calls": 2,
+      "actual_returned_bytes": 264,
+      "reported_bytes": 264,
+      "failure_reasons": [],
+      "conflict_reasons": []
+    },
+    {
+      "case": "file_symlink_race",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 0,
+      "reported_bytes": 0,
+      "failure_reasons": [
+        "[Errno 62] Too many levels of symbolic links: '/private/tmp/frontier-independent-probe-ebwnhhg4/sources/sub/A.json'"
+      ],
+      "conflict_reasons": []
+    },
+    {
+      "case": "directory_symlink_race",
+      "strategy": "hierarchical",
+      "passed": true,
+      "status": "partial",
+      "fact_count": 0,
+      "actual_read_calls": 1,
+      "actual_returned_bytes": 0,
+      "reported_bytes": 0,
+      "failure_reasons": [
+        "来源路径在授权后发生变化"
+      ],
+      "conflict_reasons": []
+    }
+  ],
+  "limitations": [
+    "拓扑测试替换 _read_node 为确定性事实源；不验证源 I/O、存储或 Agent",
+    "边界探针使用真实临时文件并注入来源变化；不修改实现或现有测试",
+    "未验证真实模型、网络、令牌成本、分布式权限或全局源事务"
+  ]
+}

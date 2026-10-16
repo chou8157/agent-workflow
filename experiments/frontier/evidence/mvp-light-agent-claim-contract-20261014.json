@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "run_type": "mvp_light_agent_claim_contract",
+  "known_fact": "leaf/W-20260715-multi-work-items",
+  "valid_claim_accepted": true,
+  "status_mismatch_rejected": true,
+  "rejection_error": "Agent 事实声明与来源不一致：leaf/W-20260715-multi-work-items status",
+  "text_authority": "non_authoritative",
+  "conclusion": "Agent 必须提交与确定性事实字段一致的结构化声明；自由文本不参与事实判定。"
+}

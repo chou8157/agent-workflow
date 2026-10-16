@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-10-16T16:32:19.674825+08:00",
+  "scope": "actual_installation_after_versioned_update",
+  "install_result": "updated",
+  "transaction": "f6bd8fb597ef43a98ce8f9133ad7c145",
+  "journal": {
+    "after": {
+      "files": 82,
+      "fingerprint": "43ec66eea2356cee3b8fb2505f398623cb6c3a955e4f91e453731b6637cf5a43",
+      "kind": "manifest",
+      "version": "1.1.0-beta.1"
+    },
+    "before": {
+      "files": 68,
+      "fingerprint": "f7b7f7323639598f735ec6724fe82925a50753938c519c6a7f38a860250e35e7",
+      "kind": "legacy-untracked",
+      "version": null
+    },
+    "created_at": "2026-10-16T08:24:41.690325+00:00",
+    "operation": "update",
+    "related_transaction": null,
+    "schema_version": 1,
+    "state": "committed",
+    "transaction": "f6bd8fb597ef43a98ce8f9133ad7c145"
+  },
+  "backup_path": "/Users/yizhoucp/.codex/skills/.agent-workflow-updates/f6bd8fb597ef43a98ce8f9133ad7c145/before",
+  "backup_matches_all_68_original_files": true,
+  "manifest_sha256": "72426084805223bc4e7e20f609ab4491861179167474ea263938d3dffd2d023e",
+  "archive_sha256": "d85fdf8c0f82957b92dfd561f75e0812e8f45d65ed178cda193bb8e7031b59ea",
+  "checks": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/release_package.py",
+        "verify",
+        "/Users/yizhoucp/.codex/skills/agent-workflow"
+      ],
+      "returncode": 0,
+      "stdout": "交付包操作完成：{\"files\": 81, \"name\": \"agent-workflow\", \"status\": \"verified\", \"version\": \"1.1.0-beta.1\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3.10",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "/Users/yizhoucp/.codex/skills/agent-workflow"
+      ],
+      "returncode": 0,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-B",
+        "/Users/yizhoucp/.codex/skills/agent-workflow/scripts/upgrade_workflow.py",
+        "/private/tmp/continuous-upgrade-trial-gznhbhz2/project",
+        "status",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"project\": \"/private/tmp/continuous-upgrade-trial-gznhbhz2/project\",\n  \"current_version\": 6,\n  \"latest_version\": 6,\n  \"version_source\": \"file\",\n  \"version_path\": [\n    6\n  ],\n  \"version_steps\": [],\n  \"safe_actions\": [],\n  \"migration_actions\": [],\n  \"review_actions\": [],\n  \"conflicts\": [],\n  \"can_apply\": true,\n  \"structure_up_to_date\": true,\n  \"migration_pending\": false,\n  \"review_pending\": false,\n  \"runtime_ready\": true,\n  \"up_to_date\": true\n}\n",
+      "stderr": ""
+    }
+  ],
+  "installed_work_item_status_and_activity_record": {
+    "id": "W-20261016-versioned-upgrade",
+    "title": "连续版本升级与原项目兼容",
+    "type": "需求",
+    "status": "completed",
+    "parent": null,
+    "created_at": "2026-10-16T15:35:13+08:00",
+    "updated_at": "2026-10-16T16:27:34+08:00",
+    "completed_at": "2026-10-16T16:27:34+08:00",
+    "blocked_reason": null,
+    "completed_at_unknown": false,
+    "activity_records": [
+      {
+        "id": "release-continuous-upgrade-20261016",
+        "date": "2026-10-16",
+        "summary": "完成连续版本升级与回滚能力并更新本机同名技能",
+        "status": "completed",
+        "evidence_refs": [
+          {
+            "path": ".agent-workflow/30-records/work-items/W-20261016-versioned-upgrade/progress/001-连续升级交付.md",
+            "sha256": "dc88b24ca78af2a6a911f896edb68893d80d5fec45e545a606155b74f8ed8d68",
+            "line_start": 7,
+            "line_end": 11,
+            "hash_scope": "lines"
+          }
+        ]
+      }
+    ]
+  },
+  "installed_report_contains_delivery_activity": true,
+  "self_report_sha256": "663d39263aeb41b8910ee6745c15231f659595c6d909bb2336287b61df282eb6",
+  "validated_sources_unchanged": true
+}

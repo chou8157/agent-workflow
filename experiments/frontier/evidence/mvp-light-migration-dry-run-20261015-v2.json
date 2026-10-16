@@ -1,0 +1,104 @@
+{
+  "observed_at": "2026-10-15T06:43:40.456628+00:00",
+  "scope": "三个原项目的工作项目录只读盘点；没有复制后迁移，也没有向原项目写入",
+  "source_unchanged": true,
+  "source_hashes_match_scan": true,
+  "automatic_migration_performed": false,
+  "candidate_semantics": "日期位置，不是已确认业务活动；不同文档同日位置未合并成事件",
+  "business_week_ready": false,
+  "scan_limits": {
+    "file_bytes": 1048576,
+    "total_bytes": 16777216,
+    "files": 1000,
+    "directory_entries": 2000,
+    "date_locations": 2000,
+    "issues": 200
+  },
+  "summary": [
+    {
+      "project": "agent-workflow",
+      "scan_status": "full",
+      "work_item_count": 3,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "work_items_without_confirmed_activity_records": [
+        "W-20260715-multi-work-items",
+        "W-20260715-workflow-upgrade",
+        "W-20260911-workflow-optimization"
+      ],
+      "candidate_date_locations": 10,
+      "ignored_status_date_locations": 0,
+      "legacy_unmigrated_work_items": [],
+      "invalid_or_unreadable_work_items": [],
+      "files_hashed_before_after": 38,
+      "read_metrics": {
+        "files_attempted": 31,
+        "bytes_read": 37351
+      }
+    },
+    {
+      "project": "support-service",
+      "scan_status": "full",
+      "work_item_count": 20,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "work_items_without_confirmed_activity_records": [
+        "W-001",
+        "W-002",
+        "W-003",
+        "W-004",
+        "W-005",
+        "W-006",
+        "W-007",
+        "W-008",
+        "W-009",
+        "W-010",
+        "W-011",
+        "W-012",
+        "W-013",
+        "W-014",
+        "W-015",
+        "W-016",
+        "W-017",
+        "W-018",
+        "W-019",
+        "W-020"
+      ],
+      "candidate_date_locations": 270,
+      "ignored_status_date_locations": 0,
+      "legacy_unmigrated_work_items": [],
+      "invalid_or_unreadable_work_items": [],
+      "files_hashed_before_after": 615,
+      "read_metrics": {
+        "files_attempted": 355,
+        "bytes_read": 1266616
+      }
+    },
+    {
+      "project": "feedbackserver",
+      "scan_status": "partial",
+      "work_item_count": 2,
+      "activity_record_count": 0,
+      "work_items_with_activity_records": 0,
+      "work_items_without_confirmed_activity_records": [
+        "W-20260723-sync-feedback-observability",
+        "W-20260910-customer-ai-dify"
+      ],
+      "candidate_date_locations": 20,
+      "ignored_status_date_locations": 12,
+      "legacy_unmigrated_work_items": [
+        "W-20260723-sync-feedback-observability",
+        "W-20260910-customer-ai-dify"
+      ],
+      "invalid_or_unreadable_work_items": [
+        "W-20260723-sync-feedback-observability",
+        "W-20260910-customer-ai-dify"
+      ],
+      "files_hashed_before_after": 33,
+      "read_metrics": {
+        "files_attempted": 21,
+        "bytes_read": 116431
+      }
+    }
+  ]
+}
