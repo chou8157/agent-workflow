@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-25",
+  "backup": {
+    "backup_commit": "31989c7b909529f0f36d04558bba657f9b913c2f",
+    "tag_planned": "v5-20261125",
+    "product_version": "1.0.0",
+    "workflow_structure_version": 5,
+    "tracked_files": 184,
+    "archive": "agent-workflow-v5-31989c7.tar.gz",
+    "archive_sha256": "f72780c289b9979d46da545c68032c87ed4f9aac0bd64df48ad097425e8aebd6",
+    "all_tracked_files_byte_identical": true
+  },
+  "package_comparison": {
+    "rebuilt_matches_install": true,
+    "files_including_manifest": 82,
+    "manifest_sha256": "72426084805223bc4e7e20f609ab4491861179167474ea263938d3dffd2d023e",
+    "source_commit": "0c79386739412ae956c353e430a3f6a4c1524a80",
+    "installed_version": "1.1.0-beta.1",
+    "template_structure_version": 6
+  },
+  "regression": {
+    "command": "python3 -B -m pytest tests experiments/frontier -q -p no:cacheprovider",
+    "source_commit": "0c79386739412ae956c353e430a3f6a4c1524a80",
+    "passed": 641,
+    "skipped": 38,
+    "duration_seconds": 132.87
+  },
+  "scope": "仅主线合并、版本说明及备份；本机安装和外部项目未改动",
+  "remote_delivery": {
+    "main_release_commit": "0c79386739412ae956c353e430a3f6a4c1524a80",
+    "backup_tag": "v5-20261125",
+    "backup_target_commit": "31989c7b909529f0f36d04558bba657f9b913c2f",
+    "atomic_push": "succeeded",
+    "note": "后续文档收口提交仅更新入口说明与当前工作项，不改变运行包。"
+  }
+}

@@ -14,6 +14,9 @@ ENV/
 # Local Git worktrees
 .worktrees/
 
+# 本地源码备份；远端恢复点使用 Git 标签
+/backups/
+
 # Regenerated external delivery drafts
 .agent-workflow/30-records/delivery/staging/*
 
