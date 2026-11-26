@@ -7,6 +7,8 @@
 - `agent-workflow/assets/templates/`
 - `agent-workflow/scripts/`
 - `agent-workflow/agents/openai.yaml`
+- `experiments/frontier/build_release.py`、`release_update.py`：完整包构建、校验与安装事务。
+- `VERSION`：当前产品构建版本；`docs/releasing.md`：维护者发行流程。
 
 ## 模块职责
 
@@ -37,6 +39,6 @@
 
 ## 阅读记录
 
-- 最近阅读：2026-09-10。
-- 来源：项目接手与深度源码审阅。
-- 结论：模块边界保持清晰；当前主要缺口是实际项目试跑、异常路径测试和源码/安装版同步治理。
+- 最近阅读：2026-11-25。
+- 来源：第一批发布与版本治理源码及候选验证。
+- 结论：产品版本由根 VERSION 提供，完整组合包生成发行信息；当前仅准备本地候选，远端 CI、发布和实际安装分别跟进。

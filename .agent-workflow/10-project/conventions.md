@@ -27,8 +27,8 @@
 
 ## 安装同步规范
 
-- 修改本地 `agent-workflow/` 后，如果希望重启 Codex 生效，必须同步到 `/Users/yizhoucp/.codex/skills/agent-workflow`。
-- 同步后需要对安装版运行 `quick_validate.py`。
+- 本地源码修改后，如需更新实际安装，必须先组合构建完整发行包，再按安装更新流程切换到 `/Users/yizhoucp/.codex/skills/agent-workflow`；不能仅复制基础源码目录。
+- 安装同步属于独立的工作区外操作；完成后校验包清单并运行 `quick_validate.py`。
 
 ## Git 规范
 

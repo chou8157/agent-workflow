@@ -1,47 +1,49 @@
 # agent-workflow
 
-用于创建、使用、记录、检查、迁移和持续改进项目智能体工作流的 Codex Skill。
+让智能体在接手、开发和交接项目时，有清晰的规则、任务上下文和可追溯记录。
 
-它以项目根目录的 `AGENTS.md` 为入口，并使用分层的 `.agent-workflow/` 目录保存项目规则、项目理解、质量门禁与工作项上下文；避免只依赖会话记忆来承接开发工作。
-
-## 当前版本
-
-当前 `main` 采用 `1.1.0-beta.1`，发行包的工作流结构版本为 `6`。2026-11-25，用户确认实际使用正常后，将实验提交纳入主线；本次保留原版本号和发行包内容。产品名和日常调用继续使用 `agent-workflow`，支持技能程序连续更新、恢复与回滚、已有项目增量升级、本地活动和可选多项目汇总。版本变化见 [CHANGELOG.md](CHANGELOG.md)。
-
-合并前的主线（产品 `1.0.0` / 结构 `v5`）保存在 Git 标签 `v5-20261125`，对应提交 `31989c7`。本机另保留源码压缩包，详见 [主线切换记录](.agent-workflow/30-records/work-items/W-20261125-mainline-promotion/current-status.md)。
+这是一个 Codex Skill，以项目根目录的 `AGENTS.md` 为入口，将项目规则和工作记录保存在 `.agent-workflow/`，帮助不同会话继续同一项工作。
 
 ## 能力
 
-- 初始化或补充项目的 `AGENTS.md` 与 `.agent-workflow/`。
-- 在开发、排障时按需读取项目工作流和目标工作项上下文。
-- 记录进展、验证、风险与稳定决策。
-- 检查工作流结构，并只自动修复低风险缺失项。
-- 从旧工作流目录迁移，或安全升级既有工作流结构。
-- 通过 `delivery` 管理可发布文档的来源快照、审批、发布、替代、撤回与归档。
-- 通过 `capability` 按需启用模块，默认 `minimum`，不强制生成完整目录。
-- 在实质开发、测试或交付结束时自动收口工作项记录；纯讨论不会触发收口。
+- 初始化项目工作流，按需读取项目资料和任务上下文。
+- 管理多个独立工作项，记录进展、验证、风险与交付。
+- 检查工作流，补齐缺失项，并增量升级已有项目。
+- 记录本地活动，按需汇总已关联的多个项目。
+- 按项目需要启用知识、证据、文档交付等可选能力。
+- 更新、恢复和回滚技能程序，同时保留项目资料。
 
-## 目录
+默认从单项目和最小能力开始，无需数据库服务或额外 Python 运行依赖。支持 macOS/Linux、Python 3.8 及以上版本。
 
-- `agent-workflow/`：基础工作流源码、参考流程、模板和 Python 脚本。
-- `experiments/frontier/`：多项目运行模块、统一 Skill 入口及发行包构建脚本；完整安装包由两处源码组合生成。
-- `tests/`：脚本自动化测试。
-- `.agent-workflow/`：本项目自身的工作流与开发记录。
-- `docs/adr/`：关键设计决策记录。
-- `CONTEXT.md`：领域术语与设计背景。
+## 开始使用
 
-## 本地验证
+安装完整发行包后，在新会话中使用：
+
+```text
+$agent-workflow 初始化当前项目
+$agent-workflow 加载当前项目，继续指定的工作项
+$agent-workflow 检查当前项目工作流
+$agent-workflow 汇总当前项目本周的工作
+```
+
+已有 `.agent-workflow/` 的项目可以直接加载；需要升级时先检查升级计划。安装、更新与恢复步骤见 [使用与升级指南](docs/usage.md)。
+
+## 版本与更新
+
+本分支的构建目标见 [VERSION](VERSION)，尚未发布的变化见 [CHANGELOG.md](CHANGELOG.md) 的“未发布”部分。源码主线与已发布版本分别管理；使用正式版本时选择对应标签的完整发行包。
+
+产品版本用于标识安装的技能程序，工作流结构版本用于判断项目是否需要迁移。更新技能不会自动升级全部项目，也不需要每次都重建工作流。
+
+## 开发与验证
+
+完整发行包由基础工作流和多项目模块组合构建，不能单独复制 `agent-workflow/` 目录作为完整安装。构建入口和版本规则见 [维护者发布指南](docs/releasing.md)。
 
 ```bash
+python3 -B experiments/frontier/build_release.py check-release
 python3 -B -m pytest tests experiments/frontier -q -p no:cacheprovider
 ```
 
-## 本地安装
-
-当前版本使用完整发行包，构建及安装说明见 [RELEASE_USAGE.md](experiments/frontier/RELEASE_USAGE.md)。请使用组合构建后的发行包，单独复制仓库中的 `agent-workflow/` 不包含完整的多项目运行能力。首次安装使用 `install`；已有安装使用 `update-plan` 和 `update`，先结束旧写入，再按计划切换并保留备份。不要用直接覆盖复制替代更新，也不要为更新技能而重新初始化业务项目。
-
-更新后新会话继续使用 `$agent-workflow`。项目结构升级先运行 `upgrade_workflow.py <项目> plan`，保留原文档、工作项与历史；冲突和建议单独处理，多项目关系不自动开启。
-
-## 状态
-
-2026-11-25 已完成主线快进合并。实验源码重新构建的发行包与本机安装版逐文件一致，回归结果为 `641 passed, 38 skipped`。本仓库既有工作流记录结构仍为 v5；发行包模板为 v6，其他项目也不会因合并自动迁移。当前交付状态见 [主线切换记录](.agent-workflow/30-records/work-items/W-20261125-mainline-promotion/current-status.md)。工作区外安装仍遵守会话授权和工具权限。
+- `agent-workflow/`：基础工作流、模板与脚本。
+- `experiments/frontier/`：多项目运行模块及发行工具。
+- `tests/`：工作流测试；发行与多项目测试位于 `experiments/frontier/`。
+- `docs/adr/`：设计决策。

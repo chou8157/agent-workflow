@@ -15,14 +15,16 @@ import re
 from pathlib import Path, PurePosixPath
 import shutil
 import stat
+import subprocess
 import sys
 import tarfile
 import tempfile
 
 
 PACKAGE_NAME = "agent-workflow"
-VERSION = "1.1.0-beta.1"
 MANIFEST = "release-manifest.json"
+RELEASE_INFO = "release-info.json"
+RELEASE_NOTES = "release-notes.md"
 REPOSITORY = Path(__file__).resolve().parents[2]
 RUNTIME_MODULES = (
     "light_cli", "light_report", "mvp_light", "activity_closeout", "node_workflow",
@@ -73,9 +75,9 @@ def _inventory(root):
     return dict(sorted(files.items())), sorted(directories)
 
 
-def _manifest(root, version=None):
+def _manifest(root, version):
     files, directories = _inventory(root)
-    return {"schema_version": 1, "name": PACKAGE_NAME, "version": version or VERSION,
+    return {"schema_version": 1, "name": PACKAGE_NAME, "version": version,
             "files": files, "directories": directories}
 
 
@@ -122,6 +124,103 @@ def compare_versions(left, right):
     return (left_pre > right_pre) - (left_pre < right_pre)
 
 
+def read_product_version(repository=None):
+    path = Path(repository or REPOSITORY) / "VERSION"
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("缺少普通文件 VERSION，请使用完整源码或发行包：{}".format(path))
+    version = path.read_text(encoding="utf-8").strip()
+    _version(version)
+    return version
+
+
+def _channel(version):
+    return "preview" if _version(version)[1] else "stable"
+
+
+def _source_revision(repository):
+    """无 Git 的源码归档仍可构建；不把未知来源冒充干净提交。"""
+    def git(*args):
+        result = subprocess.run(["git", "-C", str(repository), *args], capture_output=True, text=True)
+        if result.returncode:
+            raise ValueError("无法读取源码 Git 状态")
+        return result.stdout.strip()
+    try:
+        if Path(git("rev-parse", "--show-toplevel")).resolve() != repository:
+            return {"commit": None, "dirty": None}
+        return {"commit": git("rev-parse", "HEAD"),
+                "dirty": bool(git("status", "--porcelain=v1", "--untracked-files=normal"))}
+    except (OSError, ValueError):
+        return {"commit": None, "dirty": None}
+
+
+def _notes(repository, version):
+    path = repository / "CHANGELOG.md"
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("缺少普通文件 CHANGELOG.md")
+    text = path.read_text(encoding="utf-8")
+    sections = list(re.finditer(r"^## (.+)$", text, re.MULTILINE))
+    if not sections:
+        raise ValueError("CHANGELOG.md 缺少当前版本说明")
+    heading = sections[0].group(1)
+    if heading != "未发布" and not re.fullmatch(re.escape(version) + r" - \d{4}-\d{2}-\d{2}", heading):
+        raise ValueError("CHANGELOG.md 首个版本必须是“未发布”或当前版本与发布日期")
+    body = text[sections[0].end():sections[1].start() if len(sections) > 1 else len(text)].strip()
+    if not body:
+        raise ValueError("当前版本的发布说明不能为空")
+    return "# {} {}\n\n{}\n\n{}\n".format(PACKAGE_NAME, version, heading, body)
+
+
+def check_release(repository=None, require_clean=False, expected_tag=None):
+    """只读校验当前发行输入；不发布、不安装、不修改文档。"""
+    repository = _path(repository or REPOSITORY)
+    version = read_product_version(repository)
+    if expected_tag is not None and expected_tag != "v" + version:
+        raise ValueError("标签与 VERSION 不一致：期望 v{}".format(version))
+    _notes(repository, version)
+    source = _source_revision(repository)
+    if require_clean and (source["commit"] is None or source["dirty"] is not False):
+        raise ValueError("正式发行构建要求干净、已提交的 Git 源码；当前仅可制作本地候选包")
+    return {"status": "checked", "name": PACKAGE_NAME, "version": version,
+            "channel": _channel(version), "expected_tag": "v" + version, "source": source}
+
+
+def _payload_digest(manifest):
+    return _digest(_canonical({"files": {name: value for name, value in manifest["files"].items()
+                                        if name != RELEASE_INFO}, "directories": manifest["directories"]}))
+
+
+def _verify_release_info(package, manifest):
+    # 老包没有新发行信息也合法；不能强制历史包包含后来增加的文件。
+    if "VERSION" in manifest["files"] and read_product_version(package) != manifest["version"]:
+        raise ValueError("包内 VERSION 与 manifest 产品版本不一致")
+    if RELEASE_INFO not in manifest["files"]:
+        return
+    try:
+        info = json.loads((package / RELEASE_INFO).read_text(encoding="utf-8"))
+        workflow = int((package / "assets/templates/.agent-workflow/WORKFLOW_VERSION").read_text(encoding="utf-8").strip())
+    except (OSError, ValueError) as error:
+        raise ValueError("发行信息或模板结构版本无效") from error
+    required = {"schema_version", "name", "version", "channel", "workflow_version", "source"}
+    if (not isinstance(info, dict) or set(info) != required or
+            type(info["schema_version"]) is not int or info["schema_version"] != 1 or
+            info["name"] != PACKAGE_NAME or info["version"] != manifest["version"] or
+            info["channel"] != _channel(manifest["version"]) or
+            type(info["workflow_version"]) is not int or info["workflow_version"] != workflow or workflow < 1 or
+            not {"VERSION", RELEASE_NOTES} <= manifest["files"].keys()):
+        raise ValueError("发行信息与包版本、渠道或模板结构不一致")
+    source = info["source"]
+    if (not isinstance(source, dict) or set(source) != {"commit", "dirty", "content_sha256"} or
+            (source["commit"] is not None and
+             (not isinstance(source["commit"], str) or not re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", source["commit"]))) or
+            (source["commit"] is None and source["dirty"] is not None) or
+            (source["commit"] is not None and type(source["dirty"]) is not bool) or
+            source["content_sha256"] != _payload_digest(manifest)):
+        raise ValueError("发行来源信息或内容摘要不一致")
+    first_line = (package / RELEASE_NOTES).read_text(encoding="utf-8").splitlines()[0:1]
+    if first_line != ["# {} {}".format(PACKAGE_NAME, manifest["version"])]:
+        raise ValueError("发布说明与包版本不一致")
+
+
 def verify(package):
     """核实完整文件集合及哈希；manifest 是完整性清单，不是来源签名。"""
     package = _path(package)
@@ -158,6 +257,7 @@ def verify(package):
         raise ValueError("交付包校验失败：缺少={}；多余={}；变化={}；目录一致={}".format(
             missing, extra, changed, actual["directories"] == manifest["directories"]))
     _skill_name(package / "SKILL.md")
+    _verify_release_info(package, manifest)
     return manifest
 
 
@@ -262,8 +362,10 @@ def _publish(temporary, destination, manifest):
     return "created"
 
 
-def build(output, repository=None):
+def build(output, repository=None, require_clean=False, expected_tag=None):
     repository = _path(repository or REPOSITORY)
+    checked = check_release(repository, require_clean, expected_tag)
+    version = checked["version"]
     source = repository / "agent-workflow"
     frontier = repository / "experiments/frontier"
     overlay = frontier / "skill"
@@ -289,18 +391,28 @@ def build(output, repository=None):
         _copy_source(overlay, temporary)
         for name in RUNTIME_MODULES:
             _copy_source(frontier / (name + ".py"), temporary / "scripts/frontier" / (name + ".py"))
-        _copy_source(Path(__file__), temporary / "scripts/release_package.py")
+        _copy_source(frontier / "build_release.py", temporary / "scripts/release_package.py")
         _copy_source(frontier / "release_update.py", temporary / "scripts/release_update.py")
+        (temporary / "VERSION").write_text(version + "\n", encoding="utf-8")
+        (temporary / RELEASE_NOTES).write_text(_notes(repository, version), encoding="utf-8")
         _disable_bytecode(temporary)
+        workflow = int((temporary / "assets/templates/.agent-workflow/WORKFLOW_VERSION").read_text(encoding="utf-8").strip())
+        info = {"schema_version": 1, "name": PACKAGE_NAME, "version": version,
+                "channel": _channel(version), "workflow_version": workflow,
+                "source": dict(checked["source"], content_sha256=_payload_digest(_manifest(temporary, version)))}
+        (temporary / RELEASE_INFO).write_bytes(_canonical(info))
         _release_modes(temporary)
-        manifest = _manifest(temporary)
+        manifest = _manifest(temporary, version)
         if not REQUIRED_FILES | {"scripts/release_update.py"} <= manifest["files"].keys():
             raise ValueError("当前构建缺少必需的运行文件")
         (temporary / MANIFEST).write_bytes(_canonical(manifest))
         (temporary / MANIFEST).chmod(0o644)
         verify(temporary)
+        if check_release(repository, require_clean, expected_tag) != checked:
+            raise ValueError("构建期间发行输入发生变化，请重新构建")
         status = _publish(temporary, output, manifest)
-        return {"status": status, "path": str(output), "name": PACKAGE_NAME, "version": VERSION,
+        return {"status": status, "path": str(output), "name": PACKAGE_NAME, "version": version,
+                "workflow_version": workflow, "channel": checked["channel"], "source": info["source"],
                 "files": len(manifest["files"]), "manifest_sha256": _digest(_canonical(manifest))}
     finally:
         if temporary.exists():
@@ -390,9 +502,13 @@ def archive(package, destination):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    build_parser = commands.add_parser("build", help="从实验工作区构建独立交付包")
+    build_parser = commands.add_parser("build", help="从完整源码构建独立交付包")
     build_parser.add_argument("--output", type=Path, required=True, help="仓库之外的包目录；已有不同内容时拒绝覆盖")
     build_parser.add_argument("--archive", type=Path, help="可选 tar.gz 输出路径；已有不同内容时拒绝覆盖")
+    check_parser = commands.add_parser("check-release", help="只读检查版本、发布说明和源码状态")
+    for command in (build_parser, check_parser):
+        command.add_argument("--require-clean", action="store_true", help="要求干净且已提交的 Git 源码，用于正式发行构建")
+        command.add_argument("--expected-tag", help="检查待发布标签与 VERSION 一致，例如 v1.1.0")
     verify_parser = commands.add_parser("verify", help="检查包名、版本、文件集合和全部哈希")
     verify_parser.add_argument("package", type=Path, help="已解压的交付包目录")
     install_parser = commands.add_parser("install", help="首次安装 agent-workflow；已有不同内容时请使用 update")
@@ -403,9 +519,11 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         if args.command == "build":
-            result = build(args.output)
+            result = build(args.output, require_clean=args.require_clean, expected_tag=args.expected_tag)
             if args.archive:
                 result["archive"] = archive(args.output, args.archive)
+        elif args.command == "check-release":
+            result = check_release(require_clean=args.require_clean, expected_tag=args.expected_tag)
         elif args.command == "verify":
             manifest = verify(args.package)
             result = {"status": "verified", "name": manifest["name"], "version": manifest["version"],

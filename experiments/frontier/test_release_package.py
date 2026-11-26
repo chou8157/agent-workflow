@@ -49,7 +49,7 @@ def test_build_repeats_without_changes_and_contains_only_runtime_assets(package)
     assert timestamps == {path.relative_to(package).as_posix(): path.stat().st_mtime_ns
                           for path in package.rglob("*") if path.is_file()}
     manifest = release.verify(package)
-    assert manifest["name"] == "agent-workflow" and manifest["version"] == "1.1.0-beta.1"
+    assert manifest["name"] == "agent-workflow" and manifest["version"] == release.read_product_version()
     assert not (package / "references/local-workflow.md").read_text(encoding="utf-8").startswith("---")
     assert all(not any(part in ("__pycache__", "tests", "experiments", "evidence", "fixtures") for part in Path(name).parts)
                for name in manifest["files"])

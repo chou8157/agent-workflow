@@ -1,0 +1,29 @@
+{
+  "id": "W-20261125-release-governance",
+  "title": "发布与版本治理第一期",
+  "type": "工程改进",
+  "status": "completed",
+  "parent": null,
+  "created_at": "2026-11-25T18:30:56+08:00",
+  "updated_at": "2026-11-25T18:46:22+08:00",
+  "completed_at": "2026-11-25T18:45:12+08:00",
+  "blocked_reason": null,
+  "completed_at_unknown": false,
+  "activity_records": [
+    {
+      "id": "activity-7b0f68af49227766c8b48c22",
+      "date": "2026-11-25",
+      "summary": "完成第一批发布治理与本地候选验证：657 项回归通过，真实 beta 副本更新与回滚通过，尚未发布或更新实际安装。",
+      "status": "completed",
+      "evidence_refs": [
+        {
+          "path": ".agent-workflow/30-records/work-items/W-20261125-release-governance/progress/001-local-candidate.md",
+          "sha256": "e3f32b2cf483f53084e411951f083fe361966be1e7d3cf66bdc4bb4e4e57c8cf",
+          "line_start": 5,
+          "line_end": 10,
+          "hash_scope": "lines"
+        }
+      ]
+    }
+  ]
+}

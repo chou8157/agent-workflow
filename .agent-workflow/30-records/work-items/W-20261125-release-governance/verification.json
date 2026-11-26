@@ -1,0 +1,61 @@
+{
+  "candidate_version": "1.1.0",
+  "installed_version_unchanged": "1.1.0-beta.1",
+  "workflow_version": 6,
+  "changed_existing_package_files": [
+    "scripts/release_package.py"
+  ],
+  "added_package_files": [
+    "VERSION",
+    "release-info.json",
+    "release-notes.md"
+  ],
+  "removed_package_files": [],
+  "unchanged_existing_files": 80,
+  "beta_to_candidate_update": "passed",
+  "repeat_update": "unchanged",
+  "rollback": "passed",
+  "project_files_preserved": true,
+  "project_plan_unchanged": true,
+  "actual_installation_preserved": true,
+  "archive_sha256": "6746743c139e7c5d9c89c36ee875491c0a3200ab9c1fa81e4446b776452bcf62",
+  "candidate_info": {
+    "channel": "stable",
+    "name": "agent-workflow",
+    "schema_version": 1,
+    "source": {
+      "commit": "ff9ee6f11df5845bc94513cceb17d1844b3ddac7",
+      "content_sha256": "03c55cafd41102ad73d189f42bce798fb0796c237222a472362fc2ee072fed92",
+      "dirty": true
+    },
+    "version": "1.1.0",
+    "workflow_version": 6
+  },
+  "trial_directory": "/private/tmp/agent-workflow-release-governance-20261125/trial-phkgmpt2",
+  "tests": {
+    "targeted_passed": 72,
+    "full_passed": 657,
+    "full_skipped": 38,
+    "full_failures": 0,
+    "full_errors": 0,
+    "full_total": 695,
+    "python": "3.8.3",
+    "skipped_reasons": {
+      "service_environment_disabled": 2,
+      "postgresql_not_configured": 18,
+      "neo4j_not_configured": 18
+    }
+  },
+  "checks": {
+    "source_and_candidate_skill_structure": "passed",
+    "python38_compilation": "passed",
+    "python312_candidate_verify": "passed",
+    "workflow_check": "passed",
+    "ci_yaml_and_shell_syntax": "passed",
+    "public_doc_links": "passed",
+    "dirty_release_gate": "rejected_as_expected",
+    "remote_ci": "not_run",
+    "published": false,
+    "real_install_updated": false
+  }
+}

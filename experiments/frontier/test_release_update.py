@@ -42,10 +42,23 @@ def _hashes(root):
 
 def _new_version(package, path, version):
     shutil.copytree(package, path)
-    manifest = release._manifest(path, version)
-    (path / release.MANIFEST).write_bytes(release._canonical(manifest))
+    (path / "VERSION").write_text(version + "\n", encoding="utf-8")
+    notes = (path / release.RELEASE_NOTES).read_text(encoding="utf-8").splitlines(keepends=True)
+    notes[0] = "# {} {}\n".format(release.PACKAGE_NAME, version)
+    (path / release.RELEASE_NOTES).write_text("".join(notes), encoding="utf-8")
+    _refresh_manifest(path, version)
     release.verify(path)
     return path
+
+
+def _refresh_manifest(path, version):
+    info = json.loads((path / release.RELEASE_INFO).read_text(encoding="utf-8"))
+    info["version"] = version
+    info["channel"] = release._channel(version)
+    info["source"]["content_sha256"] = release._payload_digest(release._manifest(path, version))
+    (path / release.RELEASE_INFO).write_bytes(release._canonical(info))
+    manifest = release._manifest(path, version)
+    (path / release.MANIFEST).write_bytes(release._canonical(manifest))
 
 
 def _apply(package, root):
@@ -79,7 +92,7 @@ def test_multiple_versions_verify_and_update_without_current_version_constant(pa
     second, third = _apply(newer, legacy), _apply(newest, legacy)
     assert len({first["transaction"], second["transaction"], third["transaction"]}) == 3
     assert release.verify(legacy / release.PACKAGE_NAME)["version"] == "2.0.0-beta.2"
-    assert release.verify(Path(second["backup"]))["version"] == "1.1.0-beta.1"
+    assert release.verify(Path(second["backup"]))["version"] == release.read_product_version()
     assert release.verify(Path(third["backup"]))["version"] == "1.2.0"
     before = _hashes(legacy)
     assert _apply(newest, legacy)["status"] == "unchanged"
@@ -107,9 +120,9 @@ def test_normal_update_refuses_downgrade(package, legacy, tmp_path, version):
 
 def test_same_version_changed_payload_and_future_schema_are_rejected(package, legacy, tmp_path):
     _apply(package, legacy)
-    changed = _new_version(package, tmp_path / "changed", release.VERSION)
+    changed = _new_version(package, tmp_path / "changed", release.read_product_version())
     (changed / "SKILL.md").write_text((changed / "SKILL.md").read_text(encoding="utf-8") + "\n变化\n", encoding="utf-8")
-    (changed / release.MANIFEST).write_bytes(release._canonical(release._manifest(changed)))
+    _refresh_manifest(changed, release.read_product_version())
     with pytest.raises(ValueError, match="相同产品版本"):
         updater.update_plan(changed, legacy)
     future = json.loads((changed / release.MANIFEST).read_text(encoding="utf-8"))

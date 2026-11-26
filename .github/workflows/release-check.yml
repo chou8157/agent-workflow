@@ -1,0 +1,58 @@
+name: 发行检查
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            python: '3.8'
+          - os: ubuntu-24.04
+            python: '3.12'
+          - os: macos-14
+            python: '3.12'
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: 安装测试依赖
+        run: python -m pip install 'pytest>=7,<9'
+      - name: 检查发行输入
+        env:
+          RELEASE_REF_TYPE: ${{ github.ref_type }}
+          RELEASE_REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [ "$RELEASE_REF_TYPE" = tag ]; then
+            python -B experiments/frontier/build_release.py check-release --require-clean --expected-tag "$RELEASE_REF_NAME"
+          else
+            python -B experiments/frontier/build_release.py check-release --require-clean
+          fi
+      - name: 运行回归
+        run: python -B -m pytest tests experiments/frontier -q -p no:cacheprovider
+      - name: 构建并核验独立候选包
+        run: |
+          python -B experiments/frontier/build_release.py build --require-clean --output "$RUNNER_TEMP/agent-workflow" --archive "$RUNNER_TEMP/agent-workflow.tar.gz"
+          python -B "$RUNNER_TEMP/agent-workflow/scripts/release_package.py" verify "$RUNNER_TEMP/agent-workflow"
+          python -c 'import hashlib, os, pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"agent-workflow.tar.gz"; p.with_suffix(p.suffix+".sha256").write_text(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+p.name+"\n")'
+      - name: 保存候选产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-${{ matrix.os }}-python-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/agent-workflow.tar.gz
+            ${{ runner.temp }}/agent-workflow.tar.gz.sha256
+          if-no-files-found: error
