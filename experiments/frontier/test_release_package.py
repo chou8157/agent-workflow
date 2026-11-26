@@ -86,7 +86,8 @@ def test_package_is_self_contained_for_local_and_three_level_workflow(package, t
     cli = scripts / "frontier/light_cli.py"
     package_before = _hashes(installed)
     for script in (cli, scripts / "scaffold_workflow.py", scripts / "task_context.py",
-                   scripts / "finalize_context.py", scripts / "capability_context.py"):
+                   scripts / "finalize_context.py", scripts / "capability_context.py",
+                   scripts / "unified_upgrade.py"):
         _assert_ok(_run(script, outside, "--help"))
     nodes = tmp_path / "projects"
     registry = tmp_path / "control/registry.sqlite"

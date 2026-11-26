@@ -22,6 +22,9 @@
 - 工作项脚本：`agent-workflow/scripts/task_context.py`
 - 工作项状态：每个工作项目录的 `.state.json`
 - 升级脚本：`agent-workflow/scripts/upgrade_workflow.py`
+- 统一升级入口：`agent-workflow/scripts/unified_upgrade.py`
+- 文档基线与三方合并：`agent-workflow/scripts/document_baseline.py`
+- 项目升级事务与恢复：`agent-workflow/scripts/project_upgrade_transaction.py`
 - 评估记录：`agent-workflow/evaluation-notes.md`
 
 ## 关键依赖
@@ -39,6 +42,6 @@
 
 ## 阅读记录
 
-- 最近阅读：2026-11-25。
-- 来源：第一批发布与版本治理源码及候选验证。
-- 结论：产品版本由根 VERSION 提供，完整组合包生成发行信息；当前仅准备本地候选，远端 CI、发布和实际安装分别跟进。
+- 最近阅读：2026-11-26。
+- 来源：1.2.0 统一升级编排、文档保护、项目事务实现、完整回归和独立发行包验证。
+- 结论：产品版本由根 VERSION 提供，完整组合包生成发行信息；统一入口编排工具更新和项目升级，文档基线与项目事务保护均按明确项目范围执行，默认不更新本机安装或迁移外部项目。

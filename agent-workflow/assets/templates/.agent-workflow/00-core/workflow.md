@@ -11,10 +11,13 @@
 7. 实际开发、测试、状态变更或交付结束时默认执行 `finalize`；纯讨论和阅读不触发。收口只沉淀可验证事实，不自动改写项目级判断、Memory 或发布物。
 8. 记录：仅在用户要求或任务有沉淀价值时更新记录。
 
+<!-- agent-workflow:managed:start id="workflow-upgrade" -->
 <!-- agent-workflow:versioned-upgrade-v6 -->
 ## 版本切换与本地记录
 
 升级先按 `versioning.md` 执行只读预检，迁移只补缺，不覆盖原项目内容。结束旧写入后统一使用当前 skill 脚本。实际工作收口后追加本地活动，证据和日期必须有依据；纯查询不补造活动，不同步父项目，不因升级自动建立多项目关系。
+
+<!-- agent-workflow:managed:end id="workflow-upgrade" -->
 
 ## 任务分级
 

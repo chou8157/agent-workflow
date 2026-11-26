@@ -68,7 +68,9 @@ python3 path/to/agent-workflow/scripts/upgrade_workflow.py /path/to/project appl
 
 `task_context.py` 用于创建、列出、查看和更新工作项生命周期状态。生命周期状态唯一保存在工作项目录的 `.state.json`；旧工作项先用 `migration-check` 做只读检查。它不执行 Git 操作，也不替代记录模式中的真实事实判断。
 
-`upgrade_workflow.py` 根据结构版本和实际文件生成升级计划，区分结构、工作项迁移、冲突与待审文档。`apply-safe` 只补缺并迁移合法旧状态，保留未知日期；已有入口文档生成建议供审阅。完整发行包的 `release_package.py` 另提供技能程序更新、备份、恢复和回滚，详见升级模式。
+`upgrade_workflow.py` 根据结构版本和实际文件生成升级计划，区分结构、工作项迁移、冲突与待审文档。`apply-safe` 只补缺并迁移合法旧状态，保留未知日期；已有入口文档生成建议供审阅。统一入口还会记录文档基线并执行三方合并判断，项目写入通过事务日志和项目锁保护；中断后使用 `unified_upgrade.py recover-project` 恢复。完整发行包的 `release_package.py` 另提供技能程序更新、备份、恢复和回滚，详见升级模式。
+
+`unified_upgrade.py` 用于同时查看已指定的技能包和项目范围，生成绑定当前内容的统一计划，并在明确传入 `--update-tool` 或 `--upgrade-project` 后执行对应步骤。它不会自动下载、扫描或迁移其他项目；工具更新和项目升级始终分别返回结果。
 
 `delivery_context.py` 用于生成和发布独立外部交付物。草稿写入 staging，发布前检查内部路径、内部工作项 ID、未确认判断和敏感字段；published 版本不可原地覆盖。
 

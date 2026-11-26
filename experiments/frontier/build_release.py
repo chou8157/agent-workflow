@@ -33,7 +33,8 @@ RUNTIME_MODULES = (
 REQUIRED_FILES = {
     "SKILL.md", "references/local-workflow.md", "references/network-mode.md",
     "agents/openai.yaml", "scripts/task_context.py", "scripts/scaffold_workflow.py",
-    "scripts/release_package.py",
+    "scripts/release_package.py", "scripts/unified_upgrade.py",
+    "scripts/document_baseline.py", "scripts/project_upgrade_transaction.py",
 } | {"scripts/frontier/{}.py".format(name) for name in RUNTIME_MODULES}
 
 

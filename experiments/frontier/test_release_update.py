@@ -87,13 +87,13 @@ def test_legacy_plan_is_read_only_and_upgrade_keeps_complete_backup(package, leg
 
 def test_multiple_versions_verify_and_update_without_current_version_constant(package, legacy, tmp_path):
     first = _apply(package, legacy)
-    newer = _new_version(package, tmp_path / "next", "1.2.0")
+    newer = _new_version(package, tmp_path / "next", "1.3.0")
     newest = _new_version(package, tmp_path / "newest", "2.0.0-beta.2")
     second, third = _apply(newer, legacy), _apply(newest, legacy)
     assert len({first["transaction"], second["transaction"], third["transaction"]}) == 3
     assert release.verify(legacy / release.PACKAGE_NAME)["version"] == "2.0.0-beta.2"
     assert release.verify(Path(second["backup"]))["version"] == release.read_product_version()
-    assert release.verify(Path(third["backup"]))["version"] == "1.2.0"
+    assert release.verify(Path(third["backup"]))["version"] == "1.3.0"
     before = _hashes(legacy)
     assert _apply(newest, legacy)["status"] == "unchanged"
     assert _hashes(legacy) == before
@@ -217,7 +217,7 @@ def test_rollback_restores_legacy_and_keeps_both_versions(package, legacy):
 
 def test_rollback_refuses_later_update_or_manual_edit(package, legacy, tmp_path):
     first = _apply(package, legacy)
-    newer = _new_version(package, tmp_path / "newer", "1.2.0")
+    newer = _new_version(package, tmp_path / "newer", "1.3.0")
     second = _apply(newer, legacy)
     with pytest.raises(ValueError, match="当前安装内容已变化"):
         updater.rollback_plan(legacy, first["transaction"])
@@ -325,7 +325,7 @@ def test_concurrent_updaters_publish_once_and_repeat_idempotently(package, legac
 
 
 def test_concurrent_different_candidates_cannot_overwrite_with_stale_plan(package, legacy, tmp_path):
-    later = _new_version(package, tmp_path / "later", "1.2.0")
+    later = _new_version(package, tmp_path / "later", "1.3.0")
     candidates = [package, later]
     plans = [updater.update_plan(candidate, legacy) for candidate in candidates]
     processes = []

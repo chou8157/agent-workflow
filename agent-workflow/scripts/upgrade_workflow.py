@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -188,7 +189,7 @@ def build_upgrade_plan(project: Path) -> dict[str, object]:
         actions.append({"action": "write_version", "target": str(workflow / VERSION_FILE), "message": f"全部结构和状态迁移完成后记录结构版本 {LATEST_VERSION}。"})
     structure_up_to_date = structure_checked and current_version == LATEST_VERSION and not structure_actions
     ready = not conflicts and not migrations and not structure_actions
-    return {
+    result = {
         "project": str(project), "current_version": current_version, "latest_version": LATEST_VERSION,
         "version_source": "file" if (workflow / VERSION_FILE).exists() else "legacy_unversioned",
         "version_path": list(range(current_version, LATEST_VERSION + 1)),
@@ -198,6 +199,8 @@ def build_upgrade_plan(project: Path) -> dict[str, object]:
         "migration_pending": bool(migrations), "review_pending": bool(reviews), "runtime_ready": ready,
         "up_to_date": structure_up_to_date and ready and not reviews,
     }
+    result["plan_fingerprint"] = _plan_fingerprint(result)
+    return result
 
 
 def write_atomic(path: Path, content: bytes, replace: bool = False) -> bool:
@@ -226,9 +229,27 @@ def write_atomic(path: Path, content: bytes, replace: bool = False) -> bool:
             os.unlink(temporary)
 
 
-def apply_safe_upgrade(project: Path) -> dict[str, object]:
+def _canonical(value: object) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+
+
+def _digest(value: object) -> str:
+    return hashlib.sha256(_canonical(value)).hexdigest()
+
+
+def _plan_fingerprint(plan: dict[str, object]) -> str:
+    payload = {key: plan[key] for key in (
+        "project", "current_version", "latest_version", "safe_actions",
+        "migration_actions", "review_actions", "conflicts",
+    )}
+    return _digest(payload)
+
+
+def apply_safe_upgrade(project: Path, expected_plan_fingerprint: str | None = None) -> dict[str, object]:
     project = Path(project).resolve()
     plan = build_upgrade_plan(project)
+    if expected_plan_fingerprint and plan["plan_fingerprint"] != expected_plan_fingerprint:
+        raise ValueError("当前内容已变化，旧计划指纹失效；请重新生成计划")
     if not plan["can_apply"]:
         plan.update({"applied": False, "created_suggestions": [], "migrated_states": []})
         return plan
@@ -236,6 +257,8 @@ def apply_safe_upgrade(project: Path) -> dict[str, object]:
     migrated = []
     with task_context.state_lock(workflow_path(project) / ".upgrade"):
         plan = build_upgrade_plan(project)
+        if expected_plan_fingerprint and plan["plan_fingerprint"] != expected_plan_fingerprint:
+            raise ValueError("当前内容已变化，旧计划指纹失效；请重新生成计划")
         if not plan["can_apply"]:
             plan.update({"applied": False, "created_suggestions": [], "migrated_states": []})
             return plan
@@ -280,13 +303,14 @@ def main(argv: list[str] | None = None) -> int:
     subparsers = parser.add_subparsers(dest="command", required=True)
     for command, help_text in (("status", "只读查看版本、迁移和审阅状态。"), ("plan", "只读生成连续版本升级计划。"), ("apply-safe", "整体预检后补缺和迁移，不覆盖已有文档。")):
         subparsers.add_parser(command, help=help_text).add_argument("--json", action="store_true", help="输出机器可读 JSON。")
+    subparsers.choices["apply-safe"].add_argument("--plan-fingerprint", help="只执行与已审阅计划一致的内容。")
     args = parser.parse_args(argv)
     project = Path(args.project).resolve()
     if not project.is_dir():
         print(f"项目目录不存在：{project}", file=sys.stderr)
         return 2
     try:
-        result = apply_safe_upgrade(project) if args.command == "apply-safe" else build_upgrade_plan(project)
+        result = apply_safe_upgrade(project, args.plan_fingerprint) if args.command == "apply-safe" else build_upgrade_plan(project)
     except (ValueError, OSError, UnicodeError) as error:
         print(f"错误：{error}", file=sys.stderr)
         return 2

@@ -45,6 +45,24 @@ python3 -B "$SKILLS_ROOT/agent-workflow/scripts/release_package.py" verify "$SKI
 
 ## 检查或升级项目
 
+需要同时检查技能包和指定项目时，可以使用统一入口。它只处理明确传入的范围：
+
+```bash
+python3 -B "$SKILLS_ROOT/agent-workflow/scripts/unified_upgrade.py" plan \
+  --package "$PACKAGE" --skills-root "$SKILLS_ROOT" --project "$PROJECT" --json
+```
+
+计划会返回工具和项目的独立结果、计划指纹以及待处理事项。计划生成后如果候选包、安装内容或项目内容发生变化，旧计划指纹会失效。
+
+执行时必须明确选择范围。下面的示例只升级项目，不更新本机技能：
+
+```bash
+python3 -B "$SKILLS_ROOT/agent-workflow/scripts/unified_upgrade.py" apply \
+  --project "$PROJECT" --upgrade-project --plan-fingerprint "$PLAN_FINGERPRINT" --json
+```
+
+工具更新仍要求先停止旧/新技能写入项目的 Agent，并显式传入 `--writers-stopped`。同时指定 `--update-tool` 和 `--upgrade-project` 时，结果仍按工具和项目分别报告；工具更新成功不代表项目升级也已完成。
+
 ```bash
 python3 -B "$SKILLS_ROOT/agent-workflow/scripts/upgrade_workflow.py" "$PROJECT" plan --json
 ```
@@ -58,6 +76,17 @@ python3 -B "$SKILLS_ROOT/agent-workflow/scripts/check_workflow.py" "$PROJECT" --
 ```
 
 `apply-safe` 保留已有文档，并生成需要审阅的建议；它不会自动合并建议。处理后再次检查，只有 `up_to_date` 为真且相关检查通过，才能报告整个项目升级完成。结构版本变化或命令成功退出不代表文档已经处理完毕。
+
+统一入口会在首次确认模板来源后保存文档基线。后续入口文档按三方内容判断，用户修改与新模板没有重叠时自动合并；存在重叠时保留冲突标记并等待审阅。没有可确认基线的旧文档不会被自动覆盖。
+
+项目升级的写入范围会先记录为事务。若执行中断，可在确认没有其他写入者后运行：
+
+```bash
+python3 -B "$SKILLS_ROOT/agent-workflow/scripts/unified_upgrade.py" recover-project \
+  --project "$PROJECT" --json
+```
+
+恢复完成后重新生成计划；如果项目在中断后被人工修改，恢复会停止并保留现场。
 
 预览版转为同一目标的正式版，如果结构与规则不变，已有项目无需跟着改版本文字或重新初始化。需要迁移时按项目分别处理。
 

@@ -47,6 +47,19 @@ python3 -B "$PACKAGE/scripts/release_package.py" rollback --skills-root "$SKILLS
 
 ## 升级已有项目
 
+### 统一升级入口
+
+需要同时检查技能包和指定项目时，使用发行包中的 `unified_upgrade.py`：
+
+```bash
+python3 -B "$SKILLS_ROOT/agent-workflow/scripts/unified_upgrade.py" plan \
+  --package "$PACKAGE" --skills-root "$SKILLS_ROOT" --project "$PROJECT" --json
+```
+
+该入口只编排已有更新器和项目升级器，不自动下载、扫描或迁移其他项目。计划包含工具和项目的独立结果、写入范围、待处理事项和计划指纹。执行前如果内容发生变化，必须重新生成计划。
+
+执行时必须显式指定 `--update-tool` 或 `--upgrade-project`。统一入口的结果状态为：`complete`（本次范围已完成或无需更新）、`pending`（存在文档审阅或其他待处理项）、`blocked`（预检冲突）、`failed`（执行失败或需要恢复）。旧的 `release_package.py` 和 `upgrade_workflow.py` 命令继续保留。
+
 ```bash
 python3 -B "$SKILL_ROOT/scripts/upgrade_workflow.py" "$PROJECT" plan --json
 python3 -B "$SKILL_ROOT/scripts/upgrade_workflow.py" "$PROJECT" apply-safe --json
@@ -58,6 +71,13 @@ python3 -B "$SKILL_ROOT/scripts/check_workflow.py" "$PROJECT" --require-work-ite
 2. 仅对已授权的计划执行 `apply-safe`。它补齐缺失结构和能力清单、迁移合法旧状态、生成建议；有冲突时按计划处理，不假报完成。
 3. 已有 `AGENTS.md`、工作流入口与规则保留原文；建议经审阅后再合并。状态迁移只依据原始字段，历史日期未知仍保留未知。
 4. 再运行 `status` 和结构检查，分别报告结构是否最新、状态是否可用和建议是否待审。有迁移或审阅待办时不能只根据版本数字宣布全部完成。
+
+### 文档基线与项目事务
+
+- 首次遇到与内置模板逐字一致的入口文档时，统一入口会记录 `.agent-workflow/.document-baseline.json`；来源不明的旧文档只生成待审结果，不会猜测模板身份。
+- 有基线的入口文档按“旧模板、当前项目、新模板”三方判断：不重叠的用户修改可保留并合并，重叠修改生成冲突标记并停止文档写入。
+- 项目升级的写入路径会先固定并记录在 `.agent-workflow/.upgrade-transactions/`，同一项目使用锁串行执行。执行中断或失败时，使用统一入口的 `recover-project --project` 恢复；恢复发现用户后续修改会拒绝覆盖。
+- 项目事务只保护项目升级写集，不回滚业务代码、任务新增或其他未纳入计划的文件。恢复成功后必须重新生成计划。
 
 支持已知历史结构 1 至 6。无版本标记但已有 `.agent-workflow/` 的项目从历史结构入口检查实际文件；非法或高于当前支持范围的版本明确拒绝。结构 3 引入工作项状态，4 引入交付结构，5 引入按需能力，6 引入连续升级与统一写入规则。能力按既有事实保留，不自动启用关联、不迁移交付历史、不补造业务日期。
 

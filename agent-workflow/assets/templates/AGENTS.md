@@ -35,6 +35,7 @@
 - 每个实际开发需求必须归属到一个工作项；有多个进行中工作项而用户未指定时，必须先询问。
 - 工作项只记录任务私有事实，公共规则、项目理解和跨任务记录只维护一份。
 
+<!-- agent-workflow:managed:start id="workflow-upgrade" -->
 <!-- agent-workflow:versioned-upgrade-v6 -->
 ## 版本与增量更新
 
@@ -48,3 +49,4 @@
 - 禁止伪造测试或验收结果。
 - 禁止无确认大幅改写已有 `AGENTS.md`。
 - 禁止静默迁移或删除旧工作流目录。
+<!-- agent-workflow:managed:end id="workflow-upgrade" -->
