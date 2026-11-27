@@ -14,6 +14,18 @@
 | 本机安装更新 | 未执行，按用户要求保留 `1.1.0-beta.1` |
 | 外部项目迁移 | 未执行 |
 
+## 2026-11-27：公开安装文档与自动安装提示词
+
+| 验证 | 结果 |
+| --- | --- |
+| `git diff --check` | 通过 |
+| `python3 -B agent-workflow/scripts/check_workflow.py . --require-work-items --json` | `ok=true` |
+| `python3 -B experiments/frontier/build_release.py check-release` | 通过；版本 `1.2.0`，源码存在未提交文档改动 |
+| README 本地链接检查 | 通过 |
+| 完整发行包构建与 `release_package.py verify` | 已在本轮 README 调整前验证通过；README 不进入发行包内容 |
+| 本机安装更新 | 未执行，按用户要求保留 `1.1.0-beta.1` |
+| Git checkpoint、标签、正式 Release、推送 | 未执行，等待单独授权 |
+
 ## 2026-11-26：文档与项目事务第二阶段
 
 | 验证 | 结果 |
