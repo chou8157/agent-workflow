@@ -2,11 +2,28 @@
   "id": "W-20261126-upgrade-experience",
   "title": "1.2.0 统一升级体验与保护",
   "type": "版本迭代",
-  "status": "in_progress",
+  "status": "completed",
   "parent": null,
   "created_at": "2026-11-26T15:30:04+08:00",
-  "updated_at": "2026-11-26T15:30:04+08:00",
-  "completed_at": null,
+  "updated_at": "2026-11-27T17:17:04+08:00",
+  "completed_at": "2026-11-27T16:54:00+08:00",
   "blocked_reason": null,
-  "completed_at_unknown": false
+  "completed_at_unknown": false,
+  "activity_records": [
+    {
+      "id": "activity-65f1839f2b0928d0ad5f5bd2",
+      "date": "2026-11-27",
+      "summary": "完成 1.2.0 发布记录和工作项状态的文档收口",
+      "status": "completed",
+      "evidence_refs": [
+        {
+          "path": ".agent-workflow/30-records/work-items/W-20261126-upgrade-experience/progress/003-1.2.0正式发布.md",
+          "sha256": "cb9969d259de1f92e21b830ab94594d291e297835636cb02ed74ab22a3488e8f",
+          "line_start": 20,
+          "line_end": 20,
+          "hash_scope": "lines"
+        }
+      ]
+    }
+  ]
 }
